@@ -1,0 +1,7 @@
+# Campus Controller
+
+## Theo Stangebye - April 2 2018
+
+Each `buildingController` has 64 rooms possible.  Each `buildingController` has a bank of `n` DFFs that it stores the current statuses of each classroom in.
+
+Let the `campusController` select one of 16 `buildingController`s using an encoded selection.  It will then read the information on each classroom in the form of a bit stream.  There are 6 room select bits which the `buildingController` transmits, followed by the three status bits for that room and then a 5 bit tail - 11100 unless the classrooms have been iterated through for that building in which the system will transit a 111111 and the `campusController` should select the next building.
