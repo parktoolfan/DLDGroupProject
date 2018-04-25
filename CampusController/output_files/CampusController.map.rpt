@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Tue Apr 24 20:10:23 2018
+Tue Apr 24 20:54:37 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 24 20:10:23 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 24 20:54:37 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -196,8 +196,8 @@ refer to the applicable agreement for further details.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; sw[0]~input ;
 ; Maximum fan-out                             ; 2           ;
-; Total fan-out                               ; 8           ;
-; Average fan-out                             ; 0.67        ;
+; Total fan-out                               ; 11          ;
+; Average fan-out                             ; 0.79        ;
 +---------------------------------------------+-------------+
 
 
@@ -228,17 +228,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
++--------------------+--------------------------------+
+; Type               ; Count                          ;
++--------------------+--------------------------------+
+; boundary_port      ; 6                              ;
+; cycloneiii_io_obuf ; 2                              ;
+;                    ;                                ;
+; Max LUT depth      ; 0.00                           ;
+; Average LUT depth  ; 0.00                           ;
++--------------------+--------------------------------+
 
 
 +-------------------------------+
@@ -256,7 +254,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 24 20:10:09 2018
+    Info: Processing started: Tue Apr 24 20:54:22 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -264,22 +262,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file campusc
     Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 13
     Info (12023): Found entity 1: CampusController File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 5
 Info (12127): Elaborating entity "CampusController" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "gpio[2]" at CampusController.vhd(7) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledr[1]" at CampusController.vhd(8) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "gpio[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
-    Warning (13410): Pin "ledr[1]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "gpio[3]" and its non-tri-state driver. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "gpio[3]~synth" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Warning (14632): Output pin "ledr[1]" driven by bidirectional pin "gpio[2]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
 Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 4 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 712 megabytes
-    Info: Processing ended: Tue Apr 24 20:10:23 2018
-    Info: Elapsed time: 00:00:14
+    Info (21059): Implemented 2 output pins
+    Info (21060): Implemented 2 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 709 megabytes
+    Info: Processing ended: Tue Apr 24 20:54:37 2018
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:29
 
 
