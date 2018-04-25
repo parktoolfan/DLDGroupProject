@@ -59,6 +59,7 @@ End a;
 
 -- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:
+-- This code comes from the guide at https://www.scss.tcd.ie/Michael.Manzke/CS2022/CS2022_vhdl_eighth.pdf
 -- 2 to 4 decoder
 -- NOTE THIS IS ONLY ONE HALF of a ls139 chip.
 library IEEE;
@@ -90,7 +91,8 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity mux2_4bit is
 	port (	In0 : in std_logic_vector(3 downto 0);
-				In1 : in std_logic_vector(3 downto 0); s : in std_logic;
+				In1 : in std_logic_vector(3 downto 0);
+s : in std_logic;
 				Z : out std_logic_vector(3 downto 0)
 			);
 end mux2_4bit;
@@ -101,7 +103,7 @@ begin
 	"0000";
 end Behavioral;
 
--- 4 bit wide 4 to 1 MUX 
+-- 4 bit wide 4 to 1 MUX
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -115,9 +117,94 @@ end mux4_4bit;
 architecture Behavioral of mux4_4bit is
 begin
 	Z <= In0 when S0='0' and S1='0' else
-	In1 when S0='1' and S1='0' else 
+	In1 when S0='1' and S1='0' else
 	In2 when S0='0' and S1='1' else
 	In3 when S0='1' and S1='1' else
 	"0000";
 end Behavioral;
 
+-- Finally, here is the register component
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity reg4 is
+	port ( D : in std_logic_vector(3 downto 0);
+		load, Clk : in std_logic;
+		Q : out std_logic_vector(3 downto 0)
+	);
+end reg4;
+architecture Behavioral of reg4 is begin
+	process(Clk)
+	begin
+		if (rising_edge(Clk)) then
+			if load='1' then
+				Q<=D;
+			end if;
+		end if;
+	end process;
+end Behavioral;
+
+-- Use the register component to create a register file component:
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity register_file is
+	Port (	src_s0 : in std_logic;
+				src_s1 : in std_logic;
+				des_A0 : in std_logic;
+				des_A1 : in std_logic;
+				Clk : in std_logic;
+				data_src : in std_logic;
+				data : in std_logic_vector(3 downto 0);
+				reg0 : out std_logic_vector(3 downto 0);
+				reg1 : out std_logic_vector(3 downto 0);
+				reg2 : out std_logic_vector(3 downto 0);
+				reg3 : out std_logic_vector(3 downto 0)
+			);
+end register_file;
+architecture Behavioral of register_file is
+-- components
+-- 4 bit Register for register file
+	COMPONENT reg4 PORT(
+		D : IN std_logic_vector(3 downto 0);
+		load : IN std_logic;
+		Clk : IN std_logic;
+		Q : OUT std_logic_vector(3 downto 0)
+	);
+	END COMPONENT;
+
+	-- 2 to 4 Decoder
+	COMPONENT decoder_2to4 PORT(
+		A0 : IN std_logic;
+		A1 : IN std_logic;
+		Q0 : OUT std_logic;
+		Q1 : OUT std_logic;
+		Q2 : OUT std_logic;
+		Q3 : OUT std_logic
+	);
+	END COMPONENT;
+	-- 2 to 1 line multiplexer
+	COMPONENT mux2_4bit PORT(
+		In0 : IN std_logic_vector(3 downto 0);
+		In1 : IN std_logic_vector(3 downto 0);
+		s : IN std_logic;
+		Z : OUT std_logic_vector(3 downto 0)
+	);
+	END COMPONENT;
+	
+	-- 4 to 1 line multiplexer
+	COMPONENT mux4_4bit PORT(
+		In0 : IN std_logic_vector(3 downto 0); In1 : IN std_logic_vector(3 downto 0); In2 : IN std_logic_vector(3 downto 0); In3 : IN std_logic_vector(3 downto 0); S0 : IN std_logic;
+		S1 : IN std_logic;
+		Z : OUT std_logic_vector(3 downto 0)
+	);
+	END COMPONENT;
+	
+	-- signals
+	signal load_reg0, load_reg1, load_reg2, load_reg3 : std_logic;
+	signal reg0_q, reg1_q, reg2_q, reg3_q, data_src_mux_out, src_reg : std_logic_vector(3 downto 0);
+
+begin
+end Behavioral;
