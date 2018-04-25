@@ -57,9 +57,10 @@ begin
 	end process;
 End a;
 
+-- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:
 -- 2 to 4 decoder
-
+-- NOTE THIS IS ONLY ONE HALF of a ls139 chip.
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -73,11 +74,29 @@ entity ls139 is
 		Q2 : out std_logic;
 		Q3 : out std_logic);
 end ls139;
-
 architecture Behavioral of ls139 is
 	begin
 		Q0<= ((not A0) and (not A1));
 		Q1<= (A0 and (not A1));
 		Q2<= ((not A0) and A1);
 		Q3<= (A0 and A1);
+end Behavioral;
+
+-- 4 bit wide 2 to 1 mux
+-- this is 1 half of a 74x157 mux
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+entity mux2_4bit is
+	port (	In0 : in std_logic_vector(3 downto 0);
+				In1 : in std_logic_vector(3 downto 0); s : in std_logic;
+				Z : out std_logic_vector(3 downto 0)
+			);
+end mux2_4bit;
+architecture Behavioral of mux2_4bit is
+begin
+	Z <= In0 when S='0' else
+	In1 when S='1'else
+	"0000";
 end Behavioral;
