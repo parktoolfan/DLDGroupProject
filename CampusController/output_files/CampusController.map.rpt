@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Tue Apr 24 20:54:37 2018
+Tue Apr 24 21:33:57 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,16 +42,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 24 20:54:37 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 24 21:33:57 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 6                                           ;
+; Total logic elements               ; 4                                           ;
+;     Total combinational functions  ; 4                                           ;
+;     Dedicated logic registers      ; 1                                           ;
+; Total registers                    ; 1                                           ;
+; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -170,44 +170,46 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-;                                             ;             ;
-; Total combinational functions               ; 0           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 0           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 0           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 6           ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; sw[0]~input ;
-; Maximum fan-out                             ; 2           ;
-; Total fan-out                               ; 11          ;
-; Average fan-out                             ; 0.79        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 4               ;
+;                                             ;                 ;
+; Total combinational functions               ; 4               ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 1               ;
+;     -- 3 input functions                    ; 1               ;
+;     -- <=2 input functions                  ; 2               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 4               ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 1               ;
+;     -- Dedicated logic registers            ; 1               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 42              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; ls74:test74|q~1 ;
+; Maximum fan-out                             ; 3               ;
+; Total fan-out                               ; 62              ;
+; Average fan-out                             ; 0.68            ;
++---------------------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
-; |CampusController          ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |CampusController   ; CampusController ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+------------------+--------------+
+; |CampusController          ; 4 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |CampusController             ; CampusController ; work         ;
+;    |ls74:test74|           ; 4 (4)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|ls74:test74 ; ls74             ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -216,10 +218,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 1     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -228,15 +230,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+--------------------+--------------------------------+
-; Type               ; Count                          ;
-+--------------------+--------------------------------+
-; boundary_port      ; 6                              ;
-; cycloneiii_io_obuf ; 2                              ;
-;                    ;                                ;
-; Max LUT depth      ; 0.00                           ;
-; Average LUT depth  ; 0.00                           ;
-+--------------------+--------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 42                          ;
+; cycloneiii_ff         ; 1                           ;
+;     CLR               ; 1                           ;
+; cycloneiii_io_obuf    ; 2                           ;
+; cycloneiii_lcell_comb ; 5                           ;
+;     normal            ; 5                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.60                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -254,33 +264,74 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 24 20:54:22 2018
+    Info: Processing started: Tue Apr 24 21:33:43 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file campuscontroller.vhd
+Info (12021): Found 4 design units, including 2 entities, in source file campuscontroller.vhd
     Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 13
+    Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 44
     Info (12023): Found entity 1: CampusController File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 5
+    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 38
 Info (12127): Elaborating entity "CampusController" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "ledr[17..6]" at CampusController.vhd(7) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Warning (10873): Using initial value X (don't care) for net "ledr[4..2]" at CampusController.vhd(7) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Info (12128): Elaborating entity "ls74" for hierarchy "ls74:test74" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 29
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "gpio[3]" and its non-tri-state driver. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13035): Inserted always-enabled tri-state buffer between "gpio[3]" and its non-tri-state driver. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "ls74:test74|q" is converted into an equivalent circuit using register "ls74:test74|q~_emulated" and latch "ls74:test74|q~1" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 40
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "gpio[3]~synth" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
-Warning (14632): Output pin "ledr[1]" driven by bidirectional pin "gpio[2]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (13010): Node "gpio[3]~synth" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[8]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[9]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[10]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[12]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[13]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[14]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+Info (286030): Timing-Driven Synthesis is running
+Warning (14632): Output pin "ledr[1]" driven by bidirectional pin "gpio[2]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 2 output pins
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 18 output pins
     Info (21060): Implemented 2 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 709 megabytes
-    Info: Processing ended: Tue Apr 24 20:54:37 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21061): Implemented 4 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Tue Apr 24 21:33:57 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 

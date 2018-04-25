@@ -2,8 +2,53 @@
 gpio[3] <> gpio[3]
 ledr[0] <= sw[0].DB_MAX_OUTPUT_PORT_TYPE
 ledr[1] <= ledr[1].DB_MAX_OUTPUT_PORT_TYPE
+ledr[2] <= <GND>
+ledr[3] <= <GND>
+ledr[4] <= <GND>
+ledr[5] <= ls74:test74.q
+ledr[6] <= <GND>
+ledr[7] <= <GND>
+ledr[8] <= <GND>
+ledr[9] <= <GND>
+ledr[10] <= <GND>
+ledr[11] <= <GND>
+ledr[12] <= <GND>
+ledr[13] <= <GND>
+ledr[14] <= <GND>
+ledr[15] <= <GND>
+ledr[16] <= <GND>
+ledr[17] <= <GND>
 sw[0] => gpio[3].DATAIN
 sw[0] => ledr[0].DATAIN
 sw[1] => ~NO_FANOUT~
+sw[2] => ~NO_FANOUT~
+sw[3] => ~NO_FANOUT~
+sw[4] => ~NO_FANOUT~
+sw[5] => ~NO_FANOUT~
+sw[6] => ~NO_FANOUT~
+sw[7] => ls74:test74.d
+sw[8] => ls74:test74.clr
+sw[9] => ls74:test74.pre
+sw[10] => ~NO_FANOUT~
+sw[11] => ~NO_FANOUT~
+sw[12] => ~NO_FANOUT~
+sw[13] => ~NO_FANOUT~
+sw[14] => ~NO_FANOUT~
+sw[15] => ~NO_FANOUT~
+sw[16] => ~NO_FANOUT~
+sw[17] => ~NO_FANOUT~
+key[0] => ls74:test74.clk
+key[1] => ~NO_FANOUT~
+key[2] => ~NO_FANOUT~
+key[3] => ~NO_FANOUT~
+
+
+|CampusController|ls74:test74
+d => q~reg0.DATAIN
+clr => q.IN0
+clr => q~reg0.ACLR
+pre => q.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
