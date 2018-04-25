@@ -207,4 +207,46 @@ architecture Behavioral of register_file is
 	signal reg0_q, reg1_q, reg2_q, reg3_q, data_src_mux_out, src_reg : std_logic_vector(3 downto 0);
 
 begin
+
+	-- port maps ;-)
+	-- register 0
+	reg00: reg4 PORT MAP(
+		D => data_src_mux_out,
+		load => load_reg0, Clk => Clk,
+		Q => reg0_q
+	);
+	-- register 1
+	reg01: reg4 PORT MAP(
+		D => data_src_mux_out,
+		load => load_reg1,
+		Clk => Clk,
+		Q => reg1_q
+	);
+	-- register 2
+	reg02: reg4 PORT MAP(
+		D => data_src_mux_out,
+		load => load_reg2, Clk => Clk,
+		Q => reg2_q
+	);
+	-- register 3
+	reg03: reg4 PORT MAP(
+		D => data_src_mux_out,
+		load => load_reg3, Clk => Clk,
+		Q => reg3_q
+	);
+	-- Destination register decoder
+		des_decoder_2to4: decoder_2to4 PORT MAP( A0 => des_A0,
+		A1 => des_A1, Q0 => load_reg0, Q1 => load_reg1, Q2 => load_reg2, Q3 => load_reg3
+	);
+	-- 2 to 1 Data source multiplexer
+	data_src_mux2_4bit: mux2_4bit PORT MAP( In0 => data,
+		In1 => src_reg,
+		s => data_src,
+		Z => data_src_mux_out
+	);
+	-- 4 to 1 source register multiplexer
+		Inst_mux4_4bit: mux4_4bit PORT MAP( In0 => reg0_q,
+		In1 => reg1_q, In2 => reg2_q, In3 => reg3_q, S0 => src_s0, S1 => src_s1, Z => src_reg
+	);
+	reg0 <= reg0_q; reg1 <= reg1_q; reg2 <= reg2_q; reg3 <= reg3_q;
 end Behavioral;

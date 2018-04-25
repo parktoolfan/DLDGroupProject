@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Tue Apr 24 22:44:14 2018
+Tue Apr 24 22:52:33 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 24 22:44:14 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 24 22:52:33 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -257,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 24 22:44:00 2018
+    Info: Processing started: Tue Apr 24 22:52:19 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -332,7 +332,7 @@ Info (21057): Implemented 42 device resources after synthesis - the final resour
     Info (21060): Implemented 2 bidirectional pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
     Info: Peak virtual memory: 710 megabytes
-    Info: Processing ended: Tue Apr 24 22:44:14 2018
+    Info: Processing ended: Tue Apr 24 22:52:33 2018
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:28
 

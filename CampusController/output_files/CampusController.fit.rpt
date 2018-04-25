@@ -1,5 +1,5 @@
 Fitter report for CampusController
-Tue Apr 24 22:44:26 2018
+Tue Apr 24 22:52:45 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Apr 24 22:44:26 2018       ;
+; Fitter Status                      ; Successful - Tue Apr 24 22:52:45 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -2553,9 +2553,9 @@ Warning (169064): Following 2 pins have no output enable or a GND or VCC output 
 Info (144001): Generated suppressed messages file /Documents/DLDProject/CampusController/output_files/CampusController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 491 warnings
     Info: Peak virtual memory: 1602 megabytes
-    Info: Processing ended: Tue Apr 24 22:44:26 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Processing ended: Tue Apr 24 22:52:46 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +----------------------------+
