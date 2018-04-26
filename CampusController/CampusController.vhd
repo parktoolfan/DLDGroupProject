@@ -57,6 +57,30 @@ begin
 	end process;
 End a;
 
+-- Create 4 bit counters.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity vhdl_binary_counter is
+	port(C, CLR : in std_logic;
+	Q : out std_logic_vector(3 downto 0));
+end vhdl_binary_counter;
+
+architecture bhv of vhdl_binary_counter is
+	signal tmp: std_logic_vector(3 downto 0);
+begin
+	process (C, CLR)
+	begin
+	if (CLR='1') then
+		tmp <= "0000";
+	elsif (C'event and C='1') then
+		tmp <= tmp + 1;
+	end if;
+	end process;
+	Q <= tmp;
+end bhv;
+
 -- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:
 -- This code comes from the guide at https://www.scss.tcd.ie/Michael.Manzke/CS2022/CS2022_vhdl_eighth.pdf
@@ -250,3 +274,33 @@ begin
 	);
 	reg0 <= reg0_q; reg1 <= reg1_q; reg2 <= reg2_q; reg3 <= reg3_q;
 end Behavioral;
+
+-- END REGISTER FILE
+
+-- Begin SIPO Shift Register - adapted from https://allaboutfpga.com/vhdl-code-for-4-bit-shift-register/
+library ieee;
+use ieee.std_logic_1164.all;
+ 
+entity sipo is
+ port(
+ clk, clear : in std_logic;
+ Input_Data: in std_logic;
+ Q: out std_logic_vector(15 downto 0) );
+end sipo;
+ 
+architecture arch of sipo is
+ Signal temp : std_logic_vector(15 downto 0);
+begin
+ 
+ process (clk)
+ begin
+ if clear = '1' then
+ Q <= "0000000000000000";
+ temp <= "0000000000000000";
+ elsif (CLK'event and CLK='1') then
+ temp(15 downto 1) <= temp(14 downto 0);
+ temp(0) <= Input_Data;
+ Q <= temp;
+ end if;
+ end process;
+end arch;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Tue Apr 24 22:52:33 2018
+Thu Apr 26 19:55:40 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 24 22:52:33 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 26 19:55:39 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -257,25 +257,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 24 22:52:19 2018
+    Info: Processing started: Thu Apr 26 19:55:26 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 14 design units, including 7 entities, in source file campuscontroller.vhd
+Info (12021): Found 18 design units, including 9 entities, in source file campuscontroller.vhd
     Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 13
     Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 42
-    Info (12022): Found design unit 3: ls139-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 78
-    Info (12022): Found design unit 4: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 99
-    Info (12022): Found design unit 5: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 117
-    Info (12022): Found design unit 6: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 137
-    Info (12022): Found design unit 7: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 167
+    Info (12022): Found design unit 3: vhdl_binary_counter-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 70
+    Info (12022): Found design unit 4: ls139-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 102
+    Info (12022): Found design unit 5: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 123
+    Info (12022): Found design unit 6: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 141
+    Info (12022): Found design unit 7: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 161
+    Info (12022): Found design unit 8: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 191
+    Info (12022): Found design unit 9: sipo-arch File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 291
     Info (12023): Found entity 1: CampusController File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 5
     Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 37
-    Info (12023): Found entity 3: ls139 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 69
-    Info (12023): Found entity 4: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 92
-    Info (12023): Found entity 5: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 111
-    Info (12023): Found entity 6: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 131
-    Info (12023): Found entity 7: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 153
+    Info (12023): Found entity 3: vhdl_binary_counter File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 65
+    Info (12023): Found entity 4: ls139 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 93
+    Info (12023): Found entity 5: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 116
+    Info (12023): Found entity 6: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 135
+    Info (12023): Found entity 7: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 155
+    Info (12023): Found entity 8: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 177
+    Info (12023): Found entity 9: sipo File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 284
 Info (12127): Elaborating entity "CampusController" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "ledr[17..2]" at CampusController.vhd(7) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
@@ -331,9 +335,9 @@ Info (21057): Implemented 42 device resources after synthesis - the final resour
     Info (21059): Implemented 18 output pins
     Info (21060): Implemented 2 bidirectional pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 710 megabytes
-    Info: Processing ended: Tue Apr 24 22:52:33 2018
+    Info: Peak virtual memory: 711 megabytes
+    Info: Processing ended: Thu Apr 26 19:55:40 2018
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:26
 
 
