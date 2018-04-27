@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for CampusController
-Fri Apr 27 12:27:21 2018
+Fri Apr 27 12:48:12 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,12 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  33. Report TCCS
  34. Report RSKM
  35. Unconstrained Paths Summary
- 36. TimeQuest Timing Analyzer Messages
+ 36. Clock Status Summary
+ 37. Unconstrained Input Ports
+ 38. Unconstrained Output Ports
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. TimeQuest Timing Analyzer Messages
 
 
 
@@ -86,19 +91,22 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.1%      ;
+;     Processors 2-4         ;   0.2%      ;
 +----------------------------+-------------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; key[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { key[0] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
 
 
 --------------------------------------
@@ -137,10 +145,13 @@ No paths to report.
 No paths to report.
 
 
------------------------------------------------------
++---------------------------------------------------+
 ; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
------------------------------------------------------
-No paths to report.
++--------+--------+---------------------------------+
+; Clock  ; Slack  ; End Point TNS                   ;
++--------+--------+---------------------------------+
+; key[0] ; -3.000 ; -23.560                         ;
++--------+--------+---------------------------------+
 
 
 -----------------------------------------------
@@ -179,10 +190,13 @@ No paths to report.
 No paths to report.
 
 
-----------------------------------------------------
++--------------------------------------------------+
 ; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; key[0] ; -3.000 ; -23.560                        ;
++--------+--------+--------------------------------+
 
 
 ----------------------------------------------
@@ -215,10 +229,13 @@ No paths to report.
 No paths to report.
 
 
-----------------------------------------------------
++--------------------------------------------------+
 ; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++--------+--------+--------------------------------+
+; Clock  ; Slack  ; End Point TNS                  ;
++--------+--------+--------------------------------+
+; key[0] ; -3.000 ; -20.504                        ;
++--------+--------+--------------------------------+
 
 
 ----------------------------------------------
@@ -232,8 +249,10 @@ No synchronizer chains to report.
 +------------------+-------+------+----------+---------+---------------------+
 ; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; -3.000              ;
+;  key[0]          ; N/A   ; N/A  ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; -23.56              ;
+;  key[0]          ; N/A   ; N/A  ; N/A      ; N/A     ; -23.560             ;
 +------------------+-------+------+----------+---------+---------------------+
 
 
@@ -276,10 +295,6 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
-; sw[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[4]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[5]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[6]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -289,12 +304,8 @@ No synchronizer chains to report.
 ; sw[10]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[11]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[12]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[13]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[14]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; sw[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[16]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; sw[17]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; key[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; key[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; key[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; key[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -304,6 +315,14 @@ No synchronizer chains to report.
 ; gpio[3]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; gpio[4]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; gpio[5]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; key[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[13]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[14]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; sw[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -437,11 +456,98 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 0     ; 0    ;
-; Unconstrained Output Port Paths ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 64    ; 64   ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
 +---------------------------------+-------+------+
+
+
++--------------------------------------+
+; Clock Status Summary                 ;
++--------+--------+------+-------------+
+; Target ; Clock  ; Type ; Status      ;
++--------+--------+------+-------------+
+; key[0] ; key[0] ; Base ; Constrained ;
++--------+--------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; sw[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[13]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[14]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ledr[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[10]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[11]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[12]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[13]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[14]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[15]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; sw[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[13]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[14]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ledr[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[10]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[11]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[12]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[13]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[14]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ledr[15]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------+
@@ -450,7 +556,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Apr 27 12:27:18 2018
+    Info: Processing started: Fri Apr 27 12:48:09 2018
 Info: Command: quartus_sta CampusController -c CampusController
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -459,47 +565,55 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'CampusController.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name key[0] key[0]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow 1200mV 85C Model
 Info (332140): No fmax paths to report
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -23.560 key[0] 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332140): No fmax paths to report
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -23.560 key[0] 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
-Info (332101): Design is fully constrained for setup requirements
-Info (332101): Design is fully constrained for hold requirements
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -20.504 key[0] 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 759 megabytes
-    Info: Processing ended: Fri Apr 27 12:27:21 2018
+    Info: Peak virtual memory: 766 megabytes
+    Info: Processing ended: Fri Apr 27 12:48:12 2018
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

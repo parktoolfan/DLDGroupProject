@@ -42,6 +42,22 @@ architecture a of CampusController is
 				);
 	end component;
 	
+	component register_file is
+		Port (	src_s0 : in std_logic;
+				src_s1 : in std_logic;
+				des_A0 : in std_logic;
+				des_A1 : in std_logic;
+				writeToReg : in std_logic; -- I added an enable bit to the 2 to 4 decoder so that i can have a write signal here.
+				Clk : in std_logic;
+				data_src : in std_logic;
+				data : in std_logic_vector(3 downto 0);
+				reg0 : out std_logic_vector(3 downto 0);
+				reg1 : out std_logic_vector(3 downto 0);
+				reg2 : out std_logic_vector(3 downto 0);
+				reg3 : out std_logic_vector(3 downto 0)
+		);
+	end component;
+	
 	
 	-- SIGNALS
 	Signal rxin : std_logic_vector(15 downto 0);
@@ -76,6 +92,21 @@ begin
 	--testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
 	--testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
 	-- Test synchronous clear 4 bit counter
+	-- Testing Regerister File:
+	testRegFile : register_file port map(
+			src_s0 => sw(16),
+			src_s1 => sw(17),
+			des_A0 => sw(14),
+			des_A1 => sw(15),
+			writeToReg => sw(13),
+			Clk => key(0),
+			data_src => '0',
+			data => sw(3 downto 0),
+			reg0 => ledr(3 downto 0),
+			reg1 => ledr(7 downto 4),
+			reg2 => ledr(11 downto 8),
+			reg3 => ledr(15 downto 12)
+	);
 end a;
 
 
@@ -192,7 +223,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-entity ls139 is
+entity decoder_2to4 is
 	Port (
 		Enable : IN std_logic; -- I'm adding an enable signal that we can turn high to write to the regerister file.
 		A0 : in std_logic;
@@ -201,8 +232,8 @@ entity ls139 is
 		Q1 : out std_logic;
 		Q2 : out std_logic;
 		Q3 : out std_logic);
-end ls139;
-architecture Behavioral of ls139 is
+end decoder_2to4;
+architecture Behavioral of decoder_2to4 is
 	begin
 		Q0<= ((not A0) and (not A1)) and Enable;
 		Q1<= (A0 and (not A1)) and Enable;
