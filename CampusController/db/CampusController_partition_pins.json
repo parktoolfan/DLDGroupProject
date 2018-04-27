@@ -2,68 +2,7 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : [
-				{
-					"name" : "ledr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[16]",
-					"strict" : false
-				},
-				{
-					"name" : "ledr[17]",
-					"strict" : false
-				},
-				{
-					"name" : "gpio[2]",
-					"strict" : false
-				},
-				{
-					"name" : "gpio[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sw[0]",
-					"strict" : false
-				},
-				{
-					"name" : "sw[17]",
-					"strict" : false
-				},
-				{
-					"name" : "key[0]",
-					"strict" : false
-				}
-			]
+			"pins" : []
 		}
 	]
 }

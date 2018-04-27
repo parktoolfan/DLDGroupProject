@@ -3,7 +3,7 @@ Library ieee;
 use ieee.std_logic_1164.all;
 
 entity CampusController is
-port(	gpio : inout std_logic_vector(3 downto 2);
+port(	gpio : inout std_logic_vector(5 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
 		sw : in std_logic_vector(17 downto 0);
 		key : in std_logic_vector (3 downto 0)
@@ -26,25 +26,56 @@ architecture a of CampusController is
 				);
 	end component;
 	
+	-- Synchronous 4 bit counter
 	component ls163 is
 		port(	C, CLR : in std_logic;
 				Q : out std_logic_vector(3 downto 0)
 		);
 	end component;
 
+	
+	-- SIPO Shift Regerister.
+	component sipo is
+		port ( 	clk, clear : in std_logic;
+					Input_Data: in std_logic;
+					Q: out std_logic_vector(15 downto 0)
+				);
+	end component;
+	
+	
+	-- SIGNALS
+	Signal rxin : std_logic_vector(15 downto 0);
+	Signal BuildingID : std_logic_vector(2 downto 0);
+	Signal tx, Master_Clock, rx : std_logic;
+	Signal StartFlag, EndFlag, BitStringAlligned : std_logic;
+	
 begin
 
-	gpio(3) <= sw(0);
-	ledr(0) <= sw(0);
-	ledr(1) <= gpio(2);
+	-- TESTING output pins:
+	--gpio(3) <= sw(0);
+	--ledr(0) <= sw(0);
+	--ledr(1) <= gpio(2);
+	
+	-- GPIO INPUTS AND OUTPUTS
+		rx <= gpio(0);		-- input
+		gpio(1) <= tx;		-- rest are outputs
+		gpio(2) <= Master_Clock;
+		gpio(5 downto 3) <= BuildingID;
 
-	-- TESTING COMPONENT CODES:::
+		-- Hook up RX to shift Regerister
+		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
+		
+		-- Create And gates for counter logic
+		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
+		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
+
+	
+		-- TESTING COMPONENT CODES:::
 	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
 	-- Test asynchronous clear 4 bit counter
-	testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
-	testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
+	--testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
+	--testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
 	-- Test synchronous clear 4 bit counter
-
 end a;
 
 
