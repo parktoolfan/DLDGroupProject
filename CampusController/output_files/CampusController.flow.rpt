@@ -1,5 +1,5 @@
 Flow report for CampusController
-Thu Apr 26 19:56:10 2018
+Thu Apr 26 20:22:56 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 26 19:56:05 2018       ;
+; Flow Status                        ; Successful - Thu Apr 26 20:22:51 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 0 / 114,480 ( 0 % )                         ;
-;     Total combinational functions  ; 0 / 114,480 ( 0 % )                         ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 9 / 114,480 ( < 1 % )                       ;
+;     Total combinational functions  ; 9 / 114,480 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 8 / 114,480 ( < 1 % )                       ;
+; Total registers                    ; 8                                           ;
 ; Total pins                         ; 42 / 529 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/26/2018 19:55:26 ;
+; Start date & time ; 04/26/2018 20:22:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CampusController    ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 121373400280.152478692602892           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 172537027449166.152478852007408        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -91,11 +91,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 711 MB              ; 00:00:26                           ;
-; Fitter                    ; 00:00:15     ; 1.0                     ; 1598 MB             ; 00:00:23                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 602 MB              ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 712 MB              ; 00:00:38                           ;
+; Fitter                    ; 00:00:22     ; 1.0                     ; 1610 MB             ; 00:00:33                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 603 MB              ; 00:00:06                           ;
 ; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 759 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:39     ; --                      ; --                  ; 00:00:58                           ;
+; Total                     ; 00:00:52     ; --                      ; --                  ; 00:01:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

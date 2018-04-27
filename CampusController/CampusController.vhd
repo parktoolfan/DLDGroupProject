@@ -18,6 +18,19 @@ architecture a of CampusController is
 				q : out std_logic
 		);
 	end component;
+	
+	-- Delcare Asynchronous clear 4 bit counter
+	component vhdl_binary_counter is 
+		port (	C, CLR : in std_logic;
+					Q : out std_logic_vector(3 downto 0)
+				);
+	end component;
+	
+	component ls163 is
+		port(	C, CLR : in std_logic;
+				Q : out std_logic_vector(3 downto 0)
+		);
+	end component;
 
 begin
 
@@ -26,7 +39,11 @@ begin
 	ledr(1) <= gpio(2);
 
 	-- TESTING COMPONENT CODES:::
-	-- TEST PASSES: test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
+	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
+	-- Test asynchronous clear 4 bit counter
+	testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
+	testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
+	-- Test synchronous clear 4 bit counter
 
 end a;
 

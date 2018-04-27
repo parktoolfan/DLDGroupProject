@@ -10,14 +10,14 @@ ledr[6] <= <GND>
 ledr[7] <= <GND>
 ledr[8] <= <GND>
 ledr[9] <= <GND>
-ledr[10] <= <GND>
-ledr[11] <= <GND>
-ledr[12] <= <GND>
-ledr[13] <= <GND>
-ledr[14] <= <GND>
-ledr[15] <= <GND>
-ledr[16] <= <GND>
-ledr[17] <= <GND>
+ledr[10] <= ls163:testSchro.Q[0]
+ledr[11] <= ls163:testSchro.Q[1]
+ledr[12] <= ls163:testSchro.Q[2]
+ledr[13] <= ls163:testSchro.Q[3]
+ledr[14] <= vhdl_binary_counter:testASchro.Q[0]
+ledr[15] <= vhdl_binary_counter:testASchro.Q[1]
+ledr[16] <= vhdl_binary_counter:testASchro.Q[2]
+ledr[17] <= vhdl_binary_counter:testASchro.Q[3]
 sw[0] => gpio[3].DATAIN
 sw[0] => ledr[0].DATAIN
 sw[1] => ~NO_FANOUT~
@@ -36,10 +36,42 @@ sw[13] => ~NO_FANOUT~
 sw[14] => ~NO_FANOUT~
 sw[15] => ~NO_FANOUT~
 sw[16] => ~NO_FANOUT~
-sw[17] => ~NO_FANOUT~
-key[0] => ~NO_FANOUT~
+sw[17] => vhdl_binary_counter:testASchro.CLR
+sw[17] => ls163:testSchro.CLR
+key[0] => vhdl_binary_counter:testASchro.C
+key[0] => ls163:testSchro.C
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
+
+
+|CampusController|vhdl_binary_counter:testASchro
+C => tmp[0].CLK
+C => tmp[1].CLK
+C => tmp[2].CLK
+C => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CampusController|ls163:testSchro
+C => tmp[0].CLK
+C => tmp[1].CLK
+C => tmp[2].CLK
+C => tmp[3].CLK
+CLR => tmp[0].OUTPUTSELECT
+CLR => tmp[1].OUTPUTSELECT
+CLR => tmp[2].OUTPUTSELECT
+CLR => tmp[3].OUTPUTSELECT
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
