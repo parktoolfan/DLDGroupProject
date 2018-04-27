@@ -13,7 +13,7 @@ end CampusController;
 
 architecture a of CampusController is
 
-	-- TESTING COMPONENT DECLARATIONS
+	-- COMPONENT DECLARATIONS
 	component ls74 is
 		port(	d, clr, pre, clk : in std_logic;
 				q : out std_logic
@@ -63,7 +63,7 @@ architecture a of CampusController is
 
 	-- SIGNALS
 	Signal rxin : std_logic_vector(15 downto 0);
-	Signal BuildingID : std_logic_vector(2 downto 0);
+	Signal BuildingID : std_logic_vector(3 downto 0);
 	Signal tx, Master_Clock, rx : std_logic;
 	Signal StartFlag, EndFlag, BitStringAlligned : std_logic;
 
@@ -75,41 +75,48 @@ begin
 	--ledr(1) <= gpio(2);
 
 	-- GPIO INPUTS AND OUTPUTS
--- temp		rx <= gpio(0);		-- input
--- temp		gpio(1) <= tx;		-- rest are outputs
--- temp		gpio(2) <= Master_Clock;
--- temp		gpio(5 downto 3) <= BuildingID;
+		rx <= gpio(0);		-- input
+		gpio(1) <= tx;		-- rest are outputs
+		gpio(2) <= Master_Clock;
+		gpio(5 downto 3) <= BuildingID(2 downto 0);
 
 		-- Hook up RX to shift Regerister
--- temp		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
+		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
 
 		-- Create And gates for counter logic
--- temp		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
--- temp		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
+		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
+		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
 
+		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our buildingID Count.
+		BuildingIdCounter : vhdl_binary_counter port map (
+				C => EndFlag,
+				CLR => (NOT (BuildingID(3))),
+				Q => BuildingID
+		);
 
 		-- TESTING COMPONENT CODES:::
 	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
 	-- Test asynchronous clear 4 bit counter
-	--testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
-	--testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
+	-- testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
+	-- testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
 	-- Test synchronous clear 4 bit counter
 	-- Testing Regerister File:
-	testRegFile : register_file port map(
-			src_s0 => sw(16),
-			src_s1 => sw(17),
-			des_A0 => sw(14),
-			des_A1 => sw(15),
-			writeToReg => sw(13),
-			Clk => key(0),
-			data_src => '0',
-			data => sw(3 downto 0),
-			reg0 => ledr(3 downto 0),
-			reg1 => ledr(7 downto 4),
-			reg2 => ledr(11 downto 8),
-			reg3 => ledr(15 downto 12),
-			selectedData => ledg( 3 downto 0)
-	);
+	-- 	testRegFile : register_file port map(
+	-- 			src_s0 => sw(16),
+	-- 			src_s1 => sw(17),
+	-- 			des_A0 => sw(14),
+	-- 			des_A1 => sw(15),
+	-- 			writeToReg => sw(13),
+	-- 			Clk => key(0),
+	-- 			data_src => '0',
+	-- 			data => sw(3 downto 0),
+	-- 			reg0 => ledr(3 downto 0),
+	-- 			reg1 => ledr(7 downto 4),
+	-- 			reg2 => ledr(11 downto 8),
+	-- 			reg3 => ledr(15 downto 12),
+	-- 			selectedData => ledg( 3 downto 0)
+	-- 	);
+	
 end a;
 
 
