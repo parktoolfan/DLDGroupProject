@@ -5,6 +5,7 @@ use ieee.std_logic_1164.all;
 entity CampusController is
 port(	gpio : inout std_logic_vector(5 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
+		ledg : out std_logic_vector(7 downto 0);
 		sw : in std_logic_vector(17 downto 0);
 		key : in std_logic_vector (3 downto 0)
 	);
@@ -18,14 +19,14 @@ architecture a of CampusController is
 				q : out std_logic
 		);
 	end component;
-	
+
 	-- Delcare Asynchronous clear 4 bit counter
-	component vhdl_binary_counter is 
+	component vhdl_binary_counter is
 		port (	C, CLR : in std_logic;
 					Q : out std_logic_vector(3 downto 0)
 				);
 	end component;
-	
+
 	-- Synchronous 4 bit counter
 	component ls163 is
 		port(	C, CLR : in std_logic;
@@ -33,7 +34,7 @@ architecture a of CampusController is
 		);
 	end component;
 
-	
+
 	-- SIPO Shift Regerister.
 	component sipo is
 		port ( 	clk, clear : in std_logic;
@@ -41,7 +42,7 @@ architecture a of CampusController is
 					Q: out std_logic_vector(15 downto 0)
 				);
 	end component;
-	
+
 	component register_file is
 		Port (	src_s0 : in std_logic;
 				src_s1 : in std_logic;
@@ -54,24 +55,25 @@ architecture a of CampusController is
 				reg0 : out std_logic_vector(3 downto 0);
 				reg1 : out std_logic_vector(3 downto 0);
 				reg2 : out std_logic_vector(3 downto 0);
-				reg3 : out std_logic_vector(3 downto 0)
+				reg3 : out std_logic_vector(3 downto 0);
+				selectedData : out std_logic_vector(3 downto 0)
 		);
 	end component;
-	
-	
+
+
 	-- SIGNALS
 	Signal rxin : std_logic_vector(15 downto 0);
 	Signal BuildingID : std_logic_vector(2 downto 0);
 	Signal tx, Master_Clock, rx : std_logic;
 	Signal StartFlag, EndFlag, BitStringAlligned : std_logic;
-	
+
 begin
 
 	-- TESTING output pins:
 	--gpio(3) <= sw(0);
 	--ledr(0) <= sw(0);
 	--ledr(1) <= gpio(2);
-	
+
 	-- GPIO INPUTS AND OUTPUTS
 -- temp		rx <= gpio(0);		-- input
 -- temp		gpio(1) <= tx;		-- rest are outputs
@@ -80,12 +82,12 @@ begin
 
 		-- Hook up RX to shift Regerister
 -- temp		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
-		
+
 		-- Create And gates for counter logic
 -- temp		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
 -- temp		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
 
-	
+
 		-- TESTING COMPONENT CODES:::
 	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
 	-- Test asynchronous clear 4 bit counter
@@ -105,7 +107,8 @@ begin
 			reg0 => ledr(3 downto 0),
 			reg1 => ledr(7 downto 4),
 			reg2 => ledr(11 downto 8),
-			reg3 => ledr(15 downto 12)
+			reg3 => ledr(15 downto 12),
+			selectedData => ledg( 3 downto 0)
 	);
 end a;
 
@@ -189,18 +192,18 @@ end bhv;
 -- Begin SIPO Shift Register - adapted from https://allaboutfpga.com/vhdl-code-for-4-bit-shift-register/
 library ieee;
 use ieee.std_logic_1164.all;
- 
+
 entity sipo is
  port(
  clk, clear : in std_logic;
  Input_Data: in std_logic;
  Q: out std_logic_vector(15 downto 0) );
 end sipo;
- 
+
 architecture arch of sipo is
  Signal temp : std_logic_vector(15 downto 0);
 begin
- 
+
  process (clk)
  begin
  if clear = '1' then
@@ -320,7 +323,8 @@ entity register_file is
 				reg0 : out std_logic_vector(3 downto 0);
 				reg1 : out std_logic_vector(3 downto 0);
 				reg2 : out std_logic_vector(3 downto 0);
-				reg3 : out std_logic_vector(3 downto 0)
+				reg3 : out std_logic_vector(3 downto 0);
+				selectedData : out std_logic_vector(3 downto 0)
 			);
 end register_file;
 architecture Behavioral of register_file is
@@ -353,7 +357,7 @@ architecture Behavioral of register_file is
 		Z : OUT std_logic_vector(3 downto 0)
 	);
 	END COMPONENT;
-	
+
 	-- 4 to 1 line multiplexer
 	COMPONENT mux4_4bit PORT(
 		In0 : IN std_logic_vector(3 downto 0); In1 : IN std_logic_vector(3 downto 0); In2 : IN std_logic_vector(3 downto 0); In3 : IN std_logic_vector(3 downto 0); S0 : IN std_logic;
@@ -361,7 +365,7 @@ architecture Behavioral of register_file is
 		Z : OUT std_logic_vector(3 downto 0)
 	);
 	END COMPONENT;
-	
+
 	-- signals
 	signal load_reg0, load_reg1, load_reg2, load_reg3 : std_logic;
 	signal reg0_q, reg1_q, reg2_q, reg3_q, data_src_mux_out, src_reg : std_logic_vector(3 downto 0);
@@ -408,6 +412,9 @@ begin
 		Inst_mux4_4bit: mux4_4bit PORT MAP( In0 => reg0_q,
 		In1 => reg1_q, In2 => reg2_q, In3 => reg3_q, S0 => src_s0, S1 => src_s1, Z => src_reg
 	);
+
+	selectedData <= src_reg ;-- Send Selected data to selectedData output
+
 	reg0 <= reg0_q; reg1 <= reg1_q; reg2 <= reg2_q; reg3 <= reg3_q;
 end Behavioral;
 

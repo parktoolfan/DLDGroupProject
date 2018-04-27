@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Fri Apr 27 12:47:50 2018
+Fri Apr 27 13:05:32 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -14,10 +14,11 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "register_file:testRegFile"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "register_file:testRegFile"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 27 12:47:50 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 27 13:05:32 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 28                                          ;
+;     Total combinational functions  ; 12                                          ;
 ;     Dedicated logic registers      ; 16                                          ;
 ; Total registers                    ; 16                                          ;
-; Total pins                         ; 46                                          ;
+; Total pins                         ; 54                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -176,30 +177,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 20           ;
+; Estimated Total logic elements              ; 28           ;
 ;                                             ;              ;
-; Total combinational functions               ; 4            ;
+; Total combinational functions               ; 12           ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
+;     -- 4 input functions                    ; 8            ;
 ;     -- 3 input functions                    ; 4            ;
 ;     -- <=2 input functions                  ; 0            ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 4            ;
+;     -- normal mode                          ; 12           ;
 ;     -- arithmetic mode                      ; 0            ;
 ;                                             ;              ;
 ; Total registers                             ; 16           ;
 ;     -- Dedicated logic registers            ; 16           ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 46           ;
+; I/O pins                                    ; 54           ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; key[0]~input ;
 ; Maximum fan-out                             ; 16           ;
-; Total fan-out                               ; 128          ;
-; Average fan-out                             ; 1.08         ;
+; Total fan-out                               ; 172          ;
+; Average fan-out                             ; 1.21         ;
 +---------------------------------------------+--------------+
 
 
@@ -208,9 +209,10 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name      ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+------------------+--------------+
-; |CampusController                     ; 4 (0)               ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |CampusController                                                         ; CampusController ; work         ;
-;    |register_file:testRegFile|        ; 4 (0)               ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile                               ; register_file    ; work         ;
+; |CampusController                     ; 12 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |CampusController                                                         ; CampusController ; work         ;
+;    |register_file:testRegFile|        ; 12 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile                               ; register_file    ; work         ;
 ;       |decoder_2to4:des_decoder_2to4| ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile|decoder_2to4:des_decoder_2to4 ; decoder_2to4     ; work         ;
+;       |mux4_4bit:Inst_mux4_4bit|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile|mux4_4bit:Inst_mux4_4bit      ; mux4_4bit        ; work         ;
 ;       |reg4:reg00|                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile|reg4:reg00                    ; reg4             ; work         ;
 ;       |reg4:reg01|                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile|reg4:reg01                    ; reg4             ; work         ;
 ;       |reg4:reg02|                    ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:testRegFile|reg4:reg02                    ; reg4             ; work         ;
@@ -234,6 +236,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |CampusController|register_file:testRegFile|mux4_4bit:Inst_mux4_4bit|Z[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------+
 ; Port Connectivity Checks: "register_file:testRegFile" ;
 +----------+-------+----------+-------------------------+
@@ -248,17 +259,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 46                          ;
+; boundary_port         ; 54                          ;
 ; cycloneiii_ff         ; 16                          ;
 ;     ENA               ; 16                          ;
 ; cycloneiii_io_obuf    ; 6                           ;
-; cycloneiii_lcell_comb ; 5                           ;
-;     normal            ; 5                           ;
+; cycloneiii_lcell_comb ; 13                          ;
+;     normal            ; 13                          ;
 ;         0 data inputs ; 1                           ;
 ;         3 data inputs ; 4                           ;
+;         4 data inputs ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.20                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -277,38 +289,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Apr 27 12:47:36 2018
+    Info: Processing started: Fri Apr 27 13:05:18 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 20 design units, including 10 entities, in source file campuscontroller.vhd
-    Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 13
-    Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 121
-    Info (12022): Found design unit 3: vhdl_binary_counter-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 150
-    Info (12022): Found design unit 4: ls163-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 175
-    Info (12022): Found design unit 5: sipo-arch File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 200
-    Info (12022): Found design unit 6: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 236
-    Info (12022): Found design unit 7: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 257
-    Info (12022): Found design unit 8: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 275
-    Info (12022): Found design unit 9: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 295
-    Info (12022): Found design unit 10: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 326
+    Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 14
+    Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 124
+    Info (12022): Found design unit 3: vhdl_binary_counter-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 153
+    Info (12022): Found design unit 4: ls163-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 178
+    Info (12022): Found design unit 5: sipo-arch File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 203
+    Info (12022): Found design unit 6: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 239
+    Info (12022): Found design unit 7: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 260
+    Info (12022): Found design unit 8: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 278
+    Info (12022): Found design unit 9: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 298
+    Info (12022): Found design unit 10: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 330
     Info (12023): Found entity 1: CampusController File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 5
-    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 116
-    Info (12023): Found entity 3: vhdl_binary_counter File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 145
-    Info (12023): Found entity 4: ls163 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 170
-    Info (12023): Found entity 5: sipo File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 193
-    Info (12023): Found entity 6: decoder_2to4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 226
-    Info (12023): Found entity 7: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 250
-    Info (12023): Found entity 8: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 269
-    Info (12023): Found entity 9: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 289
-    Info (12023): Found entity 10: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 311
+    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 119
+    Info (12023): Found entity 3: vhdl_binary_counter File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 148
+    Info (12023): Found entity 4: ls163 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 173
+    Info (12023): Found entity 5: sipo File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 196
+    Info (12023): Found entity 6: decoder_2to4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 229
+    Info (12023): Found entity 7: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 253
+    Info (12023): Found entity 8: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 272
+    Info (12023): Found entity 9: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 292
+    Info (12023): Found entity 10: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 314
 Info (12127): Elaborating entity "CampusController" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "ledr[17..16]" at CampusController.vhd(7) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:testRegFile" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 96
-Info (12128): Elaborating entity "reg4" for hierarchy "register_file:testRegFile|reg4:reg00" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 373
-Info (12128): Elaborating entity "decoder_2to4" for hierarchy "register_file:testRegFile|decoder_2to4:des_decoder_2to4" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 398
-Info (12128): Elaborating entity "mux2_4bit" for hierarchy "register_file:testRegFile|mux2_4bit:data_src_mux2_4bit" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 402
-Info (12128): Elaborating entity "mux4_4bit" for hierarchy "register_file:testRegFile|mux4_4bit:Inst_mux4_4bit" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 408
+Warning (10873): Using initial value X (don't care) for net "ledg[7..4]" at CampusController.vhd(8) File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:testRegFile" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 98
+Info (12128): Elaborating entity "reg4" for hierarchy "register_file:testRegFile|reg4:reg00" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 377
+Info (12128): Elaborating entity "decoder_2to4" for hierarchy "register_file:testRegFile|decoder_2to4:des_decoder_2to4" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 402
+Info (12128): Elaborating entity "mux2_4bit" for hierarchy "register_file:testRegFile|mux2_4bit:data_src_mux2_4bit" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 406
+Info (12128): Elaborating entity "mux4_4bit" for hierarchy "register_file:testRegFile|mux4_4bit:Inst_mux4_4bit" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 412
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
@@ -319,33 +332,35 @@ Warning (13039): The following bidirectional pins have no drivers
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
     Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
+    Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (13410): Pin "ledg[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (13410): Pin "ledg[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+    Warning (13410): Pin "ledg[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[8]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
-    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[8]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
+Info (21057): Implemented 82 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 18 output pins
+    Info (21059): Implemented 26 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 20 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 710 megabytes
-    Info: Processing ended: Fri Apr 27 12:47:50 2018
+    Info (21061): Implemented 28 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Fri Apr 27 13:05:32 2018
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:28
 
 

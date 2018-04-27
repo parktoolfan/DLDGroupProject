@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Apr 27 12:47:50 2018
+Analysis & Synthesis Status : Successful - Fri Apr 27 13:05:32 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : CampusController
 Top-level Entity Name : CampusController
 Family : Cyclone IV E
-Total logic elements : 20
-    Total combinational functions : 4
+Total logic elements : 28
+    Total combinational functions : 12
     Dedicated logic registers : 16
 Total registers : 16
-Total pins : 46
+Total pins : 54
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

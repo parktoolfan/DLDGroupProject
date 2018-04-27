@@ -23,6 +23,14 @@ ledr[14] <= register_file:testRegFile.reg3[2]
 ledr[15] <= register_file:testRegFile.reg3[3]
 ledr[16] <= <GND>
 ledr[17] <= <GND>
+ledg[0] <= register_file:testRegFile.selectedData[0]
+ledg[1] <= register_file:testRegFile.selectedData[1]
+ledg[2] <= register_file:testRegFile.selectedData[2]
+ledg[3] <= register_file:testRegFile.selectedData[3]
+ledg[4] <= <GND>
+ledg[5] <= <GND>
+ledg[6] <= <GND>
+ledg[7] <= <GND>
 sw[0] => register_file:testRegFile.data[0]
 sw[1] => register_file:testRegFile.data[1]
 sw[2] => register_file:testRegFile.data[2]
@@ -78,6 +86,10 @@ reg3[0] <= reg4:reg03.Q[0]
 reg3[1] <= reg4:reg03.Q[1]
 reg3[2] <= reg4:reg03.Q[2]
 reg3[3] <= reg4:reg03.Q[3]
+selectedData[0] <= mux4_4bit:Inst_mux4_4bit.Z[0]
+selectedData[1] <= mux4_4bit:Inst_mux4_4bit.Z[1]
+selectedData[2] <= mux4_4bit:Inst_mux4_4bit.Z[2]
+selectedData[3] <= mux4_4bit:Inst_mux4_4bit.Z[3]
 
 
 |CampusController|register_file:testRegFile|reg4:reg00
