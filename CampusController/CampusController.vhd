@@ -58,6 +58,7 @@ begin
 End a;
 
 -- Create 4 bit counters.
+-- BASIC 4 bit counter:
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
@@ -73,6 +74,31 @@ begin
 	process (C, CLR)
 	begin
 	if (CLR='1') then
+		tmp <= "0000";
+	elsif (C'event and C='1') then
+		tmp <= tmp + 1;
+	end if;
+	end process;
+	Q <= tmp;
+end bhv;
+
+-- 4 bit counter with Synchronous clear:
+-- Note that a 163 would normally include a load function.
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity ls163 is
+	port(C, CLR : in std_logic;
+	Q : out std_logic_vector(3 downto 0));
+end ls163;
+
+architecture bhv of ls163 is
+	signal tmp: std_logic_vector(3 downto 0);
+begin
+	process (C, CLR)
+	begin
+	if (C'event and C='1' and CLR='1') then
 		tmp <= "0000";
 	elsif (C'event and C='1') then
 		tmp <= tmp + 1;
