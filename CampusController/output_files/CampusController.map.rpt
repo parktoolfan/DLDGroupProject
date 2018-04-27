@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Thu Apr 26 20:39:39 2018
+Fri Apr 27 12:26:57 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 26 20:39:39 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 27 12:26:57 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -268,39 +268,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Apr 26 20:39:20 2018
+    Info: Processing started: Fri Apr 27 12:26:44 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 20 design units, including 10 entities, in source file campuscontroller.vhd
     Info (12022): Found design unit 1: CampusController-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 13
-    Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 86
-    Info (12022): Found design unit 3: vhdl_binary_counter-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 115
-    Info (12022): Found design unit 4: ls163-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 140
-    Info (12022): Found design unit 5: ls139-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 172
-    Info (12022): Found design unit 6: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 193
-    Info (12022): Found design unit 7: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 211
-    Info (12022): Found design unit 8: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 231
-    Info (12022): Found design unit 9: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 261
-    Info (12022): Found design unit 10: sipo-arch File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 361
+    Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 90
+    Info (12022): Found design unit 3: vhdl_binary_counter-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 119
+    Info (12022): Found design unit 4: ls163-bhv File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 144
+    Info (12022): Found design unit 5: sipo-arch File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 169
+    Info (12022): Found design unit 6: ls139-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 205
+    Info (12022): Found design unit 7: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 226
+    Info (12022): Found design unit 8: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 244
+    Info (12022): Found design unit 9: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 264
+    Info (12022): Found design unit 10: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 295
     Info (12023): Found entity 1: CampusController File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 5
-    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 81
-    Info (12023): Found entity 3: vhdl_binary_counter File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 110
-    Info (12023): Found entity 4: ls163 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 135
-    Info (12023): Found entity 5: ls139 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 163
-    Info (12023): Found entity 6: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 186
-    Info (12023): Found entity 7: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 205
-    Info (12023): Found entity 8: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 225
-    Info (12023): Found entity 9: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 247
-    Info (12023): Found entity 10: sipo File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 354
+    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 85
+    Info (12023): Found entity 3: vhdl_binary_counter File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 114
+    Info (12023): Found entity 4: ls163 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 139
+    Info (12023): Found entity 5: sipo File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 162
+    Info (12023): Found entity 6: ls139 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 195
+    Info (12023): Found entity 7: mux2_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 219
+    Info (12023): Found entity 8: mux4_4bit File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 238
+    Info (12023): Found entity 9: reg4 File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 258
+    Info (12023): Found entity 10: register_file File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 280
 Info (12127): Elaborating entity "CampusController" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at CampusController.vhd(7): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 7
-Warning (10036): Verilog HDL or VHDL warning at CampusController.vhd(47): object "rxin" assigned a value but never read File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 47
 Warning (10541): VHDL Signal Declaration warning at CampusController.vhd(48): used implicit default value for signal "BuildingID" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 48
 Warning (10541): VHDL Signal Declaration warning at CampusController.vhd(49): used implicit default value for signal "tx" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 49
 Warning (10541): VHDL Signal Declaration warning at CampusController.vhd(49): used implicit default value for signal "Master_Clock" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 49
-Info (12128): Elaborating entity "sipo" for hierarchy "sipo:inputReg" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at CampusController.vhd(367): signal "clear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 367
+Warning (10036): Verilog HDL or VHDL warning at CampusController.vhd(50): object "StartFlag" assigned a value but never read File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 50
+Warning (10036): Verilog HDL or VHDL warning at CampusController.vhd(50): object "EndFlag" assigned a value but never read File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 50
+Info (12128): Elaborating entity "sipo" for hierarchy "sipo:inputReg" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at CampusController.vhd(175): signal "clear" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 175
 Info (13014): Ignored 5 buffer(s)
     Info (13019): Ignored 5 SOFT buffer(s)
 Warning (13039): The following bidirectional pins have no drivers
@@ -359,10 +360,10 @@ Info (21057): Implemented 46 device resources after synthesis - the final resour
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 18 output pins
     Info (21060): Implemented 6 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 57 warnings
-    Info: Peak virtual memory: 712 megabytes
-    Info: Processing ended: Thu Apr 26 20:39:39 2018
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 710 megabytes
+    Info: Processing ended: Fri Apr 27 12:26:57 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:26
 
 

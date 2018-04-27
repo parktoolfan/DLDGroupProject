@@ -57,17 +57,17 @@ begin
 	--ledr(1) <= gpio(2);
 	
 	-- GPIO INPUTS AND OUTPUTS
-		rx <= gpio(0);		-- input
-		gpio(1) <= tx;		-- rest are outputs
-		gpio(2) <= Master_Clock;
-		gpio(5 downto 3) <= BuildingID;
+-- temp		rx <= gpio(0);		-- input
+-- temp		gpio(1) <= tx;		-- rest are outputs
+-- temp		gpio(2) <= Master_Clock;
+-- temp		gpio(5 downto 3) <= BuildingID;
 
 		-- Hook up RX to shift Regerister
-		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
+-- temp		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
 		
 		-- Create And gates for counter logic
-		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
-		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
+-- temp		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
+-- temp		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
 
 	
 		-- TESTING COMPONENT CODES:::
@@ -155,6 +155,34 @@ begin
 	Q <= tmp;
 end bhv;
 
+-- Begin SIPO Shift Register - adapted from https://allaboutfpga.com/vhdl-code-for-4-bit-shift-register/
+library ieee;
+use ieee.std_logic_1164.all;
+ 
+entity sipo is
+ port(
+ clk, clear : in std_logic;
+ Input_Data: in std_logic;
+ Q: out std_logic_vector(15 downto 0) );
+end sipo;
+ 
+architecture arch of sipo is
+ Signal temp : std_logic_vector(15 downto 0);
+begin
+ 
+ process (clk)
+ begin
+ if clear = '1' then
+ Q <= "0000000000000000";
+ temp <= "0000000000000000";
+ elsif (CLK'event and CLK='1') then
+ temp(15 downto 1) <= temp(14 downto 0);
+ temp(0) <= Input_Data;
+ Q <= temp;
+ end if;
+ end process;
+end arch;
+
 -- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:
 -- This code comes from the guide at https://www.scss.tcd.ie/Michael.Manzke/CS2022/CS2022_vhdl_eighth.pdf
@@ -166,6 +194,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity ls139 is
 	Port (
+		Enable : IN std_logic; -- I'm adding an enable signal that we can turn high to write to the regerister file.
 		A0 : in std_logic;
 		A1 : in std_logic;
 		Q0 : out std_logic;
@@ -175,10 +204,10 @@ entity ls139 is
 end ls139;
 architecture Behavioral of ls139 is
 	begin
-		Q0<= ((not A0) and (not A1));
-		Q1<= (A0 and (not A1));
-		Q2<= ((not A0) and A1);
-		Q3<= (A0 and A1);
+		Q0<= ((not A0) and (not A1)) and Enable;
+		Q1<= (A0 and (not A1)) and Enable;
+		Q2<= ((not A0) and A1) and Enable;
+		Q3<= (A0 and A1) and Enable;
 end Behavioral;
 
 -- 4 bit wide 2 to 1 mux
@@ -253,6 +282,7 @@ entity register_file is
 				src_s1 : in std_logic;
 				des_A0 : in std_logic;
 				des_A1 : in std_logic;
+				writeToReg : in std_logic; -- I added an enable bit to the 2 to 4 decoder so that i can have a write signal here.
 				Clk : in std_logic;
 				data_src : in std_logic;
 				data : in std_logic_vector(3 downto 0);
@@ -275,6 +305,7 @@ architecture Behavioral of register_file is
 
 	-- 2 to 4 Decoder
 	COMPONENT decoder_2to4 PORT(
+		Enable : IN std_logic; -- I'm adding an enable signal that we can turn high to write to the regerister file.
 		A0 : IN std_logic;
 		A1 : IN std_logic;
 		Q0 : OUT std_logic;
@@ -333,7 +364,7 @@ begin
 		Q => reg3_q
 	);
 	-- Destination register decoder
-		des_decoder_2to4: decoder_2to4 PORT MAP( A0 => des_A0,
+		des_decoder_2to4: decoder_2to4 PORT MAP( Enable => writeToReg,  A0 => des_A0,
 		A1 => des_A1, Q0 => load_reg0, Q1 => load_reg1, Q2 => load_reg2, Q3 => load_reg3
 	);
 	-- 2 to 1 Data source multiplexer
@@ -350,31 +381,3 @@ begin
 end Behavioral;
 
 -- END REGISTER FILE
-
--- Begin SIPO Shift Register - adapted from https://allaboutfpga.com/vhdl-code-for-4-bit-shift-register/
-library ieee;
-use ieee.std_logic_1164.all;
- 
-entity sipo is
- port(
- clk, clear : in std_logic;
- Input_Data: in std_logic;
- Q: out std_logic_vector(15 downto 0) );
-end sipo;
- 
-architecture arch of sipo is
- Signal temp : std_logic_vector(15 downto 0);
-begin
- 
- process (clk)
- begin
- if clear = '1' then
- Q <= "0000000000000000";
- temp <= "0000000000000000";
- elsif (CLK'event and CLK='1') then
- temp(15 downto 1) <= temp(14 downto 0);
- temp(0) <= Input_Data;
- Q <= temp;
- end if;
- end process;
-end arch;
