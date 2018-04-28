@@ -63,10 +63,10 @@ Architecture a of comparator6b is
 begin
 	Process (op1, op2)
 	begin
-		if op1 = op2 then -- if they are equal, represent that on q.
-			q <= '1';
+		if op1 = op2 then -- if they are equal, represent that on equal.
+			equal <= '1';
 		else
-			q <= '0';
+			equal <= '0';
 		end if;
 	end process;
 end a;
