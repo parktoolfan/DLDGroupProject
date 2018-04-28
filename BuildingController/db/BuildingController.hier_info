@@ -1,37 +1,56 @@
 |BuildingController
-gpio[0] <> <UNC>
-gpio[1] <> <UNC>
-gpio[2] <> <UNC>
-gpio[3] <> <UNC>
-gpio[4] <> <UNC>
-gpio[5] <> <UNC>
-gpio[6] <> <UNC>
-gpio[7] <> <UNC>
-gpio[8] <> <UNC>
-gpio[9] <> <UNC>
-gpio[10] <> <UNC>
-gpio[11] <> <UNC>
-gpio[12] <> <UNC>
-gpio[13] <> <UNC>
-gpio[14] <> <UNC>
-ledr[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-ledr[1] <= ledr[1].DB_MAX_OUTPUT_PORT_TYPE
-ledr[2] <= ledr[2].DB_MAX_OUTPUT_PORT_TYPE
-ledr[3] <= ledr[3].DB_MAX_OUTPUT_PORT_TYPE
-ledr[4] <= ledr[4].DB_MAX_OUTPUT_PORT_TYPE
-ledr[5] <= ledr[5].DB_MAX_OUTPUT_PORT_TYPE
-ledr[6] <= ledr[6].DB_MAX_OUTPUT_PORT_TYPE
-ledr[7] <= ledr[7].DB_MAX_OUTPUT_PORT_TYPE
-ledr[8] <= ledr[8].DB_MAX_OUTPUT_PORT_TYPE
-ledr[9] <= ledr[9].DB_MAX_OUTPUT_PORT_TYPE
-ledr[10] <= ledr[10].DB_MAX_OUTPUT_PORT_TYPE
-ledr[11] <= ledr[11].DB_MAX_OUTPUT_PORT_TYPE
-ledr[12] <= ledr[12].DB_MAX_OUTPUT_PORT_TYPE
-ledr[13] <= ledr[13].DB_MAX_OUTPUT_PORT_TYPE
-ledr[14] <= ledr[14].DB_MAX_OUTPUT_PORT_TYPE
-ledr[15] <= ledr[15].DB_MAX_OUTPUT_PORT_TYPE
-ledr[16] <= ledr[16].DB_MAX_OUTPUT_PORT_TYPE
-ledr[17] <= ledr[17].DB_MAX_OUTPUT_PORT_TYPE
+gpio[3] <> gpio[3]
+gpio[3] <> gpio[3]
+gpio[6] <> gpio[6]
+gpio[7] <> gpio[7]
+gpio[8] <> gpio[8]
+gpio[9] <> gpio[9]
+gpio[10] <> gpio[10]
+gpio[11] <> gpio[11]
+gpio[12] <> gpio[12]
+gpio[14] <> gpio[14]
+gpio[15] <> gpio[15]
+gpio[16] <> gpio[16]
+gpio[17] <> gpio[17]
+gpio[18] <> gpio[18]
+gpio[19] <> gpio[19]
+gpio[20] <> gpio[20]
+gpio[21] <> gpio[21]
+gpio[23] <> gpio[23]
+gpio[24] <> <UNC>
+gpio[25] <> <UNC>
+gpio[26] <> <UNC>
+gpio[27] <> <UNC>
+gpio[28] <> <UNC>
+gpio[29] <> <UNC>
+gpio[30] <> <UNC>
+gpio[31] <> <UNC>
+gpio[32] <> <UNC>
+gpio[33] <> <UNC>
+gpio[34] <> <UNC>
+gpio[35] <> <UNC>
+gpio[36] <> <UNC>
+gpio[37] <> <UNC>
+gpio[38] <> <UNC>
+gpio[39] <> <UNC>
+ledr[0] <= BuildingHardware:building_A.room_data_out[0]
+ledr[1] <= BuildingHardware:building_A.room_data_out[1]
+ledr[2] <= BuildingHardware:building_A.room_data_out[2]
+ledr[3] <= BuildingHardware:building_A.room_data_out[3]
+ledr[4] <= BuildingHardware:building_B.room_data_out[0]
+ledr[5] <= BuildingHardware:building_B.room_data_out[1]
+ledr[6] <= BuildingHardware:building_B.room_data_out[2]
+ledr[7] <= BuildingHardware:building_B.room_data_out[3]
+ledr[8] <= <GND>
+ledr[9] <= <GND>
+ledr[10] <= <GND>
+ledr[11] <= <GND>
+ledr[12] <= <GND>
+ledr[13] <= <GND>
+ledr[14] <= <GND>
+ledr[15] <= <GND>
+ledr[16] <= <GND>
+ledr[17] <= <GND>
 sw[0] => ~NO_FANOUT~
 sw[1] => ~NO_FANOUT~
 sw[2] => ~NO_FANOUT~
@@ -54,5 +73,979 @@ key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
+
+
+|BuildingController|BuildingHardware:building_A
+Rx1 => SIPO_A_shift:Data_in.A
+Rx2 => ~NO_FANOUT~
+clk_in => SIPO_A_shift:Data_in.clk
+clk_in => register_file:data_storage.Clk
+clk_in => ls74:dff.clk
+clk_in => asynch_counter:clockcycle_counter.clk
+clk_in => PISO_shift:shift_output.clk
+Building_ID[0] => ~NO_FANOUT~
+Building_ID[1] => ~NO_FANOUT~
+Building_ID[2] => ~NO_FANOUT~
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+Tx1 <= PISO_shift:shift_output.SO
+Tx2 <= Tx2.DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[0] <= room_data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[1] <= room_data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[2] <= room_data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[3] <= room_data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[0] <= to_build_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[1] <= Room_ID[1].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[2] <= Room_ID[2].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[3] <= Room_ID[3].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[4] <= Room_ID[4].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[5] <= Room_ID[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|SIPO_A_shift:Data_in
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+clk => tmp[4].CLK
+clk => tmp[5].CLK
+clk => tmp[6].CLK
+clk => tmp[7].CLK
+clk => tmp[8].CLK
+clk => tmp[9].CLK
+clk => tmp[10].CLK
+clk => tmp[11].CLK
+clk => tmp[12].CLK
+clk => tmp[13].CLK
+clk => tmp[14].CLK
+clk => tmp[15].CLK
+clr => tmp[0].ACLR
+clr => tmp[1].ACLR
+clr => tmp[2].ACLR
+clr => tmp[3].ACLR
+clr => tmp[4].ACLR
+clr => tmp[5].ACLR
+clr => tmp[6].ACLR
+clr => tmp[7].ACLR
+clr => tmp[8].ACLR
+clr => tmp[9].ACLR
+clr => tmp[10].ACLR
+clr => tmp[11].ACLR
+clr => tmp[12].ACLR
+clr => tmp[13].ACLR
+clr => tmp[14].ACLR
+clr => tmp[15].ACLR
+A => tmp[0].DATAIN
+PO[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+PO[8] <= tmp[8].DB_MAX_OUTPUT_PORT_TYPE
+PO[9] <= tmp[9].DB_MAX_OUTPUT_PORT_TYPE
+PO[10] <= tmp[10].DB_MAX_OUTPUT_PORT_TYPE
+PO[11] <= tmp[11].DB_MAX_OUTPUT_PORT_TYPE
+PO[12] <= tmp[12].DB_MAX_OUTPUT_PORT_TYPE
+PO[13] <= tmp[13].DB_MAX_OUTPUT_PORT_TYPE
+PO[14] <= tmp[14].DB_MAX_OUTPUT_PORT_TYPE
+PO[15] <= tmp[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|counter:room_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage
+src_s0 => mux4_4bit:Inst_mux4_4bit.S0
+src_s1 => mux4_4bit:Inst_mux4_4bit.S1
+des_A0 => decoder_2to4:des_decoder_2to4.A0
+des_A1 => decoder_2to4:des_decoder_2to4.A1
+writeToReg => decoder_2to4:des_decoder_2to4.Enable
+Clk => reg4:reg00.Clk
+Clk => reg4:reg01.Clk
+Clk => reg4:reg02.Clk
+Clk => reg4:reg03.Clk
+data_src => mux2_4bit:data_src_mux2_4bit.s
+data[0] => mux2_4bit:data_src_mux2_4bit.In0[0]
+data[1] => mux2_4bit:data_src_mux2_4bit.In0[1]
+data[2] => mux2_4bit:data_src_mux2_4bit.In0[2]
+data[3] => mux2_4bit:data_src_mux2_4bit.In0[3]
+reg0[0] <= reg4:reg00.Q[0]
+reg0[1] <= reg4:reg00.Q[1]
+reg0[2] <= reg4:reg00.Q[2]
+reg0[3] <= reg4:reg00.Q[3]
+reg1[0] <= reg4:reg01.Q[0]
+reg1[1] <= reg4:reg01.Q[1]
+reg1[2] <= reg4:reg01.Q[2]
+reg1[3] <= reg4:reg01.Q[3]
+reg2[0] <= reg4:reg02.Q[0]
+reg2[1] <= reg4:reg02.Q[1]
+reg2[2] <= reg4:reg02.Q[2]
+reg2[3] <= reg4:reg02.Q[3]
+reg3[0] <= reg4:reg03.Q[0]
+reg3[1] <= reg4:reg03.Q[1]
+reg3[2] <= reg4:reg03.Q[2]
+reg3[3] <= reg4:reg03.Q[3]
+selectedData[0] <= mux4_4bit:Inst_mux4_4bit.Z[0]
+selectedData[1] <= mux4_4bit:Inst_mux4_4bit.Z[1]
+selectedData[2] <= mux4_4bit:Inst_mux4_4bit.Z[2]
+selectedData[3] <= mux4_4bit:Inst_mux4_4bit.Z[3]
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|reg4:reg00
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|reg4:reg01
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|reg4:reg02
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|reg4:reg03
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|decoder_2to4:des_decoder_2to4
+Enable => Q0.IN1
+Enable => Q1.IN1
+Enable => Q2.IN1
+Enable => Q3.IN1
+A0 => Q1.IN0
+A0 => Q3.IN0
+A0 => Q0.IN0
+A0 => Q2.IN0
+A1 => Q2.IN1
+A1 => Q3.IN1
+A1 => Q0.IN1
+A1 => Q1.IN1
+Q0 <= Q0.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= Q1.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= Q3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|mux2_4bit:data_src_mux2_4bit
+In0[0] => Z.DATAB
+In0[1] => Z.DATAB
+In0[2] => Z.DATAB
+In0[3] => Z.DATAB
+In1[0] => Z.DATAB
+In1[1] => Z.DATAB
+In1[2] => Z.DATAB
+In1[3] => Z.DATAB
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|register_file:data_storage|mux4_4bit:Inst_mux4_4bit
+In0[0] => Z.DATAB
+In0[1] => Z.DATAB
+In0[2] => Z.DATAB
+In0[3] => Z.DATAB
+In1[0] => Z.DATAB
+In1[1] => Z.DATAB
+In1[2] => Z.DATAB
+In1[3] => Z.DATAB
+In2[0] => Z.DATAB
+In2[1] => Z.DATAB
+In2[2] => Z.DATAB
+In2[3] => Z.DATAB
+In3[0] => Z.DATAB
+In3[1] => Z.DATAB
+In3[2] => Z.DATAB
+In3[3] => Z.DATAB
+S0 => Z.IN0
+S0 => Z.IN0
+S0 => Z.IN0
+S0 => Z.IN0
+S1 => Z.IN1
+S1 => Z.IN1
+S1 => Z.IN1
+S1 => Z.IN1
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|ls74:dff
+d => q~reg0.DATAIN
+clr => q.IN0
+clr => q~reg0.ACLR
+pre => q.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|asynch_counter:state_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => RCO.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|asynch_counter:clockcycle_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => RCO.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|Comparator:ID_comparator
+A[0] => Equal0.IN3
+A[1] => Equal0.IN2
+A[2] => Equal0.IN1
+A[3] => Equal0.IN0
+B[0] => Equal0.IN7
+B[1] => Equal0.IN6
+B[2] => Equal0.IN5
+B[3] => Equal0.IN4
+A_EQ_B <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|Mux:shift_load
+S0 => process_0.IN0
+S0 => process_0.IN0
+S0 => process_0.IN0
+S0 => process_0.IN0
+S1 => process_0.IN1
+S1 => process_0.IN1
+S1 => process_0.IN1
+S1 => process_0.IN1
+A[0] => tmp[0].DATAB
+A[1] => tmp[1].DATAB
+A[2] => tmp[2].DATAB
+A[3] => tmp[3].DATAB
+A[4] => tmp[4].DATAB
+A[5] => tmp[5].DATAB
+A[6] => tmp[6].DATAB
+A[7] => tmp[7].DATAB
+A[8] => tmp[8].DATAB
+A[9] => tmp[9].DATAB
+A[10] => tmp[10].DATAB
+A[11] => tmp[11].DATAB
+A[12] => tmp[12].DATAB
+A[13] => tmp[13].DATAB
+A[14] => tmp[14].DATAB
+A[15] => tmp[15].DATAB
+B[0] => tmp[0].DATAB
+B[1] => tmp[1].DATAB
+B[2] => tmp[2].DATAB
+B[3] => tmp[3].DATAB
+B[4] => tmp[4].DATAB
+B[5] => tmp[5].DATAB
+B[6] => tmp[6].DATAB
+B[7] => tmp[7].DATAB
+B[8] => tmp[8].DATAB
+B[9] => tmp[9].DATAB
+B[10] => tmp[10].DATAB
+B[11] => tmp[11].DATAB
+B[12] => tmp[12].DATAB
+B[13] => tmp[13].DATAB
+B[14] => tmp[14].DATAB
+B[15] => tmp[15].DATAB
+C[0] => tmp[0].DATAB
+C[1] => tmp[1].DATAB
+C[2] => tmp[2].DATAB
+C[3] => tmp[3].DATAB
+C[4] => tmp[4].DATAB
+C[5] => tmp[5].DATAB
+C[6] => tmp[6].DATAB
+C[7] => tmp[7].DATAB
+C[8] => tmp[8].DATAB
+C[9] => tmp[9].DATAB
+C[10] => tmp[10].DATAB
+C[11] => tmp[11].DATAB
+C[12] => tmp[12].DATAB
+C[13] => tmp[13].DATAB
+C[14] => tmp[14].DATAB
+C[15] => tmp[15].DATAB
+D[0] => tmp[0].DATAA
+D[1] => tmp[1].DATAA
+D[2] => tmp[2].DATAA
+D[3] => tmp[3].DATAA
+D[4] => tmp[4].DATAA
+D[5] => tmp[5].DATAA
+D[6] => tmp[6].DATAA
+D[7] => tmp[7].DATAA
+D[8] => tmp[8].DATAA
+D[9] => tmp[9].DATAA
+D[10] => tmp[10].DATAA
+D[11] => tmp[11].DATAA
+D[12] => tmp[12].DATAA
+D[13] => tmp[13].DATAA
+D[14] => tmp[14].DATAA
+D[15] => tmp[15].DATAA
+Y[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+Y[8] <= tmp[8].DB_MAX_OUTPUT_PORT_TYPE
+Y[9] <= tmp[9].DB_MAX_OUTPUT_PORT_TYPE
+Y[10] <= tmp[10].DB_MAX_OUTPUT_PORT_TYPE
+Y[11] <= tmp[11].DB_MAX_OUTPUT_PORT_TYPE
+Y[12] <= tmp[12].DB_MAX_OUTPUT_PORT_TYPE
+Y[13] <= tmp[13].DB_MAX_OUTPUT_PORT_TYPE
+Y[14] <= tmp[14].DB_MAX_OUTPUT_PORT_TYPE
+Y[15] <= tmp[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_A|PISO_shift:shift_output
+S_L => ~NO_FANOUT~
+SI => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+clr => ~NO_FANOUT~
+PI[0] => ~NO_FANOUT~
+PI[1] => ~NO_FANOUT~
+PI[2] => ~NO_FANOUT~
+PI[3] => ~NO_FANOUT~
+PI[4] => ~NO_FANOUT~
+PI[5] => ~NO_FANOUT~
+PI[6] => ~NO_FANOUT~
+PI[7] => ~NO_FANOUT~
+PI[8] => ~NO_FANOUT~
+PI[9] => ~NO_FANOUT~
+PI[10] => ~NO_FANOUT~
+PI[11] => ~NO_FANOUT~
+PI[12] => ~NO_FANOUT~
+PI[13] => ~NO_FANOUT~
+PI[14] => ~NO_FANOUT~
+PI[15] => SO.DATAIN
+SO <= PI[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B
+Rx1 => SIPO_A_shift:Data_in.A
+Rx2 => ~NO_FANOUT~
+clk_in => SIPO_A_shift:Data_in.clk
+clk_in => register_file:data_storage.Clk
+clk_in => ls74:dff.clk
+clk_in => asynch_counter:clockcycle_counter.clk
+clk_in => PISO_shift:shift_output.clk
+Building_ID[0] => ~NO_FANOUT~
+Building_ID[1] => ~NO_FANOUT~
+Building_ID[2] => ~NO_FANOUT~
+clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
+Tx1 <= PISO_shift:shift_output.SO
+Tx2 <= Tx2.DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[0] <= room_data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[1] <= room_data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[2] <= room_data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+room_data_out[3] <= room_data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[0] <= to_build_id[0].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[1] <= Room_ID[1].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[2] <= Room_ID[2].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[3] <= Room_ID[3].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[4] <= Room_ID[4].DB_MAX_OUTPUT_PORT_TYPE
+Room_ID[5] <= Room_ID[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|SIPO_A_shift:Data_in
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+clk => tmp[4].CLK
+clk => tmp[5].CLK
+clk => tmp[6].CLK
+clk => tmp[7].CLK
+clk => tmp[8].CLK
+clk => tmp[9].CLK
+clk => tmp[10].CLK
+clk => tmp[11].CLK
+clk => tmp[12].CLK
+clk => tmp[13].CLK
+clk => tmp[14].CLK
+clk => tmp[15].CLK
+clr => tmp[0].ACLR
+clr => tmp[1].ACLR
+clr => tmp[2].ACLR
+clr => tmp[3].ACLR
+clr => tmp[4].ACLR
+clr => tmp[5].ACLR
+clr => tmp[6].ACLR
+clr => tmp[7].ACLR
+clr => tmp[8].ACLR
+clr => tmp[9].ACLR
+clr => tmp[10].ACLR
+clr => tmp[11].ACLR
+clr => tmp[12].ACLR
+clr => tmp[13].ACLR
+clr => tmp[14].ACLR
+clr => tmp[15].ACLR
+A => tmp[0].DATAIN
+PO[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+PO[8] <= tmp[8].DB_MAX_OUTPUT_PORT_TYPE
+PO[9] <= tmp[9].DB_MAX_OUTPUT_PORT_TYPE
+PO[10] <= tmp[10].DB_MAX_OUTPUT_PORT_TYPE
+PO[11] <= tmp[11].DB_MAX_OUTPUT_PORT_TYPE
+PO[12] <= tmp[12].DB_MAX_OUTPUT_PORT_TYPE
+PO[13] <= tmp[13].DB_MAX_OUTPUT_PORT_TYPE
+PO[14] <= tmp[14].DB_MAX_OUTPUT_PORT_TYPE
+PO[15] <= tmp[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|counter:room_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => tmp.OUTPUTSELECT
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage
+src_s0 => mux4_4bit:Inst_mux4_4bit.S0
+src_s1 => mux4_4bit:Inst_mux4_4bit.S1
+des_A0 => decoder_2to4:des_decoder_2to4.A0
+des_A1 => decoder_2to4:des_decoder_2to4.A1
+writeToReg => decoder_2to4:des_decoder_2to4.Enable
+Clk => reg4:reg00.Clk
+Clk => reg4:reg01.Clk
+Clk => reg4:reg02.Clk
+Clk => reg4:reg03.Clk
+data_src => mux2_4bit:data_src_mux2_4bit.s
+data[0] => mux2_4bit:data_src_mux2_4bit.In0[0]
+data[1] => mux2_4bit:data_src_mux2_4bit.In0[1]
+data[2] => mux2_4bit:data_src_mux2_4bit.In0[2]
+data[3] => mux2_4bit:data_src_mux2_4bit.In0[3]
+reg0[0] <= reg4:reg00.Q[0]
+reg0[1] <= reg4:reg00.Q[1]
+reg0[2] <= reg4:reg00.Q[2]
+reg0[3] <= reg4:reg00.Q[3]
+reg1[0] <= reg4:reg01.Q[0]
+reg1[1] <= reg4:reg01.Q[1]
+reg1[2] <= reg4:reg01.Q[2]
+reg1[3] <= reg4:reg01.Q[3]
+reg2[0] <= reg4:reg02.Q[0]
+reg2[1] <= reg4:reg02.Q[1]
+reg2[2] <= reg4:reg02.Q[2]
+reg2[3] <= reg4:reg02.Q[3]
+reg3[0] <= reg4:reg03.Q[0]
+reg3[1] <= reg4:reg03.Q[1]
+reg3[2] <= reg4:reg03.Q[2]
+reg3[3] <= reg4:reg03.Q[3]
+selectedData[0] <= mux4_4bit:Inst_mux4_4bit.Z[0]
+selectedData[1] <= mux4_4bit:Inst_mux4_4bit.Z[1]
+selectedData[2] <= mux4_4bit:Inst_mux4_4bit.Z[2]
+selectedData[3] <= mux4_4bit:Inst_mux4_4bit.Z[3]
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|reg4:reg00
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|reg4:reg01
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|reg4:reg02
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|reg4:reg03
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+load => Q[0]~reg0.ENA
+load => Q[1]~reg0.ENA
+load => Q[2]~reg0.ENA
+load => Q[3]~reg0.ENA
+Clk => Q[0]~reg0.CLK
+Clk => Q[1]~reg0.CLK
+Clk => Q[2]~reg0.CLK
+Clk => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|decoder_2to4:des_decoder_2to4
+Enable => Q0.IN1
+Enable => Q1.IN1
+Enable => Q2.IN1
+Enable => Q3.IN1
+A0 => Q1.IN0
+A0 => Q3.IN0
+A0 => Q0.IN0
+A0 => Q2.IN0
+A1 => Q2.IN1
+A1 => Q3.IN1
+A1 => Q0.IN1
+A1 => Q1.IN1
+Q0 <= Q0.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= Q1.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= Q2.DB_MAX_OUTPUT_PORT_TYPE
+Q3 <= Q3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|mux2_4bit:data_src_mux2_4bit
+In0[0] => Z.DATAB
+In0[1] => Z.DATAB
+In0[2] => Z.DATAB
+In0[3] => Z.DATAB
+In1[0] => Z.DATAB
+In1[1] => Z.DATAB
+In1[2] => Z.DATAB
+In1[3] => Z.DATAB
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+s => Z.OUTPUTSELECT
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|register_file:data_storage|mux4_4bit:Inst_mux4_4bit
+In0[0] => Z.DATAB
+In0[1] => Z.DATAB
+In0[2] => Z.DATAB
+In0[3] => Z.DATAB
+In1[0] => Z.DATAB
+In1[1] => Z.DATAB
+In1[2] => Z.DATAB
+In1[3] => Z.DATAB
+In2[0] => Z.DATAB
+In2[1] => Z.DATAB
+In2[2] => Z.DATAB
+In2[3] => Z.DATAB
+In3[0] => Z.DATAB
+In3[1] => Z.DATAB
+In3[2] => Z.DATAB
+In3[3] => Z.DATAB
+S0 => Z.IN0
+S0 => Z.IN0
+S0 => Z.IN0
+S0 => Z.IN0
+S1 => Z.IN1
+S1 => Z.IN1
+S1 => Z.IN1
+S1 => Z.IN1
+Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|ls74:dff
+d => q~reg0.DATAIN
+clr => q.IN0
+clr => q~reg0.ACLR
+pre => q.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|asynch_counter:state_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => RCO.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|asynch_counter:clockcycle_counter
+clk => RCO~reg0.CLK
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+CLR => RCO~reg0.ENA
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => tmp.OUTPUTSELECT
+EN => RCO.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => RCO.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= RCO~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|Comparator:ID_comparator
+A[0] => Equal0.IN3
+A[1] => Equal0.IN2
+A[2] => Equal0.IN1
+A[3] => Equal0.IN0
+B[0] => Equal0.IN7
+B[1] => Equal0.IN6
+B[2] => Equal0.IN5
+B[3] => Equal0.IN4
+A_EQ_B <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|Mux:shift_load
+S0 => process_0.IN0
+S0 => process_0.IN0
+S0 => process_0.IN0
+S0 => process_0.IN0
+S1 => process_0.IN1
+S1 => process_0.IN1
+S1 => process_0.IN1
+S1 => process_0.IN1
+A[0] => tmp[0].DATAB
+A[1] => tmp[1].DATAB
+A[2] => tmp[2].DATAB
+A[3] => tmp[3].DATAB
+A[4] => tmp[4].DATAB
+A[5] => tmp[5].DATAB
+A[6] => tmp[6].DATAB
+A[7] => tmp[7].DATAB
+A[8] => tmp[8].DATAB
+A[9] => tmp[9].DATAB
+A[10] => tmp[10].DATAB
+A[11] => tmp[11].DATAB
+A[12] => tmp[12].DATAB
+A[13] => tmp[13].DATAB
+A[14] => tmp[14].DATAB
+A[15] => tmp[15].DATAB
+B[0] => tmp[0].DATAB
+B[1] => tmp[1].DATAB
+B[2] => tmp[2].DATAB
+B[3] => tmp[3].DATAB
+B[4] => tmp[4].DATAB
+B[5] => tmp[5].DATAB
+B[6] => tmp[6].DATAB
+B[7] => tmp[7].DATAB
+B[8] => tmp[8].DATAB
+B[9] => tmp[9].DATAB
+B[10] => tmp[10].DATAB
+B[11] => tmp[11].DATAB
+B[12] => tmp[12].DATAB
+B[13] => tmp[13].DATAB
+B[14] => tmp[14].DATAB
+B[15] => tmp[15].DATAB
+C[0] => tmp[0].DATAB
+C[1] => tmp[1].DATAB
+C[2] => tmp[2].DATAB
+C[3] => tmp[3].DATAB
+C[4] => tmp[4].DATAB
+C[5] => tmp[5].DATAB
+C[6] => tmp[6].DATAB
+C[7] => tmp[7].DATAB
+C[8] => tmp[8].DATAB
+C[9] => tmp[9].DATAB
+C[10] => tmp[10].DATAB
+C[11] => tmp[11].DATAB
+C[12] => tmp[12].DATAB
+C[13] => tmp[13].DATAB
+C[14] => tmp[14].DATAB
+C[15] => tmp[15].DATAB
+D[0] => tmp[0].DATAA
+D[1] => tmp[1].DATAA
+D[2] => tmp[2].DATAA
+D[3] => tmp[3].DATAA
+D[4] => tmp[4].DATAA
+D[5] => tmp[5].DATAA
+D[6] => tmp[6].DATAA
+D[7] => tmp[7].DATAA
+D[8] => tmp[8].DATAA
+D[9] => tmp[9].DATAA
+D[10] => tmp[10].DATAA
+D[11] => tmp[11].DATAA
+D[12] => tmp[12].DATAA
+D[13] => tmp[13].DATAA
+D[14] => tmp[14].DATAA
+D[15] => tmp[15].DATAA
+Y[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+Y[8] <= tmp[8].DB_MAX_OUTPUT_PORT_TYPE
+Y[9] <= tmp[9].DB_MAX_OUTPUT_PORT_TYPE
+Y[10] <= tmp[10].DB_MAX_OUTPUT_PORT_TYPE
+Y[11] <= tmp[11].DB_MAX_OUTPUT_PORT_TYPE
+Y[12] <= tmp[12].DB_MAX_OUTPUT_PORT_TYPE
+Y[13] <= tmp[13].DB_MAX_OUTPUT_PORT_TYPE
+Y[14] <= tmp[14].DB_MAX_OUTPUT_PORT_TYPE
+Y[15] <= tmp[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|PISO_shift:shift_output
+S_L => ~NO_FANOUT~
+SI => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+clr => ~NO_FANOUT~
+PI[0] => ~NO_FANOUT~
+PI[1] => ~NO_FANOUT~
+PI[2] => ~NO_FANOUT~
+PI[3] => ~NO_FANOUT~
+PI[4] => ~NO_FANOUT~
+PI[5] => ~NO_FANOUT~
+PI[6] => ~NO_FANOUT~
+PI[7] => ~NO_FANOUT~
+PI[8] => ~NO_FANOUT~
+PI[9] => ~NO_FANOUT~
+PI[10] => ~NO_FANOUT~
+PI[11] => ~NO_FANOUT~
+PI[12] => ~NO_FANOUT~
+PI[13] => ~NO_FANOUT~
+PI[14] => ~NO_FANOUT~
+PI[15] => SO.DATAIN
+SO <= PI[15].DB_MAX_OUTPUT_PORT_TYPE
 
 

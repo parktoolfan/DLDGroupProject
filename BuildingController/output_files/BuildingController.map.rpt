@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BuildingController
-Sat Apr 28 18:57:34 2018
+Sat Apr 28 19:44:23 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,22 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "BuildingHardware:building_A|PISO_shift:shift_output"
+ 10. Port Connectivity Checks: "BuildingHardware:building_A|Mux:shift_load"
+ 11. Port Connectivity Checks: "BuildingHardware:building_A|Comparator:ID_comparator"
+ 12. Port Connectivity Checks: "BuildingHardware:building_A|asynch_counter:clockcycle_counter"
+ 13. Port Connectivity Checks: "BuildingHardware:building_A|asynch_counter:state_counter"
+ 14. Port Connectivity Checks: "BuildingHardware:building_A|ls74:dff"
+ 15. Port Connectivity Checks: "BuildingHardware:building_A|register_file:data_storage"
+ 16. Port Connectivity Checks: "BuildingHardware:building_A|counter:room_counter"
+ 17. Port Connectivity Checks: "BuildingHardware:building_A|SIPO_A_shift:Data_in"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +51,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Apr 28 18:57:34 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 19:44:23 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 80                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -155,62 +170,438 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; BuildingController.vhd           ; yes             ; User VHDL File  ; //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+;                                             ;                 ;
+; Total combinational functions               ; 0               ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 0               ;
+;     -- 3 input functions                    ; 0               ;
+;     -- <=2 input functions                  ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 0               ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+;     -- Dedicated logic registers            ; 0               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 80              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; gpio[24]~output ;
+; Maximum fan-out                             ; 1               ;
+; Total fan-out                               ; 120             ;
+; Average fan-out                             ; 0.60            ;
++---------------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+; |BuildingController        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 80   ; 0            ; |BuildingController ; BuildingController ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|PISO_shift:shift_output" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; s_l  ; Input ; Info     ; Stuck at VCC                                          ;
+; si   ; Input ; Info     ; Stuck at GND                                          ;
+; clr  ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|Mux:shift_load" ;
++-----------+-------+----------+-----------------------------------------+
+; Port      ; Type  ; Severity ; Details                                 ;
++-----------+-------+----------+-----------------------------------------+
+; a[15]     ; Input ; Info     ; Stuck at VCC                            ;
+; a[14]     ; Input ; Info     ; Stuck at GND                            ;
+; a[13]     ; Input ; Info     ; Stuck at VCC                            ;
+; a[12]     ; Input ; Info     ; Stuck at GND                            ;
+; a[11]     ; Input ; Info     ; Stuck at VCC                            ;
+; a[10]     ; Input ; Info     ; Stuck at GND                            ;
+; a[9]      ; Input ; Info     ; Stuck at VCC                            ;
+; a[8]      ; Input ; Info     ; Stuck at GND                            ;
+; a[7]      ; Input ; Info     ; Stuck at VCC                            ;
+; a[6]      ; Input ; Info     ; Stuck at GND                            ;
+; a[5]      ; Input ; Info     ; Stuck at VCC                            ;
+; a[4]      ; Input ; Info     ; Stuck at GND                            ;
+; a[3]      ; Input ; Info     ; Stuck at VCC                            ;
+; a[2]      ; Input ; Info     ; Stuck at GND                            ;
+; a[1]      ; Input ; Info     ; Stuck at VCC                            ;
+; a[0]      ; Input ; Info     ; Stuck at GND                            ;
+; b[15..13] ; Input ; Info     ; Stuck at GND                            ;
+; b[4..0]   ; Input ; Info     ; Stuck at GND                            ;
+; b[8]      ; Input ; Info     ; Stuck at GND                            ;
+; c         ; Input ; Info     ; Stuck at GND                            ;
+; d[15]     ; Input ; Info     ; Stuck at VCC                            ;
+; d[14]     ; Input ; Info     ; Stuck at GND                            ;
+; d[13]     ; Input ; Info     ; Stuck at VCC                            ;
+; d[12]     ; Input ; Info     ; Stuck at GND                            ;
+; d[11]     ; Input ; Info     ; Stuck at VCC                            ;
+; d[10]     ; Input ; Info     ; Stuck at GND                            ;
+; d[9]      ; Input ; Info     ; Stuck at VCC                            ;
+; d[8]      ; Input ; Info     ; Stuck at GND                            ;
+; d[7]      ; Input ; Info     ; Stuck at VCC                            ;
+; d[6]      ; Input ; Info     ; Stuck at GND                            ;
+; d[5]      ; Input ; Info     ; Stuck at VCC                            ;
+; d[4]      ; Input ; Info     ; Stuck at GND                            ;
+; d[3]      ; Input ; Info     ; Stuck at VCC                            ;
+; d[2]      ; Input ; Info     ; Stuck at GND                            ;
+; d[1]      ; Input ; Info     ; Stuck at VCC                            ;
+; d[0]      ; Input ; Info     ; Stuck at GND                            ;
++-----------+-------+----------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|Comparator:ID_comparator" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; a[3] ; Input ; Info     ; Stuck at GND                                           ;
+; b[3] ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|asynch_counter:clockcycle_counter"                               ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; clr           ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load_l        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; load_in[3..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load_in[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rco           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|asynch_counter:state_counter"                                    ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; clk           ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; clr           ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; en            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load_l        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load_in[3..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; load_in[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rco           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|ls74:dff"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pre  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|register_file:data_storage"                                     ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; src_s1       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; des_a1       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; writetoreg   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_src     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data[3]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; reg0         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; reg1         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; reg2         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; reg3         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; selecteddata ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|counter:room_counter"                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; clk  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clr  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; en   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rco  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "BuildingHardware:building_A|SIPO_A_shift:Data_in"                                   ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; clr  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; po   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 80                          ;
+; cycloneiii_io_obuf    ; 40                          ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 18:57:20 2018
+    Info: Processing started: Sat Apr 28 19:44:07 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BuildingController -c BuildingController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (12090): Entity "Mux" obtained from "BuildingController.vhd" instead of from Quartus Prime megafunction library File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 388
+Warning (12090): Entity "Mux" obtained from "BuildingController.vhd" instead of from Quartus Prime megafunction library File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 451
 Info (12021): Found 28 design units, including 14 entities, in source file buildingcontroller.vhd
-    Info (12022): Found design unit 1: BuildingController-a File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 12
-    Info (12022): Found design unit 2: BuildingHardware-b File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 81
-    Info (12022): Found design unit 3: ls74-c File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 241
-    Info (12022): Found design unit 4: SIPO_A_shift-d File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 281
-    Info (12022): Found design unit 5: counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 315
-    Info (12022): Found design unit 6: asynch_counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 351
-    Info (12022): Found design unit 7: Mux-f File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 394
-    Info (12022): Found design unit 8: Comparator-g File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 432
-    Info (12022): Found design unit 9: PISO_shift-h File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 462
-    Info (12022): Found design unit 10: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 513
-    Info (12022): Found design unit 11: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 534
-    Info (12022): Found design unit 12: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 552
-    Info (12022): Found design unit 13: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 572
-    Info (12022): Found design unit 14: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 604
-    Info (12023): Found entity 1: BuildingController File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 4
-    Info (12023): Found entity 2: BuildingHardware File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 72
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 234
-    Info (12023): Found entity 4: SIPO_A_shift File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 275
-    Info (12023): Found entity 5: counter File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 310
-    Info (12023): Found entity 6: asynch_counter File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 345
-    Info (12023): Found entity 7: Mux File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 388
-    Info (12023): Found entity 8: Comparator File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 427
-    Info (12023): Found entity 9: PISO_shift File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 456
-    Info (12023): Found entity 10: decoder_2to4 File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 503
-    Info (12023): Found entity 11: mux2_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 527
-    Info (12023): Found entity 12: mux4_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 546
-    Info (12023): Found entity 13: reg4 File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 566
-    Info (12023): Found entity 14: register_file File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 588
+    Info (12022): Found design unit 1: BuildingController-a File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 12
+    Info (12022): Found design unit 2: BuildingHardware-b File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 81
+    Info (12022): Found design unit 3: ls74-c File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 304
+    Info (12022): Found design unit 4: SIPO_A_shift-d File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 344
+    Info (12022): Found design unit 5: counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 378
+    Info (12022): Found design unit 6: asynch_counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 414
+    Info (12022): Found design unit 7: Mux-f File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 457
+    Info (12022): Found design unit 8: Comparator-g File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 495
+    Info (12022): Found design unit 9: PISO_shift-h File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 525
+    Info (12022): Found design unit 10: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 574
+    Info (12022): Found design unit 11: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 595
+    Info (12022): Found design unit 12: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 613
+    Info (12022): Found design unit 13: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 633
+    Info (12022): Found design unit 14: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 665
+    Info (12023): Found entity 1: BuildingController File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 4
+    Info (12023): Found entity 2: BuildingHardware File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 72
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 297
+    Info (12023): Found entity 4: SIPO_A_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 338
+    Info (12023): Found entity 5: counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 373
+    Info (12023): Found entity 6: asynch_counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 408
+    Info (12023): Found entity 7: Mux File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 451
+    Info (12023): Found entity 8: Comparator File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 490
+    Info (12023): Found entity 9: PISO_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 519
+    Info (12023): Found entity 10: decoder_2to4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 564
+    Info (12023): Found entity 11: mux2_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 588
+    Info (12023): Found entity 12: mux4_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 607
+    Info (12023): Found entity 13: reg4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 627
+    Info (12023): Found entity 14: register_file File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 649
 Info (12127): Elaborating entity "BuildingController" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "ledr[17..6]" at BuildingController.vhd(6) File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 6
-Info (12128): Elaborating entity "BuildingHardware" for hierarchy "BuildingHardware:building_A" File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 34
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(75): used implicit default value for signal "clk_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 75
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(75): used implicit default value for signal "Tx2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 75
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(77): used implicit default value for signal "Room_ID" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 77
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(84): used implicit default value for signal "state" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 84
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(85): used implicit default value for signal "room_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 85
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(85): used implicit default value for signal "our_id" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 85
-Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(85): used implicit default value for signal "build_id" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 85
-Error (10344): VHDL expression error at BuildingController.vhd(159): expression has 3 elements, but must have 4 elements File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 159
-Error (12152): Can't elaborate user hierarchy "BuildingHardware:building_A" File: //Mac/Home/Documents/DLDProject/BuildingController/Armands Building Controller/BuildingController.vhd Line: 34
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 10 warnings
-    Error: Peak virtual memory: 702 megabytes
-    Error: Processing ended: Sat Apr 28 18:57:34 2018
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:27
+Warning (10873): Using initial value X (don't care) for net "ledr[17..8]" at BuildingController.vhd(6) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+Info (12128): Elaborating entity "BuildingHardware" for hierarchy "BuildingHardware:building_A" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 34
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(75): used implicit default value for signal "clk_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 75
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(75): used implicit default value for signal "Tx2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 75
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(76): used implicit default value for signal "room_data_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 76
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(77): used implicit default value for signal "Room_ID" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 77
+Warning (10036): Verilog HDL or VHDL warning at BuildingController.vhd(147): object "room0Data" assigned a value but never read File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 147
+Warning (10036): Verilog HDL or VHDL warning at BuildingController.vhd(147): object "room1Data" assigned a value but never read File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 147
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(150): used implicit default value for signal "state" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 150
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(151): used implicit default value for signal "room_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 151
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(151): used implicit default value for signal "our_id" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 151
+Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(151): used implicit default value for signal "build_id" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 151
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "aux_1", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "aux_2", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "roomcount_clock", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "rising_equals", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "state_inc", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "reset_st_count", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(230): inferring latch(es) for signal or variable "load", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (10041): Inferred latch for "load" at BuildingController.vhd(230) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (10041): Inferred latch for "reset_st_count" at BuildingController.vhd(230) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (10041): Inferred latch for "state_inc" at BuildingController.vhd(230) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (10041): Inferred latch for "rising_equals" at BuildingController.vhd(230) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (10041): Inferred latch for "roomcount_clock" at BuildingController.vhd(230) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 230
+Info (12128): Elaborating entity "SIPO_A_shift" for hierarchy "BuildingHardware:building_A|SIPO_A_shift:Data_in" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 157
+Info (12128): Elaborating entity "counter" for hierarchy "BuildingHardware:building_A|counter:room_counter" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 163
+Info (12128): Elaborating entity "register_file" for hierarchy "BuildingHardware:building_A|register_file:data_storage" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 168
+Info (12128): Elaborating entity "reg4" for hierarchy "BuildingHardware:building_A|register_file:data_storage|reg4:reg00" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 712
+Info (12128): Elaborating entity "decoder_2to4" for hierarchy "BuildingHardware:building_A|register_file:data_storage|decoder_2to4:des_decoder_2to4" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 737
+Info (12128): Elaborating entity "mux2_4bit" for hierarchy "BuildingHardware:building_A|register_file:data_storage|mux2_4bit:data_src_mux2_4bit" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 741
+Info (12128): Elaborating entity "mux4_4bit" for hierarchy "BuildingHardware:building_A|register_file:data_storage|mux4_4bit:Inst_mux4_4bit" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 747
+Info (12128): Elaborating entity "ls74" for hierarchy "BuildingHardware:building_A|ls74:dff" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 180
+Info (12128): Elaborating entity "asynch_counter" for hierarchy "BuildingHardware:building_A|asynch_counter:state_counter" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 187
+Info (12128): Elaborating entity "Comparator" for hierarchy "BuildingHardware:building_A|Comparator:ID_comparator" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 204
+Info (12128): Elaborating entity "Mux" for hierarchy "BuildingHardware:building_A|Mux:shift_load" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at BuildingController.vhd(467): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 467
+Warning (10492): VHDL Process Statement warning at BuildingController.vhd(470): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 470
+Warning (10492): VHDL Process Statement warning at BuildingController.vhd(473): signal "C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 473
+Warning (10492): VHDL Process Statement warning at BuildingController.vhd(476): signal "D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 476
+Warning (10631): VHDL Process Statement warning at BuildingController.vhd(463): inferring latch(es) for signal or variable "tmp", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[0]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[1]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[2]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[3]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[4]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[5]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[6]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[7]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[8]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[9]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[10]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[11]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[12]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[13]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[14]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (10041): Inferred latch for "tmp[15]" at BuildingController.vhd(463) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 463
+Info (12128): Elaborating entity "PISO_shift" for hierarchy "BuildingHardware:building_A|PISO_shift:shift_output" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 218
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[4]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[5]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[13]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[22]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[24]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[25]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[26]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[27]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[28]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[29]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[30]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[31]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[32]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[33]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[34]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[35]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[36]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[37]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+Warning (13032): The following tri-state nodes are fed by constants
+    Warning (13033): The pin "gpio[3]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[3]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[6]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[7]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[8]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[9]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[10]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[11]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[12]" is fed by VCC File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[14]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[15]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[16]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[17]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[18]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[19]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[20]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[21]" is fed by VCC File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13033): The pin "gpio[23]" is fed by GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "gpio[12]~synth" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Warning (13010): Node "gpio[21]~synth" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[0]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[1]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[8]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[9]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[10]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[12]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[13]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[14]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+    Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 22 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[0]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[8]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 7
+    Warning (15610): No output dependent on input pin "key[0]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 8
+    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 8
+Info (21057): Implemented 80 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21060): Implemented 40 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 113 warnings
+    Info: Peak virtual memory: 715 megabytes
+    Info: Processing ended: Sat Apr 28 19:44:23 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
 
 

@@ -80,13 +80,6 @@ end BuildingHardware;
 
 architecture b of BuildingHardware is
 
-	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals, 
-	old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
-	signal state: std_logic_vector(1 downto 0);
-	signal room_data, our_id, build_id : std_logic_vector(2 downto 0);
-	signal room_id_num, st_count_out, to_our_id, to_build_id: std_logic_vector(3 downto 0);
-	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
-
 
 	component SIPO_A_shift is
 		port(clk, clr, A : in std_logic;
@@ -150,21 +143,86 @@ architecture b of BuildingHardware is
 			 PI: in std_logic_vector(15 downto 0);
 			  SO: out std_logic);
 	end component PISO_shift;
+	
+	Signal room0Data, room1Data : std_logic_vector(3 downto 0);
+	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals, 
+	old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
+	signal state: std_logic_vector(1 downto 0);
+	signal room_data, our_id, build_id : std_logic_vector(2 downto 0);
+	signal room_id_num, st_count_out, to_our_id, to_build_id: std_logic_vector(3 downto 0);
+	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 	begin
 
-		Data_in: SIPO_A_SHIFT port Map(clk => clk_in, A => Rx1, PO => SIPO_out, clr => '0'); --clr?
-		room_counter: counter port Map(clk => roomcount_clock, EN => '1', CLR => state_inc, RCO => rco_1, Q => room_id_num);
-		data_storage: register_file port Map(data =>  '0' & room_data, Clk => clk_in, src_s0 => room_id_num(0), src_s1 => '0', writeToReg => write_sig,
-		 data_src => '0', des_A0 => room_id_num(0), des_A1 => '0',
-		 reg0 => room_data_out, reg1 => room_data_out, reg2 => room_data_out, reg3 => room_data_out );	--dunno about other in/out
-		dff: ls74 port Map(d => equals, clk => clk_in, q => old_equals, clr => '0', pre => '0');
-		state_counter: asynch_counter port map( clk => state_inc, Load_L => reset_st_count, CLR => rising_equals, EN => '1', load_in => "1100", Q => st_count_out );
-		clockcycle_counter: asynch_counter port map( clk => clk_in, Load_L => '0', CLR => rising_equals, EN => equals, load_in => "1100", Q => st_count_out, RCO => rco_2 );
-		ID_comparator: Comparator port map( A => to_our_id, B => to_build_id, A_EQ_B => equals);
-		shift_load: Mux port map(S0 => state(0), S1 => state(1),A => "1010101010101010", B => "000" & room_id_num & "0" & room_data & "00000",
-															C => "0000000000000000", D =>	"1010101010101010", Y => mux_out);
-		shift_output: PISO_shift port map (S_L => load, SI => '0', clr =>'0', clk => clk_in, PI => mux_out, SO => Tx1);
+		Data_in: SIPO_A_SHIFT port Map(
+			clk => clk_in,
+			A => Rx1,
+			PO => SIPO_out,
+			clr => '0'
+		); --clr?
+		room_counter: counter port Map(
+			clk => roomcount_clock, EN => '1',
+			CLR => state_inc, RCO => rco_1,
+			Q => room_id_num
+		);
+		data_storage: register_file port Map(
+			data =>  '0' & room_data,
+			Clk => clk_in,
+			src_s0 => room_id_num(0),
+			src_s1 => '0',
+			writeToReg => write_sig,
+			data_src => '0',
+			des_A0 => room_id_num(0),
+			des_A1 => '0',
+			reg0 => room0Data,
+			reg1 => room1Data
+		);	--dunno about other in/out
+		dff: ls74 port Map(
+			d => equals,
+			clk => clk_in,
+			q => old_equals,
+			clr => '0',
+			pre => '0'
+		);
+		state_counter: asynch_counter port map(
+			clk => state_inc,
+			Load_L => reset_st_count,
+			CLR => rising_equals,
+			EN => '1',
+			load_in => "1100",
+			Q => st_count_out 
+		);
+		clockcycle_counter: asynch_counter port map(
+			clk => clk_in,
+			Load_L => '0',
+			CLR => rising_equals,
+			EN => equals,
+			load_in => "1100",
+			Q => st_count_out,
+			RCO => rco_2
+		);
+		ID_comparator: Comparator port map(
+			A => to_our_id,
+			B => to_build_id,
+			A_EQ_B => equals
+		);
+		shift_load: Mux port map(
+			S0 => state(0),
+			S1 => state(1),
+			A => "1010101010101010",
+			B => "000" & room_id_num & "0" & room_data & "00000",
+			C => "0000000000000000",
+			D =>	"1010101010101010",
+			Y => mux_out
+		);
+		shift_output: PISO_shift port map (
+			S_L => load,
+			SI => '0',
+			clr =>'0',
+			clk => clk_in,
+			PI => mux_out,
+			SO => Tx1
+		);
 
 		--aux_1 <= SIPO_out(11) AND SIPO_out(12) AND SIPO_out(13) AND NOT(SIPO_out(14)) AND NOT(SIPO_out(15));
 	  --aux_2 <= C
