@@ -14,6 +14,47 @@ end ClassroomController;
 architecture a of ClassroomController is
 
 	-- Declare the components that we created below.
+
+	
+begin
+
+	-- lets wire up some test components.
+	--testPiso : piso16b port map (
+	--	parallel_In => sw(15 downto 0),
+	--	SorL => sw(17),
+	--	clk => gpio(0),
+	--	q => ledr(0)
+	--);
+	
+	-- test comparator
+	--testComp : comparator6b port map (
+	--	op1 => sw(5 downto 0),
+	--	op2 => sw(11 downto 6),
+	--	equal => ledr(0)
+	--);
+	
+	
+	
+	
+	
+	ledg(0) <= gpio(0);
+
+end a;
+
+-- Begin Component Declarations
+
+Library ieee;
+use ieee.std_logic_1164.all;
+Entity ClassroomControllerHardware is 
+	port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
+				RoomID, OurID : in std_logic_vector(5 downto 0);
+				Clk_In : in std_logic
+				projectorEnable, LightsEnable, TX : out std_logic;
+			);
+end ClassroomControllerHardware;
+Architecture a of ClassroomControllerHardware is 
+	
+	-- declare signals and hardware components.
 	component ls74 is
 	port(	d, clr, pre, clk : IN std_logic;
 		-- d is the data input
@@ -37,31 +78,54 @@ architecture a of ClassroomController is
 				equal : out std_logic -- our 1 bit equal signal. 1 if op1 = op2, else 0.
 			);
 	end component;
-
+	
+	component tri_state_buffer_top is
+    Port ( A    : in  STD_LOGIC;    -- single buffer input
+           EN   : in  STD_LOGIC;    -- single buffer enable
+           Y    : out STD_LOGIC;    -- single buffer output
+	end component;
+	
+	signal Equal, LoadShiftReg, txToBus, lastEqual : std_logic;
+	Signal toLoad : std_logic_vector(15 downto 0);
 	
 begin
-
-	-- lets wire up some test components.
-	--testPiso : piso16b port map (
-	--	parallel_In => sw(15 downto 0),
-	--	SorL => sw(17),
-	--	clk => gpio(0),
-	--	q => ledr(0)
-	--);
 	
-	-- test comparator
-	--testComp : comparator6b port map (
-	--	op1 => sw(5 downto 0),
-	--	op2 => sw(11 downto 6),
-	--	equal => ledr(0)
-	--);
+	-- Circuitry to determine when we are selected by the BuildingController to Transmit
+	classroomComparator : comparator6b port map(
+		op1 => OurID,
+		op2 => RoomID,
+		equal => Equal
+	);
 	
+	-- Circuitry to determine when we should load our shift registers with new data to shift out over serial.
+	-- we want to load the first clock cycle after being selected by the Building Controller (first equal cycle)
+	RisingEqualDFF : ls74 port map(
+		d => equal,
+		clr => '1',
+		pre => '1',
+		clk => Clk_In,
+		q => lastEqual
+	);
 	
-	ledg(0) <= gpio(0);
-
+	LoadShiftReg <= Not(lastEqual) and equal;
+	
+	-- Finally implement shift out register
+	serialOutReg : piso16b port map(
+		parallel_In => toLoad,
+		SorL => Not(LoadShiftReg), -- Load is low state.
+		clk => clk,
+		q => txToBus
+	);
+	
+	-- wire txto bus to tx bus with a tristate buffer
+	busBuffer : tri_state_buffer_top Port map (
+		A => txToBus,
+		En => Equal,
+		Y => TX
+	);
+	
 end a;
-
--- Begin Component Declarations
+				
 
 -- Create a 74x74 chip a DFF
 -- This component intends to simulate the behaviors of a 74x74 chipset.
@@ -144,3 +208,15 @@ begin
 	
 	q <= temp(0); -- connect our temp vector (the zero element) to our output.
 end a;
+
+-- Tristate Buffer
+entity tri_state_buffer_top is
+    Port ( A    : in  STD_LOGIC;    -- single buffer input
+           EN   : in  STD_LOGIC;    -- single buffer enable
+           Y    : out STD_LOGIC;    -- single buffer output
+end tri_state_buffer_top;
+architecture Behavioral of tri_state_buffer_top is
+	begin
+    -- single active low enabled tri-state buffer
+    Y <= A when (EN = '0') else 'Z';
+end Behavioral;
