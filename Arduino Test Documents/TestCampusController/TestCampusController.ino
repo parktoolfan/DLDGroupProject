@@ -1,6 +1,6 @@
 
 int size = 64;
-int dtime = 30;
+int dtime = 100;
 
 void setup() {
   // put your setup code here, to run once:

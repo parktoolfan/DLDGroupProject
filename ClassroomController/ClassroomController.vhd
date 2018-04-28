@@ -13,7 +13,43 @@ end ClassroomController;
 
 architecture a of ClassroomController is
 
+	-- Declare the components that we created below.
+	component ls74 is
+	port(	d, clr, pre, clk : IN std_logic;
+		-- d is the data input
+		-- clr: ACTIVE LOW: clears the output, q, asynchrnously.
+		-- Pre: ACTIVE LOW: sets the output q to 1 asynchronously,
+		-- clk is a clock signal (q is typically representitive of what d was 1 clock cycle ago)
+			q : out std_logic -- single bit output which is d delayed by 1 clock cycle.
+	);
+	end component;
+	
+	component piso16b is
+	port (	parallel_In : in std_logic_vector(15 downto 0); -- the 16 bits of input for parallel loading
+				SorL : in std_logic; -- the Shift/Load signal. 1 = shift, 0 = load
+				clk : in std_logic; -- the clock signal for the DFFs contained in the shift reg.
+				q : out std_logic -- we shift out through this bit.
+			);
+	end component;
+	
+	component comparator6b is
+	port (	op1, op2 : in std_logic_vector(5 downto 0); -- our two 6b inputs.
+				equal : out std_logic -- our 1 bit equal signal. 1 if op1 = op2, else 0.
+			);
+	end component;
+
+	
 begin
+
+	-- lets wire up some test components.
+	testPiso : piso16b port map (
+		parallel_In => sw(15 downto 0),
+		SorL => sw(17),
+		clk => gpio(0),
+		q => ledr(0)
+	);
+	
+	ledg(0) <= gpio(0);
 
 end a;
 
@@ -92,7 +128,7 @@ begin
 			if SorL = '0' then -- we should load from our parallel input
 				temp <= parallel_In;
 			else -- otherwise we should shift down the register.
-				temp(14 downto 0) <= temp(15 downto 0);
+				temp(14 downto 0) <= temp(15 downto 1);
 				temp(15) <= '0';  -- we never need to shift in serial for this project component, so we can simply simulate shifting in a zero.
 			end if;
 		end if;
