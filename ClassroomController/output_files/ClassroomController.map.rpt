@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 17:18:26 2018
+Sat Apr 28 17:22:20 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 17:18:25 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 17:22:20 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -257,23 +257,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 17:18:11 2018
+    Info: Processing started: Sat Apr 28 17:22:07 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 12 design units, including 6 entities, in source file classroomcontroller.vhd
     Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
-    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 56
-    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 145
-    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 172
-    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 195
-    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 223
+    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 38
+    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 130
+    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 157
+    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 180
+    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 208
     Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
-    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 48
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 136
-    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 167
-    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 188
-    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 217
+    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 30
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 121
+    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 152
+    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 173
+    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 202
 Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(7): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledg[8..1]" at ClassroomController.vhd(8) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
@@ -344,9 +344,9 @@ Info (21057): Implemented 57 device resources after synthesis - the final resour
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 8 bidirectional pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 710 megabytes
-    Info: Processing ended: Sat Apr 28 17:18:26 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Sat Apr 28 17:22:20 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 
