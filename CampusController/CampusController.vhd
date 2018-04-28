@@ -46,7 +46,7 @@ architecture a of CampusController is
 	component register_file is
 		Port (	src_s0 : in std_logic;
 				src_s1 : in std_logic;
-				des_A0 : in std_logic;
+				des_A0 : in std_logic; 
 				des_A1 : in std_logic;
 				writeToReg : in std_logic; -- I added an enable bit to the 2 to 4 decoder so that i can have a write signal here.
 				Clk : in std_logic;
@@ -63,7 +63,7 @@ architecture a of CampusController is
 
 	-- SIGNALS
 	Signal rxin : std_logic_vector(15 downto 0);
-	Signal BuildingID : std_logic_vector(3 downto 0);
+	Signal BuildingID, allignmentCounterOut : std_logic_vector(3 downto 0);
 	Signal tx, Master_Clock, rx : std_logic;
 	Signal StartFlag, EndFlag, BitStringAlligned : std_logic;
 
@@ -90,9 +90,40 @@ begin
 		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our buildingID Count.
 		BuildingIdCounter : vhdl_binary_counter port map (
 				C => EndFlag,
-				CLR => (NOT (BuildingID(3))),
+				CLR => BuildingID(3),  -- once building id is x9, we need to roll over to the first building.
 				Q => BuildingID
 		);
+
+		-- Implement Bit string allignment Counter
+		AllignmentCounter : ls163 port map (
+				C => Master_Clock,
+				CLR => StartFlag,
+				Q => allignmentCounterOut
+		);
+
+		-- Because this chip does not have an RCO, implement some combinational logic to simulate the RCO, when this simulation triggers RCO, we know that the we are ready to read from our input shift regerister into our memory circuitry.
+		BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3);
+
+
+		-- Implement Memory Component:
+		-- A note on the memory component, in a full system where we have as many as 8 classrooms with 64 classrooms a piece, we would need 512 register, since we are only demonstrating 4 classrooms across two buildings, we are going to use a 4 register register file.
+		-- This specific register file has 4 bit wide registers, we will wire '0' to the MSB of the register.
+		Database : register_file port map(
+			src_s0 => '0', -- since we don't need to read from the register file, these can be Zero.
+			src_s1 => '0',
+			des_A0 => Rxin(9), -- let this bit be the lsb on the classroom identifier since we only have 4 classrooms total in the demo, we don't need to use all 9 indexing bits like is done in the circuit diagram.
+			des_A1 => BuildingID(0), -- this will be the LSB on the building identifier (the building that we are currently talking to)
+			writeToReg => bitStringAlligned, -- just like the circuit diagram, this is wired to execute when the bit string is alligned.
+			Clk => Master_Clock,
+			data_src => '0', -- we always want our data to flow from the input bus.
+			data => '0' & Rxin(7 downto 5),  -- Here we assign our 4 bits of Data, zero padded on the MSB to arrange the 3 bits of data in a 4 bit register.
+			reg0 => ledr(3 downto 0), -- here we put the contents of our registers onto LEDs.
+			reg1 => ledr(7 downto 4),
+			reg2 => ledr(11 downto 8),
+			reg3 => ledr(15 downto 12),
+			selectedData => ledg( 3 downto 0)
+		);
+
 
 		-- TESTING COMPONENT CODES:::
 	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
@@ -116,7 +147,7 @@ begin
 	-- 			reg3 => ledr(15 downto 12),
 	-- 			selectedData => ledg( 3 downto 0)
 	-- 	);
-	
+
 end a;
 
 

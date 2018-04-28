@@ -1,5 +1,5 @@
 Fitter report for CampusController
-Fri Apr 27 14:11:01 2018
+Fri Apr 27 20:39:51 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Apr 27 14:11:01 2018       ;
+; Fitter Status                      ; Successful - Fri Apr 27 20:39:51 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
@@ -2581,10 +2581,10 @@ Warning (169064): Following 6 pins have no output enable or a GND or VCC output 
     Info (169065): Pin gpio[5] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/CampusController/output_files/CampusController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 479 warnings
-    Info: Peak virtual memory: 1585 megabytes
-    Info: Processing ended: Fri Apr 27 14:11:02 2018
+    Info: Peak virtual memory: 1584 megabytes
+    Info: Processing ended: Fri Apr 27 20:39:52 2018
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+
