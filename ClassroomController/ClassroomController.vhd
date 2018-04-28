@@ -14,12 +14,37 @@ end ClassroomController;
 architecture a of ClassroomController is
 
 	-- Declare the components that we created below.
+	Component ClassroomControllerHardware is 
+		port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
+					RoomID, OurID : in std_logic_vector(5 downto 0);
+					Clk_In : in std_logic;
+					projectorEnable, LightsEnable, TX : out std_logic
+				);
+	end Component;
 	
+	signal master_clock : std_logic;
+	signal c0len, c0pen, c1len, c1pen, c2len, c2pen, c3len, c3pen : std_logic; -- classroomNumber, lights or projector enable
+	signal sen0u, sen0l, sen0p, sen1u, sen1l, sen1p, sen2u, sen2l, sen2p, sen3u, sen3l, sen3p : std_logic; -- sensor associated with classroom #, sensing use, lights, projector
+	signal net1RoomID, net2RoomID : std_logic_vector(5 downto 0);
+	signal net1tx, net2tx : std_logic;
 	
 begin
-
 	
-	ledg(0) <= gpio(0);
+	master_clock <= gpio(0);
+	ledg(0) <= master_clock;
+	
+	Classroom0 : classroomControllerHardware port map(
+		ClassroomInUse => sen0u,
+		LightsAreOn => sen0l,
+		ProjectorIsOn => sen0p,
+		RX => '0',
+		RoomID => net1RoomID,
+		OurID => "000000",
+		Clk_In => master_clock,
+		ProjectorEnable => c0pen,
+		LightsEnable => c0len,
+		TX => net1tx
+	);
 
 end a;
 
@@ -109,7 +134,7 @@ begin
 	);
 	
 	ProjectorEnable <= ClassroomInUse;
-	LightsEnable <= ClassroomInUse;w
+	LightsEnable <= ClassroomInUse;
 	
 end a;
 				

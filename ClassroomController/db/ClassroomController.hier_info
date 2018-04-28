@@ -24,7 +24,7 @@ ledr[14] <= ledr[14].DB_MAX_OUTPUT_PORT_TYPE
 ledr[15] <= ledr[15].DB_MAX_OUTPUT_PORT_TYPE
 ledr[16] <= ledr[16].DB_MAX_OUTPUT_PORT_TYPE
 ledr[17] <= ledr[17].DB_MAX_OUTPUT_PORT_TYPE
-ledg[0] <= ledg[0].DB_MAX_OUTPUT_PORT_TYPE
+ledg[0] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
 ledg[1] <= <GND>
 ledg[2] <= <GND>
 ledg[3] <= <GND>
@@ -55,5 +55,113 @@ key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
+
+
+|ClassroomController|ClassroomControllerHardware:Classroom0
+ClassroomInUse => LightsEnable.DATAIN
+ClassroomInUse => projectorEnable.DATAIN
+LightsAreOn => ~NO_FANOUT~
+ProjectorIsOn => ~NO_FANOUT~
+RX => ~NO_FANOUT~
+RoomID[0] => comparator6b:classroomComparator.op2[0]
+RoomID[1] => comparator6b:classroomComparator.op2[1]
+RoomID[2] => comparator6b:classroomComparator.op2[2]
+RoomID[3] => comparator6b:classroomComparator.op2[3]
+RoomID[4] => comparator6b:classroomComparator.op2[4]
+RoomID[5] => comparator6b:classroomComparator.op2[5]
+OurID[0] => comparator6b:classroomComparator.op1[0]
+OurID[1] => comparator6b:classroomComparator.op1[1]
+OurID[2] => comparator6b:classroomComparator.op1[2]
+OurID[3] => comparator6b:classroomComparator.op1[3]
+OurID[4] => comparator6b:classroomComparator.op1[4]
+OurID[5] => comparator6b:classroomComparator.op1[5]
+Clk_In => ls74:RisingEqualDFF.clk
+Clk_In => piso16b:serialOutReg.clk
+projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
+LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
+TX <= tri_state_buffer_top:busBuffer.Y
+
+
+|ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator
+op1[0] => Equal0.IN5
+op1[1] => Equal0.IN4
+op1[2] => Equal0.IN3
+op1[3] => Equal0.IN2
+op1[4] => Equal0.IN1
+op1[5] => Equal0.IN0
+op2[0] => Equal0.IN11
+op2[1] => Equal0.IN10
+op2[2] => Equal0.IN9
+op2[3] => Equal0.IN8
+op2[4] => Equal0.IN7
+op2[5] => Equal0.IN6
+equal <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF
+d => q~reg0.DATAIN
+clr => q.IN0
+clr => q~reg0.ACLR
+pre => q.IN1
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ClassroomController|ClassroomControllerHardware:Classroom0|piso16b:serialOutReg
+parallel_In[0] => temp.DATAB
+parallel_In[1] => temp.DATAB
+parallel_In[2] => temp.DATAB
+parallel_In[3] => temp.DATAB
+parallel_In[4] => temp.DATAB
+parallel_In[5] => temp.DATAB
+parallel_In[6] => temp.DATAB
+parallel_In[7] => temp.DATAB
+parallel_In[8] => temp.DATAB
+parallel_In[9] => temp.DATAB
+parallel_In[10] => temp.DATAB
+parallel_In[11] => temp.DATAB
+parallel_In[12] => temp.DATAB
+parallel_In[13] => temp.DATAB
+parallel_In[14] => temp.DATAB
+parallel_In[15] => temp.DATAB
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+SorL => temp.OUTPUTSELECT
+clk => temp[0].CLK
+clk => temp[1].CLK
+clk => temp[2].CLK
+clk => temp[3].CLK
+clk => temp[4].CLK
+clk => temp[5].CLK
+clk => temp[6].CLK
+clk => temp[7].CLK
+clk => temp[8].CLK
+clk => temp[9].CLK
+clk => temp[10].CLK
+clk => temp[11].CLK
+clk => temp[12].CLK
+clk => temp[13].CLK
+clk => temp[14].CLK
+clk => temp[15].CLK
+q <= temp[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer
+A => Y.DATAIN
+EN => Y.OE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 

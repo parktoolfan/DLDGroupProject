@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sat Apr 28 17:22:32 2018
+Sat Apr 28 17:59:24 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 17:22:32 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 17:59:24 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -3028,12 +3028,12 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.03 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 8 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -3055,10 +3055,10 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 478 warnings
-    Info: Peak virtual memory: 1601 megabytes
-    Info: Processing ended: Sat Apr 28 17:22:33 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 1605 megabytes
+    Info: Processing ended: Sat Apr 28 17:59:24 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+
