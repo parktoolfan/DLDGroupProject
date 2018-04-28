@@ -48,10 +48,11 @@ use ieee.std_logic_1164.all;
 Entity ClassroomControllerHardware is 
 	port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
 				RoomID, OurID : in std_logic_vector(5 downto 0);
-				Clk_In : in std_logic
-				projectorEnable, LightsEnable, TX : out std_logic;
+				Clk_In : in std_logic;
+				projectorEnable, LightsEnable, TX : out std_logic
 			);
 end ClassroomControllerHardware;
+
 Architecture a of ClassroomControllerHardware is 
 	
 	-- declare signals and hardware components.
@@ -80,9 +81,10 @@ Architecture a of ClassroomControllerHardware is
 	end component;
 	
 	component tri_state_buffer_top is
-    Port ( A    : in  STD_LOGIC;    -- single buffer input
-           EN   : in  STD_LOGIC;    -- single buffer enable
-           Y    : out STD_LOGIC;    -- single buffer output
+	Port (	A	: in  STD_LOGIC;    -- single buffer input
+				EN	: in  STD_LOGIC;    -- single buffer enable
+				Y	: out STD_LOGIC    -- single buffer output
+			);
 	end component;
 	
 	signal Equal, LoadShiftReg, txToBus, lastEqual : std_logic;
@@ -113,7 +115,7 @@ begin
 	serialOutReg : piso16b port map(
 		parallel_In => toLoad,
 		SorL => Not(LoadShiftReg), -- Load is low state.
-		clk => clk,
+		clk => Clk_In,
 		q => txToBus
 	);
 	
@@ -210,13 +212,16 @@ begin
 end a;
 
 -- Tristate Buffer
+Library ieee;
+use ieee.std_logic_1164.all;
 entity tri_state_buffer_top is
-    Port ( A    : in  STD_LOGIC;    -- single buffer input
-           EN   : in  STD_LOGIC;    -- single buffer enable
-           Y    : out STD_LOGIC;    -- single buffer output
+	Port( A : in std_logic;    -- single buffer input
+			EN : in std_logic;    -- single buffer enable
+			Y : out std_logic    -- single buffer output
+	);
 end tri_state_buffer_top;
 architecture Behavioral of tri_state_buffer_top is
 	begin
     -- single active low enabled tri-state buffer
-    Y <= A when (EN = '0') else 'Z';
+	Y <= A when (EN = '1') else 'Z';
 end Behavioral;
