@@ -11,11 +11,6 @@ end BuildingController;
 
 architecture a of BuildingController is
 
-	signal A_rx1, A_rx2, B_rx1, B_rx2, to_clk_in: std_logic;
-	signal to_building_id: std_logic_vector(2 downto 0);
-
-
-
 	component BuildingHardware is
 		port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
@@ -24,12 +19,11 @@ architecture a of BuildingController is
 			Room_ID : out std_logic_vector(5 downto 0)
 			);
 	end component BuildingHardware;
-	
-	
-	
 
+	signal A_rx1, A_rx2, B_rx1, B_rx2, to_clk_in: std_logic;
+	signal to_building_id: std_logic_vector(2 downto 0);
 
-	begin
+begin
 
 		building_A: BuildingHardware Port map (	clk_in => to_clk_in ,
 										clk_out => gpio(14),
@@ -50,7 +44,7 @@ architecture a of BuildingController is
 										Building_ID => to_building_id,
 										Room_ID => gpio(20 downto 15),
 										room_data_out => ledr( 7 downto 4));
-	
+
 	to_clk_in <= gpio(5);
 	A_rx1 <= gpio(13);
 	A_rx2 <= gpio(4);
@@ -58,8 +52,6 @@ architecture a of BuildingController is
 	B_rx2 <= gpio(4);
 	to_building_id <=  gpio(2 downto 0);
 	--two building hardwares go here
-	--
-
 
 	end a;
 
@@ -79,7 +71,6 @@ Entity BuildingHardware is
 end BuildingHardware;
 
 architecture b of BuildingHardware is
-
 
 	component SIPO_A_shift is
 		port(clk, clr, A : in std_logic;
@@ -143,9 +134,9 @@ architecture b of BuildingHardware is
 			 PI: in std_logic_vector(15 downto 0);
 			  SO: out std_logic);
 	end component PISO_shift;
-	
+
 	Signal room0Data, room1Data : std_logic_vector(3 downto 0);
-	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals, 
+	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals,
 	old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
 	signal state: std_logic_vector(1 downto 0);
 	signal room_data, our_id, build_id : std_logic_vector(2 downto 0);
@@ -190,7 +181,7 @@ architecture b of BuildingHardware is
 			CLR => rising_equals,
 			EN => '1',
 			load_in => "1100",
-			Q => st_count_out 
+			Q => st_count_out
 		);
 		clockcycle_counter: asynch_counter port map(
 			clk => clk_in,
@@ -201,6 +192,11 @@ architecture b of BuildingHardware is
 			Q => st_count_out,
 			RCO => rco_2
 		);
+
+		-- the comparator wanted 4 bit signals
+		to_our_id <= '0' & our_id;
+		to_build_id <= '0' & build_id;
+		
 		ID_comparator: Comparator port map(
 			A => to_our_id,
 			B => to_build_id,
@@ -212,7 +208,7 @@ architecture b of BuildingHardware is
 			A => "1010101010101010",
 			B => "000" & room_id_num & "0" & room_data & "00000",
 			C => "0000000000000000",
-			D =>	"1010101010101010",
+			D => "1010101010101010",
 			Y => mux_out
 		);
 		shift_output: PISO_shift port map (
@@ -263,12 +259,7 @@ architecture b of BuildingHardware is
 					load <= '1';
 				end if;
 
-
 		end process;
-		
-		
-		to_our_id <= '0' & our_id;
-		to_build_id <= '0' & build_id;
 
 		--roomcount_clock <= write_sig OR (rco_2 And state = "01");
 
@@ -282,7 +273,7 @@ architecture b of BuildingHardware is
 
 	-- circuit diagram inplementation goes here
 
-	
+
 	end b;
 
 
