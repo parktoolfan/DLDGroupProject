@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Fri Apr 27 22:48:15 2018
+Fri Apr 27 23:24:12 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,12 +15,13 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "register_file:Database"
- 11. Port Connectivity Checks: "vhdl_binary_counter:BuildingIdCounter"
- 12. Port Connectivity Checks: "sipo:inputReg"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "register_file:Database"
+ 12. Port Connectivity Checks: "vhdl_binary_counter:BuildingIdCounter"
+ 13. Port Connectivity Checks: "sipo:inputReg"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +47,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 27 22:48:15 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 27 23:24:12 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 66                                          ;
-;     Total combinational functions  ; 23                                          ;
+; Total logic elements               ; 72                                          ;
+;     Total combinational functions  ; 29                                          ;
 ;     Dedicated logic registers      ; 50                                          ;
 ; Total registers                    ; 50                                          ;
 ; Total pins                         ; 57                                          ;
@@ -181,16 +182,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 66            ;
+; Estimated Total logic elements              ; 72            ;
 ;                                             ;               ;
-; Total combinational functions               ; 23            ;
+; Total combinational functions               ; 29            ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 12            ;
+;     -- 4 input functions                    ; 18            ;
 ;     -- 3 input functions                    ; 7             ;
 ;     -- <=2 input functions                  ; 4             ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 23            ;
+;     -- normal mode                          ; 29            ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
 ; Total registers                             ; 50            ;
@@ -203,8 +204,8 @@ refer to the applicable agreement for further details.
 ;                                             ;               ;
 ; Maximum fan-out node                        ; gpio[7]~input ;
 ; Maximum fan-out                             ; 48            ;
-; Total fan-out                               ; 278           ;
-; Average fan-out                             ; 1.43          ;
+; Total fan-out                               ; 302           ;
+; Average fan-out                             ; 1.50          ;
 +---------------------------------------------+---------------+
 
 
@@ -213,10 +214,11 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name         ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+---------------------+--------------+
-; |CampusController                          ; 23 (11)             ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |CampusController                                                      ; CampusController    ; work         ;
+; |CampusController                          ; 29 (11)             ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |CampusController                                                      ; CampusController    ; work         ;
 ;    |ls163:AllignmentCounter|               ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|ls163:AllignmentCounter                              ; ls163               ; work         ;
-;    |register_file:Database|                ; 4 (0)               ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database                               ; register_file       ; work         ;
+;    |register_file:Database|                ; 10 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database                               ; register_file       ; work         ;
 ;       |decoder_2to4:des_decoder_2to4|      ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|decoder_2to4:des_decoder_2to4 ; decoder_2to4        ; work         ;
+;       |mux4_4bit:Inst_mux4_4bit|           ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|mux4_4bit:Inst_mux4_4bit      ; mux4_4bit           ; work         ;
 ;       |reg4:reg00|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg00                    ; reg4                ; work         ;
 ;       |reg4:reg01|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg01                    ; reg4                ; work         ;
 ;       |reg4:reg02|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg02                    ; reg4                ; work         ;
@@ -257,13 +259,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |CampusController|register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+
+
 +----------------------------------------------------+
 ; Port Connectivity Checks: "register_file:Database" ;
 +----------+-------+----------+----------------------+
 ; Port     ; Type  ; Severity ; Details              ;
 +----------+-------+----------+----------------------+
-; src_s0   ; Input ; Info     ; Stuck at GND         ;
-; src_s1   ; Input ; Info     ; Stuck at GND         ;
 ; data_src ; Input ; Info     ; Stuck at GND         ;
 ; data[3]  ; Input ; Info     ; Stuck at GND         ;
 +----------+-------+----------+----------------------+
@@ -298,16 +307,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;     ENA               ; 12                          ;
 ;     plain             ; 35                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 24                          ;
-;     normal            ; 24                          ;
+; cycloneiii_lcell_comb ; 30                          ;
+;     normal            ; 30                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 7                           ;
-;         4 data inputs ; 12                          ;
+;         4 data inputs ; 18                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.85                        ;
+; Average LUT depth     ; 2.05                        ;
 +-----------------------+-----------------------------+
 
 
@@ -326,7 +335,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Apr 27 22:48:01 2018
+    Info: Processing started: Fri Apr 27 23:23:58 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -395,7 +404,7 @@ Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[7]" cann
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 22 input pin(s) that do not drive logic
+Warning (21074): Design contains 20 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[0]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
@@ -412,20 +421,18 @@ Warning (21074): Design contains 22 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 9
     Warning (15610): No output dependent on input pin "key[0]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
-Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 129 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 66 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info (21061): Implemented 72 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 722 megabytes
-    Info: Processing ended: Fri Apr 27 22:48:15 2018
+    Info: Processing ended: Fri Apr 27 23:24:12 2018
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:26
 

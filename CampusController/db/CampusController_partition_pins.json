@@ -98,6 +98,14 @@
 				{
 					"name" : "gpio[7]",
 					"strict" : false
+				},
+				{
+					"name" : "sw[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[17]",
+					"strict" : false
 				}
 			]
 		}

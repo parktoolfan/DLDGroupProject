@@ -113,8 +113,8 @@ begin
 		-- A note on the memory component, in a full system where we have as many as 8 classrooms with 64 classrooms a piece, we would need 512 register, since we are only demonstrating 4 classrooms across two buildings, we are going to use a 4 register register file.
 		-- This specific register file has 4 bit wide registers, we will wire '0' to the MSB of the register.
 		Database : register_file port map(
-			src_s0 => '0', -- since we don't need to read from the register file, these can be Zero.
-			src_s1 => '0',
+			src_s0 => sw(16), -- since we don't need to read from the register file, these can be Zero.
+			src_s1 => sw(17),
 			des_A0 => Rxin(9), -- let this bit be the lsb on the classroom identifier since we only have 4 classrooms total in the demo, we don't need to use all 9 indexing bits like is done in the circuit diagram.
 			des_A1 => BuildingID(0), -- this will be the LSB on the building identifier (the building that we are currently talking to)
 			writeToReg => bitStringAlligned, -- just like the circuit diagram, this is wired to execute when the bit string is alligned.
@@ -128,8 +128,8 @@ begin
 			selectedData => ledg( 3 downto 0)
 		);
 		
-		Ledg(7) <= BitStringAlligned;
-		Ledg(6) <= StartFlag;
+		Ledg(6) <= BitStringAlligned;
+		Ledg(7) <= StartFlag;
 		Ledg(5) <= EndFlag;
 
 
