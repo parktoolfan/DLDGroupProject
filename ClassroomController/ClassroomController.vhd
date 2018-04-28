@@ -49,3 +49,24 @@ begin
 		end if;
 	end process;
 End a;
+
+-- We also need a 6 bit comparator.  In actual hardware, this would likely be two 74x85s in series but here we will make our own 6b comparator.
+-- We only need to know if the two operands are equal, so we'll leave out greater than/ less than capabilities.
+Library ieee;
+Use ieee.std_logic_1164.all;
+Entity comparator6b is
+	port (	op1, op2 : in std_logic_vector(5 downto 0); -- our two 6b inputs.
+				equal : out std_logic -- our 1 bit equal signal. 1 if op1 = op2, else 0.
+			);
+end comparator6b;
+Architecture a of comparator6b is 
+begin
+	Process (op1, op2)
+	begin
+		if op1 = op2 then -- if they are equal, represent that on q.
+			q <= '1';
+		else
+			q <= '0';
+		end if;
+	end process;
+end a;
