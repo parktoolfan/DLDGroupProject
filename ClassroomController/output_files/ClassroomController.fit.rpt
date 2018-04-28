@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sat Apr 28 17:59:24 2018
+Sat Apr 28 19:18:11 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 17:59:24 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 19:18:11 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -1191,11 +1191,11 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.0% / 0.0% / 0.1%    ;
-; Maximum fan-out                             ; 1                     ;
-; Highest non-global fan-out                  ; 1                     ;
-; Total fan-out                               ; 71                    ;
-; Average fan-out                             ; 0.54                  ;
+; Peak interconnect usage (total/H/V)         ; 0.1% / 0.1% / 0.1%    ;
+; Maximum fan-out                             ; 8                     ;
+; Highest non-global fan-out                  ; 8                     ;
+; Total fan-out                               ; 79                    ;
+; Average fan-out                             ; 0.60                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1242,7 +1242,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ;     -- Registered Output Connections        ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Internal Connections                        ;                    ;                                ;
-;     -- Total Connections                    ; 66                 ; 5                              ;
+;     -- Total Connections                    ; 74                 ; 5                              ;
 ;     -- Registered Connections               ; 0                  ; 0                              ;
 ;                                             ;                    ;                                ;
 ; External Connections                        ;                    ;                                ;
@@ -1279,7 +1279,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; key[1] ; M21   ; 6        ; 115          ; 53           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; key[2] ; N21   ; 6        ; 115          ; 42           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; key[3] ; R24   ; 5        ; 115          ; 35           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; sw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[10] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[11] ; AB24  ; 5        ; 115          ; 5            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[12] ; AB23  ; 5        ; 115          ; 7            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -2262,7 +2262,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ledg[6]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ledg[7]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ledg[8]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; sw[0]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; sw[1]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; sw[2]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; sw[3]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
@@ -2292,46 +2291,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[5]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[6]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[7]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; sw[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-----------------------------------------------------+
-; Pad To Core Delay Chain Fanout                      ;
-+-----------------------+-------------------+---------+
-; Source Pin / Fanout   ; Pad To Core Index ; Setting ;
-+-----------------------+-------------------+---------+
-; sw[0]                 ;                   ;         ;
-; sw[1]                 ;                   ;         ;
-; sw[2]                 ;                   ;         ;
-; sw[3]                 ;                   ;         ;
-; sw[4]                 ;                   ;         ;
-; sw[5]                 ;                   ;         ;
-; sw[6]                 ;                   ;         ;
-; sw[7]                 ;                   ;         ;
-; sw[8]                 ;                   ;         ;
-; sw[9]                 ;                   ;         ;
-; sw[10]                ;                   ;         ;
-; sw[11]                ;                   ;         ;
-; sw[12]                ;                   ;         ;
-; sw[13]                ;                   ;         ;
-; sw[14]                ;                   ;         ;
-; sw[15]                ;                   ;         ;
-; sw[16]                ;                   ;         ;
-; sw[17]                ;                   ;         ;
-; key[0]                ;                   ;         ;
-; key[1]                ;                   ;         ;
-; key[2]                ;                   ;         ;
-; key[3]                ;                   ;         ;
-; gpio[0]               ;                   ;         ;
-;      - ledg[0]~output ; 0                 ; 6       ;
-; gpio[1]               ;                   ;         ;
-; gpio[2]               ;                   ;         ;
-; gpio[3]               ;                   ;         ;
-; gpio[4]               ;                   ;         ;
-; gpio[5]               ;                   ;         ;
-; gpio[6]               ;                   ;         ;
-; gpio[7]               ;                   ;         ;
-+-----------------------+-------------------+---------+
++------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                       ;
++------------------------+-------------------+---------+
+; Source Pin / Fanout    ; Pad To Core Index ; Setting ;
++------------------------+-------------------+---------+
+; sw[1]                  ;                   ;         ;
+; sw[2]                  ;                   ;         ;
+; sw[3]                  ;                   ;         ;
+; sw[4]                  ;                   ;         ;
+; sw[5]                  ;                   ;         ;
+; sw[6]                  ;                   ;         ;
+; sw[7]                  ;                   ;         ;
+; sw[8]                  ;                   ;         ;
+; sw[9]                  ;                   ;         ;
+; sw[10]                 ;                   ;         ;
+; sw[11]                 ;                   ;         ;
+; sw[12]                 ;                   ;         ;
+; sw[13]                 ;                   ;         ;
+; sw[14]                 ;                   ;         ;
+; sw[15]                 ;                   ;         ;
+; sw[16]                 ;                   ;         ;
+; sw[17]                 ;                   ;         ;
+; key[0]                 ;                   ;         ;
+; key[1]                 ;                   ;         ;
+; key[2]                 ;                   ;         ;
+; key[3]                 ;                   ;         ;
+; gpio[0]                ;                   ;         ;
+;      - ledg[0]~output  ; 0                 ; 6       ;
+; gpio[1]                ;                   ;         ;
+; gpio[2]                ;                   ;         ;
+; gpio[3]                ;                   ;         ;
+; gpio[4]                ;                   ;         ;
+; gpio[5]                ;                   ;         ;
+; gpio[6]                ;                   ;         ;
+; gpio[7]                ;                   ;         ;
+; sw[0]                  ;                   ;         ;
+;      - ledr[0]~output  ; 0                 ; 6       ;
+;      - ledr[1]~output  ; 0                 ; 6       ;
+;      - ledr[4]~output  ; 0                 ; 6       ;
+;      - ledr[5]~output  ; 0                 ; 6       ;
+;      - ledr[8]~output  ; 0                 ; 6       ;
+;      - ledr[9]~output  ; 0                 ; 6       ;
+;      - ledr[12]~output ; 0                 ; 6       ;
+;      - ledr[13]~output ; 0                 ; 6       ;
++------------------------+-------------------+---------+
 
 
 +-----------------------------------------------+
@@ -2339,14 +2347,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------+
 ; Routing Resource Type ; Usage                 ;
 +-----------------------+-----------------------+
-; Block interconnects   ; 1 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 5 / 10,120 ( < 1 % )  ;
-; C4 interconnects      ; 0 / 209,544 ( 0 % )   ;
+; Block interconnects   ; 9 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 9 / 10,120 ( < 1 % )  ;
+; C4 interconnects      ; 7 / 209,544 ( < 1 % ) ;
 ; Direct links          ; 0 / 342,891 ( 0 % )   ;
 ; Global clocks         ; 0 / 20 ( 0 % )        ;
 ; Local interconnects   ; 0 / 119,088 ( 0 % )   ;
-; R24 interconnects     ; 0 / 9,963 ( 0 % )     ;
-; R4 interconnects      ; 0 / 289,782 ( 0 % )   ;
+; R24 interconnects     ; 5 / 9,963 ( < 1 % )   ;
+; R4 interconnects      ; 2 / 289,782 ( < 1 % ) ;
 +-----------------------+-----------------------+
 
 
@@ -2438,7 +2446,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ledg[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ledg[7]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ledg[8]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; sw[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; sw[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; sw[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; sw[3]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2468,6 +2475,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[7]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; sw[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -3023,7 +3031,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X104_Y61 to location X115_Y73
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X81_Y61 to location X91_Y73
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
@@ -3033,7 +3041,7 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 8 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -3055,10 +3063,10 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 478 warnings
-    Info: Peak virtual memory: 1605 megabytes
-    Info: Processing ended: Sat Apr 28 17:59:24 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 1604 megabytes
+    Info: Processing ended: Sat Apr 28 19:18:12 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +----------------------------+

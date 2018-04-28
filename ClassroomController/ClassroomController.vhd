@@ -18,7 +18,7 @@ architecture a of ClassroomController is
 		port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
 					RoomID, OurID : in std_logic_vector(5 downto 0);
 					Clk_In : in std_logic;
-					projectorEnable, LightsEnable, TX : out std_logic
+					projectorEnable, LightsEnable, TX, transmiting : out std_logic
 				);
 	end Component;
 	
@@ -27,11 +27,49 @@ architecture a of ClassroomController is
 	signal sen0u, sen0l, sen0p, sen1u, sen1l, sen1p, sen2u, sen2l, sen2p, sen3u, sen3l, sen3p : std_logic; -- sensor associated with classroom #, sensing use, lights, projector
 	signal net1RoomID, net2RoomID : std_logic_vector(5 downto 0);
 	signal net1tx, net2tx : std_logic;
+	signal trans0, trans1, trans2, trans3 : std_logic;
 	
 begin
 	
 	master_clock <= gpio(0);
 	ledg(0) <= master_clock;
+	
+	-- input switches
+	-- Class 0:
+	sen0u <= sw(0);
+	sen0l <= sw(1);
+	sen0p <= sw(2);
+	-- Class 1:
+	sen1u <= sw(4);
+	sen1l <= sw(5);
+	sen1p <= sw(6);
+	-- Class 2:
+	sen2u <= sw(8);
+	sen2l <= sw(9);
+	sen2p <= sw(10);
+	-- Class 3:
+	sen3u <= sw(12);
+	sen3l <= sw(13);
+	sen3p <= sw(14);
+	
+	-- Outpus LEDs:
+	-- Class 0:
+	ledr(0) <= c0len;
+	ledr(1) <= c0pen;
+	ledr(2) <= trans0;
+	-- Class 1:
+	ledr(4) <= c0len;
+	ledr(5) <= c0pen;
+	ledr(6) <= trans0;
+	-- Class 1:
+	ledr(8) <= c0len;
+	ledr(9) <= c0pen;
+	ledr(10) <= trans0;
+	-- Class 1:
+	ledr(12) <= c0len;
+	ledr(13) <= c0pen;
+	ledr(14) <= trans0;
+	
 	
 	Classroom0 : classroomControllerHardware port map(
 		ClassroomInUse => sen0u,
@@ -43,7 +81,8 @@ begin
 		Clk_In => master_clock,
 		ProjectorEnable => c0pen,
 		LightsEnable => c0len,
-		TX => net1tx
+		TX => net1tx,
+		transmiting => trans0
 	);
 
 end a;
@@ -56,7 +95,7 @@ Entity ClassroomControllerHardware is
 	port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
 				RoomID, OurID : in std_logic_vector(5 downto 0);
 				Clk_In : in std_logic;
-				projectorEnable, LightsEnable, TX : out std_logic
+				projectorEnable, LightsEnable, TX, transmiting : out std_logic
 			);
 end ClassroomControllerHardware;
 

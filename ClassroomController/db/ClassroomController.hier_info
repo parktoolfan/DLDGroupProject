@@ -6,24 +6,24 @@ gpio[4] <> <UNC>
 gpio[5] <> <UNC>
 gpio[6] <> <UNC>
 gpio[7] <> <UNC>
-ledr[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-ledr[1] <= ledr[1].DB_MAX_OUTPUT_PORT_TYPE
-ledr[2] <= ledr[2].DB_MAX_OUTPUT_PORT_TYPE
-ledr[3] <= ledr[3].DB_MAX_OUTPUT_PORT_TYPE
-ledr[4] <= ledr[4].DB_MAX_OUTPUT_PORT_TYPE
-ledr[5] <= ledr[5].DB_MAX_OUTPUT_PORT_TYPE
-ledr[6] <= ledr[6].DB_MAX_OUTPUT_PORT_TYPE
-ledr[7] <= ledr[7].DB_MAX_OUTPUT_PORT_TYPE
-ledr[8] <= ledr[8].DB_MAX_OUTPUT_PORT_TYPE
-ledr[9] <= ledr[9].DB_MAX_OUTPUT_PORT_TYPE
-ledr[10] <= ledr[10].DB_MAX_OUTPUT_PORT_TYPE
-ledr[11] <= ledr[11].DB_MAX_OUTPUT_PORT_TYPE
-ledr[12] <= ledr[12].DB_MAX_OUTPUT_PORT_TYPE
-ledr[13] <= ledr[13].DB_MAX_OUTPUT_PORT_TYPE
-ledr[14] <= ledr[14].DB_MAX_OUTPUT_PORT_TYPE
-ledr[15] <= ledr[15].DB_MAX_OUTPUT_PORT_TYPE
-ledr[16] <= ledr[16].DB_MAX_OUTPUT_PORT_TYPE
-ledr[17] <= ledr[17].DB_MAX_OUTPUT_PORT_TYPE
+ledr[0] <= ClassroomControllerHardware:Classroom0.LightsEnable
+ledr[1] <= ClassroomControllerHardware:Classroom0.projectorEnable
+ledr[2] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[3] <= <GND>
+ledr[4] <= ClassroomControllerHardware:Classroom0.LightsEnable
+ledr[5] <= ClassroomControllerHardware:Classroom0.projectorEnable
+ledr[6] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[7] <= <GND>
+ledr[8] <= ClassroomControllerHardware:Classroom0.LightsEnable
+ledr[9] <= ClassroomControllerHardware:Classroom0.projectorEnable
+ledr[10] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[11] <= <GND>
+ledr[12] <= ClassroomControllerHardware:Classroom0.LightsEnable
+ledr[13] <= ClassroomControllerHardware:Classroom0.projectorEnable
+ledr[14] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[15] <= <GND>
+ledr[16] <= <GND>
+ledr[17] <= <GND>
 ledg[0] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
 ledg[1] <= <GND>
 ledg[2] <= <GND>
@@ -33,9 +33,9 @@ ledg[5] <= <GND>
 ledg[6] <= <GND>
 ledg[7] <= <GND>
 ledg[8] <= <GND>
-sw[0] => ~NO_FANOUT~
-sw[1] => ~NO_FANOUT~
-sw[2] => ~NO_FANOUT~
+sw[0] => ClassroomControllerHardware:Classroom0.ClassroomInUse
+sw[1] => ClassroomControllerHardware:Classroom0.LightsAreOn
+sw[2] => ClassroomControllerHardware:Classroom0.ProjectorIsOn
 sw[3] => ~NO_FANOUT~
 sw[4] => ~NO_FANOUT~
 sw[5] => ~NO_FANOUT~
@@ -80,6 +80,7 @@ Clk_In => piso16b:serialOutReg.clk
 projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 TX <= tri_state_buffer_top:busBuffer.Y
+transmiting <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator
