@@ -127,7 +127,7 @@ begin
 			reg3 => ledr(15 downto 12),
 			selectedData => ledg( 3 downto 0)
 		);
-		
+
 		Ledg(6) <= BitStringAlligned;
 		Ledg(7) <= StartFlag;
 		Ledg(5) <= EndFlag;
@@ -160,22 +160,27 @@ end a;
 
 
 -- Create a 74x74 chip a DFF
+-- This component intends to simulate the behaviors of a 74x74 chipset.
 Library ieee;
 use ieee.std_logic_1164.all;
 Entity ls74 is
 	port(	d, clr, pre, clk : IN std_logic;
-			q : out std_logic
+		-- d is the data input
+		-- clr: ACTIVE LOW: clears the output, q, asynchrnously.
+		-- Pre: ACTIVE LOW: sets the output q to 1 asynchronously,
+		-- clk is a clock signal (q is typically representitive of what d was 1 clock cycle ago)
+			q : out std_logic -- single bit output which is d delayed by 1 clock cycle.
 	);
 end ls74;
 Architecture a of ls74 is
 begin
-	Process(clk, clr, pre)
+	Process(clk, clr, pre) -- the DFF should update its output when any of these change.
 	begin
-		if clr = '0' then
-			q <= '0';
-		elsif pre = '0' then
+		if clr = '0' then	-- preset q to zero, reguardless of d.
+			q <= '0'; -- note that clr and pre are active low.
+		elsif pre = '0' then  -- preset q to zero, reguardless of d.
 			q <= '1';
-		elsif clk'EVENT and clk = '1' then
+		elsif clk'EVENT and clk = '1' then -- mimic d 1 clock cycle ago on q.
 			if d = '1' then
 				q <= '1';
 			else
