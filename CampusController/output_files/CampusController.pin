@@ -198,7 +198,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AD17      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD18      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD19      :        :                   :         : 4         :                
 VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4         :                
+gpio[6]                      : AD21      : bidir  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD22      :        :                   :         : 4         :                
 VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4         :                
@@ -221,7 +221,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AE12      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE14      :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE15      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE16      :        :                   :         : 4         :                
+gpio[7]                      : AE16      : bidir  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE17      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE18      :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE19      :        :                   :         : 4         :                
@@ -444,7 +444,7 @@ GND                          : F13       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 8         :                
 ledr[14]                     : F15       : output : 2.5 V             :         : 7         : Y              
 GND                          : F16       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 7         :                
+ledg[8]                      : F17       : output : 2.5 V             :         : 7         : Y              
 ledr[4]                      : F18       : output : 2.5 V             :         : 7         : Y              
 ledr[1]                      : F19       : output : 2.5 V             :         : 7         : Y              
 GND                          : F20       : gnd    :                   :         :           :                

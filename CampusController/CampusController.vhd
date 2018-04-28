@@ -3,9 +3,9 @@ Library ieee;
 use ieee.std_logic_1164.all;
 
 entity CampusController is
-port(	gpio : inout std_logic_vector(5 downto 0);
+port(	gpio : inout std_logic_vector(7 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
-		ledg : out std_logic_vector(7 downto 0);
+		ledg : out std_logic_vector(8 downto 0);
 		sw : in std_logic_vector(17 downto 0);
 		key : in std_logic_vector (3 downto 0)
 	);
@@ -46,7 +46,7 @@ architecture a of CampusController is
 	component register_file is
 		Port (	src_s0 : in std_logic;
 				src_s1 : in std_logic;
-				des_A0 : in std_logic; 
+				des_A0 : in std_logic;
 				des_A1 : in std_logic;
 				writeToReg : in std_logic; -- I added an enable bit to the 2 to 4 decoder so that i can have a write signal here.
 				Clk : in std_logic;
@@ -75,10 +75,14 @@ begin
 	--ledr(1) <= gpio(2);
 
 	-- GPIO INPUTS AND OUTPUTS
-		rx <= gpio(0);		-- input
-		gpio(1) <= tx;		-- rest are outputs
-		gpio(2) <= Master_Clock;
-		gpio(5 downto 3) <= BuildingID(2 downto 0);
+		rx <= gpio(4);		-- input
+		gpio(3) <= tx;		-- rest are outputs
+		--gpio(5) <= Master_Clock;
+		gpio(2 downto 0) <= BuildingID(2 downto 0);
+		-- for testing, we'll let the Arduino Create the Clock signal.
+		Master_Clock <= gpio(7);
+		ledg(8) <= Master_Clock;
+
 
 		-- Hook up RX to shift Regerister
 		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
@@ -123,6 +127,10 @@ begin
 			reg3 => ledr(15 downto 12),
 			selectedData => ledg( 3 downto 0)
 		);
+		
+		Ledg(7) <= BitStringAlligned;
+		Ledg(6) <= StartFlag;
+		Ledg(5) <= EndFlag;
 
 
 		-- TESTING COMPONENT CODES:::

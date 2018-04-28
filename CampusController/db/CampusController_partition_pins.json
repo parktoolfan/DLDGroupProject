@@ -2,7 +2,104 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "ledr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[8]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[0]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[1]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[2]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[4]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[7]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
