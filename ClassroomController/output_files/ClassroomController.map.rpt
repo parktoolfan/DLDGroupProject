@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 15:08:58 2018
+Sat Apr 28 15:36:20 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +42,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Apr 28 15:08:57 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 15:36:20 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 57                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -155,28 +161,188 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; ClassroomController.vhd          ; yes             ; User VHDL File  ; //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+;                                             ;                ;
+; Total combinational functions               ; 0              ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 0              ;
+;     -- 3 input functions                    ; 0              ;
+;     -- <=2 input functions                  ; 0              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 0              ;
+;     -- arithmetic mode                      ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 0              ;
+;     -- Dedicated logic registers            ; 0              ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 57             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; gpio[0]~output ;
+; Maximum fan-out                             ; 1              ;
+; Total fan-out                               ; 65             ;
+; Average fan-out                             ; 0.53           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+---------------------+--------------+
+; |ClassroomController       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |ClassroomController ; ClassroomController ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 57                          ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 15:08:44 2018
+    Info: Processing started: Sat Apr 28 15:36:07 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 6 design units, including 3 entities, in source file classroomcontroller.vhd
+Info (12021): Found 8 design units, including 4 entities, in source file classroomcontroller.vhd
     Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
     Info (12022): Found design unit 2: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 35
     Info (12022): Found design unit 3: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 62
+    Info (12022): Found design unit 4: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 85
     Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
     Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
     Info (12023): Found entity 3: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 57
-Error (10482): VHDL error at ClassroomController.vhd(67): object "q" is used but not declared File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 67
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 698 megabytes
-    Error: Processing ended: Sat Apr 28 15:08:58 2018
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:28
+    Info (12023): Found entity 4: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 78
+Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(7): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(8): used implicit default value for signal "ledg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[3]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[4]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[5]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[6]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[7]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ledr[0]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[1]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[8]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[9]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[10]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[12]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[13]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[14]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
+    Warning (13410): Pin "ledg[0]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[1]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledg[8]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 22 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw[0]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[8]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+    Warning (15610): No output dependent on input pin "key[0]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
+Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 27 output pins
+    Info (21060): Implemented 8 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 63 warnings
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Sat Apr 28 15:36:20 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 
