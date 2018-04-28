@@ -94,7 +94,7 @@ begin
 		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our buildingID Count.
 		BuildingIdCounter : vhdl_binary_counter port map (
 				C => EndFlag,
-				CLR => BuildingID(3),  -- once building id is x9, we need to roll over to the first building.
+				CLR => BuildingID(2),  -- Normally, we would reset when the buildingID is x9, however, since in this demo there are only 2 building,s we need to roll over to the first building when b_1 goes hot..
 				Q => BuildingID
 		);
 
@@ -106,7 +106,7 @@ begin
 		);
 
 		-- Because this chip does not have an RCO, implement some combinational logic to simulate the RCO, when this simulation triggers RCO, we know that the we are ready to read from our input shift regerister into our memory circuitry.
-		BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3);
+		BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3) and not(endFlag) and not(startflag);
 
 
 		-- Implement Memory Component:

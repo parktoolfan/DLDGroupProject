@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CampusController
-Fri Apr 27 22:27:32 2018
+Fri Apr 27 22:48:15 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -16,10 +16,11 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Port Connectivity Checks: "register_file:Database"
- 11. Port Connectivity Checks: "sipo:inputReg"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "vhdl_binary_counter:BuildingIdCounter"
+ 12. Port Connectivity Checks: "sipo:inputReg"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +46,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 27 22:27:32 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 27 22:48:15 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 69                                          ;
-;     Total combinational functions  ; 26                                          ;
-;     Dedicated logic registers      ; 51                                          ;
-; Total registers                    ; 51                                          ;
+; Total logic elements               ; 66                                          ;
+;     Total combinational functions  ; 23                                          ;
+;     Dedicated logic registers      ; 50                                          ;
+; Total registers                    ; 50                                          ;
 ; Total pins                         ; 57                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -180,20 +181,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 69            ;
+; Estimated Total logic elements              ; 66            ;
 ;                                             ;               ;
-; Total combinational functions               ; 26            ;
+; Total combinational functions               ; 23            ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 14            ;
-;     -- 3 input functions                    ; 8             ;
+;     -- 4 input functions                    ; 12            ;
+;     -- 3 input functions                    ; 7             ;
 ;     -- <=2 input functions                  ; 4             ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 26            ;
+;     -- normal mode                          ; 23            ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
-; Total registers                             ; 51            ;
-;     -- Dedicated logic registers            ; 51            ;
+; Total registers                             ; 50            ;
+;     -- Dedicated logic registers            ; 50            ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 57            ;
@@ -202,8 +203,8 @@ refer to the applicable agreement for further details.
 ;                                             ;               ;
 ; Maximum fan-out node                        ; gpio[7]~input ;
 ; Maximum fan-out                             ; 48            ;
-; Total fan-out                               ; 292           ;
-; Average fan-out                             ; 1.47          ;
+; Total fan-out                               ; 278           ;
+; Average fan-out                             ; 1.43          ;
 +---------------------------------------------+---------------+
 
 
@@ -212,32 +213,33 @@ refer to the applicable agreement for further details.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name         ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+---------------------+--------------+
-; |CampusController                          ; 26 (10)             ; 51 (0)                    ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |CampusController                                                      ; CampusController    ; work         ;
-;    |ls163:AllignmentCounter|               ; 7 (7)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|ls163:AllignmentCounter                              ; ls163               ; work         ;
-;    |register_file:Database|                ; 5 (0)               ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database                               ; register_file       ; work         ;
-;       |decoder_2to4:des_decoder_2to4|      ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|decoder_2to4:des_decoder_2to4 ; decoder_2to4        ; work         ;
+; |CampusController                          ; 23 (11)             ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 57   ; 0            ; |CampusController                                                      ; CampusController    ; work         ;
+;    |ls163:AllignmentCounter|               ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|ls163:AllignmentCounter                              ; ls163               ; work         ;
+;    |register_file:Database|                ; 4 (0)               ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database                               ; register_file       ; work         ;
+;       |decoder_2to4:des_decoder_2to4|      ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|decoder_2to4:des_decoder_2to4 ; decoder_2to4        ; work         ;
 ;       |reg4:reg00|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg00                    ; reg4                ; work         ;
 ;       |reg4:reg01|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg01                    ; reg4                ; work         ;
 ;       |reg4:reg02|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg02                    ; reg4                ; work         ;
 ;       |reg4:reg03|                         ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|register_file:Database|reg4:reg03                    ; reg4                ; work         ;
 ;    |sipo:inputReg|                         ; 0 (0)               ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|sipo:inputReg                                        ; sipo                ; work         ;
-;    |vhdl_binary_counter:BuildingIdCounter| ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|vhdl_binary_counter:BuildingIdCounter                ; vhdl_binary_counter ; work         ;
+;    |vhdl_binary_counter:BuildingIdCounter| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CampusController|vhdl_binary_counter:BuildingIdCounter                ; vhdl_binary_counter ; work         ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; register_file:Database|reg4:reg03|Q[3] ; Stuck at GND due to stuck port data_in ;
-; register_file:Database|reg4:reg02|Q[3] ; Stuck at GND due to stuck port data_in ;
-; register_file:Database|reg4:reg01|Q[3] ; Stuck at GND due to stuck port data_in ;
-; register_file:Database|reg4:reg00|Q[3] ; Stuck at GND due to stuck port data_in ;
-; sipo:inputReg|temp[14]                 ; Merged with sipo:inputReg|Q[13]        ;
-; Total Number of Removed Registers = 5  ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++----------------------------------------------+----------------------------------------+
+; Register name                                ; Reason for Removal                     ;
++----------------------------------------------+----------------------------------------+
+; register_file:Database|reg4:reg03|Q[3]       ; Stuck at GND due to stuck port data_in ;
+; register_file:Database|reg4:reg02|Q[3]       ; Stuck at GND due to stuck port data_in ;
+; register_file:Database|reg4:reg01|Q[3]       ; Stuck at GND due to stuck port data_in ;
+; register_file:Database|reg4:reg00|Q[3]       ; Stuck at GND due to stuck port data_in ;
+; sipo:inputReg|temp[14]                       ; Merged with sipo:inputReg|Q[13]        ;
+; vhdl_binary_counter:BuildingIdCounter|tmp[3] ; Lost fanout                            ;
+; Total Number of Removed Registers = 6        ;                                        ;
++----------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -245,10 +247,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 51    ;
+; Total registers                              ; 50    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
@@ -267,6 +269,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+-------+----------+----------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vhdl_binary_counter:BuildingIdCounter"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------+
 ; Port Connectivity Checks: "sipo:inputReg" ;
 +-------+-------+----------+----------------+
@@ -282,21 +293,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 57                          ;
-; cycloneiii_ff         ; 51                          ;
-;     CLR               ; 4                           ;
+; cycloneiii_ff         ; 50                          ;
+;     CLR               ; 3                           ;
 ;     ENA               ; 12                          ;
 ;     plain             ; 35                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 27                          ;
-;     normal            ; 27                          ;
+; cycloneiii_lcell_comb ; 24                          ;
+;     normal            ; 24                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 3                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 14                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 12                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.30                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -315,7 +326,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Apr 27 22:27:17 2018
+    Info: Processing started: Fri Apr 27 22:48:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CampusController -c CampusController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -381,6 +392,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[7]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 22 input pin(s) that do not drive logic
@@ -406,15 +418,15 @@ Warning (21074): Design contains 22 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 10
-Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 69 logic cells
+    Info (21061): Implemented 66 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 725 megabytes
-    Info: Processing ended: Fri Apr 27 22:27:32 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 722 megabytes
+    Info: Processing ended: Fri Apr 27 22:48:15 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:26
 
 
