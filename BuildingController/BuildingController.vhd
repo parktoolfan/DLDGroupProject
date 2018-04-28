@@ -20,7 +20,7 @@ architecture a of BuildingController is
 		port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
-			room_data_out : out std_logic_vector(2 downto 0);
+			room_data_out : out std_logic_vector(3 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
 			);
 	end component BuildingHardware;
@@ -39,7 +39,7 @@ architecture a of BuildingController is
 										Rx2 => A_rx2,
 										Building_ID => to_building_id,
 										Room_ID => gpio(11 downto 6),
-										room_data_out => ledr( 2 downto 0));
+										room_data_out => ledr( 3 downto 0));
 
 		building_B: BuildingHardware Port map (	clk_in => to_clk_in,
 										clk_out => gpio(23),
@@ -49,7 +49,7 @@ architecture a of BuildingController is
 										Rx2 => B_rx2,
 										Building_ID => to_building_id,
 										Room_ID => gpio(20 downto 15),
-										room_data_out => ledr( 5 downto 3));
+										room_data_out => ledr( 7 downto 4));
 	
 	to_clk_in <= gpio(5);
 	A_rx1 <= gpio(13);
@@ -73,17 +73,18 @@ Entity BuildingHardware is
 	port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
-			room_data_out : out std_logic_vector(2 downto 0);
+			room_data_out : out std_logic_vector(3 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
 	);
 end BuildingHardware;
 
 architecture b of BuildingHardware is
 
-	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals, old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
+	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals, 
+	old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
 	signal state: std_logic_vector(1 downto 0);
 	signal room_data, our_id, build_id : std_logic_vector(2 downto 0);
-	signal room_id_num, st_count_out: std_logic_vector(3 downto 0);
+	signal room_id_num, st_count_out, to_our_id, to_build_id: std_logic_vector(3 downto 0);
 	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 
@@ -160,7 +161,7 @@ architecture b of BuildingHardware is
 		dff: ls74 port Map(d => equals, clk => clk_in, q => old_equals, clr => '0', pre => '0');
 		state_counter: asynch_counter port map( clk => state_inc, Load_L => reset_st_count, CLR => rising_equals, EN => '1', load_in => "1100", Q => st_count_out );
 		clockcycle_counter: asynch_counter port map( clk => clk_in, Load_L => '0', CLR => rising_equals, EN => equals, load_in => "1100", Q => st_count_out, RCO => rco_2 );
-		ID_comparator: Comparator port map( A => our_id, B => build_id, A_EQ_B => equals);
+		ID_comparator: Comparator port map( A => to_our_id, B => to_build_id, A_EQ_B => equals);
 		shift_load: Mux port map(S0 => state(0), S1 => state(1),A => "1010101010101010", B => "000" & room_id_num & "0" & room_data & "00000",
 															C => "0000000000000000", D =>	"1010101010101010", Y => mux_out);
 		shift_output: PISO_shift port map (S_L => load, SI => '0', clr =>'0', clk => clk_in, PI => mux_out, SO => Tx1);
@@ -206,6 +207,10 @@ architecture b of BuildingHardware is
 
 
 		end process;
+		
+		
+		to_our_id <= '0' & our_id;
+		to_build_id <= '0' & build_id;
 
 		--roomcount_clock <= write_sig OR (rco_2 And state = "01");
 
@@ -219,7 +224,7 @@ architecture b of BuildingHardware is
 
 	-- circuit diagram inplementation goes here
 
-
+	
 	end b;
 
 
@@ -484,10 +489,8 @@ architecture h of PISO_shift is
 
 				end if;
 
-			 SO <= PI(15);
-
-
 			end process;
+			SO <= PI(15);
 
 		end h;
 
