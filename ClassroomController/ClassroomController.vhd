@@ -42,12 +42,20 @@ architecture a of ClassroomController is
 begin
 
 	-- lets wire up some test components.
-	testPiso : piso16b port map (
-		parallel_In => sw(15 downto 0),
-		SorL => sw(17),
-		clk => gpio(0),
-		q => ledr(0)
-	);
+	--testPiso : piso16b port map (
+	--	parallel_In => sw(15 downto 0),
+	--	SorL => sw(17),
+	--	clk => gpio(0),
+	--	q => ledr(0)
+	--);
+	
+	-- test comparator
+	--testComp : comparator6b port map (
+	--	op1 => sw(5 downto 0),
+	--	op2 => sw(11 downto 6),
+	--	equal => ledr(0)
+	--);
+	
 	
 	ledg(0) <= gpio(0);
 
