@@ -27,6 +27,17 @@ architecture a of BuildingController is
 			Q: out std_logic_vector(3 downto 0));
 	end component;
 
+	-- DFFs
+	component ls74 is
+	port(	d, clr, pre, clk : IN std_logic;
+		-- d is the data input
+		-- clr: ACTIVE LOW: clears the output, q, asynchrnously.
+		-- Pre: ACTIVE LOW: sets the output q to 1 asynchronously,
+		-- clk is a clock signal (q is typically representitive of what d was 1 clock cycle ago)
+			q : out std_logic -- single bit output which is d delayed by 1 clock cycle.
+	);
+	end component;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
@@ -38,7 +49,7 @@ architecture a of BuildingController is
 		-- aux is anded from parallel inputs and tells when the input from the classroomController is ready for reading.
 		-- write to DB tells when to write to the Reg file.
 		-- use state_inc to increment the FSM
-	Signal RisingEqual, rco_2, rco_1, load : std_logic;
+	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual : std_logic;
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
 	Signal state : std_logic_vector(3 downto 0);
 begin
@@ -79,9 +90,20 @@ begin
 	--State_inc combinational logic
 	state_inc <= (RCO_2 and not(state(0)) and not(state(1)) and not(state(2)) and not(state(3)))
 		or (rco_1) or (rco_2 and not(state(0)) and not(state(1)) and state(2) and not(state(3)));
-		
+
 	-- comb for load
 	load <= state_inc or RCO_2;
+
+	-- we want to load the first clock cycle after being selected by the Building Controller (first equal cycle)
+	RisingEqualDFF : ls74 port map(
+		d => equal,
+		clr => '1',
+		pre => '1',
+		clk => master_clock,
+		q => lastEqual
+	);
+
+	RisingEqual <= equal and Not(lastEqual);
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
@@ -429,48 +451,36 @@ begin
 
 
 
-
-
-
 -- Create a 74x74 chip a DFF
+-- This component intends to simulate the behaviors of a 74x74 chipset.
 Library ieee;
 use ieee.std_logic_1164.all;
-
 Entity ls74 is
-
 	port(	d, clr, pre, clk : IN std_logic;
-			q : out std_logic
+		-- d is the data input
+		-- clr: ACTIVE LOW: clears the output, q, asynchrnously.
+		-- Pre: ACTIVE LOW: sets the output q to 1 asynchronously,
+		-- clk is a clock signal (q is typically representitive of what d was 1 clock cycle ago)
+			q : out std_logic -- single bit output which is d delayed by 1 clock cycle.
 	);
 end ls74;
-
-Architecture c of ls74 is
-
+Architecture a of ls74 is
 begin
-
-	Process(clk, clr, pre)
-
+	Process(clk, clr, pre) -- the DFF should update its output when any of these change.
 	begin
-		if clr = '0' then
-			q <= '0';
-
-		elsif pre = '0' then
+		if clr = '0' then	-- preset q to zero, reguardless of d.
+			q <= '0'; -- note that clr and pre are active low.
+		elsif pre = '0' then  -- preset q to zero, reguardless of d.
 			q <= '1';
-
-		elsif clk'EVENT and clk = '1' then
-
+		elsif clk'EVENT and clk = '1' then -- mimic d 1 clock cycle ago on q.
 			if d = '1' then
 				q <= '1';
-
 			else
 				q <= '0';
-
 			end if;
-
 		end if;
-
 	end process;
-
-End c;
+End a;
 
 
 --16 bit Serial in/Parallel out with asynchronous clear, not this is 2 74x164 chips
