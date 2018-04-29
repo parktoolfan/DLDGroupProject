@@ -11,7 +11,6 @@ gpio[9] <> gpio[9]
 gpio[10] <> gpio[10]
 gpio[11] <> gpio[11]
 gpio[12] <> gpio[12]
-gpio[13] <> <UNC>
 gpio[14] <> gpio[14]
 gpio[15] <> <UNC>
 gpio[16] <> <UNC>
@@ -87,5 +86,57 @@ ledg[5] <= ledg[5].DB_MAX_OUTPUT_PORT_TYPE
 ledg[6] <= <GND>
 ledg[7] <= <GND>
 ledg[8] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|SIPO_A_shift:Data_in
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+clk => tmp[4].CLK
+clk => tmp[5].CLK
+clk => tmp[6].CLK
+clk => tmp[7].CLK
+clk => tmp[8].CLK
+clk => tmp[9].CLK
+clk => tmp[10].CLK
+clk => tmp[11].CLK
+clk => tmp[12].CLK
+clk => tmp[13].CLK
+clk => tmp[14].CLK
+clk => tmp[15].CLK
+clr => tmp[0].ACLR
+clr => tmp[1].ACLR
+clr => tmp[2].ACLR
+clr => tmp[3].ACLR
+clr => tmp[4].ACLR
+clr => tmp[5].ACLR
+clr => tmp[6].ACLR
+clr => tmp[7].ACLR
+clr => tmp[8].ACLR
+clr => tmp[9].ACLR
+clr => tmp[10].ACLR
+clr => tmp[11].ACLR
+clr => tmp[12].ACLR
+clr => tmp[13].ACLR
+clr => tmp[14].ACLR
+clr => tmp[15].ACLR
+A => tmp[15].DATAIN
+PO[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= tmp[4].DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= tmp[5].DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= tmp[6].DB_MAX_OUTPUT_PORT_TYPE
+PO[7] <= tmp[7].DB_MAX_OUTPUT_PORT_TYPE
+PO[8] <= tmp[8].DB_MAX_OUTPUT_PORT_TYPE
+PO[9] <= tmp[9].DB_MAX_OUTPUT_PORT_TYPE
+PO[10] <= tmp[10].DB_MAX_OUTPUT_PORT_TYPE
+PO[11] <= tmp[11].DB_MAX_OUTPUT_PORT_TYPE
+PO[12] <= tmp[12].DB_MAX_OUTPUT_PORT_TYPE
+PO[13] <= tmp[13].DB_MAX_OUTPUT_PORT_TYPE
+PO[14] <= tmp[14].DB_MAX_OUTPUT_PORT_TYPE
+PO[15] <= tmp[15].DB_MAX_OUTPUT_PORT_TYPE
 
 

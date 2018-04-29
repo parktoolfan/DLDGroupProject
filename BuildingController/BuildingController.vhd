@@ -12,12 +12,29 @@ end BuildingController;
 
 architecture a of BuildingController is
 
+	-- SIPO shift register for reading in from ClassroomInUse
+	component SIPO_A_shift is
+		port(clk, clr, A : in std_logic;
+	      PO : out std_logic_vector(15 downto 0)
+				);
+	end component SIPO_A_shift;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
 	signal roomID : std_logic_vector(5 downto 0);
 
+	-- Internal Signals
+	Signal ClassroomStream : std_logic_vector(15 downto 0);
 begin
+
+	-- Serial in from Classrooms
+	Data_in: SIPO_A_SHIFT port Map(
+		clk => master_clock,
+		A => Rx1,
+		PO => ClassroomStream, -- ClassroomStream(15 is newest, 0 is the oldest)
+		clr => '0'
+	);
 
 	-- fectch master clock signal, and flash clock LED
 	master_clock <= gpio(5);
@@ -420,26 +437,20 @@ end SIPO_A_shift;
 
 architecture d of SIPO_A_shift is
 
-  signal tmp: std_logic_vector(15 downto 0);
+	signal tmp: std_logic_vector(15 downto 0);
 
-  begin
-    process (clk, clr)
-      begin
-
-		if (clr = '1') then
+begin
+	process (clk, clr)
+		begin
+			if (clr = '1') then
 				tmp <= "0000000000000000";
-
-        elsif (clk'event and Clk='1') then
-
-          --if (LEFT_RIGHT='0') then
-            tmp <= tmp(14 downto 0) & A;
-
-         -- end if;
-
-        end if;
-    end process;
-
-    PO <= tmp;
+			elsif (clk'event and Clk='1') then
+				-- items are shifted from 15 towards 1 on the parallel side.
+				tmp(14 downto 0) <= tmp(15 downto 1);
+				tmp(15) <= A;
+			end if;
+	end process;
+	PO <= tmp;
 end d;
 
 -- 4 bit up counter 74x163
