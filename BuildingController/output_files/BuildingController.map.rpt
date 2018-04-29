@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BuildingController
-Sat Apr 28 23:45:48 2018
+Sun Apr 29 00:01:42 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 23:45:48 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 29 00:01:42 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
@@ -268,48 +268,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 23:45:34 2018
+    Info: Processing started: Sun Apr 29 00:01:28 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BuildingController -c BuildingController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (12090): Entity "Mux" obtained from "BuildingController.vhd" instead of from Quartus Prime megafunction library File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 539
+Warning (12090): Entity "Mux" obtained from "BuildingController.vhd" instead of from Quartus Prime megafunction library File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 548
 Info (12021): Found 28 design units, including 14 entities, in source file buildingcontroller.vhd
     Info (12022): Found design unit 1: BuildingController-a File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 13
-    Info (12022): Found design unit 2: ls74-c File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 398
-    Info (12022): Found design unit 3: SIPO_A_shift-d File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 438
-    Info (12022): Found design unit 4: counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 466
-    Info (12022): Found design unit 5: asynch_counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 502
-    Info (12022): Found design unit 6: Mux-f File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 545
-    Info (12022): Found design unit 7: Comparator-g File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 583
-    Info (12022): Found design unit 8: PISO_shift-h File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 613
-    Info (12022): Found design unit 9: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 654
-    Info (12022): Found design unit 10: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 679
-    Info (12022): Found design unit 11: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 700
-    Info (12022): Found design unit 12: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 718
-    Info (12022): Found design unit 13: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 738
-    Info (12022): Found design unit 14: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 770
+    Info (12022): Found design unit 2: ls74-c File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 407
+    Info (12022): Found design unit 3: SIPO_A_shift-d File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 447
+    Info (12022): Found design unit 4: counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 475
+    Info (12022): Found design unit 5: asynch_counter-e File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 511
+    Info (12022): Found design unit 6: Mux-f File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 554
+    Info (12022): Found design unit 7: Comparator-g File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 592
+    Info (12022): Found design unit 8: PISO_shift-h File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 622
+    Info (12022): Found design unit 9: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 663
+    Info (12022): Found design unit 10: decoder_2to4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 688
+    Info (12022): Found design unit 11: mux2_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 709
+    Info (12022): Found design unit 12: mux4_4bit-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 727
+    Info (12022): Found design unit 13: reg4-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 747
+    Info (12022): Found design unit 14: register_file-Behavioral File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 779
     Info (12023): Found entity 1: BuildingController File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 4
-    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 391
-    Info (12023): Found entity 3: SIPO_A_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 432
-    Info (12023): Found entity 4: counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 461
-    Info (12023): Found entity 5: asynch_counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 496
-    Info (12023): Found entity 6: Mux File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 539
-    Info (12023): Found entity 7: Comparator File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 578
-    Info (12023): Found entity 8: PISO_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 607
-    Info (12023): Found entity 9: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 648
-    Info (12023): Found entity 10: decoder_2to4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 669
-    Info (12023): Found entity 11: mux2_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 693
-    Info (12023): Found entity 12: mux4_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 712
-    Info (12023): Found entity 13: reg4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 732
-    Info (12023): Found entity 14: register_file File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 754
+    Info (12023): Found entity 2: ls74 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 400
+    Info (12023): Found entity 3: SIPO_A_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 441
+    Info (12023): Found entity 4: counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 470
+    Info (12023): Found entity 5: asynch_counter File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 505
+    Info (12023): Found entity 6: Mux File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 548
+    Info (12023): Found entity 7: Comparator File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 587
+    Info (12023): Found entity 8: PISO_shift File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 616
+    Info (12023): Found entity 9: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 657
+    Info (12023): Found entity 10: decoder_2to4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 678
+    Info (12023): Found entity 11: mux2_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 702
+    Info (12023): Found entity 12: mux4_4bit File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 721
+    Info (12023): Found entity 13: reg4 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 741
+    Info (12023): Found entity 14: register_file File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 763
 Info (12127): Elaborating entity "BuildingController" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(6): used implicit default value for signal "ledr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 6
 Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(23): used implicit default value for signal "tx1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 23
 Warning (10541): VHDL Signal Declaration warning at BuildingController.vhd(25): used implicit default value for signal "roomID" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 25
-Warning (10036): Verilog HDL or VHDL warning at BuildingController.vhd(28): object "ClassroomStream" assigned a value but never read File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at BuildingController.vhd(29): object "aux" assigned a value but never read File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 29
 Warning (10873): Using initial value X (don't care) for net "ledg[7..6]" at BuildingController.vhd(9) File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 9
 Warning (10665): Bidirectional port "gpio[5]" at BuildingController.vhd(5) has a one-way connection to bidirectional port "gpio[14]" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-Info (12128): Elaborating entity "SIPO_A_shift" for hierarchy "SIPO_A_shift:Data_in" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 32
+Info (12128): Elaborating entity "SIPO_A_shift" for hierarchy "SIPO_A_shift:Data_in" File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 33
 Info (13014): Ignored 7 buffer(s)
     Info (13019): Ignored 7 SOFT buffer(s)
 Warning (13039): The following bidirectional pins have no drivers
@@ -414,7 +414,7 @@ Info (21057): Implemented 89 device resources after synthesis - the final resour
     Info (21060): Implemented 40 bidirectional pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 102 warnings
     Info: Peak virtual memory: 713 megabytes
-    Info: Processing ended: Sat Apr 28 23:45:48 2018
+    Info: Processing ended: Sun Apr 29 00:01:42 2018
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:28
 

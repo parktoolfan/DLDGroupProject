@@ -26,6 +26,7 @@ architecture a of BuildingController is
 
 	-- Internal Signals
 	Signal ClassroomStream : std_logic_vector(15 downto 0);
+	Signal aux : std_logic;
 begin
 
 	-- Serial in from Classrooms
@@ -35,6 +36,14 @@ begin
 		PO => ClassroomStream, -- ClassroomStream(15 is newest, 0 is the oldest)
 		clr => '0'
 	);
+
+	-- combinational logic to tell when bitstrings are alligned
+	--aux <= ClassroomStream(4 downto 0) = "11100" and ClassroomStream(14 downto 8) = "1111111"; <- this is what we expect
+	aux <= ClassroomStream(4) and ClassroomStream(3) and ClassroomStream(2) and
+		Not(ClassroomStream(1)) and Not(ClassroomStream(0)) and
+		ClassroomStream(14) and ClassroomStream(13) and ClassroomStream(12) and 
+		ClassroomStream(11) and ClassroomStream(10) and ClassroomStream(9) and 
+		ClassroomStream(8);
 
 	-- fectch master clock signal, and flash clock LED
 	master_clock <= gpio(5);
