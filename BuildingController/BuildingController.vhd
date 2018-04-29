@@ -38,6 +38,13 @@ architecture a of BuildingController is
 	);
 	end component;
 
+	-- comparator
+		component Comparator is
+				port(A, B: in std_logic_vector(3 downto 0);
+						A_EQ_B: out std_logic
+				);
+		end component Comparator;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
@@ -117,6 +124,13 @@ begin
 
 	-- combinational logic for RCO2
 	rco_2 <= clockCycle(3) and clockCycle(2) and clockCycle(1) and clockCycle(0);
+
+	-- comparator for equals
+	selectedForTransmission : comparator port map(
+		A => OurID & '0',
+		B => BuildingId & '0',
+		A_EQ_B => equal
+	);
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
@@ -639,30 +653,22 @@ architecture f of Mux is
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
-
 entity Comparator is
   port(A, B: in std_logic_vector(3 downto 0);
 		  A_EQ_B: out std_logic);
 end Comparator;
-
 architecture g of Comparator is
 	begin
 		--signal tmp_A, tmp_B: std_logic_vector(3 downto 0);
-
 		process(A, B)
 			begin
-
 				if ( A = B) then
-				A_EQ_B <= '1';
-
+					A_EQ_B <= '1';
 				else
-				A_EQ_B <= '0';
-
+					A_EQ_B <= '0';
 				end if;
 			end process;
 	end g;
-
-
 
 -- 16 bit PISO shift register, note this is 2 74x166 chips
 library ieee;
