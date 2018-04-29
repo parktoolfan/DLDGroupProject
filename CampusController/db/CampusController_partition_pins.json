@@ -88,11 +88,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "gpio[2]",
+					"name" : "gpio[4]",
 					"strict" : false
 				},
 				{
-					"name" : "gpio[4]",
+					"name" : "gpio[5]",
 					"strict" : false
 				},
 				{

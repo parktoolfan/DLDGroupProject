@@ -1,9 +1,9 @@
 |CampusController
 gpio[0] <> gpio[0]
 gpio[1] <> gpio[1]
-gpio[2] <> gpio[2]
+gpio[2] <> <UNC>
 gpio[3] <> gpio[3]
-gpio[5] <> <UNC>
+gpio[5] <> gpio[5]
 gpio[6] <> <UNC>
 ledr[0] <= register_file:Database.reg0[0]
 ledr[1] <= register_file:Database.reg0[1]

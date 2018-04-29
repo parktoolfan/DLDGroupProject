@@ -82,6 +82,8 @@ begin
 		-- for testing, we'll let the Arduino Create the Clock signal.
 		Master_Clock <= gpio(7);
 		ledg(8) <= Master_Clock;
+		-- share clock signal with children.
+		gpio(5) <= Master_clock;
 
 
 		-- Hook up RX to shift Regerister
