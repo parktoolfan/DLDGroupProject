@@ -63,7 +63,10 @@ begin
 
 	Ledg(8) <= to_clk_in;
 
-
+	-- Testign LEDs
+	ledg(5 downto 0) <= net1roomID;
+	
+	
 	end a;
 
 
