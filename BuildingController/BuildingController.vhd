@@ -101,6 +101,13 @@ architecture b of BuildingHardware is
 				selectedData : out std_logic_vector(3 downto 0) --data of selected register
 				);
 	end component register_file;
+	
+	component tri_state_buffer_top is
+		Port (	A	: in  STD_LOGIC;    -- single buffer input
+					EN	: in  STD_LOGIC;    -- single buffer enable
+					Y	: out STD_LOGIC    -- single buffer output
+		);
+	end component;
 
 	component ls74 is
 		port(	d, clr, pre, clk : IN std_logic;
@@ -137,7 +144,7 @@ architecture b of BuildingHardware is
 
 	Signal room0Data, room1Data : std_logic_vector(3 downto 0);
 	signal aux_1, aux_2, write_sig, load, rco_1, rco_2, state_inc, equals,
-	old_equals, rising_equals, reset_st_count, roomcount_clock: std_logic;
+	old_equals, rising_equals, reset_st_count, roomcount_clock, tx2buffer: std_logic;
 	signal state: std_logic_vector(1 downto 0);
 	signal room_data, our_id, build_id : std_logic_vector(2 downto 0);
 	signal room_id_num, st_count_out, to_our_id, to_build_id: std_logic_vector(3 downto 0);
@@ -196,7 +203,7 @@ architecture b of BuildingHardware is
 		-- the comparator wanted 4 bit signals
 		to_our_id <= '0' & our_id;
 		to_build_id <= '0' & build_id;
-		
+
 		ID_comparator: Comparator port map(
 			A => to_our_id,
 			B => to_build_id,
@@ -217,12 +224,19 @@ architecture b of BuildingHardware is
 			clr =>'0',
 			clk => clk_in,
 			PI => mux_out,
-			SO => Tx1
+			SO => tx2buffer
+		);
+		
+		-- wire txto bus to tx bus with a tristate buffer
+		busBuffer : tri_state_buffer_top Port map (
+				A => tx2buffer,
+				En => equals,
+				Y => TX2
 		);
 
 		--aux_1 <= SIPO_out(11) AND SIPO_out(12) AND SIPO_out(13) AND NOT(SIPO_out(14)) AND NOT(SIPO_out(15));
-	  --aux_2 <= C
-	 -- SIPO_out(1) AND SIPO_out(2) AND SIPO_out(3) AND SIPO_out(4) AND SIPO_out(5) AND SIPO_out(6) AND SIPO_out(7);
+		--aux_2 <= C
+		-- SIPO_out(1) AND SIPO_out(2) AND SIPO_out(3) AND SIPO_out(4) AND SIPO_out(5) AND SIPO_out(6) AND SIPO_out(7);
 	 	process(SIPO_out, aux_1,aux_2, state, write_sig, rco_2, rco_1, equals, old_equals,st_count_out, state_inc)
 			Begin
 				if (SIPO_out(15 downto 11) = "00111") then
@@ -263,15 +277,15 @@ architecture b of BuildingHardware is
 
 		--roomcount_clock <= write_sig OR (rco_2 And state = "01");
 
-	--	rising_equals <= equals AND NOT(old_equals);
+		--	rising_equals <= equals AND NOT(old_equals);
 
-	--	state_inc <= (rco_2 AND state = "00") OR rco_1 OR (rco_2 AND state = "10");
+		--	state_inc <= (rco_2 AND state = "00") OR rco_1 OR (rco_2 AND state = "10");
 
 		--reset_st_count <= st_count_out(3) OR st_count_out(2);
 
-	--	load <= state_inc OR rco_2;
+		--	load <= state_inc OR rco_2;
 
-	-- circuit diagram inplementation goes here
+		-- circuit diagram inplementation goes here
 
 
 	end b;
@@ -542,6 +556,23 @@ architecture h of PISO_shift is
 			SO <= PI(15);
 
 		end h;
+		
+		
+-- Add tristate buffer code
+-- Tristate Buffer
+Library ieee;
+use ieee.std_logic_1164.all;
+entity tri_state_buffer_top is
+	Port( A : in std_logic;    -- single buffer input
+			EN : in std_logic;    -- single buffer enable
+			Y : out std_logic    -- single buffer output
+	);
+end tri_state_buffer_top;
+architecture Behavioral of tri_state_buffer_top is
+	begin
+    -- single active low enabled tri-state buffer
+	Y <= A when (EN = '1') else 'Z';
+end Behavioral;
 
 	-- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:

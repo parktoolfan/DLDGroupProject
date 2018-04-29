@@ -87,8 +87,8 @@ Building_ID[0] => ~NO_FANOUT~
 Building_ID[1] => ~NO_FANOUT~
 Building_ID[2] => ~NO_FANOUT~
 clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
-Tx1 <= PISO_shift:shift_output.SO
-Tx2 <= Tx2.DB_MAX_OUTPUT_PORT_TYPE
+Tx1 <= Tx1.DB_MAX_OUTPUT_PORT_TYPE
+Tx2 <= tri_state_buffer_top:busBuffer.Y
 room_data_out[0] <= room_data_out[0].DB_MAX_OUTPUT_PORT_TYPE
 room_data_out[1] <= room_data_out[1].DB_MAX_OUTPUT_PORT_TYPE
 room_data_out[2] <= room_data_out[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -562,6 +562,12 @@ PI[15] => SO.DATAIN
 SO <= PI[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
+|BuildingController|BuildingHardware:building_A|tri_state_buffer_top:busBuffer
+A => Y.DATAIN
+EN => Y.OE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |BuildingController|BuildingHardware:building_B
 Rx1 => SIPO_A_shift:Data_in.A
 Rx2 => ~NO_FANOUT~
@@ -574,8 +580,8 @@ Building_ID[0] => ~NO_FANOUT~
 Building_ID[1] => ~NO_FANOUT~
 Building_ID[2] => ~NO_FANOUT~
 clk_out <= clk_out.DB_MAX_OUTPUT_PORT_TYPE
-Tx1 <= PISO_shift:shift_output.SO
-Tx2 <= Tx2.DB_MAX_OUTPUT_PORT_TYPE
+Tx1 <= Tx1.DB_MAX_OUTPUT_PORT_TYPE
+Tx2 <= tri_state_buffer_top:busBuffer.Y
 room_data_out[0] <= room_data_out[0].DB_MAX_OUTPUT_PORT_TYPE
 room_data_out[1] <= room_data_out[1].DB_MAX_OUTPUT_PORT_TYPE
 room_data_out[2] <= room_data_out[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -1047,5 +1053,11 @@ PI[13] => ~NO_FANOUT~
 PI[14] => ~NO_FANOUT~
 PI[15] => SO.DATAIN
 SO <= PI[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|BuildingHardware:building_B|tri_state_buffer_top:busBuffer
+A => Y.DATAIN
+EN => Y.OE
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
