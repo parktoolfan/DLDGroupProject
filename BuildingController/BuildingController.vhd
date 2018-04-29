@@ -51,7 +51,7 @@ architecture a of BuildingController is
 		-- use state_inc to increment the FSM
 	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual : std_logic;
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
-	Signal state : std_logic_vector(3 downto 0);
+	Signal state, clockCycle : std_logic_vector(3 downto 0);
 begin
 
 	-- Serial in from Classrooms
@@ -104,6 +104,19 @@ begin
 	);
 
 	RisingEqual <= equal and Not(lastEqual);
+
+	-- Clock cycle counter
+	clockCounter : asynch_counter port map (
+		clk => master_clock,
+		CLR => RisingEqual,
+		EN => equal,
+		Load_L => '1',
+		load_in => "0000",
+		Q => clockCycle
+	);
+
+	-- combinational logic for RCO2
+	rco_2 <= clockCycle(3) and clockCycle(2) and clockCycle(1) and clockCycle(0);
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED

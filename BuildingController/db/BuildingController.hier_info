@@ -177,3 +177,31 @@ clk => q~reg0.CLK
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|BuildingController|asynch_counter:clockCounter
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+EN => tmp[3].ENA
+EN => tmp[2].ENA
+EN => tmp[1].ENA
+EN => tmp[0].ENA
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= <VCC>
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
