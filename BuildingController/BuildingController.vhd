@@ -5,7 +5,8 @@ entity BuildingController is
 port(	gpio : inout std_logic_vector(39 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
 		sw : in std_logic_vector(17 downto 0);
-		key : in std_logic_vector (3 downto 0)
+		key : in std_logic_vector (3 downto 0);
+		ledg : out std_logic_vector(8 downto 0)
 	);
 end BuildingController;
 
@@ -50,6 +51,8 @@ begin
 	A_rx2 <= gpio(4);
 	B_rx1 <= gpio(22);
 	B_rx2 <= gpio(4);
+	
+	Ledg(8) <= to_clk_in;
 	to_building_id <=  gpio(2 downto 0);
 	--two building hardwares go here
 
@@ -151,6 +154,9 @@ architecture b of BuildingHardware is
 	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 	begin
+	
+		-- send clock data out.
+		clk_out <= clk_in;
 
 		Data_in: SIPO_A_SHIFT port Map(
 			clk => clk_in,

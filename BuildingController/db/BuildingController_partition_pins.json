@@ -2,7 +2,24 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "ledg[8]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[5]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[14]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[23]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
