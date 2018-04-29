@@ -1,5 +1,5 @@
 Fitter report for BuildingController
-Sat Apr 28 21:53:49 2018
+Sat Apr 28 22:05:21 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 21:53:49 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 22:05:21 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
@@ -3187,9 +3187,9 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[37] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[38] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[39] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[0] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[1] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[2] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169065): Pin gpio[0] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169065): Pin gpio[1] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169065): Pin gpio[2] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[3] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[4] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[5] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
@@ -3213,8 +3213,8 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[23] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
 Info (144001): Generated suppressed messages file /Documents/DLDProject/BuildingController/output_files/BuildingController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 451 warnings
-    Info: Peak virtual memory: 1605 megabytes
-    Info: Processing ended: Sat Apr 28 21:53:49 2018
+    Info: Peak virtual memory: 1603 megabytes
+    Info: Processing ended: Sat Apr 28 22:05:22 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:17
 

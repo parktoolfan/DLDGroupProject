@@ -22,7 +22,8 @@ architecture a of BuildingController is
 	end component BuildingHardware;
 
 	signal A_rx1, A_rx2, B_rx1, B_rx2, to_clk_in: std_logic;
-	signal to_building_id: std_logic_vector(2 downto 0);
+	signal to_building_id0, to_building_id1: std_logic_vector(2 downto 0);
+	signal net1roomID, net2roomID : std_logic_vector(5 downto 0);
 
 begin
 
@@ -32,8 +33,8 @@ begin
 										Tx2 => gpio(3),
 										Rx1 => A_rx1,
 										Rx2 => A_rx2,
-										Building_ID => to_building_id,
-										Room_ID => gpio(11 downto 6),
+										Building_ID => to_building_id0,
+										Room_ID => net1roomID,
 										room_data_out => ledr( 3 downto 0));
 
 		building_B: BuildingHardware Port map (	clk_in => to_clk_in,
@@ -42,19 +43,24 @@ begin
 										Tx2 => gpio(3),
 										Rx1 => B_rx1,
 										Rx2 => B_rx2,
-										Building_ID => to_building_id,
+										Building_ID => to_building_id1,
 										Room_ID => gpio(20 downto 15),
 										room_data_out => ledr( 7 downto 4));
-
+	-- get master clock signal
 	to_clk_in <= gpio(5);
+	
+	-- wire up building a
 	A_rx1 <= gpio(13);
 	A_rx2 <= gpio(4);
+	gpio(2 downto 0) <= to_building_id0;
+	gpio(11 downto 6) <= net1roomID;
+	
+	-- wire up building b
 	B_rx1 <= gpio(22);
 	B_rx2 <= gpio(4);
-	
+
 	Ledg(8) <= to_clk_in;
-	to_building_id <=  gpio(2 downto 0);
-	--two building hardwares go here
+
 
 	end a;
 
@@ -104,7 +110,7 @@ architecture b of BuildingHardware is
 				selectedData : out std_logic_vector(3 downto 0) --data of selected register
 				);
 	end component register_file;
-	
+
 	component tri_state_buffer_top is
 		Port (	A	: in  STD_LOGIC;    -- single buffer input
 					EN	: in  STD_LOGIC;    -- single buffer enable
@@ -154,7 +160,7 @@ architecture b of BuildingHardware is
 	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 	begin
-	
+
 		-- send clock data out.
 		clk_out <= clk_in;
 
@@ -232,7 +238,7 @@ architecture b of BuildingHardware is
 			PI => mux_out,
 			SO => tx2buffer
 		);
-		
+
 		-- wire txto bus to tx bus with a tristate buffer
 		busBuffer : tri_state_buffer_top Port map (
 				A => tx2buffer,
@@ -562,8 +568,8 @@ architecture h of PISO_shift is
 			SO <= PI(15);
 
 		end h;
-		
-		
+
+
 -- Add tristate buffer code
 -- Tristate Buffer
 Library ieee;

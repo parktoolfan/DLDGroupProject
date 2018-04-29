@@ -1,4 +1,7 @@
 |BuildingController
+gpio[0] <> gpio[0]
+gpio[1] <> gpio[1]
+gpio[2] <> gpio[2]
 gpio[3] <> gpio[3]
 gpio[3] <> gpio[3]
 gpio[6] <> gpio[6]
