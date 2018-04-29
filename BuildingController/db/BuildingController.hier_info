@@ -8,8 +8,8 @@ gpio[6] <> gpio[6]
 gpio[7] <> gpio[7]
 gpio[8] <> gpio[8]
 gpio[9] <> gpio[9]
-gpio[10] <> gpio[10]
-gpio[11] <> gpio[11]
+gpio[10] <> <GND>
+gpio[11] <> <GND>
 gpio[12] <> gpio[12]
 gpio[14] <> gpio[14]
 gpio[15] <> <UNC>
@@ -37,7 +37,7 @@ gpio[36] <> <UNC>
 gpio[37] <> <UNC>
 gpio[38] <> <UNC>
 gpio[39] <> <UNC>
-ledr[0] <= ledr[0].DB_MAX_OUTPUT_PORT_TYPE
+ledr[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 ledr[1] <= ledr[1].DB_MAX_OUTPUT_PORT_TYPE
 ledr[2] <= ledr[2].DB_MAX_OUTPUT_PORT_TYPE
 ledr[3] <= ledr[3].DB_MAX_OUTPUT_PORT_TYPE
@@ -77,12 +77,12 @@ key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
-ledg[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-ledg[1] <= ledg[1].DB_MAX_OUTPUT_PORT_TYPE
-ledg[2] <= ledg[2].DB_MAX_OUTPUT_PORT_TYPE
-ledg[3] <= ledg[3].DB_MAX_OUTPUT_PORT_TYPE
-ledg[4] <= ledg[4].DB_MAX_OUTPUT_PORT_TYPE
-ledg[5] <= ledg[5].DB_MAX_OUTPUT_PORT_TYPE
+ledg[0] <= asynch_counter:roomCounter.Q[0]
+ledg[1] <= asynch_counter:roomCounter.Q[1]
+ledg[2] <= asynch_counter:roomCounter.Q[2]
+ledg[3] <= asynch_counter:roomCounter.Q[3]
+ledg[4] <= <GND>
+ledg[5] <= <GND>
 ledg[6] <= <GND>
 ledg[7] <= <GND>
 ledg[8] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
@@ -522,5 +522,33 @@ Z[0] <= Z.DB_MAX_OUTPUT_PORT_TYPE
 Z[1] <= Z.DB_MAX_OUTPUT_PORT_TYPE
 Z[2] <= Z.DB_MAX_OUTPUT_PORT_TYPE
 Z[3] <= Z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BuildingController|asynch_counter:roomCounter
+clk => tmp[0].CLK
+clk => tmp[1].CLK
+clk => tmp[2].CLK
+clk => tmp[3].CLK
+CLR => tmp[0].ACLR
+CLR => tmp[1].ACLR
+CLR => tmp[2].ACLR
+CLR => tmp[3].ACLR
+EN => tmp[3].ENA
+EN => tmp[2].ENA
+EN => tmp[1].ENA
+EN => tmp[0].ENA
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+Load_L => tmp.OUTPUTSELECT
+load_in[0] => tmp.DATAB
+load_in[1] => tmp.DATAB
+load_in[2] => tmp.DATAB
+load_in[3] => tmp.DATAB
+RCO <= <VCC>
+Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
 
 

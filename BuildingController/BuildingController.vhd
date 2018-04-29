@@ -98,7 +98,7 @@ architecture a of BuildingController is
 		-- write to DB tells when to write to the Reg file.
 		-- use state_inc to increment the FSM
 	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual, txToBus : std_logic;
-	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
+	Signal Rst_State_count, roomCountIncrement : std_logic; -- when state is greater than 0011.
 	Signal state, clockCycle, regDataOut : std_logic_vector(3 downto 0);
 	Signal multiplexedOutput : std_logic_vector(15 downto 0);
 
@@ -222,6 +222,24 @@ begin
 		reg3 => r3,
 		selectedData => regDataOut
 	);
+
+	roomCounter : asynch_counter port map(
+		clk => roomCountIncrement,
+		CLR => State_inc,
+		EN => '1',
+		Load_L => '0',
+		load_in => "0000",
+		Q => RoomID(3 downto 0)
+	);
+
+	-- rco_1 should trigger when we've gone over all of the classrooms for a cycle
+	rco_1 <= RoomID(1);
+
+	-- since this counter doesn't take care of the MSB of roomID, we'll set them here.
+	RoomID(5 downto 4) <= "00";
+
+	-- Combinational logic for roomCountIncrement
+	roomCountIncrement <= writeToDB or (rco_2 and Not(state(3)) and Not(state(2)) and Not(state(1)) and state(0));
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
