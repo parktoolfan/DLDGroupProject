@@ -94,6 +94,48 @@ begin
 		TX => net1tx,
 		transmiting => trans0
 	);
+	
+		Classroom1 : classroomControllerHardware port map(
+		ClassroomInUse => sen1u,
+		LightsAreOn => sen1l,
+		ProjectorIsOn => sen1p,
+		RX => '0',
+		RoomID => net1RoomID,
+		OurID => "000001",
+		Clk_In => master_clock,
+		ProjectorEnable => c1pen,
+		LightsEnable => c1len,
+		TX => net1tx,
+		transmiting => trans1
+	);
+	
+		Classroom2 : classroomControllerHardware port map(
+		ClassroomInUse => sen2u,
+		LightsAreOn => sen2l,
+		ProjectorIsOn => sen2p,
+		RX => '0',
+		RoomID => net2RoomID,
+		OurID => "000000",
+		Clk_In => master_clock,
+		ProjectorEnable => c2pen,
+		LightsEnable => c2len,
+		TX => net2tx,
+		transmiting => trans2
+	);
+	
+		Classroom3 : classroomControllerHardware port map(
+		ClassroomInUse => sen3u,
+		LightsAreOn => sen3l,
+		ProjectorIsOn => sen3p,
+		RX => '0',
+		RoomID => net2RoomID,
+		OurID => "000001",
+		Clk_In => master_clock,
+		ProjectorEnable => c3pen,
+		LightsEnable => c3len,
+		TX => net2tx,
+		transmiting => trans3
+	);
 
 end a;
 

@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sat Apr 28 20:22:36 2018
+Sat Apr 28 20:26:27 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -64,15 +64,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 20:22:36 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 20:26:27 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2 / 114,480 ( < 1 % )                       ;
-;     Total combinational functions  ; 2 / 114,480 ( < 1 % )                       ;
+; Total logic elements               ; 4 / 114,480 ( < 1 % )                       ;
+;     Total combinational functions  ; 4 / 114,480 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 70 / 529 ( 13 % )                           ;
@@ -1091,8 +1091,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 174 ) ; 0.00 % ( 0 / 174 )         ; 0.00 % ( 0 / 174 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 174 ) ; 0.00 % ( 0 / 174 )         ; 0.00 % ( 0 / 174 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 176 ) ; 0.00 % ( 0 / 176 )         ; 0.00 % ( 0 / 176 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 176 ) ; 0.00 % ( 0 / 176 )         ; 0.00 % ( 0 / 176 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -1115,7 +1115,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 164 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 166 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -1131,26 +1131,26 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 2 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 2                     ;
+; Total logic elements                        ; 4 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 4                     ;
 ;     -- Register only                        ; 0                     ;
 ;     -- Combinational with a register        ; 0                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 1                     ;
-;     -- 3 input functions                    ; 1                     ;
-;     -- <=2 input functions                  ; 0                     ;
+;     -- 4 input functions                    ; 2                     ;
+;     -- 3 input functions                    ; 0                     ;
+;     -- <=2 input functions                  ; 2                     ;
 ;     -- Register only                        ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 2                     ;
+;     -- normal mode                          ; 4                     ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
 ; Total registers*                            ; 0 / 117,053 ( 0 % )   ;
 ;     -- Dedicated logic registers            ; 0 / 114,480 ( 0 % )   ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )     ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 2 / 7,155 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 3 / 7,155 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 70 / 529 ( 13 % )     ;
 ;     -- Clock pins                           ; 0 / 7 ( 0 % )         ;
@@ -1169,11 +1169,11 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.1% / 0.2% / 0.2%    ;
+; Peak interconnect usage (total/H/V)         ; 0.2% / 0.2% / 0.2%    ;
 ; Maximum fan-out                             ; 8                     ;
 ; Highest non-global fan-out                  ; 8                     ;
-; Total fan-out                               ; 113                   ;
-; Average fan-out                             ; 0.65                  ;
+; Total fan-out                               ; 119                   ;
+; Average fan-out                             ; 0.68                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1186,26 +1186,26 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 2 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 2                    ; 0                              ;
+; Total logic elements                        ; 4 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 4                    ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;     -- Combinational with a register        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 1                    ; 0                              ;
-;     -- 3 input functions                    ; 1                    ; 0                              ;
-;     -- <=2 input functions                  ; 0                    ; 0                              ;
+;     -- 4 input functions                    ; 2                    ; 0                              ;
+;     -- 3 input functions                    ; 0                    ; 0                              ;
+;     -- <=2 input functions                  ; 2                    ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 2                    ; 0                              ;
+;     -- normal mode                          ; 4                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 0                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 0 / 114480 ( 0 % )   ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 2 / 7155 ( < 1 % )   ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 3 / 7155 ( < 1 % )   ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 70                   ; 0                              ;
@@ -1220,7 +1220,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 108                  ; 5                              ;
+;     -- Total Connections                    ; 114                  ; 5                              ;
 ;     -- Registered Connections               ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -1313,33 +1313,33 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------------------------------------------------------+
-; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group                                                                         ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------------------------------------------------------+
-; gpio[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[10] ; AC19  ; 4        ; 94           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[11] ; AF16  ; 4        ; 65           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[12] ; AD19  ; 4        ; 94           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[13] ; AF15  ; 4        ; 60           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[14] ; AF24  ; 4        ; 83           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[15] ; AE21  ; 4        ; 85           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[16] ; AF25  ; 4        ; 83           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[17] ; AC22  ; 4        ; 109          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[18] ; AE22  ; 4        ; 96           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[19] ; AF21  ; 4        ; 87           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[1]  ; AC15  ; 4        ; 60           ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[20] ; AF22  ; 4        ; 96           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[2]  ; AB21  ; 4        ; 109          ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[3]  ; Y17   ; 4        ; 96           ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[4]  ; AC21  ; 4        ; 102          ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[5]  ; Y16   ; 4        ; 96           ; 0            ; 14           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[6]  ; AD21  ; 4        ; 102          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~1 (inverted) ;
-; gpio[7]  ; AE16  ; 4        ; 65           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[8]  ; AD15  ; 4        ; 60           ; 0            ; 14           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-; gpio[9]  ; AE15  ; 4        ; 60           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                           ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+--------------------------------------------------------------------------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group                                                                  ;
++----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+--------------------------------------------------------------------------------------+
+; gpio[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[10] ; AC19  ; 4        ; 94           ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[11] ; AF16  ; 4        ; 65           ; 0            ; 14           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[12] ; AD19  ; 4        ; 94           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[13] ; AF15  ; 4        ; 60           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[14] ; AF24  ; 4        ; 83           ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[15] ; AE21  ; 4        ; 85           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~1 (inverted) ;
+; gpio[16] ; AF25  ; 4        ; 83           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[17] ; AC22  ; 4        ; 109          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[18] ; AE22  ; 4        ; 96           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[19] ; AF21  ; 4        ; 87           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[1]  ; AC15  ; 4        ; 60           ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[20] ; AF22  ; 4        ; 96           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[2]  ; AB21  ; 4        ; 109          ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[3]  ; Y17   ; 4        ; 96           ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[4]  ; AC21  ; 4        ; 102          ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[5]  ; Y16   ; 4        ; 96           ; 0            ; 14           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[6]  ; AD21  ; 4        ; 102          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~1 (inverted) ;
+; gpio[7]  ; AE16  ; 4        ; 65           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[8]  ; AD15  ; 4        ; 60           ; 0            ; 14           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
+; gpio[9]  ; AE15  ; 4        ; 60           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                                                    ;
++----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+--------------------+---------------------------+----------------------------+----------------------+----------------------+--------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -2201,12 +2201,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; ledg[7]  ; Missing drive strength and slew rate ;
 ; ledg[8]  ; Missing drive strength and slew rate ;
 ; gpio[7]  ; Missing drive strength               ;
-; gpio[9]  ; Missing drive strength               ;
-; gpio[10] ; Missing drive strength               ;
-; gpio[11] ; Missing drive strength               ;
-; gpio[12] ; Missing drive strength               ;
-; gpio[13] ; Missing drive strength               ;
-; gpio[14] ; Missing drive strength               ;
 ; gpio[16] ; Missing drive strength               ;
 ; gpio[17] ; Missing drive strength               ;
 ; gpio[18] ; Missing drive strength               ;
@@ -2220,19 +2214,27 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; gpio[5]  ; Missing drive strength               ;
 ; gpio[6]  ; Missing drive strength               ;
 ; gpio[8]  ; Missing drive strength               ;
+; gpio[9]  ; Missing drive strength               ;
+; gpio[10] ; Missing drive strength               ;
+; gpio[11] ; Missing drive strength               ;
+; gpio[12] ; Missing drive strength               ;
+; gpio[13] ; Missing drive strength               ;
+; gpio[14] ; Missing drive strength               ;
 ; gpio[15] ; Missing drive strength               ;
 +----------+--------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                   ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 70   ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
-;       |comparator6b:classroomComparator|    ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                        ; Entity Name                 ; Library Name ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; |ClassroomController                        ; 4 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 70   ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; |ClassroomController                                                                       ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                ; ClassroomControllerHardware ; work         ;
+;       |tri_state_buffer_top:busBuffer|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer ; tri_state_buffer_top        ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                ; ClassroomControllerHardware ; work         ;
+;       |tri_state_buffer_top:busBuffer|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer ; tri_state_buffer_top        ; work         ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -2290,94 +2292,98 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; key[2]   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; key[3]   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[7]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[9]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[10] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[11] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[12] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[13] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[14] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[16] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[17] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[18] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[19] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[20] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[0]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; gpio[0]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[1]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; gpio[2]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; gpio[3]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; gpio[4]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; gpio[3]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; gpio[4]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; gpio[5]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; gpio[6]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[8]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; gpio[9]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; gpio[10] ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; gpio[11] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; gpio[12] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; gpio[13] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; gpio[14] ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; gpio[15] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; sw[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                                        ;
-+-----------------------------------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                                                     ; Pad To Core Index ; Setting ;
-+-----------------------------------------------------------------------------------------+-------------------+---------+
-; sw[1]                                                                                   ;                   ;         ;
-; sw[2]                                                                                   ;                   ;         ;
-; sw[3]                                                                                   ;                   ;         ;
-; sw[4]                                                                                   ;                   ;         ;
-; sw[5]                                                                                   ;                   ;         ;
-; sw[6]                                                                                   ;                   ;         ;
-; sw[7]                                                                                   ;                   ;         ;
-; sw[8]                                                                                   ;                   ;         ;
-; sw[9]                                                                                   ;                   ;         ;
-; sw[10]                                                                                  ;                   ;         ;
-; sw[11]                                                                                  ;                   ;         ;
-; sw[12]                                                                                  ;                   ;         ;
-; sw[13]                                                                                  ;                   ;         ;
-; sw[14]                                                                                  ;                   ;         ;
-; sw[15]                                                                                  ;                   ;         ;
-; sw[16]                                                                                  ;                   ;         ;
-; sw[17]                                                                                  ;                   ;         ;
-; key[0]                                                                                  ;                   ;         ;
-; key[1]                                                                                  ;                   ;         ;
-; key[2]                                                                                  ;                   ;         ;
-; key[3]                                                                                  ;                   ;         ;
-; gpio[7]                                                                                 ;                   ;         ;
-; gpio[9]                                                                                 ;                   ;         ;
-; gpio[10]                                                                                ;                   ;         ;
-; gpio[11]                                                                                ;                   ;         ;
-; gpio[12]                                                                                ;                   ;         ;
-; gpio[13]                                                                                ;                   ;         ;
-; gpio[14]                                                                                ;                   ;         ;
-; gpio[16]                                                                                ;                   ;         ;
-; gpio[17]                                                                                ;                   ;         ;
-; gpio[18]                                                                                ;                   ;         ;
-; gpio[19]                                                                                ;                   ;         ;
-; gpio[20]                                                                                ;                   ;         ;
-; gpio[0]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~1 ; 0                 ; 6       ;
-; gpio[1]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~1 ; 0                 ; 6       ;
-; gpio[2]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~0 ; 1                 ; 6       ;
-; gpio[3]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~0 ; 0                 ; 6       ;
-; gpio[4]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~0 ; 1                 ; 6       ;
-; gpio[5]                                                                                 ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator|Equal0~0 ; 1                 ; 6       ;
-; gpio[6]                                                                                 ;                   ;         ;
-; gpio[8]                                                                                 ;                   ;         ;
-;      - ledg[8]~output                                                                   ; 0                 ; 6       ;
-; gpio[15]                                                                                ;                   ;         ;
-; sw[0]                                                                                   ;                   ;         ;
-;      - ledr[0]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[1]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[4]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[5]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[8]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[9]~output                                                                   ; 0                 ; 6       ;
-;      - ledr[12]~output                                                                  ; 0                 ; 6       ;
-;      - ledr[13]~output                                                                  ; 0                 ; 6       ;
-+-----------------------------------------------------------------------------------------+-------------------+---------+
++----------------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                                 ;
++----------------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                              ; Pad To Core Index ; Setting ;
++----------------------------------------------------------------------------------+-------------------+---------+
+; sw[1]                                                                            ;                   ;         ;
+; sw[2]                                                                            ;                   ;         ;
+; sw[3]                                                                            ;                   ;         ;
+; sw[4]                                                                            ;                   ;         ;
+; sw[5]                                                                            ;                   ;         ;
+; sw[6]                                                                            ;                   ;         ;
+; sw[7]                                                                            ;                   ;         ;
+; sw[8]                                                                            ;                   ;         ;
+; sw[9]                                                                            ;                   ;         ;
+; sw[10]                                                                           ;                   ;         ;
+; sw[11]                                                                           ;                   ;         ;
+; sw[12]                                                                           ;                   ;         ;
+; sw[13]                                                                           ;                   ;         ;
+; sw[14]                                                                           ;                   ;         ;
+; sw[15]                                                                           ;                   ;         ;
+; sw[16]                                                                           ;                   ;         ;
+; sw[17]                                                                           ;                   ;         ;
+; key[0]                                                                           ;                   ;         ;
+; key[1]                                                                           ;                   ;         ;
+; key[2]                                                                           ;                   ;         ;
+; key[3]                                                                           ;                   ;         ;
+; gpio[7]                                                                          ;                   ;         ;
+; gpio[16]                                                                         ;                   ;         ;
+; gpio[17]                                                                         ;                   ;         ;
+; gpio[18]                                                                         ;                   ;         ;
+; gpio[19]                                                                         ;                   ;         ;
+; gpio[20]                                                                         ;                   ;         ;
+; gpio[0]                                                                          ;                   ;         ;
+; gpio[1]                                                                          ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~1 ; 0                 ; 6       ;
+; gpio[2]                                                                          ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~0 ; 1                 ; 6       ;
+; gpio[3]                                                                          ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~0 ; 1                 ; 6       ;
+; gpio[4]                                                                          ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~0 ; 0                 ; 6       ;
+; gpio[5]                                                                          ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~0 ; 1                 ; 6       ;
+; gpio[6]                                                                          ;                   ;         ;
+; gpio[8]                                                                          ;                   ;         ;
+;      - ledg[8]~output                                                            ; 0                 ; 6       ;
+; gpio[9]                                                                          ;                   ;         ;
+; gpio[10]                                                                         ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~1 ; 1                 ; 6       ;
+; gpio[11]                                                                         ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~0 ; 0                 ; 6       ;
+; gpio[12]                                                                         ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~0 ; 0                 ; 6       ;
+; gpio[13]                                                                         ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~0 ; 0                 ; 6       ;
+; gpio[14]                                                                         ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer|Y~0 ; 1                 ; 6       ;
+; gpio[15]                                                                         ;                   ;         ;
+; sw[0]                                                                            ;                   ;         ;
+;      - ledr[0]~output                                                            ; 0                 ; 6       ;
+;      - ledr[1]~output                                                            ; 0                 ; 6       ;
+;      - ledr[4]~output                                                            ; 0                 ; 6       ;
+;      - ledr[5]~output                                                            ; 0                 ; 6       ;
+;      - ledr[8]~output                                                            ; 0                 ; 6       ;
+;      - ledr[9]~output                                                            ; 0                 ; 6       ;
+;      - ledr[12]~output                                                           ; 0                 ; 6       ;
+;      - ledr[13]~output                                                           ; 0                 ; 6       ;
++----------------------------------------------------------------------------------+-------------------+---------+
 
 
 +------------------------------------------------+
@@ -2385,24 +2391,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 17 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 10 / 10,120 ( < 1 % )  ;
-; C4 interconnects      ; 14 / 209,544 ( < 1 % ) ;
-; Direct links          ; 1 / 342,891 ( < 1 % )  ;
+; Block interconnects   ; 22 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 12 / 10,120 ( < 1 % )  ;
+; C4 interconnects      ; 19 / 209,544 ( < 1 % ) ;
+; Direct links          ; 0 / 342,891 ( 0 % )    ;
 ; Global clocks         ; 0 / 20 ( 0 % )         ;
-; Local interconnects   ; 0 / 119,088 ( 0 % )    ;
-; R24 interconnects     ; 8 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 8 / 289,782 ( < 1 % )  ;
+; Local interconnects   ; 1 / 119,088 ( < 1 % )  ;
+; R24 interconnects     ; 10 / 9,963 ( < 1 % )   ;
+; R4 interconnects      ; 15 / 289,782 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 1.00) ; Number of LABs  (Total = 2) ;
+; Number of Logic Elements  (Average = 1.33) ; Number of LABs  (Total = 3) ;
 +--------------------------------------------+-----------------------------+
 ; 1                                          ; 2                           ;
-; 2                                          ; 0                           ;
+; 2                                          ; 1                           ;
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
@@ -2423,33 +2429,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 1.00) ; Number of LABs  (Total = 2) ;
+; Number of Signals Sourced  (Average = 1.33) ; Number of LABs  (Total = 3) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 2                           ;
+; 2                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 1.00) ; Number of LABs  (Total = 2) ;
+; Number of Signals Sourced Out  (Average = 1.00) ; Number of LABs  (Total = 3) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 2                           ;
+; 1                                               ; 3                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 3.50) ; Number of LABs  (Total = 2) ;
+; Number of Distinct Inputs  (Average = 3.67) ; Number of LABs  (Total = 3) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
+; 2                                           ; 1                           ;
+; 3                                           ; 0                           ;
 ; 4                                           ; 1                           ;
+; 5                                           ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -2563,12 +2571,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; key[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; key[3]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[7]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[9]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[10]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[11]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[12]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[13]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[14]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[16]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[17]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[18]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2582,6 +2584,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[8]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[9]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[10]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[11]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[12]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[13]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[14]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[15]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; sw[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -3126,12 +3134,12 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X58_Y61 to location X68_Y73
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X92_Y0 to location X103_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.07 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3140,12 +3148,6 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 21 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin gpio[7] uses I/O standard 3.3-V LVTTL at AE16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[9] uses I/O standard 3.3-V LVTTL at AE15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[10] uses I/O standard 3.3-V LVTTL at AC19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[11] uses I/O standard 3.3-V LVTTL at AF16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[12] uses I/O standard 3.3-V LVTTL at AD19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[13] uses I/O standard 3.3-V LVTTL at AF15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[14] uses I/O standard 3.3-V LVTTL at AF24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[16] uses I/O standard 3.3-V LVTTL at AF25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[17] uses I/O standard 3.3-V LVTTL at AC22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[18] uses I/O standard 3.3-V LVTTL at AE22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -3159,15 +3161,15 @@ Warning (169177): 21 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin gpio[5] uses I/O standard 3.3-V LVTTL at Y16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[6] uses I/O standard 3.3-V LVTTL at AD21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[8] uses I/O standard 3.3-V LVTTL at AD15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[9] uses I/O standard 3.3-V LVTTL at AE15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[10] uses I/O standard 3.3-V LVTTL at AC19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[11] uses I/O standard 3.3-V LVTTL at AF16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[12] uses I/O standard 3.3-V LVTTL at AD19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[13] uses I/O standard 3.3-V LVTTL at AF15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[14] uses I/O standard 3.3-V LVTTL at AF24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169178): Pin gpio[15] uses I/O standard 3.3-V LVTTL at AE21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-Warning (169064): Following 20 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+Warning (169064): Following 19 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[9] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[10] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[11] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[12] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[13] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[14] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169065): Pin gpio[16] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169065): Pin gpio[17] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169065): Pin gpio[18] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -3180,11 +3182,16 @@ Warning (169064): Following 20 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[4] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169065): Pin gpio[5] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Info (169065): Pin gpio[8] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[15] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[9] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[10] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[11] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[12] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[13] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[14] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 465 warnings
-    Info: Peak virtual memory: 1613 megabytes
-    Info: Processing ended: Sat Apr 28 20:22:37 2018
+    Info: Peak virtual memory: 1604 megabytes
+    Info: Processing ended: Sat Apr 28 20:26:27 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:18
 
