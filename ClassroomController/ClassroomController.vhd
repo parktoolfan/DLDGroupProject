@@ -16,7 +16,7 @@ architecture a of ClassroomController is
 	-- Declare the components that we created below.
 	Component ClassroomControllerHardware is 
 		port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
-					RoomID, OurID : in std_logic_vector(5 downto 0);
+					RoomID, OurID : in std_logic_vector(1 downto 0);
 					Clk_In : in std_logic;
 					projectorEnable, LightsEnable, TX, transmitting : out std_logic
 				);
@@ -25,8 +25,8 @@ architecture a of ClassroomController is
 	signal master_clock : std_logic;
 	signal c0len, c0pen, c1len, c1pen, c2len, c2pen, c3len, c3pen : std_logic; -- classroomNumber, lights or projector enable
 	signal sen0u, sen0l, sen0p, sen1u, sen1l, sen1p, sen2u, sen2l, sen2p, sen3u, sen3l, sen3p : std_logic; -- sensor associated with classroom #, sensing use, lights, projector
-	signal net1RoomID, net2RoomID : std_logic_vector(5 downto 0);
-	signal net1tx, net2tx : std_logic;
+	signal net1RoomID : std_logic_vector(1 downto 0);
+	signal net1tx : std_logic;
 	signal trans0, trans1, trans2, trans3 : std_logic;
 	
 begin
@@ -35,11 +35,9 @@ begin
 	-- Clock
 	master_clock <= gpio(8);
 	-- RoomIDs
-	net1RoomID <= gpio(5 downto 0);
-	net2RoomID <= gpio(14 downto 9);
+	net1RoomID <= gpio(1 downto 0);
 	-- TX bits
 	gpio(6) <= net1tx;
-	gpio(15) <= net2tx;
 	
 	-- flash on clock
 	ledg(8) <= master_clock;
@@ -81,7 +79,7 @@ begin
 	ledr(14) <= trans3;
 	
 	-- for testing purposes, we will plot network 1 room id and network 1 tx on ledg
-	ledg(5 downto 0) <= net1RoomID;
+	ledg(1 downto 0) <= net1RoomID;
 	ledg(7) <= net1tx;
 	
 	
@@ -91,7 +89,7 @@ begin
 		ProjectorIsOn => sen0p,
 		RX => '0',
 		RoomID => net1RoomID,
-		OurID => "000000",
+		OurID => "00",
 		Clk_In => master_clock,
 		ProjectorEnable => c0pen,
 		LightsEnable => c0len,
@@ -105,7 +103,7 @@ begin
 		ProjectorIsOn => sen1p,
 		RX => '0',
 		RoomID => net1RoomID,
-		OurID => "000001",
+		OurID => "01",
 		Clk_In => master_clock,
 		ProjectorEnable => c1pen,
 		LightsEnable => c1len,
@@ -118,12 +116,12 @@ begin
 		LightsAreOn => sen2l,
 		ProjectorIsOn => sen2p,
 		RX => '0',
-		RoomID => net2RoomID,
-		OurID => "000000",
+		RoomID => net1RoomID,
+		OurID => "10",
 		Clk_In => master_clock,
 		ProjectorEnable => c2pen,
 		LightsEnable => c2len,
-		TX => net2tx,
+		TX => net1tx,
 		transmitting => trans2
 	);
 	
@@ -132,12 +130,12 @@ begin
 		LightsAreOn => sen3l,
 		ProjectorIsOn => sen3p,
 		RX => '0',
-		RoomID => net2RoomID,
-		OurID => "000001",
+		RoomID => net1RoomID,
+		OurID => "11",
 		Clk_In => master_clock,
 		ProjectorEnable => c3pen,
 		LightsEnable => c3len,
-		TX => net2tx,
+		TX => net1tx,
 		transmitting => trans3
 	);
 
@@ -149,7 +147,7 @@ Library ieee;
 use ieee.std_logic_1164.all;
 Entity ClassroomControllerHardware is 
 	port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
-				RoomID, OurID : in std_logic_vector(5 downto 0);
+				RoomID, OurID : in std_logic_vector(1 downto 0);
 				Clk_In : in std_logic;
 				projectorEnable, LightsEnable, TX, transmitting : out std_logic
 			);
@@ -199,8 +197,8 @@ begin
 	
 	-- Circuitry to determine when we are selected by the BuildingController to Transmit
 	classroomComparator : comparator6b port map(
-		op1 => OurID,
-		op2 => RoomID,
+		op1 => "0000" & OurID,
+		op2 => "0000" & RoomID,  -- the comparator expects 6b of input but roomId and ourID are only 2 bits now.
 		equal => Equal
 	);
 	
