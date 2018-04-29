@@ -14,10 +14,6 @@
 				{
 					"name" : "gpio[14]",
 					"strict" : false
-				},
-				{
-					"name" : "gpio[23]",
-					"strict" : false
 				}
 			]
 		}

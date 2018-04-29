@@ -1,6 +1,41 @@
 Library ieee;
 use ieee.std_logic_1164.all;
 
+entity BuildingController is
+port(	gpio : inout std_logic_vector(39 downto 0);
+		ledr : out std_logic_vector(17 downto 0);
+		sw : in std_logic_vector(17 downto 0);
+		key : in std_logic_vector (3 downto 0);
+		ledg : out std_logic_vector(8 downto 0)
+	);
+end BuildingController;
+
+architecture a of BuildingController is
+
+	-- SIGNALS for external IO
+	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
+	signal buildingID, ourID : std_logic_vector(2 downto 0);
+	signal roomID : std_logic_vector(5 downto 0);
+
+begin
+
+	-- fectch master clock signal, and flash clock LED
+	master_clock <= gpio(5);
+	ledg(8) <= master_clock;
+	-- send clock signal to ClassroomInUse
+	gpio(14) <= master_clock;
+
+	-- wire our building to GPIO Pins
+	rx1 <= gpio(13);
+	gpio(12) <= tx1;
+	gpio(11 downto 6) <= roomID;
+
+	-- Show what roomID we're on
+	ledg(5 downto 0) <= roomID;
+
+
+	end a;
+
 -- entity BuildingController is
 -- port(	gpio : inout std_logic_vector(39 downto 0);
 -- 		ledr : out std_logic_vector(17 downto 0);
@@ -325,7 +360,7 @@ use ieee.std_logic_1164.all;
 		-- circuit diagram inplementation goes here
 
 
-	end b;
+--	end b;
 
 
 

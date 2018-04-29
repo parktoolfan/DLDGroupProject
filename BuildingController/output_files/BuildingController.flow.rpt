@@ -1,5 +1,5 @@
 Flow report for BuildingController
-Sat Apr 28 23:11:09 2018
+Sat Apr 28 23:33:19 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Apr 28 23:11:05 2018       ;
+; Flow Status                        ; Successful - Sat Apr 28 23:33:15 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/28/2018 23:10:32 ;
+; Start date & time ; 04/28/2018 23:32:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BuildingController  ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 963354563467.152497143211844           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 963354563467.152497276401408           ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -91,11 +91,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 714 MB              ; 00:00:28                           ;
-; Fitter                    ; 00:00:11     ; 1.0                     ; 1600 MB             ; 00:00:17                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 605 MB              ; 00:00:04                           ;
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 712 MB              ; 00:00:25                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 1608 MB             ; 00:00:16                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 604 MB              ; 00:00:04                           ;
 ; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 764 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:32     ; --                      ; --                  ; 00:00:52                           ;
+; Total                     ; 00:00:31     ; --                      ; --                  ; 00:00:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
