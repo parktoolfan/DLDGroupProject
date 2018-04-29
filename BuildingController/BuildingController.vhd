@@ -53,6 +53,13 @@ architecture a of BuildingController is
 						);
 			end component Mux;
 
+			-- our PISO output shift register
+			component PISO_shift is
+				port(S_L, SI, clk, clr  : in std_logic;
+					 PI: in std_logic_vector(15 downto 0);
+					  SO: out std_logic);
+			end component PISO_shift;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
@@ -64,7 +71,7 @@ architecture a of BuildingController is
 		-- aux is anded from parallel inputs and tells when the input from the classroomController is ready for reading.
 		-- write to DB tells when to write to the Reg file.
 		-- use state_inc to increment the FSM
-	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual : std_logic;
+	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual, txToBus : std_logic;
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
 	Signal state, clockCycle, regDataOut : std_logic_vector(3 downto 0);
 	Signal multiplexedOutput : std_logic_vector(15 downto 0);
@@ -151,6 +158,17 @@ begin
 		D => "1010101010101010",
 		Y => multiplexedOutput
 	);
+
+-- output shift reg
+	outputShifter : PISO_shift Port map (
+		S_L => Not(load), -- load is the active low state
+		SI => '0',
+		clk => master_clock,
+		clr => '0',
+		PI => multiplexedOutput,
+		SO => txToBus
+	);
+
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
@@ -692,36 +710,24 @@ entity PISO_shift is
 		 PI: in std_logic_vector(15 downto 0);
 		  SO: out std_logic);
 end PISO_shift;
-
 architecture h of PISO_shift is
-
 	signal tmp: std_logic_vector(15 downto 0);
-
-	 begin
-
-		process(S_L, clk, clr)
-
+	begin
+		process(clk, clr)
 			 begin
-
 				if (clr = '1') then
 				tmp <= "0000000000000000";
-
 				elsif (clk'event and Clk='1') then
-
 					if (S_L ='1') then
-					tmp <= tmp(14 downto 0) & SI;
-
+						tmp(14 downto 0) <= tmp(15 downto 1); -- items flow from 15 to 0
+						tmp(15) <= SI;
 					elsif (S_L = '0') then
 					tmp <= PI;
-
 					end if;
-
 				end if;
-
 			end process;
-			SO <= PI(15);
-
-		end h;
+			SO <= PI(0);
+	end h;
 
 
 -- Add tristate buffer code
