@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sun Apr 29 16:41:36 2018
+Sun Apr 29 17:12:46 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -14,17 +14,19 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Port Connectivity Checks: "ClassroomControllerHardware:Classroom3"
- 11. Port Connectivity Checks: "ClassroomControllerHardware:Classroom2"
- 12. Port Connectivity Checks: "ClassroomControllerHardware:Classroom1"
- 13. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|piso48b:serialOutReg"
- 14. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF"
- 15. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator"
- 16. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Port Connectivity Checks: "ClassroomControllerHardware:Classroom3"
+ 13. Port Connectivity Checks: "ClassroomControllerHardware:Classroom2"
+ 14. Port Connectivity Checks: "ClassroomControllerHardware:Classroom1"
+ 15. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|piso48b:serialOutReg"
+ 16. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF"
+ 17. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator"
+ 18. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +52,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 29 16:41:36 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 29 17:12:46 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 137                                         ;
+;     Total combinational functions  ; 137                                         ;
+;     Dedicated logic registers      ; 132                                         ;
+; Total registers                    ; 132                                         ;
 ; Total pins                         ; 89                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -162,10 +164,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -183,30 +186,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 4             ;
+; Estimated Total logic elements              ; 137           ;
 ;                                             ;               ;
-; Total combinational functions               ; 4             ;
+; Total combinational functions               ; 137           ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 0             ;
-;     -- 3 input functions                    ; 0             ;
-;     -- <=2 input functions                  ; 4             ;
+;     -- 4 input functions                    ; 114           ;
+;     -- 3 input functions                    ; 16            ;
+;     -- <=2 input functions                  ; 7             ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 4             ;
+;     -- normal mode                          ; 137           ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
-; Total registers                             ; 0             ;
-;     -- Dedicated logic registers            ; 0             ;
+; Total registers                             ; 132           ;
+;     -- Dedicated logic registers            ; 132           ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 89            ;
 ;                                             ;               ;
 ; Embedded Multiplier 9-bit elements          ; 0             ;
 ;                                             ;               ;
-; Maximum fan-out node                        ; gpio[0]~input ;
-; Maximum fan-out                             ; 5             ;
-; Total fan-out                               ; 152           ;
-; Average fan-out                             ; 0.68          ;
+; Maximum fan-out node                        ; gpio[8]~input ;
+; Maximum fan-out                             ; 133           ;
+; Total fan-out                               ; 925           ;
+; Average fan-out                             ; 1.90          ;
 +---------------------------------------------+---------------+
 
 
@@ -215,90 +218,161 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
+; |ClassroomController                        ; 137 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 35 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
-;    |ClassroomControllerHardware:Classroom1| ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
+;    |ClassroomControllerHardware:Classroom1| ; 36 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator ; comparator6b                ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 33 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;    |ClassroomControllerHardware:Classroom3| ; 33 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso48b:serialOutReg             ; piso48b                     ; work         ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                       ;
-+---------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                   ; Reason for Removal                     ;
-+---------------------------------------------------------------------------------+----------------------------------------+
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[0..15]         ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[16..20,24..32] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[33]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[34]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[35]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[39]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[40]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[47]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[0..15]         ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[16..20,24..32] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[33]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[34]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[38]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[39]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[44]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[45]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[46]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[47]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[0..15]         ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[16..20,24..32] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[36]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[37]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[40]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[41]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[42]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[43]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[44]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[45]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[46]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[47]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[0..15]         ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[16..20,24..32] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[34]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[35]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[36]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[37]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[38]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[40]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[41]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[42]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[43]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45]            ; Stuck at VCC due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46]            ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[47]            ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 180                                         ;                                        ;
-+---------------------------------------------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++-----------------------------------------------------------------------+----------------------------------------+
+; Register name                                                         ; Reason for Removal                     ;
++-----------------------------------------------------------------------+----------------------------------------+
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[0,1] ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[0,1] ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[0,1] ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[0,1] ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[2]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[2]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[2]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[2]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[3]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[3]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[3]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[3]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[4]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[4]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[4]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[4]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[5]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[5]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[5]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[5]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[6]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[6]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[6]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[6]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[7]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[7]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[7]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[7]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[8]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[8]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[8]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[8]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[9]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[9]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[9]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[9]   ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[10]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[10]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[10]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[10]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[11]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[11]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[11]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[11]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[12]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[12]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[12]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[12]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[13]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[13]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[13]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[13]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[14]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[14]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[14]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[14]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[15]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[15]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[15]  ; Stuck at VCC due to stuck port data_in ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[15]  ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 64                                ;                                        ;
++-----------------------------------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                             ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
+; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[0] ; Stuck at VCC              ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[1],  ;
+;                                                                     ; due to stuck port data_in ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[2],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[3],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[4],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[5],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[6],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[7],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[8],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[9],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[10], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[11], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[12], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[13], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[14], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[15]  ;
+; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[0] ; Stuck at VCC              ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[1],  ;
+;                                                                     ; due to stuck port data_in ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[2],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[3],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[4],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[5],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[6],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[7],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[8],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[9],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[10], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[11], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[12], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[13], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[14], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[15]  ;
+; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[0] ; Stuck at VCC              ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[1],  ;
+;                                                                     ; due to stuck port data_in ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[2],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[3],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[4],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[5],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[6],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[7],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[8],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[9],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[10], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[11], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[12], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[13], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[14], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[15]  ;
+; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[0] ; Stuck at VCC              ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[1],  ;
+;                                                                     ; due to stuck port data_in ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[2],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[3],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[4],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[5],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[6],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[7],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[8],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[9],  ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[10], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[11], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[12], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[13], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[14], ;
+;                                                                     ;                           ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[15]  ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -306,7 +380,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 132   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -314,6 +388,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------+
+; Inverted Register Statistics                                           ;
++--------------------------------------------------------------+---------+
+; Inverted Register                                            ; Fan out ;
++--------------------------------------------------------------+---------+
+; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q ; 29      ;
+; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q ; 29      ;
+; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q ; 29      ;
+; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q ; 29      ;
+; Total number of inverted registers = 4                       ;         ;
++--------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------+
@@ -374,15 +461,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------+----------+------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF"                         ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; clr  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; pre  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" ;
++------+-------+----------+--------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                      ;
++------+-------+----------+--------------------------------------------------------------+
+; clr  ; Input ; Info     ; Stuck at VCC                                                 ;
+; pre  ; Input ; Info     ; Stuck at VCC                                                 ;
++------+-------+----------+--------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -411,15 +497,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 89                          ;
+; cycloneiii_ff         ; 132                         ;
+;     plain             ; 132                         ;
 ; cycloneiii_io_obuf    ; 41                          ;
-; cycloneiii_lcell_comb ; 6                           ;
-;     normal            ; 6                           ;
+; cycloneiii_lcell_comb ; 139                         ;
+;     normal            ; 139                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 4                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 114                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.20                        ;
+; Average LUT depth     ; 0.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -438,7 +528,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 29 16:41:22 2018
+    Info: Processing started: Sun Apr 29 17:12:31 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -462,8 +552,6 @@ Warning (10873): Using initial value X (don't care) for net "ledr[7]" at Classro
 Warning (10873): Using initial value X (don't care) for net "ledr[3]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledg[6..2]" at ClassroomController.vhd(8) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
 Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "ClassroomControllerHardware:Classroom0" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 86
-Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(190): used implicit default value for signal "LoadShiftReg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 190
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(190): object "lastEqual" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 190
 Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 199
 Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 207
 Info (12128): Elaborating entity "piso48b" for hierarchy "ClassroomControllerHardware:Classroom0|piso48b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 218
@@ -529,18 +617,10 @@ Warning (14632): Output pin "ledg[1]" driven by bidirectional pin "gpio[1]" cann
 Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[8]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
@@ -548,15 +628,15 @@ Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 85 warnings
-    Info: Peak virtual memory: 714 megabytes
-    Info: Processing ended: Sun Apr 29 16:41:36 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21061): Implemented 142 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 712 megabytes
+    Info: Processing ended: Sun Apr 29 17:12:46 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
 
 

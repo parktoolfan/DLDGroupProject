@@ -212,7 +212,7 @@ begin
 		q => lastEqual
 	);
 	
-	--LoadShiftReg <= Not(lastEqual) and equal;
+	LoadShiftReg <= Not(lastEqual) and equal;
 	
 	-- Finally implement shift out register
 	serialOutReg : piso48b port map(
@@ -312,7 +312,7 @@ begin
 				temp <= parallel_In;
 			else -- otherwise we should shift down the register.
 				temp(47 downto 1) <= temp(46 downto 0);
-				temp(0) <= '0';  -- we never need to shift in serial for this project component, so we can simply simulate shifting in a zero.
+				temp(0) <= '1';  -- we never need to shift in serial for this project component, so we can simply simulate shifting in a zero.
 			end if;
 		end if;
 	end process;
