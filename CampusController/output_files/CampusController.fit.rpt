@@ -1,5 +1,5 @@
 Fitter report for CampusController
-Sun Apr 29 17:03:38 2018
+Sun Apr 29 19:56:15 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -69,17 +69,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 29 17:03:37 2018       ;
+; Fitter Status                      ; Successful - Sun Apr 29 19:56:15 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; CampusController                            ;
 ; Top-level Entity Name              ; CampusController                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 62 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 29 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 50 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 50                                          ;
+; Total logic elements               ; 50 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 25 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 46 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 46                                          ;
 ; Total pins                         ; 57 / 529 ( 11 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
@@ -648,8 +648,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 213 ) ; 0.00 % ( 0 / 213 )         ; 0.00 % ( 0 / 213 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 213 ) ; 0.00 % ( 0 / 213 )         ; 0.00 % ( 0 / 213 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 205 ) ; 0.00 % ( 0 / 205 )         ; 0.00 % ( 0 / 205 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 205 ) ; 0.00 % ( 0 / 205 )         ; 0.00 % ( 0 / 205 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -672,7 +672,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 203 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 195 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -688,23 +688,23 @@ The pin-out file can be found in /Documents/DLDProject/CampusController/output_f
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 62 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 12                     ;
-;     -- Register only                        ; 33                     ;
-;     -- Combinational with a register        ; 17                     ;
+; Total logic elements                        ; 50 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 4                      ;
+;     -- Register only                        ; 25                     ;
+;     -- Combinational with a register        ; 21                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 18                     ;
-;     -- 3 input functions                    ; 7                      ;
-;     -- <=2 input functions                  ; 4                      ;
-;     -- Register only                        ; 33                     ;
+;     -- 4 input functions                    ; 14                     ;
+;     -- 3 input functions                    ; 6                      ;
+;     -- <=2 input functions                  ; 5                      ;
+;     -- Register only                        ; 25                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 29                     ;
+;     -- normal mode                          ; 25                     ;
 ;     -- arithmetic mode                      ; 0                      ;
 ;                                             ;                        ;
-; Total registers*                            ; 50 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 50 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 46 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 46 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )      ;
 ;                                             ;                        ;
 ; Total LABs:  partially or completely used   ; 6 / 7,155 ( < 1 % )    ;
@@ -725,12 +725,12 @@ The pin-out file can be found in /Documents/DLDProject/CampusController/output_f
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.2%     ;
-; Peak interconnect usage (total/H/V)         ; 1.3% / 1.2% / 1.5%     ;
-; Maximum fan-out                             ; 49                     ;
-; Highest non-global fan-out                  ; 49                     ;
-; Total fan-out                               ; 341                    ;
-; Average fan-out                             ; 1.39                   ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
+; Peak interconnect usage (total/H/V)         ; 0.8% / 0.9% / 1.1%     ;
+; Maximum fan-out                             ; 45                     ;
+; Highest non-global fan-out                  ; 45                     ;
+; Total fan-out                               ; 308                    ;
+; Average fan-out                             ; 1.34                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -743,23 +743,23 @@ The pin-out file can be found in /Documents/DLDProject/CampusController/output_f
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 62 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 12                    ; 0                              ;
-;     -- Register only                        ; 33                    ; 0                              ;
-;     -- Combinational with a register        ; 17                    ; 0                              ;
+; Total logic elements                        ; 50 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 4                     ; 0                              ;
+;     -- Register only                        ; 25                    ; 0                              ;
+;     -- Combinational with a register        ; 21                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 18                    ; 0                              ;
-;     -- 3 input functions                    ; 7                     ; 0                              ;
-;     -- <=2 input functions                  ; 4                     ; 0                              ;
-;     -- Register only                        ; 33                    ; 0                              ;
+;     -- 4 input functions                    ; 14                    ; 0                              ;
+;     -- 3 input functions                    ; 6                     ; 0                              ;
+;     -- <=2 input functions                  ; 5                     ; 0                              ;
+;     -- Register only                        ; 25                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 29                    ; 0                              ;
+;     -- normal mode                          ; 25                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 50                    ; 0                              ;
-;     -- Dedicated logic registers            ; 50 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 46                    ; 0                              ;
+;     -- Dedicated logic registers            ; 46 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total LABs:  partially or completely used   ; 6 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
@@ -778,8 +778,8 @@ The pin-out file can be found in /Documents/DLDProject/CampusController/output_f
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 336                   ; 5                              ;
-;     -- Registered Connections               ; 126                   ; 0                              ;
+;     -- Total Connections                    ; 303                   ; 5                              ;
+;     -- Registered Connections               ; 114                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 16                    ; 0                              ;
@@ -883,7 +883,7 @@ The pin-out file can be found in /Documents/DLDProject/CampusController/output_f
 ; gpio[4] ; AC21  ; 4        ; 102          ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[5] ; Y16   ; 4        ; 96           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[6] ; AD21  ; 4        ; 102          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
-; gpio[7] ; AE16  ; 4        ; 65           ; 0            ; 21           ; 49                    ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
+; gpio[7] ; AE16  ; 4        ; 65           ; 0            ; 21           ; 45                    ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -1783,16 +1783,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                 ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                    ; Entity Name         ; Library Name ;
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+---------------------+--------------+
-; |CampusController                          ; 62 (8)      ; 50 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 57   ; 0            ; 12 (8)       ; 33 (0)            ; 17 (3)           ; |CampusController                                                      ; CampusController    ; work         ;
-;    |ls163:AllignmentCounter|               ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; |CampusController|ls163:AllignmentCounter                              ; ls163               ; work         ;
-;    |register_file:Database|                ; 15 (0)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 4 (0)             ; 8 (0)            ; |CampusController|register_file:Database                               ; register_file       ; work         ;
-;       |decoder_2to4:des_decoder_2to4|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 1 (1)            ; |CampusController|register_file:Database|decoder_2to4:des_decoder_2to4 ; decoder_2to4        ; work         ;
+; |CampusController                          ; 50 (3)      ; 46 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 57   ; 0            ; 4 (3)        ; 25 (0)            ; 21 (9)           ; |CampusController                                                      ; CampusController    ; work         ;
+;    |register_file:Database|                ; 13 (0)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 2 (0)             ; 10 (0)           ; |CampusController|register_file:Database                               ; register_file       ; work         ;
+;       |decoder_2to4:des_decoder_2to4|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (3)            ; |CampusController|register_file:Database|decoder_2to4:des_decoder_2to4 ; decoder_2to4        ; work         ;
 ;       |mux4_4bit:Inst_mux4_4bit|           ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; |CampusController|register_file:Database|mux4_4bit:Inst_mux4_4bit      ; mux4_4bit           ; work         ;
 ;       |reg4:reg00|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 1 (1)            ; |CampusController|register_file:Database|reg4:reg00                    ; reg4                ; work         ;
-;       |reg4:reg01|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 1 (1)            ; |CampusController|register_file:Database|reg4:reg01                    ; reg4                ; work         ;
+;       |reg4:reg01|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |CampusController|register_file:Database|reg4:reg01                    ; reg4                ; work         ;
 ;       |reg4:reg02|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |CampusController|register_file:Database|reg4:reg02                    ; reg4                ; work         ;
 ;       |reg4:reg03|                         ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |CampusController|register_file:Database|reg4:reg03                    ; reg4                ; work         ;
-;    |sipo:inputReg|                         ; 31 (31)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 29 (29)           ; 2 (2)            ; |CampusController|sipo:inputReg                                        ; sipo                ; work         ;
+;    |sipo:inputReg|                         ; 31 (31)     ; 31 (31)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 23 (23)           ; 8 (8)            ; |CampusController|sipo:inputReg                                        ; sipo                ; work         ;
 ;    |vhdl_binary_counter:BuildingIdCounter| ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |CampusController|vhdl_binary_counter:BuildingIdCounter                ; vhdl_binary_counter ; work         ;
 +--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1858,8 +1857,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[4]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; gpio[5]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[7]  ; Bidir    ; (6) 1314 ps   ; (0) 0 ps      ; --                    ; --  ; --   ;
-; sw[16]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; sw[17]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; sw[16]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; sw[17]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1910,78 +1909,74 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - register_file:Database|reg4:reg03|Q[0]                 ; 1                 ; 0       ;
 ;      - register_file:Database|reg4:reg03|Q[1]                 ; 1                 ; 0       ;
 ;      - register_file:Database|reg4:reg03|Q[2]                 ; 1                 ; 0       ;
-;      - ls163:AllignmentCounter|tmp[3]                         ; 1                 ; 0       ;
-;      - ls163:AllignmentCounter|tmp[2]                         ; 1                 ; 0       ;
-;      - ls163:AllignmentCounter|tmp[1]                         ; 1                 ; 0       ;
-;      - ls163:AllignmentCounter|tmp[0]                         ; 1                 ; 0       ;
-;      - sipo:inputReg|Q[0]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[15]                                    ; 1                 ; 0       ;
+;      - sipo:inputReg|Q[13]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[11]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[9]                                     ; 1                 ; 0       ;
-;      - sipo:inputReg|Q[7]                                     ; 1                 ; 0       ;
-;      - sipo:inputReg|Q[5]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[3]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[1]                                     ; 1                 ; 0       ;
-;      - sipo:inputReg|Q[13]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[14]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[12]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[10]                                    ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[8]                                     ; 1                 ; 0       ;
-;      - sipo:inputReg|Q[6]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[4]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|Q[2]                                     ; 1                 ; 0       ;
-;      - sipo:inputReg|temp[0]                                  ; 1                 ; 0       ;
+;      - sipo:inputReg|Q[0]                                     ; 1                 ; 0       ;
+;      - sipo:inputReg|Q[6]                                     ; 1                 ; 0       ;
+;      - sipo:inputReg|Q[7]                                     ; 1                 ; 0       ;
+;      - sipo:inputReg|Q[5]                                     ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[15]                                 ; 1                 ; 0       ;
+;      - sipo:inputReg|temp[13]                                 ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[11]                                 ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[9]                                  ; 1                 ; 0       ;
-;      - sipo:inputReg|temp[7]                                  ; 1                 ; 0       ;
-;      - sipo:inputReg|temp[5]                                  ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[3]                                  ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[1]                                  ; 1                 ; 0       ;
-;      - sipo:inputReg|temp[13]                                 ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[12]                                 ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[10]                                 ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[8]                                  ; 1                 ; 0       ;
-;      - sipo:inputReg|temp[6]                                  ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[4]                                  ; 1                 ; 0       ;
 ;      - sipo:inputReg|temp[2]                                  ; 1                 ; 0       ;
+;      - sipo:inputReg|temp[0]                                  ; 1                 ; 0       ;
+;      - sipo:inputReg|temp[6]                                  ; 1                 ; 0       ;
+;      - sipo:inputReg|temp[7]                                  ; 1                 ; 0       ;
+;      - sipo:inputReg|temp[5]                                  ; 1                 ; 0       ;
 ;      - ledg[8]~output                                         ; 0                 ; 6       ;
 ; sw[16]                                                        ;                   ;         ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]~0 ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]   ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]~1 ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]   ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]~2 ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]   ; 1                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]~0 ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]   ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]~1 ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]   ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]~2 ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]   ; 0                 ; 6       ;
 ; sw[17]                                                        ;                   ;         ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]~0 ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]~1 ; 1                 ; 6       ;
-;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]~2 ; 1                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[0]~0 ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[1]~1 ; 0                 ; 6       ;
+;      - register_file:Database|mux4_4bit:Inst_mux4_4bit|Z[2]~2 ; 0                 ; 6       ;
 +---------------------------------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                       ;
-+-----------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                      ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; EndFlag                                                   ; LCCOMB_X67_Y5_N26 ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK17           ; --                        ;
-; gpio[7]                                                   ; PIN_AE16          ; 49      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; register_file:Database|decoder_2to4:des_decoder_2to4|Q0   ; LCCOMB_X67_Y5_N14 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~0 ; LCCOMB_X67_Y5_N0  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~1 ; LCCOMB_X67_Y5_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~2 ; LCCOMB_X67_Y5_N30 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; vhdl_binary_counter:BuildingIdCounter|tmp[2]              ; FF_X67_Y5_N21     ; 3       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-+-----------------------------------------------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                        ;
++-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                      ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; EndFlag                                                   ; LCCOMB_X68_Y56_N24 ; 3       ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; gpio[7]                                                   ; PIN_AE16           ; 45      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; register_file:Database|decoder_2to4:des_decoder_2to4|Q0   ; LCCOMB_X69_Y56_N28 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~0 ; LCCOMB_X68_Y56_N22 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~1 ; LCCOMB_X69_Y56_N6  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; register_file:Database|decoder_2to4:des_decoder_2to4|Q1~2 ; LCCOMB_X68_Y56_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; vhdl_binary_counter:BuildingIdCounter|tmp[2]              ; FF_X69_Y56_N9      ; 3       ; Async. clear ; no     ; --                   ; --               ; --                        ;
++-----------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                        ;
-+---------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name    ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; EndFlag ; LCCOMB_X67_Y5_N26 ; 3       ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
-+---------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                         ;
++---------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name    ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; EndFlag ; LCCOMB_X68_Y56_N24 ; 3       ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
++---------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------+
@@ -1989,39 +1984,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 85 / 342,891 ( < 1 % )  ;
-; C16 interconnects     ; 72 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 132 / 209,544 ( < 1 % ) ;
-; Direct links          ; 10 / 342,891 ( < 1 % )  ;
+; Block interconnects   ; 101 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 46 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 101 / 209,544 ( < 1 % ) ;
+; Direct links          ; 23 / 342,891 ( < 1 % )  ;
 ; Global clocks         ; 1 / 20 ( 5 % )          ;
-; Local interconnects   ; 41 / 119,088 ( < 1 % )  ;
-; R24 interconnects     ; 27 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 108 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 30 / 119,088 ( < 1 % )  ;
+; R24 interconnects     ; 25 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 89 / 289,782 ( < 1 % )  ;
 +-----------------------+-------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.33) ; Number of LABs  (Total = 6) ;
-+---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 0                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 1                           ;
-; 7                                           ; 1                           ;
-; 8                                           ; 1                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 1                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 1                           ;
-; 15                                          ; 1                           ;
-; 16                                          ; 0                           ;
-+---------------------------------------------+-----------------------------+
++--------------------------------------------------------------------------+
+; LAB Logic Elements                                                       ;
++--------------------------------------------+-----------------------------+
+; Number of Logic Elements  (Average = 8.33) ; Number of LABs  (Total = 6) ;
++--------------------------------------------+-----------------------------+
+; 1                                          ; 1                           ;
+; 2                                          ; 0                           ;
+; 3                                          ; 1                           ;
+; 4                                          ; 0                           ;
+; 5                                          ; 0                           ;
+; 6                                          ; 0                           ;
+; 7                                          ; 1                           ;
+; 8                                          ; 0                           ;
+; 9                                          ; 0                           ;
+; 10                                         ; 1                           ;
+; 11                                         ; 0                           ;
+; 12                                         ; 0                           ;
+; 13                                         ; 1                           ;
+; 14                                         ; 0                           ;
+; 15                                         ; 0                           ;
+; 16                                         ; 1                           ;
++--------------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------------------+
@@ -2030,8 +2025,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LAB-wide Signals  (Average = 1.33) ; Number of LABs  (Total = 6) ;
 +------------------------------------+-----------------------------+
 ; 1 Clock                            ; 5                           ;
-; 1 Clock enable                     ; 1                           ;
-; 2 Clock enables                    ; 1                           ;
+; 1 Clock enable                     ; 2                           ;
 ; 2 Clocks                           ; 1                           ;
 +------------------------------------+-----------------------------+
 
@@ -2039,21 +2033,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 18.67) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced  (Average = 16.00) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
+; 2                                            ; 1                           ;
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
+; 6                                            ; 1                           ;
 ; 7                                            ; 0                           ;
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
-; 12                                           ; 2                           ;
+; 12                                           ; 0                           ;
 ; 13                                           ; 1                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
@@ -2067,56 +2061,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 23                                           ; 0                           ;
 ; 24                                           ; 0                           ;
 ; 25                                           ; 0                           ;
-; 26                                           ; 0                           ;
+; 26                                           ; 1                           ;
 ; 27                                           ; 0                           ;
-; 28                                           ; 1                           ;
-; 29                                           ; 1                           ;
+; 28                                           ; 0                           ;
+; 29                                           ; 0                           ;
+; 30                                           ; 0                           ;
+; 31                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 8.67) ; Number of LABs  (Total = 6) ;
+; Number of Signals Sourced Out  (Average = 8.50) ; Number of LABs  (Total = 6) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
+; 1                                               ; 1                           ;
 ; 2                                               ; 0                           ;
-; 3                                               ; 1                           ;
-; 4                                               ; 1                           ;
+; 3                                               ; 0                           ;
+; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
+; 6                                               ; 2                           ;
 ; 7                                               ; 0                           ;
 ; 8                                               ; 0                           ;
-; 9                                               ; 1                           ;
+; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
-; 11                                              ; 2                           ;
-; 12                                              ; 0                           ;
-; 13                                              ; 0                           ;
-; 14                                              ; 1                           ;
+; 11                                              ; 0                           ;
+; 12                                              ; 1                           ;
+; 13                                              ; 2                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 8.67) ; Number of LABs  (Total = 6) ;
+; Number of Distinct Inputs  (Average = 9.67) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 1                           ;
+; 2                                           ; 2                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 1                           ;
-; 6                                           ; 0                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 1                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
+; 10                                          ; 1                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
-; 13                                          ; 1                           ;
-; 14                                          ; 2                           ;
+; 13                                          ; 0                           ;
+; 14                                          ; 0                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 0                           ;
+; 17                                          ; 0                           ;
+; 18                                          ; 0                           ;
+; 19                                          ; 2                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -2282,9 +2282,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+----------------------+-------------------+
 ; Source Clock(s)            ; Destination Clock(s) ; Delay Added in ns ;
 +----------------------------+----------------------+-------------------+
-; gpio[7]                    ; gpio[7]              ; 9.1               ;
-; gpio[7]                    ; gpio[7],I/O          ; 2.1               ;
-; sipo:inputReg|Q[0],gpio[7] ; gpio[7]              ; 1.3               ;
+; gpio[7]                    ; gpio[7],I/O          ; 1.5               ;
+; gpio[7]                    ; gpio[7]              ; 1.4               ;
+; sipo:inputReg|Q[0],gpio[7] ; gpio[7]              ; 1.2               ;
 +----------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2295,31 +2295,24 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------------------+----------------------------------------+-------------------+
 ; Source Register                              ; Destination Register                   ; Delay Added in ns ;
 +----------------------------------------------+----------------------------------------+-------------------+
-; sipo:inputReg|Q[0]                           ; ls163:AllignmentCounter|tmp[3]         ; 2.446             ;
-; sipo:inputReg|Q[15]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[11]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[9]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[7]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[5]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[3]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[1]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[14]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[12]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[10]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[8]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[6]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[4]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; sipo:inputReg|Q[2]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.924             ;
-; ls163:AllignmentCounter|tmp[3]               ; register_file:Database|reg4:reg01|Q[0] ; 0.880             ;
-; ls163:AllignmentCounter|tmp[2]               ; register_file:Database|reg4:reg01|Q[0] ; 0.880             ;
-; ls163:AllignmentCounter|tmp[1]               ; register_file:Database|reg4:reg01|Q[0] ; 0.880             ;
-; ls163:AllignmentCounter|tmp[0]               ; register_file:Database|reg4:reg01|Q[0] ; 0.880             ;
-; sipo:inputReg|Q[13]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.880             ;
-; gpio[7]                                      ; sipo:inputReg|temp[0]                  ; 0.489             ;
-; vhdl_binary_counter:BuildingIdCounter|tmp[1] ; register_file:Database|reg4:reg01|Q[0] ; 0.440             ;
-; vhdl_binary_counter:BuildingIdCounter|tmp[0] ; register_file:Database|reg4:reg01|Q[0] ; 0.440             ;
+; sipo:inputReg|Q[0]                           ; register_file:Database|reg4:reg01|Q[0] ; 2.313             ;
+; sipo:inputReg|Q[4]                           ; register_file:Database|reg4:reg01|Q[0] ; 1.111             ;
+; sipo:inputReg|Q[2]                           ; register_file:Database|reg4:reg01|Q[0] ; 1.111             ;
+; sipo:inputReg|Q[3]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[1]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[15]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[11]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[9]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[13]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[14]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[12]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[10]                          ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; sipo:inputReg|Q[8]                           ; register_file:Database|reg4:reg01|Q[0] ; 0.838             ;
+; vhdl_binary_counter:BuildingIdCounter|tmp[1] ; register_file:Database|reg4:reg01|Q[0] ; 0.368             ;
+; vhdl_binary_counter:BuildingIdCounter|tmp[0] ; register_file:Database|reg4:reg01|Q[0] ; 0.368             ;
+; gpio[7]                                      ; sipo:inputReg|Q[6]                     ; 0.120             ;
 +----------------------------------------------+----------------------------------------+-------------------+
-Note: This table only shows the top 23 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 16 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2357,7 +2350,6 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176353): Automatically promoted node EndFlag  File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 68
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node BitStringAlligned File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 68
         Info (176357): Destination node ledg[5]~output File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 8
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -2831,7 +2823,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -2840,11 +2832,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X58_Y0 to location X68_Y11
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X69_Y49 to location X80_Y60
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.21 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2862,10 +2854,10 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/CampusController/CampusController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/CampusController/output_files/CampusController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 475 warnings
-    Info: Peak virtual memory: 1612 megabytes
-    Info: Processing ended: Sun Apr 29 17:03:38 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 1602 megabytes
+    Info: Processing ended: Sun Apr 29 19:56:15 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +----------------------------+

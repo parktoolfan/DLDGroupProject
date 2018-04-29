@@ -108,8 +108,8 @@ begin
 		);
 
 		-- Because this chip does not have an RCO, implement some combinational logic to simulate the RCO, when this simulation triggers RCO, we know that the we are ready to read from our input shift regerister into our memory circuitry.
-		BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3) and not(endFlag) and not(startflag);
-
+		--BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3) and not(endFlag) and not(startflag);
+		BitStringAlligned <= Not(rxin(15) or rxin(14) or rxin(13) or rxin(12) or rxin(11) or rxin(10) or rxin(9) or rxin(8) or rxin(0) or rxin(1) or rxin(2) or rxin(3) or rxin(4));
 
 		-- Implement Memory Component:
 		-- A note on the memory component, in a full system where we have as many as 8 classrooms with 64 classrooms a piece, we would need 512 register, since we are only demonstrating 4 classrooms across two buildings, we are going to use a 4 register register file.

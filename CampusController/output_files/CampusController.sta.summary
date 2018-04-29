@@ -3,96 +3,96 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'gpio[7]'
-Slack : -4.039
-TNS   : -69.144
+Slack : -3.151
+TNS   : -45.953
 
 Type  : Slow 1200mV 85C Model Setup 'sipo:inputReg|Q[0]'
-Slack : -0.269
-TNS   : -0.339
+Slack : -0.209
+TNS   : -0.209
 
 Type  : Slow 1200mV 85C Model Hold 'sipo:inputReg|Q[0]'
-Slack : 0.403
+Slack : 0.405
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'gpio[7]'
-Slack : 0.440
+Slack : 0.483
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'sipo:inputReg|Q[0]'
-Slack : -0.465
-TNS   : -1.395
+Slack : -0.463
+TNS   : -1.389
 
 Type  : Slow 1200mV 85C Model Removal 'sipo:inputReg|Q[0]'
-Slack : 0.979
+Slack : 0.981
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gpio[7]'
 Slack : -3.210
-TNS   : -63.605
+TNS   : -58.465
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sipo:inputReg|Q[0]'
 Slack : -1.285
 TNS   : -3.855
 
 Type  : Slow 1200mV 0C Model Setup 'gpio[7]'
-Slack : -3.553
-TNS   : -60.245
+Slack : -2.759
+TNS   : -38.658
 
 Type  : Slow 1200mV 0C Model Setup 'sipo:inputReg|Q[0]'
-Slack : -0.139
-TNS   : -0.139
+Slack : -0.084
+TNS   : -0.084
 
 Type  : Slow 1200mV 0C Model Hold 'sipo:inputReg|Q[0]'
-Slack : 0.355
+Slack : 0.356
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'gpio[7]'
-Slack : 0.377
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'sipo:inputReg|Q[0]'
-Slack : -0.322
-TNS   : -0.966
+Slack : -0.321
+TNS   : -0.963
 
 Type  : Slow 1200mV 0C Model Removal 'sipo:inputReg|Q[0]'
-Slack : 0.886
+Slack : 0.887
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gpio[7]'
 Slack : -3.210
-TNS   : -63.605
+TNS   : -58.465
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sipo:inputReg|Q[0]'
 Slack : -1.285
 TNS   : -3.855
 
 Type  : Fast 1200mV 0C Model Setup 'gpio[7]'
-Slack : -1.544
-TNS   : -21.570
+Slack : -1.027
+TNS   : -12.108
 
 Type  : Fast 1200mV 0C Model Setup 'sipo:inputReg|Q[0]'
-Slack : 0.374
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'sipo:inputReg|Q[0]'
-Slack : 0.180
+Slack : 0.407
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'gpio[7]'
-Slack : 0.192
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sipo:inputReg|Q[0]'
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'sipo:inputReg|Q[0]'
-Slack : 0.270
+Slack : 0.273
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'sipo:inputReg|Q[0]'
-Slack : 0.475
+Slack : 0.479
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'gpio[7]'
 Slack : -3.000
-TNS   : -56.003
+TNS   : -58.618
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sipo:inputReg|Q[0]'
 Slack : -1.000
