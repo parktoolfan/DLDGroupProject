@@ -4,9 +4,9 @@ use ieee.std_logic_1164.all;
 entity BuildingController is
 port(	gpio : inout std_logic_vector(39 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
+		ledg : out std_logic_vector(8 downto 8);
 		sw : in std_logic_vector(17 downto 0);
-		key : in std_logic_vector (3 downto 0);
-		ledg : out std_logic_vector(8 downto 0)
+		key : in std_logic_vector (3 downto 0)
 	);
 end BuildingController;
 
@@ -16,7 +16,7 @@ architecture a of BuildingController is
 		port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
-			room_data_out : out std_logic_vector(3 downto 0);
+			room_data_out : out std_logic_vector(7 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
 			);
 	end component BuildingHardware;
@@ -25,6 +25,8 @@ architecture a of BuildingController is
 	signal to_building_id: std_logic_vector(2 downto 0);
 
 begin
+		gpio(30) <= '1';
+		ledg(8) <= to_clk_in;
 
 		building_A: BuildingHardware Port map (	clk_in => to_clk_in ,
 										clk_out => gpio(14),
@@ -34,7 +36,7 @@ begin
 										Rx2 => A_rx2,
 										Building_ID => to_building_id,
 										Room_ID => gpio(11 downto 6),
-										room_data_out => ledr( 3 downto 0));
+										room_data_out => ledr( 7 downto 0));
 
 		building_B: BuildingHardware Port map (	clk_in => to_clk_in,
 										clk_out => gpio(23),
@@ -44,17 +46,16 @@ begin
 										Rx2 => B_rx2,
 										Building_ID => to_building_id,
 										Room_ID => gpio(20 downto 15),
-										room_data_out => ledr( 7 downto 4));
+										room_data_out => ledr( 15 downto 8));
 
 	to_clk_in <= gpio(5);
 	A_rx1 <= gpio(13);
 	A_rx2 <= gpio(4);
 	B_rx1 <= gpio(22);
 	B_rx2 <= gpio(4);
-	
-	Ledg(8) <= to_clk_in;
 	to_building_id <=  gpio(2 downto 0);
 	--two building hardwares go here
+
 
 	end a;
 
@@ -68,7 +69,7 @@ Entity BuildingHardware is
 	port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
-			room_data_out : out std_logic_vector(3 downto 0);
+			room_data_out : out std_logic_vector(7 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
 	);
 end BuildingHardware;
@@ -104,7 +105,7 @@ architecture b of BuildingHardware is
 				selectedData : out std_logic_vector(3 downto 0) --data of selected register
 				);
 	end component register_file;
-	
+
 	component tri_state_buffer_top is
 		Port (	A	: in  STD_LOGIC;    -- single buffer input
 					EN	: in  STD_LOGIC;    -- single buffer enable
@@ -154,9 +155,6 @@ architecture b of BuildingHardware is
 	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 	begin
-	
-		-- send clock data out.
-		clk_out <= clk_in;
 
 		Data_in: SIPO_A_SHIFT port Map(
 			clk => clk_in,
@@ -232,13 +230,15 @@ architecture b of BuildingHardware is
 			PI => mux_out,
 			SO => tx2buffer
 		);
-		
+
 		-- wire txto bus to tx bus with a tristate buffer
 		busBuffer : tri_state_buffer_top Port map (
 				A => tx2buffer,
 				En => equals,
 				Y => TX2
 		);
+
+		clk_out <= clk_in;
 
 		--aux_1 <= SIPO_out(11) AND SIPO_out(12) AND SIPO_out(13) AND NOT(SIPO_out(14)) AND NOT(SIPO_out(15));
 		--aux_2 <= C
@@ -562,8 +562,8 @@ architecture h of PISO_shift is
 			SO <= PI(15);
 
 		end h;
-		
-		
+
+
 -- Add tristate buffer code
 -- Tristate Buffer
 Library ieee;
