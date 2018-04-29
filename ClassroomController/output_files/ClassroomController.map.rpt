@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 21:00:27 2018
+Sat Apr 28 22:35:21 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -49,13 +49,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 21:00:27 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 22:35:21 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 8                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 89                                          ;
@@ -177,49 +177,55 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 4           ;
-;                                             ;             ;
-; Total combinational functions               ; 4           ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2           ;
-;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 2           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 4           ;
-;     -- arithmetic mode                      ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 89          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; sw[0]~input ;
-; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 152         ;
-; Average fan-out                             ; 0.68        ;
-+---------------------------------------------+-------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 8             ;
+;                                             ;               ;
+; Total combinational functions               ; 8             ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 2             ;
+;     -- 3 input functions                    ; 4             ;
+;     -- <=2 input functions                  ; 2             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 8             ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 89            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; gpio[1]~input ;
+; Maximum fan-out                             ; 4             ;
+; Total fan-out                               ; 175           ;
+; Average fan-out                             ; 0.77          ;
++---------------------------------------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                              ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name                 ; Library Name ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                       ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                ; ClassroomControllerHardware ; work         ;
-;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer ; tri_state_buffer_top        ; work         ;
-;    |ClassroomControllerHardware:Classroom2| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                ; ClassroomControllerHardware ; work         ;
-;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer ; tri_state_buffer_top        ; work         ;
-+---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; |ClassroomController                        ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
+;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
+;       |tri_state_buffer_top:busBuffer|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
+;    |ClassroomControllerHardware:Classroom1| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
+;       |comparator6b:classroomComparator|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator ; comparator6b                ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
+;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|comparator6b:classroomComparator ; comparator6b                ; work         ;
+;       |tri_state_buffer_top:busBuffer|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
+;    |ClassroomControllerHardware:Classroom3| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
+;       |comparator6b:classroomComparator|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|comparator6b:classroomComparator ; comparator6b                ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -379,45 +385,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ClassroomControllerHardware:Classroom3"                                                        ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; rx              ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ourid[5..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ourid[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; projectorenable ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; lightsenable    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; transmiting     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "ClassroomControllerHardware:Classroom3" ;
++-------------+-------+----------+-----------------------------------+
+; Port        ; Type  ; Severity ; Details                           ;
++-------------+-------+----------+-----------------------------------+
+; rx          ; Input ; Info     ; Stuck at GND                      ;
+; ourid[5..1] ; Input ; Info     ; Stuck at GND                      ;
+; ourid[0]    ; Input ; Info     ; Stuck at VCC                      ;
++-------------+-------+----------+-----------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ClassroomControllerHardware:Classroom2"                                                        ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; rx              ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ourid           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; projectorenable ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; lightsenable    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; transmiting     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "ClassroomControllerHardware:Classroom2" ;
++-------+-------+----------+-----------------------------------------+
+; Port  ; Type  ; Severity ; Details                                 ;
++-------+-------+----------+-----------------------------------------+
+; rx    ; Input ; Info     ; Stuck at GND                            ;
+; ourid ; Input ; Info     ; Stuck at GND                            ;
++-------+-------+----------+-----------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ClassroomControllerHardware:Classroom1"                                                        ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; rx              ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ourid[5..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; ourid[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; projectorenable ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; lightsenable    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; transmiting     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "ClassroomControllerHardware:Classroom1" ;
++-------------+-------+----------+-----------------------------------+
+; Port        ; Type  ; Severity ; Details                           ;
++-------------+-------+----------+-----------------------------------+
+; rx          ; Input ; Info     ; Stuck at GND                      ;
+; ourid[5..1] ; Input ; Info     ; Stuck at GND                      ;
+; ourid[0]    ; Input ; Info     ; Stuck at VCC                      ;
++-------------+-------+----------+-----------------------------------+
 
 
 +----------------------------------------------------------------------------------------+
@@ -446,15 +443,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 89                          ;
-; cycloneiii_io_obuf    ; 40                          ;
-; cycloneiii_lcell_comb ; 5                           ;
-;     normal            ; 5                           ;
+; cycloneiii_io_obuf    ; 41                          ;
+; cycloneiii_lcell_comb ; 9                           ;
+;     normal            ; 9                           ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.46                        ;
+; Average LUT depth     ; 0.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -473,45 +471,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 21:00:13 2018
+    Info: Processing started: Sat Apr 28 22:35:07 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 12 design units, including 6 entities, in source file classroomcontroller.vhd
     Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
-    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 154
-    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 246
-    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 273
-    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 296
-    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 324
+    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 158
+    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 253
+    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 280
+    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 303
+    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 331
     Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
-    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 146
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 237
-    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 268
-    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 289
-    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 318
+    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 150
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 244
+    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 275
+    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 296
+    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 325
 Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c1len" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c1pen" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c2len" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c2pen" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c3len" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(26): object "c3pen" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(30): object "trans1" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 30
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(30): object "trans2" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 30
-Warning (10036): Verilog HDL or VHDL warning at ClassroomController.vhd(30): object "trans3" assigned a value but never read File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 30
 Warning (10873): Using initial value X (don't care) for net "ledr[17..15]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledr[11]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledr[7]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledr[3]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledg[7..0]" at ClassroomController.vhd(8) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "ClassroomControllerHardware:Classroom0" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 84
-Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(150): used implicit default value for signal "transmiting" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 150
-Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(189): used implicit default value for signal "toLoad" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 189
-Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 194
-Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 202
-Info (12128): Elaborating entity "piso16b" for hierarchy "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 213
-Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 221
+Warning (10873): Using initial value X (don't care) for net "ledg[6]" at ClassroomController.vhd(8) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "ClassroomControllerHardware:Classroom0" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 88
+Warning (10541): VHDL Signal Declaration warning at ClassroomController.vhd(193): used implicit default value for signal "toLoad" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 193
+Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 201
+Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 209
+Info (12128): Elaborating entity "piso16b" for hierarchy "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 220
+Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 228
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -552,41 +540,33 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ledr[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[10]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[14]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledg[0]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[1]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
     Warning (13410): Pin "ledg[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
 Info (286030): Timing-Driven Synthesis is running
+Warning (14632): Output pin "ledg[0]" driven by bidirectional pin "gpio[0]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[1]" driven by bidirectional pin "gpio[1]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[2]" driven by bidirectional pin "gpio[2]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[3]" driven by bidirectional pin "gpio[3]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[4]" driven by bidirectional pin "gpio[4]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[5]" driven by bidirectional pin "gpio[5]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
 Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[8]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 21 input pin(s) that do not drive logic
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[4]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[5]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[6]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[8]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[9]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[10]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[12]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[13]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[14]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
     Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
@@ -596,15 +576,15 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 98 warnings
-    Info: Peak virtual memory: 715 megabytes
-    Info: Processing ended: Sat Apr 28 21:00:27 2018
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 714 megabytes
+    Info: Processing ended: Sat Apr 28 22:35:21 2018
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:27
 
 

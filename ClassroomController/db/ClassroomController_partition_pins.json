@@ -12,11 +12,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "ledr[2]",
+					"strict" : false
+				},
+				{
 					"name" : "ledr[4]",
 					"strict" : false
 				},
 				{
 					"name" : "ledr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[6]",
 					"strict" : false
 				},
 				{
@@ -28,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ledr[10]",
+					"strict" : false
+				},
+				{
 					"name" : "ledr[12]",
 					"strict" : false
 				},
@@ -36,7 +48,43 @@
 					"strict" : false
 				},
 				{
+					"name" : "ledr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ledg[8]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[0]",
 					"strict" : false
 				},
 				{
@@ -68,6 +116,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "gpio[9]",
+					"strict" : false
+				},
+				{
 					"name" : "gpio[10]",
 					"strict" : false
 				},
@@ -93,6 +145,18 @@
 				},
 				{
 					"name" : "sw[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[12]",
 					"strict" : false
 				}
 			]
