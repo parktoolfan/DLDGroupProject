@@ -78,11 +78,11 @@ key[3] => ~NO_FANOUT~
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom0
-ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
+ClassroomInUse => piso16b:serialOutReg.parallel_In[5]
 ClassroomInUse => projectorEnable.DATAIN
 ClassroomInUse => LightsEnable.DATAIN
-LightsAreOn => piso16b:serialOutReg.parallel_In[9]
-ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
+LightsAreOn => piso16b:serialOutReg.parallel_In[6]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[7]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -188,11 +188,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom1
-ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
+ClassroomInUse => piso16b:serialOutReg.parallel_In[5]
 ClassroomInUse => projectorEnable.DATAIN
 ClassroomInUse => LightsEnable.DATAIN
-LightsAreOn => piso16b:serialOutReg.parallel_In[9]
-ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
+LightsAreOn => piso16b:serialOutReg.parallel_In[6]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[7]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -298,11 +298,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom2
-ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
+ClassroomInUse => piso16b:serialOutReg.parallel_In[5]
 ClassroomInUse => projectorEnable.DATAIN
 ClassroomInUse => LightsEnable.DATAIN
-LightsAreOn => piso16b:serialOutReg.parallel_In[9]
-ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
+LightsAreOn => piso16b:serialOutReg.parallel_In[6]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[7]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -408,11 +408,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom3
-ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
+ClassroomInUse => piso16b:serialOutReg.parallel_In[5]
 ClassroomInUse => projectorEnable.DATAIN
 ClassroomInUse => LightsEnable.DATAIN
-LightsAreOn => piso16b:serialOutReg.parallel_In[9]
-ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
+LightsAreOn => piso16b:serialOutReg.parallel_In[6]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[7]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]

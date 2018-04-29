@@ -2,4 +2,160 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -3.322
+TNS   : -16.827
+
+Type  : Slow 1200mV 85C Model Setup 'gpio[5]'
+Slack : -2.379
+TNS   : -5.691
+
+Type  : Slow 1200mV 85C Model Setup 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -2.103
+TNS   : -9.685
+
+Type  : Slow 1200mV 85C Model Hold 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -0.805
+TNS   : -0.805
+
+Type  : Slow 1200mV 85C Model Hold 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'gpio[5]'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -4.785
+TNS   : -29.519
+
+Type  : Slow 1200mV 85C Model Recovery 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -3.315
+TNS   : -18.732
+
+Type  : Slow 1200mV 85C Model Removal 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : 0.796
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 2.270
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gpio[5]'
+Slack : -3.210
+TNS   : -23.770
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -1.285
+TNS   : -14.135
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Slow 1200mV 0C Model Setup 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -2.934
+TNS   : -14.723
+
+Type  : Slow 1200mV 0C Model Setup 'gpio[5]'
+Slack : -2.037
+TNS   : -4.463
+
+Type  : Slow 1200mV 0C Model Setup 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -1.841
+TNS   : -8.426
+
+Type  : Slow 1200mV 0C Model Hold 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -0.725
+TNS   : -0.725
+
+Type  : Slow 1200mV 0C Model Hold 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'gpio[5]'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -4.123
+TNS   : -25.867
+
+Type  : Slow 1200mV 0C Model Recovery 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -2.922
+TNS   : -16.486
+
+Type  : Slow 1200mV 0C Model Removal 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : 0.734
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 2.041
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gpio[5]'
+Slack : -3.210
+TNS   : -23.770
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -1.285
+TNS   : -14.135
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -1.285
+TNS   : -7.710
+
+Type  : Fast 1200mV 0C Model Setup 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -1.436
+TNS   : -6.748
+
+Type  : Fast 1200mV 0C Model Setup 'gpio[5]'
+Slack : -0.824
+TNS   : -0.824
+
+Type  : Fast 1200mV 0C Model Setup 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -0.751
+TNS   : -3.235
+
+Type  : Fast 1200mV 0C Model Hold 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -0.502
+TNS   : -0.502
+
+Type  : Fast 1200mV 0C Model Hold 'gpio[5]'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -2.104
+TNS   : -10.662
+
+Type  : Fast 1200mV 0C Model Recovery 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -1.407
+TNS   : -7.614
+
+Type  : Fast 1200mV 0C Model Removal 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : 1.089
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'gpio[5]'
+Slack : -3.000
+TNS   : -28.332
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'asynch_counter:StateCounter|tmp[0]~_Duplicate_1'
+Slack : -1.000
+TNS   : -11.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SIPO_A_shift:Data_in|tmp[0]'
+Slack : -1.000
+TNS   : -6.000
+
 ------------------------------------------------------------

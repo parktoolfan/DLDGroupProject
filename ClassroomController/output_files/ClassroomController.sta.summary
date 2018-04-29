@@ -3,39 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'gpio[8]'
-Slack : -0.480
-TNS   : -22.476
+Slack : -0.347
+TNS   : -19.640
 
 Type  : Slow 1200mV 85C Model Hold 'gpio[8]'
-Slack : 0.461
+Slack : 0.480
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'gpio[8]'
 Slack : -3.210
-TNS   : -80.310
+TNS   : -90.590
 
 Type  : Slow 1200mV 0C Model Setup 'gpio[8]'
-Slack : -0.330
-TNS   : -14.461
+Slack : -0.213
+TNS   : -11.491
 
 Type  : Slow 1200mV 0C Model Hold 'gpio[8]'
-Slack : 0.423
+Slack : 0.443
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'gpio[8]'
 Slack : -3.210
-TNS   : -80.310
+TNS   : -90.590
 
 Type  : Fast 1200mV 0C Model Setup 'gpio[8]'
-Slack : 0.274
+Slack : 0.347
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'gpio[8]'
-Slack : 0.205
+Slack : 0.216
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'gpio[8]'
 Slack : -3.000
-TNS   : -89.661
+TNS   : -106.775
 
 ------------------------------------------------------------

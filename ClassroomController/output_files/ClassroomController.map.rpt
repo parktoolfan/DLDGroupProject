@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 22:51:13 2018
+Sun Apr 29 03:28:40 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,19 +13,17 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Port Connectivity Checks: "ClassroomControllerHardware:Classroom3"
- 13. Port Connectivity Checks: "ClassroomControllerHardware:Classroom2"
- 14. Port Connectivity Checks: "ClassroomControllerHardware:Classroom1"
- 15. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg"
- 16. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF"
- 17. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Port Connectivity Checks: "ClassroomControllerHardware:Classroom3"
+ 11. Port Connectivity Checks: "ClassroomControllerHardware:Classroom2"
+ 12. Port Connectivity Checks: "ClassroomControllerHardware:Classroom1"
+ 13. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg"
+ 14. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF"
+ 15. Port Connectivity Checks: "ClassroomControllerHardware:Classroom0"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -51,15 +49,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 22:51:13 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 29 03:28:40 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 74                                          ;
-;     Total combinational functions  ; 74                                          ;
-;     Dedicated logic registers      ; 60                                          ;
-; Total registers                    ; 60                                          ;
+; Total logic elements               ; 82                                          ;
+;     Total combinational functions  ; 82                                          ;
+;     Dedicated logic registers      ; 68                                          ;
+; Total registers                    ; 68                                          ;
 ; Total pins                         ; 89                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -185,20 +183,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 74            ;
+; Estimated Total logic elements              ; 82            ;
 ;                                             ;               ;
-; Total combinational functions               ; 74            ;
+; Total combinational functions               ; 82            ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 13            ;
+;     -- 4 input functions                    ; 12            ;
 ;     -- 3 input functions                    ; 16            ;
-;     -- <=2 input functions                  ; 45            ;
+;     -- <=2 input functions                  ; 54            ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 74            ;
+;     -- normal mode                          ; 82            ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
-; Total registers                             ; 60            ;
-;     -- Dedicated logic registers            ; 60            ;
+; Total registers                             ; 68            ;
+;     -- Dedicated logic registers            ; 68            ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
 ; I/O pins                                    ; 89            ;
@@ -206,9 +204,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; gpio[8]~input ;
-; Maximum fan-out                             ; 61            ;
-; Total fan-out                               ; 460           ;
-; Average fan-out                             ; 1.31          ;
+; Maximum fan-out                             ; 69            ;
+; Total fan-out                               ; 490           ;
+; Average fan-out                             ; 1.33          ;
 +---------------------------------------------+---------------+
 
 
@@ -217,60 +215,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 74 (0)              ; 60 (0)                    ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 19 (1)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
+; |ClassroomController                        ; 82 (0)              ; 68 (0)                    ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 21 (1)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso16b:serialOutReg|                ; 14 (14)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso16b:serialOutReg             ; piso16b                     ; work         ;
+;       |piso16b:serialOutReg|                ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso16b:serialOutReg             ; piso16b                     ; work         ;
 ;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
-;    |ClassroomControllerHardware:Classroom1| ; 18 (1)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
+;    |ClassroomControllerHardware:Classroom1| ; 20 (1)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso16b:serialOutReg|                ; 14 (14)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso16b:serialOutReg             ; piso16b                     ; work         ;
-;    |ClassroomControllerHardware:Classroom2| ; 19 (1)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
+;       |piso16b:serialOutReg|                ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso16b:serialOutReg             ; piso16b                     ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 21 (1)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso16b:serialOutReg|                ; 14 (14)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso16b:serialOutReg             ; piso16b                     ; work         ;
+;       |piso16b:serialOutReg|                ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso16b:serialOutReg             ; piso16b                     ; work         ;
 ;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
-;    |ClassroomControllerHardware:Classroom3| ; 18 (1)              ; 15 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
+;    |ClassroomControllerHardware:Classroom3| ; 20 (1)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso16b:serialOutReg|                ; 14 (14)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso16b:serialOutReg             ; piso16b                     ; work         ;
+;       |piso16b:serialOutReg|                ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso16b:serialOutReg             ; piso16b                     ; work         ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                            ;
-+----------------------------------------------------------------------+----------------------------------------+
-; Register name                                                        ; Reason for Removal                     ;
-+----------------------------------------------------------------------+----------------------------------------+
-; ClassroomControllerHardware:Classroom3|piso16b:serialOutReg|temp[15] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso16b:serialOutReg|temp[15] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso16b:serialOutReg|temp[15] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso16b:serialOutReg|temp[15] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom3|piso16b:serialOutReg|temp[14] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom2|piso16b:serialOutReg|temp[14] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom1|piso16b:serialOutReg|temp[14] ; Stuck at GND due to stuck port data_in ;
-; ClassroomControllerHardware:Classroom0|piso16b:serialOutReg|temp[14] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 8                                ;                                        ;
-+----------------------------------------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                             ;
-+----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-; Register name                                                        ; Reason for Removal        ; Registers Removed due to This Register                               ;
-+----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
-; ClassroomControllerHardware:Classroom3|piso16b:serialOutReg|temp[15] ; Stuck at GND              ; ClassroomControllerHardware:Classroom3|piso16b:serialOutReg|temp[14] ;
-;                                                                      ; due to stuck port data_in ;                                                                      ;
-; ClassroomControllerHardware:Classroom2|piso16b:serialOutReg|temp[15] ; Stuck at GND              ; ClassroomControllerHardware:Classroom2|piso16b:serialOutReg|temp[14] ;
-;                                                                      ; due to stuck port data_in ;                                                                      ;
-; ClassroomControllerHardware:Classroom1|piso16b:serialOutReg|temp[15] ; Stuck at GND              ; ClassroomControllerHardware:Classroom1|piso16b:serialOutReg|temp[14] ;
-;                                                                      ; due to stuck port data_in ;                                                                      ;
-; ClassroomControllerHardware:Classroom0|piso16b:serialOutReg|temp[15] ; Stuck at GND              ; ClassroomControllerHardware:Classroom0|piso16b:serialOutReg|temp[14] ;
-;                                                                      ; due to stuck port data_in ;                                                                      ;
-+----------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -278,7 +243,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 60    ;
+; Total registers                              ; 68    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -295,7 +260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+---------+
 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q ; 2       ;
 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q ; 2       ;
-; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q ; 3       ;
+; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q ; 2       ;
 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q ; 2       ;
 ; Total number of inverted registers = 4                       ;         ;
 +--------------------------------------------------------------+---------+
@@ -335,13 +300,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +-----------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg" ;
-+---------------------+-------+----------+------------------------------------------------+
-; Port                ; Type  ; Severity ; Details                                        ;
-+---------------------+-------+----------+------------------------------------------------+
-; parallel_in[13..11] ; Input ; Info     ; Stuck at VCC                                   ;
-; parallel_in[7..0]   ; Input ; Info     ; Stuck at VCC                                   ;
-; parallel_in[15..14] ; Input ; Info     ; Stuck at GND                                   ;
-+---------------------+-------+----------+------------------------------------------------+
++--------------------+-------+----------+-------------------------------------------------+
+; Port               ; Type  ; Severity ; Details                                         ;
++--------------------+-------+----------+-------------------------------------------------+
+; parallel_in[15..8] ; Input ; Info     ; Stuck at VCC                                    ;
+; parallel_in[4..2]  ; Input ; Info     ; Stuck at VCC                                    ;
+; parallel_in[1..0]  ; Input ; Info     ; Stuck at GND                                    ;
++--------------------+-------+----------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------+
@@ -370,19 +335,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 89                          ;
-; cycloneiii_ff         ; 60                          ;
-;     plain             ; 60                          ;
+; cycloneiii_ff         ; 68                          ;
+;     plain             ; 68                          ;
 ; cycloneiii_io_obuf    ; 41                          ;
-; cycloneiii_lcell_comb ; 75                          ;
-;     normal            ; 75                          ;
+; cycloneiii_lcell_comb ; 83                          ;
+;     normal            ; 83                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 41                          ;
+;         2 data inputs ; 50                          ;
 ;         3 data inputs ; 16                          ;
-;         4 data inputs ; 13                          ;
+;         4 data inputs ; 12                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.61                        ;
+; Average LUT depth     ; 1.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -401,23 +366,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 22:50:58 2018
+    Info: Processing started: Sun Apr 29 03:28:25 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 12 design units, including 6 entities, in source file classroomcontroller.vhd
     Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
     Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 158
-    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 256
-    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 283
-    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 306
-    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 334
+    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 257
+    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 284
+    Info (12022): Found design unit 5: piso16b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 307
+    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 335
     Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
     Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 150
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 247
-    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 278
-    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 299
-    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 328
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 248
+    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 279
+    Info (12023): Found entity 5: piso16b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 300
+    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 329
 Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "ledr[17..15]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledr[11]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
@@ -428,7 +393,7 @@ Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "Cl
 Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 201
 Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 209
 Info (12128): Elaborating entity "piso16b" for hierarchy "ClassroomControllerHardware:Classroom0|piso16b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 220
-Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 231
+Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 232
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
@@ -497,15 +462,15 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-Info (21057): Implemented 167 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 175 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 78 logic cells
+    Info (21061): Implemented 86 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 71 warnings
     Info: Peak virtual memory: 713 megabytes
-    Info: Processing ended: Sat Apr 28 22:51:13 2018
+    Info: Processing ended: Sun Apr 29 03:28:40 2018
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:27
 
 

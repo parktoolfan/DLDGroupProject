@@ -4,11 +4,51 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "ledr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ledr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ledg[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ledg[8]",
 					"strict" : false
 				},
 				{
 					"name" : "gpio[5]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[6]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[7]",
+					"strict" : false
+				},
+				{
+					"name" : "gpio[13]",
 					"strict" : false
 				},
 				{

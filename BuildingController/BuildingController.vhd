@@ -128,17 +128,19 @@ begin
 
 	-- Implement State counter
 	StateCounter : asynch_counter port map (
-		clk => state_inc,
+		clk => state_inc or Rst_State_count,
 		CLR => RisingEqual,
 		EN => '1',
-		Load_L => Not(Rst_State_count),
+		Load_L => Not(Rst_State_Count),
 		load_in => "0011",
 		Q => state
 	);
 
 	-- reset state counter when we enter a state greater than "0011"
-	Rst_State_count <= state(3) or state(2);
-
+	Rst_State_count <= state(3) or state(2) or ((not(state(1)) or not(state(0))) and not(equal)); -- i've added this because i think my circuit needs help starting
+	--Rst_State_count <= key(0);
+	ledr(13) <= RSt_State_count;
+	
 	--State_inc combinational logic
 	state_inc <= (RCO_2 and not(state(0)) and not(state(1)) and not(state(2)) and not(state(3)))
 		or (rco_1) or (rco_2 and not(state(0)) and not(state(1)) and state(2) and not(state(3)));
@@ -227,7 +229,7 @@ begin
 		clk => roomCountIncrement,
 		CLR => State_inc,
 		EN => '1',
-		Load_L => '0',
+		Load_L => '1',
 		load_in => "0000",
 		Q => RoomID(3 downto 0)
 	);
@@ -247,6 +249,8 @@ begin
 	ledg(8) <= master_clock;
 	-- send clock signal to ClassroomInUse
 	gpio(14) <= master_clock;
+	
+	--Ledr(7 downto 0) <= r1 & r0;
 
 	-- wire our building to GPIO Pins
 	rx1 <= gpio(13);
@@ -255,7 +259,13 @@ begin
 
 	-- Show what roomID we're on
 	ledg(5 downto 0) <= roomID;
-
+	-- show what state we're on
+	ledr(17 downto 14) <= state;
+	ledg(7) <= rx1;
+	
+	ledr(12) <= risingEqual;
+	ourId <= "000";
+	BuildingId <= "100";
 
 	end a;
 
@@ -696,15 +706,15 @@ end asynch_counter;
 architecture e of asynch_counter is
   signal tmp, tmp_in: std_logic_vector(3 downto 0);
   begin
-		process (clk, CLR)
+		process (clk, CLR, Load_L)
 		begin
 			if CLR = '1' then
 				tmp <= "0000";
+			elsif Load_L = '0' then -- load
+				tmp <= load_in;
 			elsif (en = '1') then
 				if (clk'event and clk = '1') then
-					if Load_L = '0' then -- we should load
-						tmp <= load_in;
-					elsif tmp = "1111" then -- overflow
+					if tmp = "1111" then -- overflow
 						tmp <= "0000";
 					else
 						tmp <= tmp + 1;
