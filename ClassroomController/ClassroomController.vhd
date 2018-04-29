@@ -225,7 +225,8 @@ begin
 	);
 	
 	-- specify toLoad
-	toLoad <= "00" & "111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11111111";
+	--toLoad <= "00" & "111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11111111";
+	toLoad <= "11111111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11100";
 	
 	-- wire txto bus to tx bus with a tristate buffer
 	busBuffer : tri_state_buffer_top Port map (
