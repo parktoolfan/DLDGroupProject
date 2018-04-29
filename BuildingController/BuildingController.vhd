@@ -48,13 +48,12 @@ begin
 										room_data_out => ledr( 7 downto 4));
 	-- get master clock signal
 	to_clk_in <= gpio(5);
-	
+
 	-- wire up building a
 	A_rx1 <= gpio(13);
 	A_rx2 <= gpio(4);
-	gpio(2 downto 0) <= to_building_id0;
 	gpio(11 downto 6) <= net1roomID;
-	
+
 	-- wire up building b
 	B_rx1 <= gpio(22);
 	B_rx2 <= gpio(4);

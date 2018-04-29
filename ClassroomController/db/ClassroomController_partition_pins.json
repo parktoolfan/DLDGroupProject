@@ -158,6 +158,38 @@
 				{
 					"name" : "sw[12]",
 					"strict" : false
+				},
+				{
+					"name" : "sw[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sw[10]",
+					"strict" : false
 				}
 			]
 		}

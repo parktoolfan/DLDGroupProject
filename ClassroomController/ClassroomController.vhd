@@ -214,7 +214,7 @@ begin
 		q => lastEqual
 	);
 	
-	LoadShiftReg <= Not(lastEqual) and equal;
+	--LoadShiftReg <= Not(lastEqual) and equal;
 	
 	-- Finally implement shift out register
 	serialOutReg : piso16b port map(
@@ -223,6 +223,9 @@ begin
 		clk => Clk_In,
 		q => txToBus
 	);
+	
+	-- specify toLoad
+	toLoad <= "00" & "111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11111111";
 	
 	-- wire txto bus to tx bus with a tristate buffer
 	busBuffer : tri_state_buffer_top Port map (
