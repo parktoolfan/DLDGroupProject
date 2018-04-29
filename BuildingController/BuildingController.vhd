@@ -19,6 +19,14 @@ architecture a of BuildingController is
 				);
 	end component SIPO_A_shift;
 
+	-- ls 161, a 4 bit counter with asynchronous clears
+	component asynch_counter is
+		port(clk, CLR, EN, Load_L : in std_logic;
+			load_in: in std_logic_vector(3 downto 0);
+			RCO: out std_logic;
+			Q: out std_logic_vector(3 downto 0));
+	end component;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
@@ -26,7 +34,13 @@ architecture a of BuildingController is
 
 	-- Internal Signals
 	Signal ClassroomStream : std_logic_vector(15 downto 0);
-	Signal aux : std_logic;
+	Signal aux, writeToDB, state_inc : std_logic;
+		-- aux is anded from parallel inputs and tells when the input from the classroomController is ready for reading.
+		-- write to DB tells when to write to the Reg file.
+		-- use state_inc to increment the FSM
+	Signal RisingEqual : std_logic;
+	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
+	Signal state : std_logic_vector(3 downto 0);
 begin
 
 	-- Serial in from Classrooms
@@ -41,9 +55,26 @@ begin
 	--aux <= ClassroomStream(4 downto 0) = "11100" and ClassroomStream(14 downto 8) = "1111111"; <- this is what we expect
 	aux <= ClassroomStream(4) and ClassroomStream(3) and ClassroomStream(2) and
 		Not(ClassroomStream(1)) and Not(ClassroomStream(0)) and
-		ClassroomStream(14) and ClassroomStream(13) and ClassroomStream(12) and 
-		ClassroomStream(11) and ClassroomStream(10) and ClassroomStream(9) and 
+		ClassroomStream(14) and ClassroomStream(13) and ClassroomStream(12) and
+		ClassroomStream(11) and ClassroomStream(10) and ClassroomStream(9) and
 		ClassroomStream(8);
+
+	-- Combinational logic to determine when we should write to our db
+	-- write when aux and state 0001.
+	writeToDB <= aux and Not(state(3)) and Not(state(2)) and Not(state(1)) and state(0);
+
+	-- Implement State counter
+	StateCounter : asynch_counter port map (
+		clk => state_inc,
+		CLR => RisingEqual,
+		EN => '1',
+		Load_L => Not(Rst_State_count),
+		load_in => "0011",
+		Q => state
+	);
+
+	-- reset state counter when we enter a state greater than "0011"
+	Rst_State_count <= state(3) or state(2);
 
 	-- fectch master clock signal, and flash clock LED
 	master_clock <= gpio(5);
@@ -504,39 +535,33 @@ use ieee.std_logic_unsigned.all;
 
 entity asynch_counter is
   port(clk, CLR, EN, Load_L : in std_logic;
-		 load_in: in std_logic_vector(3 downto 0);
-		 RCO: out std_logic;
-		  Q: out std_logic_vector(3 downto 0));
+		load_in: in std_logic_vector(3 downto 0);
+		RCO: out std_logic;
+		Q: out std_logic_vector(3 downto 0));
 end asynch_counter;
 architecture e of asynch_counter is
   signal tmp, tmp_in: std_logic_vector(3 downto 0);
   begin
-    process (clk, CLR)
-      begin
-        if (CLR='1') then
-          tmp <= "0000";
-
-        elsif (clk'event and clk='1') then
-
-          if (EN='1') then
-            tmp <= tmp + 1;
-
-			 		elsif ( tmp = "0011") then
+		process (clk, CLR)
+		begin
+			if CLR = '1' then
+				tmp <= "0000";
+			elsif (en = '1') then
+				if (clk'event and clk = '1') then
+					if Load_L = '0' then -- we should load
+						tmp <= load_in;
+					elsif tmp = "1111" then -- overflow
 						tmp <= "0000";
-
-					elsif (Load_L ='1') then --load_l is actually active low
-						tmp <= tmp_in;
-
-					elsif (tmp = "1111") then
-						RCO <= '1';
-
-          end if;
-
-        end if;
-    end process;
-
-   Q <= tmp;
-	tmp_in <= load_in;
+					else
+						tmp <= tmp + 1;
+					end if;
+				end if;
+			end if;
+			if tmp = "1111" then
+				RCO <= '1';
+			end if;
+		end Process;
+		Q <= tmp;
 
 end e;
 

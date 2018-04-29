@@ -1,5 +1,5 @@
 Fitter report for BuildingController
-Sun Apr 29 00:01:55 2018
+Sun Apr 29 00:26:11 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 29 00:01:55 2018       ;
+; Fitter Status                      ; Successful - Sun Apr 29 00:26:11 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
@@ -3211,10 +3211,10 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[39] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
 Info (144001): Generated suppressed messages file /Documents/DLDProject/BuildingController/output_files/BuildingController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 451 warnings
-    Info: Peak virtual memory: 1607 megabytes
-    Info: Processing ended: Sun Apr 29 00:01:56 2018
+    Info: Peak virtual memory: 1608 megabytes
+    Info: Processing ended: Sun Apr 29 00:26:11 2018
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +----------------------------+
