@@ -78,7 +78,7 @@ begin
 		rx <= gpio(4);		-- input
 		gpio(3) <= tx;		-- rest are outputs
 		--gpio(5) <= Master_Clock;
-		gpio(2 downto 0) <= BuildingID(2 downto 0);
+		gpio(1 downto 0) <= BuildingID(1 downto 0);
 		-- for testing, we'll let the Arduino Create the Clock signal.
 		Master_Clock <= gpio(7);
 		ledg(8) <= Master_Clock;
@@ -94,7 +94,7 @@ begin
 		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our buildingID Count.
 		BuildingIdCounter : vhdl_binary_counter port map (
 				C => EndFlag,
-				CLR => BuildingID(2),  -- Normally, we would reset when the buildingID is x9, however, since in this demo there are only 2 building,s we need to roll over to the first building when b_1 goes hot..
+				CLR => BuildingID(2),  -- since we are only talking two 4 classrooms, we will reset the counter as soon as the binar number changes from 0011 to 0100
 				Q => BuildingID
 		);
 
@@ -115,8 +115,8 @@ begin
 		Database : register_file port map(
 			src_s0 => sw(16), -- since we don't need to read from the register file, these can be Zero.
 			src_s1 => sw(17),
-			des_A0 => Rxin(9), -- let this bit be the lsb on the classroom identifier since we only have 4 classrooms total in the demo, we don't need to use all 9 indexing bits like is done in the circuit diagram.
-			des_A1 => BuildingID(0), -- this will be the LSB on the building identifier (the building that we are currently talking to)
+			des_A0 => BuildingId(0), -- we index our data based on what classroom we are reading from
+			des_A1 => BuildingID(1), -- we index our data based on what classroom we are reading from
 			writeToReg => bitStringAlligned, -- just like the circuit diagram, this is wired to execute when the bit string is alligned.
 			Clk => Master_Clock,
 			data_src => '0', -- we always want our data to flow from the input bus.
