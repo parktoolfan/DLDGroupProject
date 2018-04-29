@@ -214,7 +214,7 @@ begin
 		q => lastEqual
 	);
 	
-	--LoadShiftReg <= Not(lastEqual) and equal;
+	LoadShiftReg <= Not(lastEqual) and equal;
 	
 	-- Finally implement shift out register
 	serialOutReg : piso16b port map(
