@@ -17,7 +17,8 @@ architecture a of BuildingController is
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
 			room_data_out : out std_logic_vector(3 downto 0);
-			Room_ID : out std_logic_vector(5 downto 0)
+			Room_ID : out std_logic_vector(5 downto 0);
+			RegisterContents : out std_logic_vector(7 downto 0)
 			);
 	end component BuildingHardware;
 
@@ -35,7 +36,9 @@ begin
 										Rx2 => A_rx2,
 										Building_ID => to_building_id0,
 										Room_ID => net1roomID,
-										room_data_out => ledr( 3 downto 0));
+										room_data_out => ledr( 3 downto 0),
+										RegisterContents => ledr(17 downto 10)
+									);
 
 		building_B: BuildingHardware Port map (	clk_in => to_clk_in,
 										clk_out => gpio(23),
@@ -74,7 +77,8 @@ Entity BuildingHardware is
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
 			room_data_out : out std_logic_vector(3 downto 0);
-			Room_ID : out std_logic_vector(5 downto 0)
+			Room_ID : out std_logic_vector(5 downto 0);
+			RegisterContents : out std_logic_vector(7 downto 0)
 	);
 end BuildingHardware;
 
@@ -186,6 +190,11 @@ architecture b of BuildingHardware is
 			reg0 => room0Data,
 			reg1 => room1Data
 		);	--dunno about other in/out
+		
+		-- set register contents for testing:
+		RegisterContents <= room0Data & room1Data;
+		
+		
 		dff: ls74 port Map(
 			d => equals,
 			clk => clk_in,
@@ -252,10 +261,14 @@ architecture b of BuildingHardware is
 			Begin
 				if (SIPO_out(15 downto 11) = "00111") then
 					aux_1 <= '1';
+				else 
+					aux_1 <= '0';
 			  end if;
 
 				if ( SIPO_out (7 downto 1) = "1111111") then
 						aux_2 <= '1';
+				else 
+					aux_2 <= '0';
 				end if;
 
 				if ( aux_1 = '1' AND aux_2 = '1' AND state = "01") then
@@ -265,23 +278,33 @@ architecture b of BuildingHardware is
 				end if;
 
 				if (write_sig = '1' OR (rco_2 = '1' AND state ="01")) then
-					 roomcount_clock <= '1';
+					roomcount_clock <= '1';
+				else 
+					roomcount_clock <= '0';
 				end if;
 
 				if equals = '1' AND old_equals = '0' then
 					rising_equals <= '1';
+				else 
+					rising_equals <= '0';
 				end if;
 
 				if (rco_2 = '1' AND state = "00") OR rco_1 = '1' OR (rco_2 = '1' AND state = "10") then
 					state_inc <= '1';
+				else 
+					state_inc <= '0';
 				end if;
 
 				if st_count_out(3) = '1' OR st_count_out(2) = '1' then
 					reset_st_count <= '1';
+				else 
+					reset_st_count <= '0';
 				end if;
 
 				if  state_inc = '1' OR rco_2 ='1' then
 					load <= '1';
+				else 
+					load <= '0';
 				end if;
 
 		end process;

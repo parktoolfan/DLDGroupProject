@@ -1,7 +1,7 @@
 |BuildingController
-gpio[0] <> gpio[0]
-gpio[1] <> gpio[1]
-gpio[2] <> gpio[2]
+gpio[0] <> <UNC>
+gpio[1] <> <UNC>
+gpio[2] <> <UNC>
 gpio[3] <> gpio[3]
 gpio[3] <> gpio[3]
 gpio[6] <> gpio[6]
@@ -46,14 +46,14 @@ ledr[6] <= BuildingHardware:building_B.room_data_out[2]
 ledr[7] <= BuildingHardware:building_B.room_data_out[3]
 ledr[8] <= <GND>
 ledr[9] <= <GND>
-ledr[10] <= <GND>
-ledr[11] <= <GND>
-ledr[12] <= <GND>
-ledr[13] <= <GND>
-ledr[14] <= <GND>
-ledr[15] <= <GND>
-ledr[16] <= <GND>
-ledr[17] <= <GND>
+ledr[10] <= BuildingHardware:building_A.RegisterContents[0]
+ledr[11] <= BuildingHardware:building_A.RegisterContents[1]
+ledr[12] <= BuildingHardware:building_A.RegisterContents[2]
+ledr[13] <= BuildingHardware:building_A.RegisterContents[3]
+ledr[14] <= BuildingHardware:building_A.RegisterContents[4]
+ledr[15] <= BuildingHardware:building_A.RegisterContents[5]
+ledr[16] <= BuildingHardware:building_A.RegisterContents[6]
+ledr[17] <= BuildingHardware:building_A.RegisterContents[7]
 sw[0] => ~NO_FANOUT~
 sw[1] => ~NO_FANOUT~
 sw[2] => ~NO_FANOUT~
@@ -112,6 +112,14 @@ Room_ID[2] <= Room_ID[2].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[3] <= Room_ID[3].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[4] <= Room_ID[4].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[5] <= Room_ID[5].DB_MAX_OUTPUT_PORT_TYPE
+RegisterContents[0] <= register_file:data_storage.reg1[0]
+RegisterContents[1] <= register_file:data_storage.reg1[1]
+RegisterContents[2] <= register_file:data_storage.reg1[2]
+RegisterContents[3] <= register_file:data_storage.reg1[3]
+RegisterContents[4] <= register_file:data_storage.reg0[0]
+RegisterContents[5] <= register_file:data_storage.reg0[1]
+RegisterContents[6] <= register_file:data_storage.reg0[2]
+RegisterContents[7] <= register_file:data_storage.reg0[3]
 
 
 |BuildingController|BuildingHardware:building_A|SIPO_A_shift:Data_in
@@ -606,6 +614,14 @@ Room_ID[2] <= Room_ID[2].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[3] <= Room_ID[3].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[4] <= Room_ID[4].DB_MAX_OUTPUT_PORT_TYPE
 Room_ID[5] <= Room_ID[5].DB_MAX_OUTPUT_PORT_TYPE
+RegisterContents[0] <= register_file:data_storage.reg1[0]
+RegisterContents[1] <= register_file:data_storage.reg1[1]
+RegisterContents[2] <= register_file:data_storage.reg1[2]
+RegisterContents[3] <= register_file:data_storage.reg1[3]
+RegisterContents[4] <= register_file:data_storage.reg0[0]
+RegisterContents[5] <= register_file:data_storage.reg0[1]
+RegisterContents[6] <= register_file:data_storage.reg0[2]
+RegisterContents[7] <= register_file:data_storage.reg0[3]
 
 
 |BuildingController|BuildingHardware:building_B|SIPO_A_shift:Data_in
