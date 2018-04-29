@@ -39,26 +39,52 @@ architecture a of BuildingController is
 	end component;
 
 	-- comparator
-		component Comparator is
-				port(A, B: in std_logic_vector(3 downto 0);
-						A_EQ_B: out std_logic
+	component Comparator is
+			port(A, B: in std_logic_vector(3 downto 0);
+					A_EQ_B: out std_logic
+			);
+	end component Comparator;
+
+	-- 16 bit wide multiplexer
+	component Mux is
+			port(S0, S1 : in std_logic;
+				 A, B, C, D: in std_logic_vector(15 downto 0);
+				  Y: out std_logic_vector(15 downto 0)
 				);
-		end component Comparator;
+	end component Mux;
 
-		-- 16 bit wide multiplexer
-			component Mux is
-					port(S0, S1 : in std_logic;
-						 A, B, C, D: in std_logic_vector(15 downto 0);
-						  Y: out std_logic_vector(15 downto 0)
-						);
-			end component Mux;
+	-- our PISO output shift register
+	component PISO_shift is
+		port(S_L, SI, clk, clr  : in std_logic;
+			 PI: in std_logic_vector(15 downto 0);
+			  SO: out std_logic);
+	end component PISO_shift;
 
-			-- our PISO output shift register
-			component PISO_shift is
-				port(S_L, SI, clk, clr  : in std_logic;
-					 PI: in std_logic_vector(15 downto 0);
-					  SO: out std_logic);
-			end component PISO_shift;
+	-- tristate Buffer
+	component tri_state_buffer_top is
+		Port (	A	: in  STD_LOGIC;    -- single buffer input
+					EN	: in  STD_LOGIC;    -- single buffer enable
+					Y	: out STD_LOGIC    -- single buffer output
+		);
+	end component;
+
+	-- Register file component for our Database
+	component register_file is
+		port(	src_s0 : in std_logic; --read select bits, room ids least significant bits
+				src_s1 : in std_logic;
+				des_A0 : in std_logic; --write select bits
+				des_A1 : in std_logic;
+				writeToReg : in std_logic;	--write command
+				Clk : in std_logic;
+				data_src : in std_logic; -- wire to 0
+				data : in std_logic_vector(3 downto 0); --0 and three bits of room data (data in)
+				reg0 : out std_logic_vector(3 downto 0);
+				reg1 : out std_logic_vector(3 downto 0);
+				reg2 : out std_logic_vector(3 downto 0);
+				reg3 : out std_logic_vector(3 downto 0);
+				selectedData : out std_logic_vector(3 downto 0) --data of selected register
+				);
+	end component register_file;
 
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
@@ -75,6 +101,9 @@ architecture a of BuildingController is
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
 	Signal state, clockCycle, regDataOut : std_logic_vector(3 downto 0);
 	Signal multiplexedOutput : std_logic_vector(15 downto 0);
+
+	-- Test SIGNALS
+	Signal r0, r1, r2, r3 : std_logic_vector(3 downto 0);
 begin
 
 	-- Serial in from Classrooms
@@ -169,6 +198,30 @@ begin
 		SO => txToBus
 	);
 
+	-- wire output to bus
+	-- wire txto bus to tx bus with a tristate buffer
+	busBuffer : tri_state_buffer_top Port map (
+			A => txToBus,
+			En => equal,
+			Y => TX2
+	);
+
+	-- Database
+	database : register_file port map (
+		src_s0 => RoomID(0),
+		src_s1 => RoomID(1),
+		des_A0 => RoomID(0),
+		des_A1 => RoomID(1),
+		writeToReg => writeToDB,
+		Clk => master_clock,
+		data_src => '0',
+		data => '0' & ClassroomStream(11 downto 9),
+		reg0 => r0,
+		reg1 => r1,
+		reg2 => r2,
+		reg3 => r3,
+		selectedData => regDataOut
+	);
 
 -- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
