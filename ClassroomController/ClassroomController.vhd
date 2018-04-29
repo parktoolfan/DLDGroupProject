@@ -18,7 +18,7 @@ architecture a of ClassroomController is
 		port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
 					RoomID, OurID : in std_logic_vector(5 downto 0);
 					Clk_In : in std_logic;
-					projectorEnable, LightsEnable, TX, transmiting : out std_logic
+					projectorEnable, LightsEnable, TX, transmitting : out std_logic
 				);
 	end Component;
 	
@@ -68,17 +68,21 @@ begin
 	ledr(1) <= c0pen;
 	ledr(2) <= trans0;
 	-- Class 1:
-	ledr(4) <= c0len;
-	ledr(5) <= c0pen;
-	ledr(6) <= trans0;
-	-- Class 1:
-	ledr(8) <= c0len;
-	ledr(9) <= c0pen;
-	ledr(10) <= trans0;
-	-- Class 1:
-	ledr(12) <= c0len;
-	ledr(13) <= c0pen;
-	ledr(14) <= trans0;
+	ledr(4) <= c1len;
+	ledr(5) <= c1pen;
+	ledr(6) <= trans1;
+	-- Class 2:
+	ledr(8) <= c2len;
+	ledr(9) <= c2pen;
+	ledr(10) <= trans2;
+	-- Class 3:
+	ledr(12) <= c3len;
+	ledr(13) <= c3pen;
+	ledr(14) <= trans3;
+	
+	-- for testing purposes, we will plot network 1 room id and network 1 tx on ledg
+	ledg(5 downto 0) <= net1RoomID;
+	ledg(7) <= net1tx;
 	
 	
 	Classroom0 : classroomControllerHardware port map(
@@ -92,7 +96,7 @@ begin
 		ProjectorEnable => c0pen,
 		LightsEnable => c0len,
 		TX => net1tx,
-		transmiting => trans0
+		transmitting => trans0
 	);
 	
 		Classroom1 : classroomControllerHardware port map(
@@ -106,7 +110,7 @@ begin
 		ProjectorEnable => c1pen,
 		LightsEnable => c1len,
 		TX => net1tx,
-		transmiting => trans1
+		transmitting => trans1
 	);
 	
 		Classroom2 : classroomControllerHardware port map(
@@ -120,7 +124,7 @@ begin
 		ProjectorEnable => c2pen,
 		LightsEnable => c2len,
 		TX => net2tx,
-		transmiting => trans2
+		transmitting => trans2
 	);
 	
 		Classroom3 : classroomControllerHardware port map(
@@ -134,7 +138,7 @@ begin
 		ProjectorEnable => c3pen,
 		LightsEnable => c3len,
 		TX => net2tx,
-		transmiting => trans3
+		transmitting => trans3
 	);
 
 end a;
@@ -147,7 +151,7 @@ Entity ClassroomControllerHardware is
 	port (	ClassroomInUse, LightsAreOn, ProjectorIsOn, RX : in std_logic;
 				RoomID, OurID : in std_logic_vector(5 downto 0);
 				Clk_In : in std_logic;
-				projectorEnable, LightsEnable, TX, transmiting : out std_logic
+				projectorEnable, LightsEnable, TX, transmitting : out std_logic
 			);
 end ClassroomControllerHardware;
 
@@ -190,6 +194,9 @@ Architecture a of ClassroomControllerHardware is
 	
 begin
 	
+	-- for indication purposes, show when this classroom is transmitting
+	transmitting <= Equal;
+	
 	-- Circuitry to determine when we are selected by the BuildingController to Transmit
 	classroomComparator : comparator6b port map(
 		op1 => OurID,
@@ -207,7 +214,7 @@ begin
 		q => lastEqual
 	);
 	
-	LoadShiftReg <= Not(lastEqual) and equal;
+	--LoadShiftReg <= Not(lastEqual) and equal;
 	
 	-- Finally implement shift out register
 	serialOutReg : piso16b port map(
@@ -216,6 +223,9 @@ begin
 		clk => Clk_In,
 		q => txToBus
 	);
+	
+	-- specify toLoad
+	toLoad <= "00" & "111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11111111";
 	
 	-- wire txto bus to tx bus with a tristate buffer
 	busBuffer : tri_state_buffer_top Port map (

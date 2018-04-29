@@ -16,13 +16,20 @@ architecture a of BuildingController is
 		port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
+<<<<<<< HEAD
 			room_data_out : out std_logic_vector(7 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
+=======
+			room_data_out : out std_logic_vector(3 downto 0);
+			Room_ID : out std_logic_vector(5 downto 0);
+			RegisterContents : out std_logic_vector(7 downto 0)
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 			);
 	end component BuildingHardware;
 
 	signal A_rx1, A_rx2, B_rx1, B_rx2, to_clk_in: std_logic;
-	signal to_building_id: std_logic_vector(2 downto 0);
+	signal to_building_id0, to_building_id1: std_logic_vector(2 downto 0);
+	signal net1roomID, net2roomID : std_logic_vector(5 downto 0);
 
 begin
 		gpio(30) <= '1';
@@ -34,9 +41,17 @@ begin
 										Tx2 => gpio(3),
 										Rx1 => A_rx1,
 										Rx2 => A_rx2,
+<<<<<<< HEAD
 										Building_ID => to_building_id,
 										Room_ID => gpio(11 downto 6),
 										room_data_out => ledr( 7 downto 0));
+=======
+										Building_ID => to_building_id0,
+										Room_ID => net1roomID,
+										room_data_out => ledr( 3 downto 0),
+										RegisterContents => ledr(17 downto 10)
+									);
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 
 		building_B: BuildingHardware Port map (	clk_in => to_clk_in,
 										clk_out => gpio(23),
@@ -44,19 +59,39 @@ begin
 										Tx2 => gpio(3),
 										Rx1 => B_rx1,
 										Rx2 => B_rx2,
-										Building_ID => to_building_id,
+										Building_ID => to_building_id1,
 										Room_ID => gpio(20 downto 15),
+<<<<<<< HEAD
 										room_data_out => ledr( 15 downto 8));
 
+=======
+										room_data_out => ledr( 7 downto 4));
+	-- get master clock signal
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 	to_clk_in <= gpio(5);
+
+	-- wire up building a
 	A_rx1 <= gpio(13);
 	A_rx2 <= gpio(4);
+	gpio(11 downto 6) <= net1roomID;
+
+	-- wire up building b
 	B_rx1 <= gpio(22);
 	B_rx2 <= gpio(4);
+<<<<<<< HEAD
 	to_building_id <=  gpio(2 downto 0);
 	--two building hardwares go here
 
 
+=======
+
+	Ledg(8) <= to_clk_in;
+
+	-- Testign LEDs
+	ledg(5 downto 0) <= net1roomID;
+	
+	
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 	end a;
 
 
@@ -69,8 +104,14 @@ Entity BuildingHardware is
 	port(Rx1, Rx2, clk_in : IN std_logic;
 			Building_ID : IN std_logic_vector(2 downto 0);
 			clk_out, Tx1, Tx2 : out std_logic;
+<<<<<<< HEAD
 			room_data_out : out std_logic_vector(7 downto 0);
 			Room_ID : out std_logic_vector(5 downto 0)
+=======
+			room_data_out : out std_logic_vector(3 downto 0);
+			Room_ID : out std_logic_vector(5 downto 0);
+			RegisterContents : out std_logic_vector(7 downto 0)
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 	);
 end BuildingHardware;
 
@@ -155,6 +196,12 @@ architecture b of BuildingHardware is
 	signal SIPO_out, mux_out: std_logic_vector(15 downto 0);
 
 	begin
+<<<<<<< HEAD
+=======
+
+		-- send clock data out.
+		clk_out <= clk_in;
+>>>>>>> 92556212dc0d851bc90af068bf3888f26d36e275
 
 		Data_in: SIPO_A_SHIFT port Map(
 			clk => clk_in,
@@ -179,6 +226,11 @@ architecture b of BuildingHardware is
 			reg0 => room0Data,
 			reg1 => room1Data
 		);	--dunno about other in/out
+		
+		-- set register contents for testing:
+		RegisterContents <= room0Data & room1Data;
+		
+		
 		dff: ls74 port Map(
 			d => equals,
 			clk => clk_in,
@@ -247,10 +299,14 @@ architecture b of BuildingHardware is
 			Begin
 				if (SIPO_out(15 downto 11) = "00111") then
 					aux_1 <= '1';
+				else 
+					aux_1 <= '0';
 			  end if;
 
 				if ( SIPO_out (7 downto 1) = "1111111") then
 						aux_2 <= '1';
+				else 
+					aux_2 <= '0';
 				end if;
 
 				if ( aux_1 = '1' AND aux_2 = '1' AND state = "01") then
@@ -260,23 +316,33 @@ architecture b of BuildingHardware is
 				end if;
 
 				if (write_sig = '1' OR (rco_2 = '1' AND state ="01")) then
-					 roomcount_clock <= '1';
+					roomcount_clock <= '1';
+				else 
+					roomcount_clock <= '0';
 				end if;
 
 				if equals = '1' AND old_equals = '0' then
 					rising_equals <= '1';
+				else 
+					rising_equals <= '0';
 				end if;
 
 				if (rco_2 = '1' AND state = "00") OR rco_1 = '1' OR (rco_2 = '1' AND state = "10") then
 					state_inc <= '1';
+				else 
+					state_inc <= '0';
 				end if;
 
 				if st_count_out(3) = '1' OR st_count_out(2) = '1' then
 					reset_st_count <= '1';
+				else 
+					reset_st_count <= '0';
 				end if;
 
 				if  state_inc = '1' OR rco_2 ='1' then
 					load <= '1';
+				else 
+					load <= '0';
 				end if;
 
 		end process;

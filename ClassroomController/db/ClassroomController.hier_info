@@ -28,30 +28,30 @@ gpio[38] <> <UNC>
 gpio[39] <> <UNC>
 ledr[0] <= ClassroomControllerHardware:Classroom0.LightsEnable
 ledr[1] <= ClassroomControllerHardware:Classroom0.projectorEnable
-ledr[2] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[2] <= ClassroomControllerHardware:Classroom0.transmitting
 ledr[3] <= <GND>
-ledr[4] <= ClassroomControllerHardware:Classroom0.LightsEnable
-ledr[5] <= ClassroomControllerHardware:Classroom0.projectorEnable
-ledr[6] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[4] <= ClassroomControllerHardware:Classroom1.LightsEnable
+ledr[5] <= ClassroomControllerHardware:Classroom1.projectorEnable
+ledr[6] <= ClassroomControllerHardware:Classroom1.transmitting
 ledr[7] <= <GND>
-ledr[8] <= ClassroomControllerHardware:Classroom0.LightsEnable
-ledr[9] <= ClassroomControllerHardware:Classroom0.projectorEnable
-ledr[10] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[8] <= ClassroomControllerHardware:Classroom2.LightsEnable
+ledr[9] <= ClassroomControllerHardware:Classroom2.projectorEnable
+ledr[10] <= ClassroomControllerHardware:Classroom2.transmitting
 ledr[11] <= <GND>
-ledr[12] <= ClassroomControllerHardware:Classroom0.LightsEnable
-ledr[13] <= ClassroomControllerHardware:Classroom0.projectorEnable
-ledr[14] <= ClassroomControllerHardware:Classroom0.transmiting
+ledr[12] <= ClassroomControllerHardware:Classroom3.LightsEnable
+ledr[13] <= ClassroomControllerHardware:Classroom3.projectorEnable
+ledr[14] <= ClassroomControllerHardware:Classroom3.transmitting
 ledr[15] <= <GND>
 ledr[16] <= <GND>
 ledr[17] <= <GND>
-ledg[0] <= <GND>
-ledg[1] <= <GND>
-ledg[2] <= <GND>
-ledg[3] <= <GND>
-ledg[4] <= <GND>
-ledg[5] <= <GND>
+ledg[0] <= net1RoomID[0].DB_MAX_OUTPUT_PORT_TYPE
+ledg[1] <= net1RoomID[1].DB_MAX_OUTPUT_PORT_TYPE
+ledg[2] <= net1RoomID[2].DB_MAX_OUTPUT_PORT_TYPE
+ledg[3] <= net1RoomID[3].DB_MAX_OUTPUT_PORT_TYPE
+ledg[4] <= net1RoomID[4].DB_MAX_OUTPUT_PORT_TYPE
+ledg[5] <= net1RoomID[5].DB_MAX_OUTPUT_PORT_TYPE
 ledg[6] <= <GND>
-ledg[7] <= <GND>
+ledg[7] <= net1tx.DB_MAX_OUTPUT_PORT_TYPE
 ledg[8] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
 sw[0] => ClassroomControllerHardware:Classroom0.ClassroomInUse
 sw[1] => ClassroomControllerHardware:Classroom0.LightsAreOn
@@ -78,10 +78,11 @@ key[3] => ~NO_FANOUT~
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom0
-ClassroomInUse => LightsEnable.DATAIN
+ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
 ClassroomInUse => projectorEnable.DATAIN
-LightsAreOn => ~NO_FANOUT~
-ProjectorIsOn => ~NO_FANOUT~
+ClassroomInUse => LightsEnable.DATAIN
+LightsAreOn => piso16b:serialOutReg.parallel_In[9]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -100,7 +101,7 @@ Clk_In => piso16b:serialOutReg.clk
 projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 TX <= tri_state_buffer_top:busBuffer.Y
-transmiting <= comb.DB_MAX_OUTPUT_PORT_TYPE
+transmitting <= comparator6b:classroomComparator.equal
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator
@@ -187,10 +188,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom1
-ClassroomInUse => LightsEnable.DATAIN
+ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
 ClassroomInUse => projectorEnable.DATAIN
-LightsAreOn => ~NO_FANOUT~
-ProjectorIsOn => ~NO_FANOUT~
+ClassroomInUse => LightsEnable.DATAIN
+LightsAreOn => piso16b:serialOutReg.parallel_In[9]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -209,7 +211,7 @@ Clk_In => piso16b:serialOutReg.clk
 projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 TX <= tri_state_buffer_top:busBuffer.Y
-transmiting <= comb.DB_MAX_OUTPUT_PORT_TYPE
+transmitting <= comparator6b:classroomComparator.equal
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator
@@ -296,10 +298,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom2
-ClassroomInUse => LightsEnable.DATAIN
+ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
 ClassroomInUse => projectorEnable.DATAIN
-LightsAreOn => ~NO_FANOUT~
-ProjectorIsOn => ~NO_FANOUT~
+ClassroomInUse => LightsEnable.DATAIN
+LightsAreOn => piso16b:serialOutReg.parallel_In[9]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -318,7 +321,7 @@ Clk_In => piso16b:serialOutReg.clk
 projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 TX <= tri_state_buffer_top:busBuffer.Y
-transmiting <= comb.DB_MAX_OUTPUT_PORT_TYPE
+transmitting <= comparator6b:classroomComparator.equal
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom2|comparator6b:classroomComparator
@@ -405,10 +408,11 @@ Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom3
-ClassroomInUse => LightsEnable.DATAIN
+ClassroomInUse => piso16b:serialOutReg.parallel_In[8]
 ClassroomInUse => projectorEnable.DATAIN
-LightsAreOn => ~NO_FANOUT~
-ProjectorIsOn => ~NO_FANOUT~
+ClassroomInUse => LightsEnable.DATAIN
+LightsAreOn => piso16b:serialOutReg.parallel_In[9]
+ProjectorIsOn => piso16b:serialOutReg.parallel_In[10]
 RX => ~NO_FANOUT~
 RoomID[0] => comparator6b:classroomComparator.op2[0]
 RoomID[1] => comparator6b:classroomComparator.op2[1]
@@ -427,7 +431,7 @@ Clk_In => piso16b:serialOutReg.clk
 projectorEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 LightsEnable <= ClassroomInUse.DB_MAX_OUTPUT_PORT_TYPE
 TX <= tri_state_buffer_top:busBuffer.Y
-transmiting <= comb.DB_MAX_OUTPUT_PORT_TYPE
+transmitting <= comparator6b:classroomComparator.equal
 
 
 |ClassroomController|ClassroomControllerHardware:Classroom3|comparator6b:classroomComparator

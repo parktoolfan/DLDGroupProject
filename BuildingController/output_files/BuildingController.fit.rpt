@@ -1,5 +1,5 @@
 Fitter report for BuildingController
-Sat Apr 28 21:53:49 2018
+Sat Apr 28 23:10:59 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 21:53:49 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 23:10:59 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; BuildingController                          ;
 ; Top-level Entity Name              ; BuildingController                          ;
@@ -2187,6 +2187,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; ledg[6]  ; Missing drive strength and slew rate ;
 ; ledg[7]  ; Missing drive strength and slew rate ;
 ; ledg[8]  ; Missing drive strength and slew rate ;
+; gpio[0]  ; Missing drive strength               ;
+; gpio[1]  ; Missing drive strength               ;
+; gpio[2]  ; Missing drive strength               ;
 ; gpio[24] ; Missing drive strength               ;
 ; gpio[25] ; Missing drive strength               ;
 ; gpio[26] ; Missing drive strength               ;
@@ -2203,9 +2206,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; gpio[37] ; Incomplete set of assignments        ;
 ; gpio[38] ; Incomplete set of assignments        ;
 ; gpio[39] ; Incomplete set of assignments        ;
-; gpio[0]  ; Missing drive strength               ;
-; gpio[1]  ; Missing drive strength               ;
-; gpio[2]  ; Missing drive strength               ;
 ; gpio[3]  ; Missing drive strength               ;
 ; gpio[4]  ; Missing drive strength               ;
 ; gpio[5]  ; Missing drive strength               ;
@@ -2298,6 +2298,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ledg[6]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ledg[7]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ledg[8]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; gpio[0]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; gpio[1]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; gpio[2]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[24] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[25] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[26] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -2314,9 +2317,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[37] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[38] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[39] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[0]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[1]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; gpio[2]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[3]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[4]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; gpio[5]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -2368,6 +2368,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; key[1]                 ;                   ;         ;
 ; key[2]                 ;                   ;         ;
 ; key[3]                 ;                   ;         ;
+; gpio[0]                ;                   ;         ;
+; gpio[1]                ;                   ;         ;
+; gpio[2]                ;                   ;         ;
 ; gpio[24]               ;                   ;         ;
 ; gpio[25]               ;                   ;         ;
 ; gpio[26]               ;                   ;         ;
@@ -2384,9 +2387,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[37]               ;                   ;         ;
 ; gpio[38]               ;                   ;         ;
 ; gpio[39]               ;                   ;         ;
-; gpio[0]                ;                   ;         ;
-; gpio[1]                ;                   ;         ;
-; gpio[2]                ;                   ;         ;
 ; gpio[3]                ;                   ;         ;
 ; gpio[4]                ;                   ;         ;
 ; gpio[5]                ;                   ;         ;
@@ -2540,6 +2540,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ledg[6]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ledg[7]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ledg[8]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; gpio[2]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[24]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[25]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[26]           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2556,9 +2559,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gpio[37]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[38]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[39]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; gpio[2]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[3]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[4]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; gpio[5]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -3126,7 +3126,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3134,6 +3134,9 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 36 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
+    Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169178): Pin gpio[1] uses I/O standard 3.3-V LVTTL at AC15 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169178): Pin gpio[2] uses I/O standard 3.3-V LVTTL at AB21 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[24] uses I/O standard 3.3-V LVTTL at AH25 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[25] uses I/O standard 3.3-V LVTTL at AE25 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[26] uses I/O standard 3.3-V LVTTL at AG22 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
@@ -3146,9 +3149,6 @@ Warning (169177): 36 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin gpio[33] uses I/O standard 3.3-V LVTTL at AH26 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[34] uses I/O standard 3.3-V LVTTL at AH23 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[35] uses I/O standard 3.3-V LVTTL at AG26 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169178): Pin gpio[1] uses I/O standard 3.3-V LVTTL at AC15 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169178): Pin gpio[2] uses I/O standard 3.3-V LVTTL at AB21 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[3] uses I/O standard 3.3-V LVTTL at Y17 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[4] uses I/O standard 3.3-V LVTTL at AC21 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[5] uses I/O standard 3.3-V LVTTL at Y16 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
@@ -3171,6 +3171,9 @@ Warning (169177): 36 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin gpio[22] uses I/O standard 3.3-V LVTTL at AG25 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169178): Pin gpio[23] uses I/O standard 3.3-V LVTTL at AD25 File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
 Warning (169064): Following 40 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin gpio[0] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169065): Pin gpio[1] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
+    Info (169065): Pin gpio[2] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[24] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[25] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[26] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
@@ -3187,9 +3190,6 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[37] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[38] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[39] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[0] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[1] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
-    Info (169065): Pin gpio[2] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[3] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[4] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
     Info (169065): Pin gpio[5] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
@@ -3213,8 +3213,8 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[23] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/BuildingController/BuildingController.vhd Line: 5
 Info (144001): Generated suppressed messages file /Documents/DLDProject/BuildingController/output_files/BuildingController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 451 warnings
-    Info: Peak virtual memory: 1605 megabytes
-    Info: Processing ended: Sat Apr 28 21:53:49 2018
+    Info: Peak virtual memory: 1600 megabytes
+    Info: Processing ended: Sat Apr 28 23:11:00 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:17
 
