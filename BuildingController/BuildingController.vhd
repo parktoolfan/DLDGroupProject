@@ -45,6 +45,14 @@ architecture a of BuildingController is
 				);
 		end component Comparator;
 
+		-- 16 bit wide multiplexer
+			component Mux is
+					port(S0, S1 : in std_logic;
+						 A, B, C, D: in std_logic_vector(15 downto 0);
+						  Y: out std_logic_vector(15 downto 0)
+						);
+			end component Mux;
+
 	-- SIGNALS for external IO
 	signal rx1, rx2, tx1, tx2, master_clock: std_logic;
 	signal buildingID, ourID : std_logic_vector(2 downto 0);
@@ -58,7 +66,8 @@ architecture a of BuildingController is
 		-- use state_inc to increment the FSM
 	Signal RisingEqual, rco_2, rco_1, load, equal, lastEqual : std_logic;
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
-	Signal state, clockCycle : std_logic_vector(3 downto 0);
+	Signal state, clockCycle, regDataOut : std_logic_vector(3 downto 0);
+	Signal multiplexedOutput : std_logic_vector(15 downto 0);
 begin
 
 	-- Serial in from Classrooms
@@ -130,6 +139,17 @@ begin
 		A => OurID & '0',
 		B => BuildingId & '0',
 		A_EQ_B => equal
+	);
+
+	-- 16 bit multiplexer
+	outputMux : Mux port map(
+		s0 => state(0),
+		s1 => state(1),
+		A => "1010101010101010",
+		B => '0' & RoomID & '0' & regDataOut(2 downto 0) & "00000",
+		C => "1111111111111111",
+		D => "1010101010101010",
+		Y => multiplexedOutput
 	);
 
 -- BEGIN IO
@@ -622,26 +642,18 @@ entity Mux is
 end Mux;
 
 architecture f of Mux is
-
 	signal tmp: std_logic_vector(15 downto 0);
-
 	begin
-
 		process(S0, S1)
 			begin
-
 			if ( S1 = '0' AND S0 = '0') then
 				tmp <= A;
-
 			elsif ( S1 = '0' AND S0 = '1') then
 				tmp <= B;
-
 			elsif ( S1 = '1' AND S0 = '0') then
 				tmp <= C;
-
 			elsif ( S1 = '1' AND S0 = '1') then
 				tmp <= D;
-
 			end if;
 		end process;
 		Y <= tmp;
