@@ -3,7 +3,7 @@ Library ieee;
 use ieee.std_logic_1164.all;
 
 entity ClassroomController is -- we'll ue classroomControllerHardware as our actual classroomController Simulator
-port(	gpio : inout std_logic_vector(7 downto 0);
+port(	gpio : inout std_logic_vector(20 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
 		ledg : out std_logic_vector(8 downto 0);
 		sw : in std_logic_vector(17 downto 0);
@@ -31,8 +31,18 @@ architecture a of ClassroomController is
 	
 begin
 	
-	master_clock <= gpio(0);
-	ledg(0) <= master_clock;
+	-- GPIO
+	-- Clock
+	master_clock <= gpio(8);
+	-- RoomIDs
+	net1RoomID <= gpio(5 downto 0);
+	net2RoomID <= gpio(14 downto 9);
+	-- TX bits
+	gpio(6) <= net1tx;
+	gpio(15) <= net2tx;
+	
+	-- flash on clock
+	ledg(8) <= master_clock;
 	
 	-- input switches
 	-- Class 0:

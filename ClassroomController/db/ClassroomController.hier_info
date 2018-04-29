@@ -1,11 +1,18 @@
 |ClassroomController
-gpio[1] <> <UNC>
-gpio[2] <> <UNC>
-gpio[3] <> <UNC>
-gpio[4] <> <UNC>
-gpio[5] <> <UNC>
-gpio[6] <> <UNC>
+gpio[6] <> gpio[6]
 gpio[7] <> <UNC>
+gpio[9] <> <UNC>
+gpio[10] <> <UNC>
+gpio[11] <> <UNC>
+gpio[12] <> <UNC>
+gpio[13] <> <UNC>
+gpio[14] <> <UNC>
+gpio[15] <> gpio[15]
+gpio[16] <> <UNC>
+gpio[17] <> <UNC>
+gpio[18] <> <UNC>
+gpio[19] <> <UNC>
+gpio[20] <> <UNC>
 ledr[0] <= ClassroomControllerHardware:Classroom0.LightsEnable
 ledr[1] <= ClassroomControllerHardware:Classroom0.projectorEnable
 ledr[2] <= ClassroomControllerHardware:Classroom0.transmiting
@@ -24,7 +31,7 @@ ledr[14] <= ClassroomControllerHardware:Classroom0.transmiting
 ledr[15] <= <GND>
 ledr[16] <= <GND>
 ledr[17] <= <GND>
-ledg[0] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
+ledg[0] <= <GND>
 ledg[1] <= <GND>
 ledg[2] <= <GND>
 ledg[3] <= <GND>
@@ -32,7 +39,7 @@ ledg[4] <= <GND>
 ledg[5] <= <GND>
 ledg[6] <= <GND>
 ledg[7] <= <GND>
-ledg[8] <= <GND>
+ledg[8] <= master_clock.DB_MAX_OUTPUT_PORT_TYPE
 sw[0] => ClassroomControllerHardware:Classroom0.ClassroomInUse
 sw[1] => ClassroomControllerHardware:Classroom0.LightsAreOn
 sw[2] => ClassroomControllerHardware:Classroom0.ProjectorIsOn
