@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sat Apr 28 22:35:33 2018
+Sat Apr 28 22:37:56 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Apr 28 22:35:33 2018       ;
+; Fitter Status                      ; Successful - Sat Apr 28 22:37:56 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -3317,8 +3317,8 @@ Warning (169064): Following 38 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[14] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 451 warnings
-    Info: Peak virtual memory: 1606 megabytes
-    Info: Processing ended: Sat Apr 28 22:35:34 2018
+    Info: Peak virtual memory: 1612 megabytes
+    Info: Processing ended: Sat Apr 28 22:37:57 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:17
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 22:35:21 2018
+Sat Apr 28 22:37:44 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 22:35:21 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 22:37:44 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -471,7 +471,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 22:35:07 2018
+    Info: Processing started: Sat Apr 28 22:37:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -582,9 +582,9 @@ Info (21057): Implemented 97 device resources after synthesis - the final resour
     Info (21060): Implemented 40 bidirectional pins
     Info (21061): Implemented 8 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
-    Info: Peak virtual memory: 714 megabytes
-    Info: Processing ended: Sat Apr 28 22:35:21 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 713 megabytes
+    Info: Processing ended: Sat Apr 28 22:37:44 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
 
 
