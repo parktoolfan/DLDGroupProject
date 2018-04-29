@@ -168,8 +168,8 @@ Architecture a of ClassroomControllerHardware is
 	);
 	end component;
 	
-	component piso16b is
-	port (	parallel_In : in std_logic_vector(15 downto 0); -- the 16 bits of input for parallel loading
+	component piso48b is
+	port (	parallel_In : in std_logic_vector(47 downto 0); -- the 16 bits of input for parallel loading
 				SorL : in std_logic; -- the Shift/Load signal. 1 = shift, 0 = load
 				clk : in std_logic; -- the clock signal for the DFFs contained in the shift reg.
 				q : out std_logic -- we shift out through this bit.
@@ -190,7 +190,7 @@ Architecture a of ClassroomControllerHardware is
 	end component;
 	
 	signal Equal, LoadShiftReg, txToBus, lastEqual : std_logic;
-	Signal toLoad : std_logic_vector(15 downto 0);
+	Signal toLoad : std_logic_vector(47 downto 0);
 	
 begin
 	
@@ -217,7 +217,7 @@ begin
 	--LoadShiftReg <= Not(lastEqual) and equal;
 	
 	-- Finally implement shift out register
-	serialOutReg : piso16b port map(
+	serialOutReg : piso48b port map(
 		parallel_In => toLoad,
 		SorL => Not(LoadShiftReg), -- Load is low state.
 		clk => Clk_In,
@@ -225,7 +225,7 @@ begin
 	);
 	
 	-- specify toLoad
-	toLoad <= "00" & "111" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "11111111";
+	toLoad <= "1010101010101010" & "00000000" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "00000" & "1111111111111111";
 	
 	-- wire txto bus to tx bus with a tristate buffer
 	busBuffer : tri_state_buffer_top Port map (
@@ -293,33 +293,33 @@ begin
 end a;
 
 -- Finally, we will need a 16b PISO shift regerister.
--- 	in our circuit schematic, we wired two 8 bit shift regeristers together, but here, we can just create a 16b shift register.
+-- 	in our circuit schematic, we wired two 8 bit shift regeristers together, but here, we can just create a 48b shift register.
 Library ieee;
 Use ieee.std_logic_1164.all;
-Entity piso16b is
-	port (	parallel_In : in std_logic_vector(15 downto 0); -- the 16 bits of input for parallel loading
+Entity piso48b is
+	port (	parallel_In : in std_logic_vector(47 downto 0); -- the 16 bits of input for parallel loading
 				SorL : in std_logic; -- the Shift/Load signal. 1 = shift, 0 = load
 				clk : in std_logic; -- the clock signal for the DFFs contained in the shift reg.
 				q : out std_logic -- we shift out through this bit.
 			);
-end piso16b;
-Architecture a of piso16b is
-	signal temp : std_logic_vector(15 downto 0);
+end piso48b;
+Architecture a of piso48b is
+	signal temp : std_logic_vector(47 downto 0);
 begin
-	-- Note: in this shift regerister, elements are shifted "down" meaning that an item which enters at temp(15) is consecutively shifted down the register to temp(0) at which point it shows up on the output q.
+	-- Note: in this shift regerister, elements are shifted "up" meaning that an item which enters at temp(0) is consecutively shifted down the register to temp(47) at which point it shows up on the output q.
 	process(clk) -- 0ur register updates every clock cycle, nothing is asynchronous.
 	begin
 		if clk'EVENT and clk = '1' then
 			if SorL = '0' then -- we should load from our parallel input
 				temp <= parallel_In;
 			else -- otherwise we should shift down the register.
-				temp(14 downto 0) <= temp(15 downto 1);
-				temp(15) <= '0';  -- we never need to shift in serial for this project component, so we can simply simulate shifting in a zero.
+				temp(47 downto 1) <= temp(46 downto 0);
+				temp(0) <= '0';  -- we never need to shift in serial for this project component, so we can simply simulate shifting in a zero.
 			end if;
 		end if;
 	end process;
 	
-	q <= temp(0); -- connect our temp vector (the zero element) to our output.
+	q <= temp(47); -- connect our temp vector (the zero element) to our output.
 end a;
 
 -- Tristate Buffer
