@@ -3,7 +3,7 @@ Library ieee;
 use ieee.std_logic_1164.all;
 
 entity ClassroomController is -- we'll ue classroomControllerHardware as our actual classroomController Simulator
-port(	gpio : inout std_logic_vector(20 downto 0);
+port(	gpio : inout std_logic_vector(39 downto 0);
 		ledr : out std_logic_vector(17 downto 0);
 		ledg : out std_logic_vector(8 downto 0);
 		sw : in std_logic_vector(17 downto 0);

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sat Apr 28 20:26:14 2018
+Sat Apr 28 21:00:27 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 28 20:26:14 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 28 21:00:27 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -58,7 +58,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 4                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 70                                          ;
+; Total pins                         ; 89                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -198,14 +198,14 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 0           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 70          ;
+; I/O pins                                    ; 89          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; sw[0]~input ;
 ; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 114         ;
-; Average fan-out                             ; 0.69        ;
+; Total fan-out                               ; 152         ;
+; Average fan-out                             ; 0.68        ;
 +---------------------------------------------+-------------+
 
 
@@ -214,7 +214,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name                 ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 70   ; 0            ; |ClassroomController                                                                       ; ClassroomController         ; work         ;
+; |ClassroomController                        ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                       ; ClassroomController         ; work         ;
 ;    |ClassroomControllerHardware:Classroom0| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                ; ClassroomControllerHardware ; work         ;
 ;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer ; tri_state_buffer_top        ; work         ;
 ;    |ClassroomControllerHardware:Classroom2| ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                ; ClassroomControllerHardware ; work         ;
@@ -445,8 +445,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 70                          ;
-; cycloneiii_io_obuf    ; 21                          ;
+; boundary_port         ; 89                          ;
+; cycloneiii_io_obuf    ; 40                          ;
 ; cycloneiii_lcell_comb ; 5                           ;
 ;     normal            ; 5                           ;
 ;         0 data inputs ; 1                           ;
@@ -454,7 +454,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;         4 data inputs ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.68                        ;
+; Average LUT depth     ; 0.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -473,7 +473,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Apr 28 20:25:59 2018
+    Info: Processing started: Sat Apr 28 21:00:13 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -532,6 +532,25 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[18]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[19]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[20]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[21]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[22]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[23]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[24]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[25]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[26]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[27]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[28]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[29]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[30]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[31]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[32]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[33]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[34]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[35]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[36]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[37]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
     Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
@@ -577,15 +596,15 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
-    Info (21060): Implemented 21 bidirectional pins
+    Info (21060): Implemented 40 bidirectional pins
     Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 712 megabytes
-    Info: Processing ended: Sat Apr 28 20:26:14 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 98 warnings
+    Info: Peak virtual memory: 715 megabytes
+    Info: Processing ended: Sat Apr 28 21:00:27 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:26
 
 

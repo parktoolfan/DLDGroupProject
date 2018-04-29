@@ -1,0 +1,10 @@
+|sanitycheck
+gpio[25] <> <UNC>
+gpio[26] <> <UNC>
+gpio[27] <> <UNC>
+gpio[28] <> <UNC>
+gpio[29] <> <UNC>
+gpio[30] <> <VCC>
+key[0] => ~NO_FANOUT~
+
+
