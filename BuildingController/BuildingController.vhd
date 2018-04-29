@@ -38,7 +38,7 @@ architecture a of BuildingController is
 		-- aux is anded from parallel inputs and tells when the input from the classroomController is ready for reading.
 		-- write to DB tells when to write to the Reg file.
 		-- use state_inc to increment the FSM
-	Signal RisingEqual : std_logic;
+	Signal RisingEqual, rco_2, rco_1, load : std_logic;
 	Signal Rst_State_count : std_logic; -- when state is greater than 0011.
 	Signal state : std_logic_vector(3 downto 0);
 begin
@@ -76,6 +76,14 @@ begin
 	-- reset state counter when we enter a state greater than "0011"
 	Rst_State_count <= state(3) or state(2);
 
+	--State_inc combinational logic
+	state_inc <= (RCO_2 and not(state(0)) and not(state(1)) and not(state(2)) and not(state(3)))
+		or (rco_1) or (rco_2 and not(state(0)) and not(state(1)) and state(2) and not(state(3)));
+		
+	-- comb for load
+	load <= state_inc or RCO_2;
+
+-- BEGIN IO
 	-- fectch master clock signal, and flash clock LED
 	master_clock <= gpio(5);
 	ledg(8) <= master_clock;
