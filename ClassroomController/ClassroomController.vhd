@@ -187,7 +187,7 @@ Architecture a of ClassroomControllerHardware is
 			);
 	end component;
 	
-	signal Equal, LoadShiftReg, txToBus, lastEqual : std_logic;
+	signal Equal, LoadShiftReg, txToBus, lastEqual, projectorIsEnabledAndOn, lightsEnabledAndOn: std_logic;
 	Signal toLoad : std_logic_vector(47 downto 0);
 	
 begin
@@ -223,7 +223,7 @@ begin
 	);
 	
 	-- specify toLoad
-	toLoad <= "1010101010101010" & "00000000" & ProjectorIsOn & lightsAreOn & ClassroomInUse & "00000" & "1111111111111111";
+	toLoad <= "1010101010101010" & "00000000" & projectorIsEnabledAndOn & lightsEnabledAndOn & ClassroomInUse & "00000" & "1111111111111111";
 	
 	-- wire txto bus to tx bus with a tristate buffer
 	busBuffer : tri_state_buffer_top Port map (
@@ -232,8 +232,13 @@ begin
 		Y => TX
 	);
 	
+	
+	-- We simulate that the projector is on or off by doing the following.
 	ProjectorEnable <= ClassroomInUse;
 	LightsEnable <= ClassroomInUse;
+	
+	projectorIsEnabledAndOn <= ClassroomInUse and projectorIsOn;
+	lightsEnabledAndOn <= ClassroomInUse and lightsAreOn;
 	
 end a;
 				

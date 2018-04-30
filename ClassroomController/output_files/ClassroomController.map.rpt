@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sun Apr 29 17:12:46 2018
+Sun Apr 29 20:11:44 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -52,13 +52,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 29 17:12:46 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 29 20:11:44 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 137                                         ;
-;     Total combinational functions  ; 137                                         ;
+; Total logic elements               ; 140                                         ;
+;     Total combinational functions  ; 140                                         ;
 ;     Dedicated logic registers      ; 132                                         ;
 ; Total registers                    ; 132                                         ;
 ; Total pins                         ; 89                                          ;
@@ -186,16 +186,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 137           ;
+; Estimated Total logic elements              ; 140           ;
 ;                                             ;               ;
-; Total combinational functions               ; 137           ;
+; Total combinational functions               ; 140           ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 114           ;
-;     -- 3 input functions                    ; 16            ;
+;     -- 4 input functions                    ; 122           ;
+;     -- 3 input functions                    ; 11            ;
 ;     -- <=2 input functions                  ; 7             ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 137           ;
+;     -- normal mode                          ; 140           ;
 ;     -- arithmetic mode                      ; 0             ;
 ;                                             ;               ;
 ; Total registers                             ; 132           ;
@@ -208,8 +208,8 @@ refer to the applicable agreement for further details.
 ;                                             ;               ;
 ; Maximum fan-out node                        ; gpio[8]~input ;
 ; Maximum fan-out                             ; 133           ;
-; Total fan-out                               ; 925           ;
-; Average fan-out                             ; 1.90          ;
+; Total fan-out                               ; 942           ;
+; Average fan-out                             ; 1.92          ;
 +---------------------------------------------+---------------+
 
 
@@ -218,19 +218,19 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 137 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 35 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
+; |ClassroomController                        ; 140 (0)             ; 132 (0)                   ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 36 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;       |piso48b:serialOutReg|                ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso48b:serialOutReg             ; piso48b                     ; work         ;
 ;       |tri_state_buffer_top:busBuffer|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
-;    |ClassroomControllerHardware:Classroom1| ; 36 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
+;    |ClassroomControllerHardware:Classroom1| ; 37 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator ; comparator6b                ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso48b:serialOutReg             ; piso48b                     ; work         ;
-;    |ClassroomControllerHardware:Classroom2| ; 33 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
+;       |piso48b:serialOutReg|                ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 34 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;       |piso48b:serialOutReg|                ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso48b:serialOutReg             ; piso48b                     ; work         ;
 ;    |ClassroomControllerHardware:Classroom3| ; 33 (1)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF              ; ls74                        ; work         ;
 ;       |piso48b:serialOutReg|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso48b:serialOutReg             ; piso48b                     ; work         ;
@@ -395,9 +395,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+---------+
 ; Inverted Register                                            ; Fan out ;
 +--------------------------------------------------------------+---------+
-; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q ; 29      ;
-; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q ; 29      ;
-; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q ; 29      ;
+; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q ; 30      ;
+; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q ; 30      ;
+; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q ; 30      ;
 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q ; 29      ;
 ; Total number of inverted registers = 4                       ;         ;
 +--------------------------------------------------------------+---------+
@@ -500,16 +500,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cycloneiii_ff         ; 132                         ;
 ;     plain             ; 132                         ;
 ; cycloneiii_io_obuf    ; 41                          ;
-; cycloneiii_lcell_comb ; 139                         ;
-;     normal            ; 139                         ;
+; cycloneiii_lcell_comb ; 142                         ;
+;     normal            ; 142                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 4                           ;
-;         3 data inputs ; 16                          ;
-;         4 data inputs ; 114                         ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 122                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.97                        ;
+; Average LUT depth     ; 0.98                        ;
 +-----------------------+-----------------------------+
 
 
@@ -528,23 +528,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 29 17:12:31 2018
+    Info: Processing started: Sun Apr 29 20:11:30 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 12 design units, including 6 entities, in source file classroomcontroller.vhd
     Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
     Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 156
-    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 254
-    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 281
-    Info (12022): Found design unit 5: piso48b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 304
-    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 332
+    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 259
+    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 286
+    Info (12022): Found design unit 5: piso48b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 309
+    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 337
     Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
     Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 148
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 245
-    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 276
-    Info (12023): Found entity 5: piso48b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 297
-    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 326
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 250
+    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 281
+    Info (12023): Found entity 5: piso48b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 302
+    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 331
 Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "ledr[17..15]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
 Warning (10873): Using initial value X (don't care) for net "ledr[11]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
@@ -597,7 +597,7 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
     Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 329
+    Warning (13010): Node "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 334
     Warning (13010): Node "gpio[6]~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
@@ -628,15 +628,15 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
     Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-Info (21057): Implemented 231 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 234 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 40 bidirectional pins
-    Info (21061): Implemented 142 logic cells
+    Info (21061): Implemented 145 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 712 megabytes
-    Info: Processing ended: Sun Apr 29 17:12:46 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 714 megabytes
+    Info: Processing ended: Sun Apr 29 20:11:44 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 

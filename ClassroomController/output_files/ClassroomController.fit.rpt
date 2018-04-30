@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sun Apr 29 17:13:07 2018
+Sun Apr 29 20:12:06 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -68,15 +68,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 29 17:13:07 2018       ;
+; Fitter Status                      ; Successful - Sun Apr 29 20:12:05 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 137 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 137 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 142 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 140 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 132 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 132                                         ;
 ; Total pins                         ; 89 / 529 ( 17 % )                           ;
@@ -160,8 +160,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processors 3-4         ;   0.1%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -1066,8 +1065,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 498 ) ; 0.00 % ( 0 / 498 )         ; 0.00 % ( 0 / 498 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 498 ) ; 0.00 % ( 0 / 498 )         ; 0.00 % ( 0 / 498 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 501 ) ; 0.00 % ( 0 / 501 )         ; 0.00 % ( 0 / 501 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 501 ) ; 0.00 % ( 0 / 501 )         ; 0.00 % ( 0 / 501 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -1090,7 +1089,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 488 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 491 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -1106,19 +1105,19 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 137 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 5                       ;
-;     -- Register only                        ; 0                       ;
-;     -- Combinational with a register        ; 132                     ;
+; Total logic elements                        ; 142 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 10                      ;
+;     -- Register only                        ; 2                       ;
+;     -- Combinational with a register        ; 130                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 114                     ;
-;     -- 3 input functions                    ; 16                      ;
+;     -- 4 input functions                    ; 122                     ;
+;     -- 3 input functions                    ; 11                      ;
 ;     -- <=2 input functions                  ; 7                       ;
-;     -- Register only                        ; 0                       ;
+;     -- Register only                        ; 2                       ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 137                     ;
+;     -- normal mode                          ; 140                     ;
 ;     -- arithmetic mode                      ; 0                       ;
 ;                                             ;                         ;
 ; Total registers*                            ; 132 / 117,053 ( < 1 % ) ;
@@ -1144,11 +1143,11 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
 ; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%      ;
-; Peak interconnect usage (total/H/V)         ; 1.1% / 0.9% / 1.5%      ;
+; Peak interconnect usage (total/H/V)         ; 1.1% / 0.9% / 1.3%      ;
 ; Maximum fan-out                             ; 133                     ;
 ; Highest non-global fan-out                  ; 133                     ;
-; Total fan-out                               ; 930                     ;
-; Average fan-out                             ; 1.87                    ;
+; Total fan-out                               ; 949                     ;
+; Average fan-out                             ; 1.89                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -1161,19 +1160,19 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 137 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 5                      ; 0                              ;
-;     -- Register only                        ; 0                      ; 0                              ;
-;     -- Combinational with a register        ; 132                    ; 0                              ;
+; Total logic elements                        ; 142 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 10                     ; 0                              ;
+;     -- Register only                        ; 2                      ; 0                              ;
+;     -- Combinational with a register        ; 130                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 114                    ; 0                              ;
-;     -- 3 input functions                    ; 16                     ; 0                              ;
+;     -- 4 input functions                    ; 122                    ; 0                              ;
+;     -- 3 input functions                    ; 11                     ; 0                              ;
 ;     -- <=2 input functions                  ; 7                      ; 0                              ;
-;     -- Register only                        ; 0                      ; 0                              ;
+;     -- Register only                        ; 2                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 137                    ; 0                              ;
+;     -- normal mode                          ; 140                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Total registers                             ; 132                    ; 0                              ;
@@ -1195,8 +1194,8 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 925                    ; 5                              ;
-;     -- Registered Connections               ; 244                    ; 0                              ;
+;     -- Total Connections                    ; 944                    ; 5                              ;
+;     -- Registered Connections               ; 247                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 80                     ; 0                              ;
@@ -1232,10 +1231,10 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; key[1] ; M21   ; 6        ; 115          ; 53           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; key[2] ; N21   ; 6        ; 115          ; 42           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; key[3] ; R24   ; 5        ; 115          ; 35           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; sw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[10] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[11] ; AB24  ; 5        ; 115          ; 5            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sw[12] ; AB23  ; 5        ; 115          ; 7            ; 14           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; sw[12] ; AB23  ; 5        ; 115          ; 7            ; 14           ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[13] ; AA24  ; 5        ; 115          ; 9            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[14] ; AA23  ; 5        ; 115          ; 10           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[15] ; AA22  ; 5        ; 115          ; 6            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -1244,11 +1243,11 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; sw[1]  ; AC28  ; 5        ; 115          ; 14           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[2]  ; AC27  ; 5        ; 115          ; 15           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[3]  ; AD27  ; 5        ; 115          ; 13           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sw[4]  ; AB27  ; 5        ; 115          ; 18           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; sw[4]  ; AB27  ; 5        ; 115          ; 18           ; 7            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[5]  ; AC26  ; 5        ; 115          ; 11           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[6]  ; AD26  ; 5        ; 115          ; 10           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[7]  ; AB26  ; 5        ; 115          ; 15           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; sw[8]  ; AC25  ; 5        ; 115          ; 4            ; 21           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; sw[8]  ; AC25  ; 5        ; 115          ; 4            ; 21           ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw[9]  ; AB25  ; 5        ; 115          ; 16           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +--------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
@@ -1293,7 +1292,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination                ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------+
-; gpio[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 122                   ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
+; gpio[0]  ; AB22  ; 4        ; 107          ; 0            ; 0            ; 125                   ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[10] ; AC19  ; 4        ; 94           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[11] ; AF16  ; 4        ; 65           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[12] ; AD19  ; 4        ; 94           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
@@ -1304,7 +1303,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; gpio[17] ; AC22  ; 4        ; 109          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[18] ; AE22  ; 4        ; 96           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[19] ; AF21  ; 4        ; 87           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
-; gpio[1]  ; AC15  ; 4        ; 60           ; 0            ; 21           ; 123                   ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
+; gpio[1]  ; AC15  ; 4        ; 60           ; 0            ; 21           ; 126                   ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[20] ; AF22  ; 4        ; 96           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[21] ; AD22  ; 4        ; 111          ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[22] ; AG25  ; 4        ; 91           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
@@ -1323,7 +1322,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; gpio[34] ; AH23  ; 4        ; 81           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[35] ; AG26  ; 4        ; 113          ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
 ; gpio[36] ; AA13  ; 3        ; 52           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                   ;
-; gpio[37] ; AF27  ; 5        ; 115          ; 8            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                   ;
+; gpio[37] ; J24   ; 6        ; 115          ; 63           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                   ;
 ; gpio[38] ; D4    ; 8        ; 1            ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                   ;
 ; gpio[39] ; E28   ; 6        ; 115          ; 57           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                   ;
 ; gpio[3]  ; Y17   ; 4        ; 96           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                   ;
@@ -1367,8 +1366,8 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; 2        ; 0 / 63 ( 0 % )   ; 2.5V          ; --           ;
 ; 3        ; 1 / 73 ( 1 % )   ; 2.5V          ; --           ;
 ; 4        ; 36 / 71 ( 51 % ) ; 3.3V          ; --           ;
-; 5        ; 20 / 65 ( 31 % ) ; 2.5V          ; --           ;
-; 6        ; 5 / 58 ( 9 % )   ; 2.5V          ; --           ;
+; 5        ; 19 / 65 ( 29 % ) ; 2.5V          ; --           ;
+; 6        ; 6 / 58 ( 10 % )  ; 2.5V          ; --           ;
 ; 7        ; 27 / 72 ( 38 % ) ; 2.5V          ; --           ;
 ; 8        ; 1 / 71 ( 1 % )   ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
@@ -1571,7 +1570,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; AF24     ; 233        ; 4        ; gpio[14]                                                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF25     ; 234        ; 4        ; gpio[16]                                                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF26     ; 244        ; 4        ; gpio[29]                                                  ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
-; AF27     ; 277        ; 5        ; gpio[37]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AF27     ; 277        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF28     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG1      ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AG2      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1846,7 +1845,7 @@ The pin-out file can be found in /Documents/DLDProject/ClassroomController/outpu
 ; J21      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; J22      ; 394        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J23      ; 387        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; J24      ; 386        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; J24      ; 386        ; 6        ; gpio[37]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J25      ; 365        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J26      ; 364        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J27      ; 338        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -2247,22 +2246,22 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                          ; Entity Name                 ; Library Name ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |ClassroomController                        ; 137 (0)     ; 132 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 89   ; 0            ; 5 (0)        ; 0 (0)             ; 132 (0)          ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
-;    |ClassroomControllerHardware:Classroom0| ; 35 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
+; |ClassroomController                        ; 142 (0)     ; 132 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 89   ; 0            ; 10 (0)       ; 2 (0)             ; 130 (0)          ; |ClassroomController                                                                         ; ClassroomController         ; work         ;
+;    |ClassroomControllerHardware:Classroom0| ; 37 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (1)        ; 1 (0)             ; 32 (0)           ; |ClassroomController|ClassroomControllerHardware:Classroom0                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator ; comparator6b                ; work         ;
-;       |ls74:RisingEqualDFF|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 33 (33)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 32 (32)          ; |ClassroomController|ClassroomControllerHardware:Classroom0|piso48b:serialOutReg             ; piso48b                     ; work         ;
 ;       |tri_state_buffer_top:busBuffer|      ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer   ; tri_state_buffer_top        ; work         ;
-;    |ClassroomControllerHardware:Classroom1| ; 36 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
+;    |ClassroomControllerHardware:Classroom1| ; 37 (0)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom1                                  ; ClassroomControllerHardware ; work         ;
 ;       |comparator6b:classroomComparator|    ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |ClassroomController|ClassroomControllerHardware:Classroom1|comparator6b:classroomComparator ; comparator6b                ; work         ;
-;       |ls74:RisingEqualDFF|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF              ; ls74                        ; work         ;
 ;       |piso48b:serialOutReg|                ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |ClassroomController|ClassroomControllerHardware:Classroom1|piso48b:serialOutReg             ; piso48b                     ; work         ;
-;    |ClassroomControllerHardware:Classroom2| ; 33 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
-;       |ls74:RisingEqualDFF|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso48b:serialOutReg             ; piso48b                     ; work         ;
-;    |ClassroomControllerHardware:Classroom3| ; 33 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
+;    |ClassroomControllerHardware:Classroom2| ; 34 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 33 (1)           ; |ClassroomController|ClassroomControllerHardware:Classroom2                                  ; ClassroomControllerHardware ; work         ;
+;       |ls74:RisingEqualDFF|                 ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF              ; ls74                        ; work         ;
+;       |piso48b:serialOutReg|                ; 33 (33)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 33 (33)          ; |ClassroomController|ClassroomControllerHardware:Classroom2|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;    |ClassroomControllerHardware:Classroom3| ; 34 (1)      ; 33 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (0)             ; 32 (0)           ; |ClassroomController|ClassroomControllerHardware:Classroom3                                  ; ClassroomControllerHardware ; work         ;
 ;       |ls74:RisingEqualDFF|                 ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |ClassroomController|ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF              ; ls74                        ; work         ;
-;       |piso48b:serialOutReg|                ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso48b:serialOutReg             ; piso48b                     ; work         ;
+;       |piso48b:serialOutReg|                ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 31 (31)          ; |ClassroomController|ClassroomControllerHardware:Classroom3|piso48b:serialOutReg             ; piso48b                     ; work         ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -2517,25 +2516,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|LoadShiftReg                              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|LoadShiftReg                              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|LoadShiftReg                              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom2|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ledg[0]~output                                                                   ; 0                 ; 6       ;
 ; gpio[1]                                                                                 ;                   ;         ;
@@ -2641,25 +2643,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~23              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|LoadShiftReg                              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|LoadShiftReg                              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|LoadShiftReg                              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom2|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|LoadShiftReg                              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
-;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~28              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~29              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~31              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~30              ; 0                 ; 6       ;
 ;      - ledg[1]~output                                                                   ; 0                 ; 6       ;
 ; gpio[6]                                                                                 ;                   ;         ;
@@ -2798,35 +2803,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[16]             ; 1                 ; 0       ;
 ;      - ledg[8]~output                                                                   ; 0                 ; 6       ;
 ; sw[0]                                                                                   ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~26              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ledr[0]~output                                                                   ; 0                 ; 6       ;
 ;      - ledr[1]~output                                                                   ; 0                 ; 6       ;
 ; sw[4]                                                                                   ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~26              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ledr[4]~output                                                                   ; 0                 ; 6       ;
 ;      - ledr[5]~output                                                                   ; 0                 ; 6       ;
 ; sw[8]                                                                                   ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~26              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~27              ; 0                 ; 6       ;
 ;      - ledr[8]~output                                                                   ; 0                 ; 6       ;
 ;      - ledr[9]~output                                                                   ; 0                 ; 6       ;
 ; sw[12]                                                                                  ;                   ;         ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~26              ; 0                 ; 6       ;
 ;      - ledr[12]~output                                                                  ; 0                 ; 6       ;
 ;      - ledr[13]~output                                                                  ; 0                 ; 6       ;
 ; sw[6]                                                                                   ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ; sw[2]                                                                                   ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~24              ; 1                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~25              ; 1                 ; 6       ;
 ; sw[10]                                                                                  ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~24              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 ; sw[14]                                                                                  ;                   ;         ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~24              ; 1                 ; 6       ;
 ; sw[5]                                                                                   ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~25              ; 1                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp~26              ; 1                 ; 6       ;
 ; sw[1]                                                                                   ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp~26              ; 0                 ; 6       ;
 ; sw[9]                                                                                   ;                   ;         ;
-;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~25              ; 1                 ; 6       ;
+;      - ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp~26              ; 1                 ; 6       ;
 ; sw[13]                                                                                  ;                   ;         ;
 ;      - ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp~25              ; 0                 ; 6       ;
 +-----------------------------------------------------------------------------------------+-------------------+---------+
@@ -2846,35 +2859,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 138 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 50 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 102 / 209,544 ( < 1 % ) ;
-; Direct links          ; 50 / 342,891 ( < 1 % )  ;
+; Block interconnects   ; 118 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 48 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 103 / 209,544 ( < 1 % ) ;
+; Direct links          ; 38 / 342,891 ( < 1 % )  ;
 ; Global clocks         ; 0 / 20 ( 0 % )          ;
-; Local interconnects   ; 86 / 119,088 ( < 1 % )  ;
-; R24 interconnects     ; 51 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 29 / 289,782 ( < 1 % )  ;
+; Local interconnects   ; 106 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 52 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 36 / 289,782 ( < 1 % )  ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.42) ; Number of LABs  (Total = 12) ;
+; Number of Logic Elements  (Average = 11.83) ; Number of LABs  (Total = 12) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
+; 8                                           ; 0                            ;
 ; 9                                           ; 1                            ;
 ; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
 ; 12                                          ; 0                            ;
-; 13                                          ; 0                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 1                            ;
 ; 15                                          ; 0                            ;
 ; 16                                          ; 6                            ;
@@ -2893,74 +2906,76 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 22.42) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced  (Average = 22.83) ; Number of LABs  (Total = 12) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 0                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 1                            ;
+; 16                                           ; 0                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
+; 30                                           ; 1                            ;
 ; 31                                           ; 1                            ;
-; 32                                           ; 5                            ;
+; 32                                           ; 4                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 2.83) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced Out  (Average = 3.33) ; Number of LABs  (Total = 12) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
+; 1                                               ; 3                            ;
 ; 2                                               ; 2                            ;
-; 3                                               ; 5                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 1                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 4                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 6.92) ; Number of LABs  (Total = 12) ;
+; Number of Distinct Inputs  (Average = 7.25) ; Number of LABs  (Total = 12) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
 ; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 2                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 4                            ;
+; 5                                           ; 3                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 2                            ;
 ; 8                                           ; 1                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 2                            ;
+; 9                                           ; 2                            ;
+; 10                                          ; 3                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -3167,7 +3182,7 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------+----------------------------------------------------------------------+-------------------+
 ; Source Register ; Destination Register                                                 ; Delay Added in ns ;
 +-----------------+----------------------------------------------------------------------+-------------------+
-; gpio[8]         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; 0.046             ;
+; gpio[8]         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[16] ; 0.199             ;
 +-----------------+----------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
 
@@ -3672,11 +3687,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X58_Y0 to location X68_Y11
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X58_Y0 to location X68_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.18 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3763,10 +3778,10 @@ Warning (169064): Following 40 pins have no output enable or a GND or VCC output
     Info (169065): Pin gpio[8] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 450 warnings
-    Info: Peak virtual memory: 1618 megabytes
-    Info: Processing ended: Sun Apr 29 17:13:08 2018
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 1605 megabytes
+    Info: Processing ended: Sun Apr 29 20:12:06 2018
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +----------------------------+

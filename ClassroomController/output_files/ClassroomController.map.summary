@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Apr 29 17:12:46 2018
+Analysis & Synthesis Status : Successful - Sun Apr 29 20:11:44 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : ClassroomController
 Top-level Entity Name : ClassroomController
 Family : Cyclone IV E
-Total logic elements : 137
-    Total combinational functions : 137
+Total logic elements : 140
+    Total combinational functions : 140
     Dedicated logic registers : 132
 Total registers : 132
 Total pins : 89
