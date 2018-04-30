@@ -1,5 +1,5 @@
 Fitter report for ClassroomController
-Sun Apr 29 20:12:06 2018
+Sun Apr 29 22:30:31 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 29 20:12:05 2018       ;
+; Fitter Status                      ; Successful - Sun Apr 29 22:30:31 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -3691,7 +3691,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.19 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3699,87 +3699,87 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 36 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin gpio[2] uses I/O standard 3.3-V LVTTL at AB21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[3] uses I/O standard 3.3-V LVTTL at Y17 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[4] uses I/O standard 3.3-V LVTTL at AC21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[5] uses I/O standard 3.3-V LVTTL at Y16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[7] uses I/O standard 3.3-V LVTTL at AE16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[9] uses I/O standard 3.3-V LVTTL at AE15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[10] uses I/O standard 3.3-V LVTTL at AC19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[11] uses I/O standard 3.3-V LVTTL at AF16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[12] uses I/O standard 3.3-V LVTTL at AD19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[13] uses I/O standard 3.3-V LVTTL at AF15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[14] uses I/O standard 3.3-V LVTTL at AF24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[15] uses I/O standard 3.3-V LVTTL at AE21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[16] uses I/O standard 3.3-V LVTTL at AF25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[17] uses I/O standard 3.3-V LVTTL at AC22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[18] uses I/O standard 3.3-V LVTTL at AE22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[19] uses I/O standard 3.3-V LVTTL at AF21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[20] uses I/O standard 3.3-V LVTTL at AF22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[21] uses I/O standard 3.3-V LVTTL at AD22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[22] uses I/O standard 3.3-V LVTTL at AG25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[23] uses I/O standard 3.3-V LVTTL at AD25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[24] uses I/O standard 3.3-V LVTTL at AH25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[25] uses I/O standard 3.3-V LVTTL at AE25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[26] uses I/O standard 3.3-V LVTTL at AG22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[27] uses I/O standard 3.3-V LVTTL at AE24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[28] uses I/O standard 3.3-V LVTTL at AH22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[29] uses I/O standard 3.3-V LVTTL at AF26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[30] uses I/O standard 3.3-V LVTTL at AE20 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[31] uses I/O standard 3.3-V LVTTL at AG23 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[32] uses I/O standard 3.3-V LVTTL at AF20 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[33] uses I/O standard 3.3-V LVTTL at AH26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[34] uses I/O standard 3.3-V LVTTL at AH23 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[35] uses I/O standard 3.3-V LVTTL at AG26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[1] uses I/O standard 3.3-V LVTTL at AC15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[6] uses I/O standard 3.3-V LVTTL at AD21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169178): Pin gpio[8] uses I/O standard 3.3-V LVTTL at AD15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169178): Pin gpio[2] uses I/O standard 3.3-V LVTTL at AB21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[3] uses I/O standard 3.3-V LVTTL at Y17 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[4] uses I/O standard 3.3-V LVTTL at AC21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[5] uses I/O standard 3.3-V LVTTL at Y16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[7] uses I/O standard 3.3-V LVTTL at AE16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[9] uses I/O standard 3.3-V LVTTL at AE15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[10] uses I/O standard 3.3-V LVTTL at AC19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[11] uses I/O standard 3.3-V LVTTL at AF16 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[12] uses I/O standard 3.3-V LVTTL at AD19 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[13] uses I/O standard 3.3-V LVTTL at AF15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[14] uses I/O standard 3.3-V LVTTL at AF24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[15] uses I/O standard 3.3-V LVTTL at AE21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[16] uses I/O standard 3.3-V LVTTL at AF25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[17] uses I/O standard 3.3-V LVTTL at AC22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[18] uses I/O standard 3.3-V LVTTL at AE22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[19] uses I/O standard 3.3-V LVTTL at AF21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[20] uses I/O standard 3.3-V LVTTL at AF22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[21] uses I/O standard 3.3-V LVTTL at AD22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[22] uses I/O standard 3.3-V LVTTL at AG25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[23] uses I/O standard 3.3-V LVTTL at AD25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[24] uses I/O standard 3.3-V LVTTL at AH25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[25] uses I/O standard 3.3-V LVTTL at AE25 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[26] uses I/O standard 3.3-V LVTTL at AG22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[27] uses I/O standard 3.3-V LVTTL at AE24 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[28] uses I/O standard 3.3-V LVTTL at AH22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[29] uses I/O standard 3.3-V LVTTL at AF26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[30] uses I/O standard 3.3-V LVTTL at AE20 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[31] uses I/O standard 3.3-V LVTTL at AG23 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[32] uses I/O standard 3.3-V LVTTL at AF20 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[33] uses I/O standard 3.3-V LVTTL at AH26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[34] uses I/O standard 3.3-V LVTTL at AH23 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[35] uses I/O standard 3.3-V LVTTL at AG26 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[0] uses I/O standard 3.3-V LVTTL at AB22 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[1] uses I/O standard 3.3-V LVTTL at AC15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[6] uses I/O standard 3.3-V LVTTL at AD21 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169178): Pin gpio[8] uses I/O standard 3.3-V LVTTL at AD15 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
 Warning (169064): Following 40 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin gpio[2] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[3] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[4] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[5] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[9] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[10] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[11] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[12] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[13] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[14] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[15] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[16] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[17] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[18] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[19] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[20] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[21] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[22] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[23] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[24] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[25] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[26] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[27] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[28] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[29] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[30] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[31] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[32] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[33] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[34] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[35] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[36] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[37] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[38] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[39] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[0] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[1] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[6] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Info (169065): Pin gpio[8] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Info (169065): Pin gpio[2] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[3] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[4] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[5] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[7] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[9] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[10] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[11] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[12] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[13] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[14] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[15] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[16] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[17] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[18] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[19] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[20] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[21] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[22] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[23] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[24] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[25] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[26] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[27] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[28] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[29] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[30] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[31] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[32] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[33] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[34] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[35] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[36] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[37] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[38] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[39] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[0] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[1] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[6] has a permanently enabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Info (169065): Pin gpio[8] has a permanently disabled output enable File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
 Info (144001): Generated suppressed messages file /Documents/DLDProject/ClassroomController/output_files/ClassroomController.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 450 warnings
-    Info: Peak virtual memory: 1605 megabytes
-    Info: Processing ended: Sun Apr 29 20:12:06 2018
+    Info: Peak virtual memory: 1616 megabytes
+    Info: Processing ended: Sun Apr 29 22:30:31 2018
     Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:29
 

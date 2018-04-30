@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ClassroomController
-Sun Apr 29 20:11:44 2018
+Sun Apr 29 22:30:10 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 29 20:11:44 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 29 22:30:09 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ClassroomController                         ;
 ; Top-level Entity Name              ; ClassroomController                         ;
@@ -528,106 +528,106 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 29 20:11:30 2018
+    Info: Processing started: Sun Apr 29 22:29:54 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ClassroomController -c ClassroomController
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 12 design units, including 6 entities, in source file classroomcontroller.vhd
-    Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
-    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 156
-    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 259
-    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 286
-    Info (12022): Found design unit 5: piso48b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 309
-    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 337
-    Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 5
-    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 148
-    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 250
-    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 281
-    Info (12023): Found entity 5: piso48b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 302
-    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 331
+    Info (12022): Found design unit 1: ClassroomController-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 22
+    Info (12022): Found design unit 2: ClassroomControllerHardware-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 165
+    Info (12022): Found design unit 3: ls74-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 273
+    Info (12022): Found design unit 4: comparator6b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 300
+    Info (12022): Found design unit 5: piso48b-a File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 323
+    Info (12022): Found design unit 6: tri_state_buffer_top-Behavioral File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 351
+    Info (12023): Found entity 1: ClassroomController File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 12
+    Info (12023): Found entity 2: ClassroomControllerHardware File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 157
+    Info (12023): Found entity 3: ls74 File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 264
+    Info (12023): Found entity 4: comparator6b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 295
+    Info (12023): Found entity 5: piso48b File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 316
+    Info (12023): Found entity 6: tri_state_buffer_top File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 345
 Info (12127): Elaborating entity "ClassroomController" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "ledr[17..15]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledr[11]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledr[7]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledr[3]" at ClassroomController.vhd(7) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-Warning (10873): Using initial value X (don't care) for net "ledg[6..2]" at ClassroomController.vhd(8) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "ClassroomControllerHardware:Classroom0" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 86
-Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 199
-Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 207
-Info (12128): Elaborating entity "piso48b" for hierarchy "ClassroomControllerHardware:Classroom0|piso48b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 218
-Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 229
+Warning (10873): Using initial value X (don't care) for net "ledr[17..15]" at ClassroomController.vhd(14) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "ledr[11]" at ClassroomController.vhd(14) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "ledr[7]" at ClassroomController.vhd(14) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "ledr[3]" at ClassroomController.vhd(14) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "ledg[6..2]" at ClassroomController.vhd(15) File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+Info (12128): Elaborating entity "ClassroomControllerHardware" for hierarchy "ClassroomControllerHardware:Classroom0" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 94
+Info (12128): Elaborating entity "comparator6b" for hierarchy "ClassroomControllerHardware:Classroom0|comparator6b:classroomComparator" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 213
+Info (12128): Elaborating entity "ls74" for hierarchy "ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 221
+Info (12128): Elaborating entity "piso48b" for hierarchy "ClassroomControllerHardware:Classroom0|piso48b:serialOutReg" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 232
+Info (12128): Elaborating entity "tri_state_buffer_top" for hierarchy "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 244
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[8]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[3]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[4]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[5]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[7]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[9]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[10]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[11]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[12]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[13]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[14]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[15]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[16]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[17]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[18]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[19]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[20]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[21]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[22]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[23]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[24]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[25]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[26]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[27]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[28]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[29]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[30]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[31]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[32]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[33]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[34]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[35]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[36]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[37]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
-    Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13040): bidirectional pin "gpio[0]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[1]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[8]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[2]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[3]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[4]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[5]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[7]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[9]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[10]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[11]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[12]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[13]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[14]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[15]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[16]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[17]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[18]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[19]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[20]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[21]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[22]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[23]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[24]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[25]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[26]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[27]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[28]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[29]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[30]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[31]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[32]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[33]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[34]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[35]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[36]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[37]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[38]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
+    Warning (13040): bidirectional pin "gpio[39]" has no driver File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 334
-    Warning (13010): Node "gpio[6]~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 6
+    Warning (13010): Node "ClassroomControllerHardware:Classroom0|tri_state_buffer_top:busBuffer|Y~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 348
+    Warning (13010): Node "gpio[6]~synth" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 7
-    Warning (13410): Pin "ledg[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-    Warning (13410): Pin "ledg[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledr[7]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledr[11]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledr[15]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledr[16]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledr[17]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 14
+    Warning (13410): Pin "ledg[2]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+    Warning (13410): Pin "ledg[3]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+    Warning (13410): Pin "ledg[4]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+    Warning (13410): Pin "ledg[5]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+    Warning (13410): Pin "ledg[6]" is stuck at GND File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
 Info (286030): Timing-Driven Synthesis is running
-Warning (14632): Output pin "ledg[0]" driven by bidirectional pin "gpio[0]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-Warning (14632): Output pin "ledg[1]" driven by bidirectional pin "gpio[1]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
-Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[8]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 8
+Warning (14632): Output pin "ledg[0]" driven by bidirectional pin "gpio[0]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+Warning (14632): Output pin "ledg[1]" driven by bidirectional pin "gpio[1]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
+Warning (14632): Output pin "ledg[8]" driven by bidirectional pin "gpio[8]" cannot be tri-stated File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 15
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 9
-    Warning (15610): No output dependent on input pin "key[0]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
-    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 10
+    Warning (15610): No output dependent on input pin "sw[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "sw[7]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "sw[11]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "sw[15]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "sw[16]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "sw[17]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 16
+    Warning (15610): No output dependent on input pin "key[0]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 17
+    Warning (15610): No output dependent on input pin "key[1]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 17
+    Warning (15610): No output dependent on input pin "key[2]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 17
+    Warning (15610): No output dependent on input pin "key[3]" File: //Mac/Home/Documents/DLDProject/ClassroomController/ClassroomController.vhd Line: 17
 Info (21057): Implemented 234 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 22 input pins
     Info (21059): Implemented 27 output pins
@@ -635,8 +635,8 @@ Info (21057): Implemented 234 device resources after synthesis - the final resou
     Info (21061): Implemented 145 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
     Info: Peak virtual memory: 714 megabytes
-    Info: Processing ended: Sun Apr 29 20:11:44 2018
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Processing ended: Sun Apr 29 22:30:10 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:31
 
 

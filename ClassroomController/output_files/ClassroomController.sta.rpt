@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ClassroomController
-Sun Apr 29 20:12:16 2018
+Sun Apr 29 22:30:41 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -103,9 +103,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.1%      ;
-;     Processor 3            ;   1.8%      ;
-;     Processor 4            ;   1.3%      ;
+;     Processor 2            ;   2.0%      ;
+;     Processor 3            ;   1.7%      ;
+;     Processor 4            ;   1.4%      ;
 +----------------------------+-------------+
 
 
@@ -294,10 +294,10 @@ No paths to report.
 ; 0.459 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.695      ;
 ; 0.459 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.695      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
-; 0.460 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
-; 0.460 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.696      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.696      ;
+; 0.460 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
+; 0.460 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
 ; 0.460 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.695      ;
@@ -310,12 +310,12 @@ No paths to report.
 ; 0.461 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
+; 0.461 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.048      ; 0.695      ;
+; 0.461 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.697      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
-; 0.461 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.048      ; 0.695      ;
-; 0.461 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.697      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
 ; 0.461 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.696      ;
@@ -325,10 +325,10 @@ No paths to report.
 ; 0.462 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
+; 0.462 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.048      ; 0.696      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[30] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
-; 0.462 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.048      ; 0.696      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
 ; 0.462 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.697      ;
@@ -363,10 +363,10 @@ No paths to report.
 ; 0.583 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.819      ;
 ; 0.583 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.819      ;
 ; 0.583 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.819      ;
+; 0.584 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.820      ;
 ; 0.584 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.819      ;
 ; 0.584 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.819      ;
 ; 0.584 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.049      ; 0.819      ;
-; 0.584 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.820      ;
 ; 0.584 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.820      ;
 ; 0.584 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.050      ; 0.820      ;
 ; 0.585 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.048      ; 0.819      ;
@@ -493,8 +493,8 @@ No paths to report.
 ; -0.270 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.245      ;
 ; -0.268 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.243      ;
 ; -0.268 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.061     ; 1.226      ;
-; -0.267 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.242      ;
 ; -0.267 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.061     ; 1.225      ;
+; -0.267 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.242      ;
 ; -0.266 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.241      ;
 ; -0.266 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.061     ; 1.224      ;
 ; -0.265 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.044     ; 1.240      ;
@@ -560,54 +560,54 @@ No paths to report.
 ; 0.344 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.267      ; 0.782      ;
 ; 0.364 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.267      ; 0.802      ;
 ; 0.370 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.267      ; 0.808      ;
-; 0.422 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.638      ;
 ; 0.422 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.638      ;
+; 0.422 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.638      ;
+; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.638      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
-; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.638      ;
-; 0.423 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
-; 0.423 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
+; 0.423 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.638      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
-; 0.423 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.638      ;
+; 0.423 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
+; 0.423 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
 ; 0.423 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[16] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[17] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.639      ;
+; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
-; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
-; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
-; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
-; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
-; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
-; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
-; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
+; 0.424 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
+; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
+; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
+; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
+; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
+; 0.424 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.639      ;
 ; 0.424 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.641      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
+; 0.425 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.641      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[42] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[30] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
-; 0.425 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.641      ;
+; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
+; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
+; 0.425 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
 ; 0.425 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
+; 0.425 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.641      ;
+; 0.425 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.640      ;
 ; 0.426 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.641      ;
+; 0.426 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.641      ;
 ; 0.426 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.641      ;
 ; 0.426 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.641      ;
-; 0.426 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.641      ;
 ; 0.426 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.642      ;
 ; 0.427 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.642      ;
 ; 0.499 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.245      ; 0.915      ;
@@ -630,33 +630,33 @@ No paths to report.
 ; 0.534 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.749      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.749      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.749      ;
-; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
-; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
-; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.749      ;
-; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.245      ; 0.950      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[21] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[22] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
 ; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
+; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.749      ;
+; 0.534 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.245      ; 0.950      ;
+; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
+; 0.534 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.750      ;
 ; 0.535 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
 ; 0.535 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
-; 0.535 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
 ; 0.535 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
+; 0.535 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.751      ;
+; 0.535 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
+; 0.535 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
 ; 0.535 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.751      ;
 ; 0.535 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[16] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[17] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.751      ;
-; 0.535 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.750      ;
-; 0.535 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.751      ;
 ; 0.536 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
 ; 0.536 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
-; 0.536 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
-; 0.536 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.752      ;
 ; 0.536 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
 ; 0.536 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
+; 0.536 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.751      ;
+; 0.536 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.752      ;
 ; 0.536 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[22] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.752      ;
-; 0.537 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.753      ;
 ; 0.537 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.753      ;
+; 0.537 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.753      ;
 ; 0.537 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[22] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[23] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.045      ; 0.753      ;
-; 0.538 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[22] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[23] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.753      ;
+; 0.538 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.044      ; 0.753      ;
 +-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -736,14 +736,14 @@ No paths to report.
 ; 0.291 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.696      ;
 ; 0.292 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.695      ;
 ; 0.293 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.694      ;
-; 0.293 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.690      ;
 ; 0.293 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.691      ;
+; 0.293 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.690      ;
 ; 0.295 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.692      ;
 ; 0.295 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.692      ;
 ; 0.295 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.688      ;
 ; 0.296 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.691      ;
-; 0.298 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.134     ; 0.575      ;
 ; 0.298 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.686      ;
+; 0.298 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.134     ; 0.575      ;
 ; 0.299 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.685      ;
 ; 0.299 ; ClassroomControllerHardware:Classroom1|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.020     ; 0.688      ;
 ; 0.300 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.134     ; 0.573      ;
@@ -772,10 +772,10 @@ No paths to report.
 ; 0.345 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.638      ;
 ; 0.347 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.636      ;
 ; 0.351 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[16] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.632      ;
-; 0.353 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.630      ;
 ; 0.353 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.631      ;
-; 0.356 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.628      ;
+; 0.353 ; ClassroomControllerHardware:Classroom0|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.630      ;
 ; 0.356 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.627      ;
+; 0.356 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.628      ;
 ; 0.356 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.628      ;
 ; 0.356 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.023     ; 0.628      ;
 ; 0.357 ; ClassroomControllerHardware:Classroom3|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 1.000        ; -0.024     ; 0.626      ;
@@ -822,21 +822,21 @@ No paths to report.
 ; 0.169 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.134      ; 0.387      ;
 ; 0.173 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.134      ; 0.391      ;
 ; 0.204 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.313      ;
-; 0.204 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.313      ;
 ; 0.204 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[17] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.313      ;
+; 0.204 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.313      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
+; 0.205 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
+; 0.205 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.205 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[24] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[25] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
-; 0.205 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
-; 0.205 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[26] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[27] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.314      ;
 ; 0.206 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.315      ;
 ; 0.206 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[47] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.314      ;
 ; 0.206 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.314      ;
@@ -845,8 +845,6 @@ No paths to report.
 ; 0.206 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[31] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[32] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.314      ;
 ; 0.206 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[27] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.315      ;
 ; 0.206 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[16] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[17] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.314      ;
-; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
-; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
@@ -855,20 +853,22 @@ No paths to report.
 ; 0.207 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[29] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[30] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.315      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
-; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
-; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[43] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
+; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
+; 0.207 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.314      ;
+; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[44] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[45] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
+; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[28] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[29] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.316      ;
 ; 0.207 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.315      ;
 ; 0.208 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.316      ;
 ; 0.208 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[39] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.315      ;
+; 0.209 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
+; 0.209 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
 ; 0.209 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
 ; 0.209 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
 ; 0.209 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[36] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
-; 0.209 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
-; 0.209 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[37] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[38] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.316      ;
 ; 0.209 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[36] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[37] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.317      ;
 ; 0.210 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.317      ;
 ; 0.232 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.126      ; 0.442      ;
@@ -888,8 +888,8 @@ No paths to report.
 ; 0.258 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[31] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.126      ; 0.468      ;
 ; 0.260 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.126      ; 0.470      ;
 ; 0.261 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.126      ; 0.471      ;
-; 0.262 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[23] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.047      ; 0.393      ;
 ; 0.262 ; ClassroomControllerHardware:Classroom2|ls74:RisingEqualDFF|q         ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.126      ; 0.472      ;
+; 0.262 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[23] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[24] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.047      ; 0.393      ;
 ; 0.264 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[45] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[46] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.373      ;
 ; 0.264 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[43] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[44] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.373      ;
 ; 0.264 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.373      ;
@@ -909,15 +909,15 @@ No paths to report.
 ; 0.265 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[21] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.374      ;
 ; 0.265 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[16] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[17] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.374      ;
 ; 0.265 ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[21] ; ClassroomControllerHardware:Classroom0|piso48b:serialOutReg|temp[22] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.024      ; 0.373      ;
-; 0.266 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
-; 0.266 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[22] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[23] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
 ; 0.266 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[42] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
 ; 0.266 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[39] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
 ; 0.266 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[20] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.375      ;
-; 0.267 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.374      ;
+; 0.266 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[32] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[33] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
+; 0.266 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[22] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[23] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.373      ;
 ; 0.267 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[25] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[26] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.376      ;
 ; 0.267 ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[40] ; ClassroomControllerHardware:Classroom2|piso48b:serialOutReg|temp[41] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.374      ;
 ; 0.267 ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[18] ; ClassroomControllerHardware:Classroom3|piso48b:serialOutReg|temp[19] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.025      ; 0.376      ;
+; 0.267 ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[34] ; ClassroomControllerHardware:Classroom1|piso48b:serialOutReg|temp[35] ; gpio[8]      ; gpio[8]     ; 0.000        ; 0.023      ; 0.374      ;
 +-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -1477,7 +1477,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 29 20:12:13 2018
+    Info: Processing started: Sun Apr 29 22:30:38 2018
 Info: Command: quartus_sta ClassroomController -c ClassroomController
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1550,7 +1550,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 764 megabytes
-    Info: Processing ended: Sun Apr 29 20:12:16 2018
+    Info: Processing ended: Sun Apr 29 22:30:41 2018
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
