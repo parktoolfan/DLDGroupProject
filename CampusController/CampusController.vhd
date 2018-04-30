@@ -2,8 +2,14 @@ Library ieee;
 
 use ieee.std_logic_1164.all;
 
+-- This program is written for the 2017 Spring DLD class at Grove City College. The goal is to create a system which polls classrooms around campus to clooect information from them.
+-- Information collected is ClassroomInUse, LightsAreOn, and ProjectorIsOn.
+-- ClassroomInUse being a 1 represents that the classroom is being used, all of these signals come from sensors in the classroom that are explained in the writup attached with this code.
+
+-- This VHDL program is written by Theo Stangebye, stangebyeTO1@gcc.edu, April 2017.
+
 entity CampusController is
-port(	gpio : inout std_logic_vector(7 downto 0);
+port(	gpio : inout std_logic_vector(7 downto 0);	-- We clear all of the io on the baord so that the LEDs are not "Ghosted on".
 		ledr : out std_logic_vector(17 downto 0);
 		ledg : out std_logic_vector(8 downto 0);
 		sw : in std_logic_vector(17 downto 0);
@@ -11,10 +17,12 @@ port(	gpio : inout std_logic_vector(7 downto 0);
 	);
 end CampusController;
 
+-- The campus Controller will poll classrooms (which are simulated on another VHDL board). It will output a 2 bit integer which represents the ID of 1 of 4 classrooms.
+-- When a classroom's id is broadcasted on the RoomID bits, that classroom will connect to the communication bus (1 bit wide) and send it's information over a serial connection to this campus controller.
 architecture a of CampusController is
 
 	-- COMPONENT DECLARATIONS
-	component ls74 is
+	component ls74 is -- This is a standard DFF.
 		port(	d, clr, pre, clk : in std_logic;
 				q : out std_logic
 		);
@@ -34,7 +42,6 @@ architecture a of CampusController is
 		);
 	end component;
 
-
 	-- SIPO Shift Regerister.
 	component sipo is
 		port ( 	clk, clear : in std_logic;
@@ -43,72 +50,60 @@ architecture a of CampusController is
 				);
 	end component;
 
+	-- Much of the register file code is derived from online lecture slides, see entity declaration for more.
 	component register_file is
-		Port (	src_s0 : in std_logic;
+		Port (	src_s0 : in std_logic; -- src_s0 and src_s0 are the selection bits which decide which register the selectedData out gets its bits from.
 				src_s1 : in std_logic;
-				des_A0 : in std_logic;
+				des_A0 : in std_logic; -- address of register file for writing to.
 				des_A1 : in std_logic;
-				writeToReg : in std_logic; -- I added an enable bit to the 2 to 4 decoder so that i can have a write signal here.
-				Clk : in std_logic;
-				data_src : in std_logic;
-				data : in std_logic_vector(3 downto 0);
-				reg0 : out std_logic_vector(3 downto 0);
-				reg1 : out std_logic_vector(3 downto 0);
+				writeToReg : in std_logic; -- when we want to write to the Register.
+				Clk : in std_logic; -- clock signal.
+				data_src : in std_logic; -- this is an artifact from the walkthrough slides.
+				data : in std_logic_vector(3 downto 0); -- Data input that we want to write.
+				reg0 : out std_logic_vector(3 downto 0); -- register 0 contents
+				reg1 : out std_logic_vector(3 downto 0); -- register 1 contents, etc.
 				reg2 : out std_logic_vector(3 downto 0);
 				reg3 : out std_logic_vector(3 downto 0);
-				selectedData : out std_logic_vector(3 downto 0)
+				selectedData : out std_logic_vector(3 downto 0) -- the data selected by src_s1 and src_s0
 		);
 	end component;
 
-
 	-- SIGNALS
-	Signal rxin : std_logic_vector(15 downto 0);
-	Signal BuildingID, allignmentCounterOut : std_logic_vector(3 downto 0);
-	Signal tx, Master_Clock, rx : std_logic;
-	Signal StartFlag, EndFlag, BitStringAlligned : std_logic;
+	Signal rxin : std_logic_vector(15 downto 0); -- this signal represents the last 16 bits recieved on the RX input.
+	Signal RoomID : std_logic_vector(3 downto 0); -- RoomID will be the binary number of the classroom that we are talking to,
+	Signal tx, Master_Clock, rx : std_logic; -- tx can be used to communicate in serial on, Master_Clock is the main clock signal, and RX is our recieving bit.
+	Signal StartFlag, EndFlag, BitStringAlligned : std_logic; -- the startFlag is thrown after a predetermined serial stream is recieved which represeents a ClassroomController Coming Online.
+	-- the ENd is thrown after a predetermined serial stream is recieved which represeents a ClassroomController Coming Online.
+	-- BitStringAlligned is thrown when we are ready to load the bitstream from RX into our DB.
 
 begin
 
-	-- TESTING output pins:
-	--gpio(3) <= sw(0);
-	--ledr(0) <= sw(0);
-	--ledr(1) <= gpio(2);
-
 	-- GPIO INPUTS AND OUTPUTS
-		rx <= gpio(4);		-- input
-		gpio(3) <= tx;		-- rest are outputs
-		--gpio(5) <= Master_Clock;
-		gpio(1 downto 0) <= BuildingID(1 downto 0);
-		-- for testing, we'll let the Arduino Create the Clock signal.
-		Master_Clock <= gpio(7);
-		ledg(8) <= Master_Clock;
+		rx <= gpio(4);		-- input from classroomController
+		gpio(3) <= tx;		-- we could talk to classroomControllers on this.
+		gpio(1 downto 0) <= RoomID(1 downto 0); -- Broadcast RoomID to ClassroomControllers
+		Master_Clock <= gpio(7); -- Read clock from arduino.
+		ledg(8) <= Master_Clock; -- flash LEDG(8) with clock signal.
 		-- share clock signal with children.
-		gpio(5) <= Master_clock;
+		gpio(5) <= Master_clock; -- Tranmit clock signal to connected classroomContorllers.
 
+		-- Hook up RX to shift Regerister - this takes a serial stream in and produces a parallel output representing the last 16 bits that came through on the shift register.
+		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin); -- rxin is the 16bit history of what came in on RX.
+		-- rxin(0) should be the newest bit recieved, rxin(15) the oldest.
 
-		-- Hook up RX to shift Regerister
-		inputReg : sipo port map (clk => Master_Clock, Clear => '0', Input_Data => rx, q => rxin);
-
-		-- Create And gates for counter logic
+		-- This is some combinational logic that sets StartFlag to '1' when rxin is "1010101010101010"
 		StartFlag <= (rxin(15) and rxin(13) and rxin(11) and rxin(9) and rxin(7) and rxin(5) and rxin(3) and rxin(1)) and Not(rxin(14) OR rxin(12) OR rxin(10) Or rxin(8) or rxin(6) or rxin(4) or rxin(2) or rxin(0));
+		-- End flag when rxin is "1111111111111111"
 		EndFlag <= (rxin(15) and rxin(14) and rxin(12) and rxin(11) and rxin(10) and rxin(9) and rxin(8) and rxin(7) and rxin(6) and rxin(5) and rxin(4) and rxin(3) and rxin(2) and rxin(1) and rxin(0));
 
-		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our buildingID Count.
-		BuildingIdCounter : vhdl_binary_counter port map (
+		-- Implement our model for a 74x161 with asynchronous clear.  This counter drives our RoomID Count.
+		RoomIDCounter : vhdl_binary_counter port map (
 				C => EndFlag,
-				CLR => BuildingID(2),  -- since we are only talking two 4 classrooms, we will reset the counter as soon as the binar number changes from 0011 to 0100
-				Q => BuildingID
-		);
-
-		-- Implement Bit string allignment Counter
-		AllignmentCounter : ls163 port map (
-				C => Master_Clock,
-				CLR => StartFlag,
-				Q => allignmentCounterOut
+				CLR => RoomID(2),  -- since we are only talking two 4 classrooms, we will reset the counter as soon as the binar number changes from 0011 to 0100
+				Q => RoomID
 		);
 
 		-- Because this chip does not have an RCO, implement some combinational logic to simulate the RCO, when this simulation triggers RCO, we know that the we are ready to read from our input shift regerister into our memory circuitry.
-		--BitStringAlligned <= allignmentCounterOut(0) and allignmentCounterOut(1) and allignmentCounterOut(2) and allignmentCounterOut(3) and not(endFlag) and not(startflag);
 		BitStringAlligned <= Not(rxin(15) or rxin(14) or rxin(13) or rxin(12) or rxin(11) or rxin(10) or rxin(9) or rxin(8) or rxin(0) or rxin(1) or rxin(2) or rxin(3) or rxin(4));
 
 		-- Implement Memory Component:
@@ -117,8 +112,8 @@ begin
 		Database : register_file port map(
 			src_s0 => sw(16), -- since we don't need to read from the register file, these can be Zero.
 			src_s1 => sw(17),
-			des_A0 => BuildingId(0), -- we index our data based on what classroom we are reading from
-			des_A1 => BuildingID(1), -- we index our data based on what classroom we are reading from
+			des_A0 => RoomID(0), -- we index our data based on what classroom we are reading from
+			des_A1 => RoomID(1), -- we index our data based on what classroom we are reading from
 			writeToReg => bitStringAlligned, -- just like the circuit diagram, this is wired to execute when the bit string is alligned.
 			Clk => Master_Clock,
 			data_src => '0', -- we always want our data to flow from the input bus.
@@ -130,33 +125,10 @@ begin
 			selectedData => ledg( 3 downto 0)
 		);
 
-		Ledg(6) <= BitStringAlligned;
-		Ledg(7) <= StartFlag;
-		Ledg(5) <= EndFlag;
-
-
-		-- TESTING COMPONENT CODES:::
-	-- test74: ls74  port map (d => sw(7), clr => sw(8), pre => sw(9), clk => key(0), q => ledr(5));
-	-- Test asynchronous clear 4 bit counter
-	-- testASchro : vhdl_binary_counter port map (C => key(0), CLR => sw(17), q => ledr(17 downto 14)); -- test asynchronous clear
-	-- testSchro : ls163 port map (C => key(0), CLR => sw(17), q => ledr(13 downto 10)); -- tests synchronous clear
-	-- Test synchronous clear 4 bit counter
-	-- Testing Regerister File:
-	-- 	testRegFile : register_file port map(
-	-- 			src_s0 => sw(16),
-	-- 			src_s1 => sw(17),
-	-- 			des_A0 => sw(14),
-	-- 			des_A1 => sw(15),
-	-- 			writeToReg => sw(13),
-	-- 			Clk => key(0),
-	-- 			data_src => '0',
-	-- 			data => sw(3 downto 0),
-	-- 			reg0 => ledr(3 downto 0),
-	-- 			reg1 => ledr(7 downto 4),
-	-- 			reg2 => ledr(11 downto 8),
-	-- 			reg3 => ledr(15 downto 12),
-	-- 			selectedData => ledg( 3 downto 0)
-	-- 	);
+		-- update leds with information as to what our circuit is doing.
+		Ledg(6) <= BitStringAlligned; -- this implies we're writing to the register file.
+		Ledg(7) <= StartFlag; -- this means we got the start flag
+		Ledg(5) <= EndFlag; -- we got the end flag.
 
 end a;
 
@@ -198,9 +170,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
+-- this 4 bit counter has an asynchronous clear.
 entity vhdl_binary_counter is
-	port(C, CLR : in std_logic;
-	Q : out std_logic_vector(3 downto 0));
+	port(C, CLR : in std_logic; -- C is the clock signal.
+	Q : out std_logic_vector(3 downto 0)); -- 4 bit integer output.
 end vhdl_binary_counter;
 
 architecture bhv of vhdl_binary_counter is
@@ -222,12 +195,10 @@ end bhv;
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
-
 entity ls163 is
 	port(C, CLR : in std_logic;
 	Q : out std_logic_vector(3 downto 0));
 end ls163;
-
 architecture bhv of ls163 is
 	signal tmp: std_logic_vector(3 downto 0);
 begin
@@ -245,12 +216,11 @@ end bhv;
 -- Begin SIPO Shift Register - adapted from https://allaboutfpga.com/vhdl-code-for-4-bit-shift-register/
 library ieee;
 use ieee.std_logic_1164.all;
-
-entity sipo is
+entity sipo is -- the SIPO register takes data in in serial and produces a parallel string representing the last so many values that appeared in its bitstream input.
  port(
  clk, clear : in std_logic;
  Input_Data: in std_logic;
- Q: out std_logic_vector(15 downto 0) );
+ Q: out std_logic_vector(15 downto 0) ); -- this one remembers 16 bits.
 end sipo;
 
 architecture arch of sipo is
@@ -263,16 +233,16 @@ begin
  Q <= "0000000000000000";
  temp <= "0000000000000000";
  elsif (CLK'event and CLK='1') then
- temp(15 downto 1) <= temp(14 downto 0);
+ temp(15 downto 1) <= temp(14 downto 0); -- 15 is going to be the oldest data, 0 will be the newest.
  temp(0) <= Input_Data;
  Q <= temp;
  end if;
  end process;
 end arch;
 
--- ///////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -- Create RegisterFile Components:
 -- This code comes from the guide at https://www.scss.tcd.ie/Michael.Manzke/CS2022/CS2022_vhdl_eighth.pdf
+-- from here to the end of this file, the contents are created from the lecture slides at the URL above. As such, this code is implemented with sparse comments as the author of the lecture materials above neglected to comment his code.
 -- 2 to 4 decoder
 -- NOTE THIS IS ONLY ONE HALF of a ls139 chip.
 library IEEE;
@@ -281,7 +251,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity decoder_2to4 is
 	Port (
-		Enable : IN std_logic; -- I'm adding an enable signal that we can turn high to write to the regerister file.
+		Enable : IN std_logic; -- I'm adding an enable signal that we can turn high to write to the regerister file.  Disabling the decoder writes 0 to all of the outputs.
 		A0 : in std_logic;
 		A1 : in std_logic;
 		Q0 : out std_logic;
@@ -291,7 +261,7 @@ entity decoder_2to4 is
 end decoder_2to4;
 architecture Behavioral of decoder_2to4 is
 	begin
-		Q0<= ((not A0) and (not A1)) and Enable;
+		Q0<= ((not A0) and (not A1)) and Enable; -- and enable to implement 0 out of m when the enable bit is '0'
 		Q1<= (A0 and (not A1)) and Enable;
 		Q2<= ((not A0) and A1) and Enable;
 		Q3<= (A0 and A1) and Enable;
@@ -337,15 +307,15 @@ begin
 	"0000";
 end Behavioral;
 
--- Finally, here is the register component
+-- Finally, here is the register component -- this register is 4 bits wide and simulates 4 DFFs wired in parallel.
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity reg4 is
-	port ( D : in std_logic_vector(3 downto 0);
+	port ( D : in std_logic_vector(3 downto 0); -- input data to register.
 		load, Clk : in std_logic;
-		Q : out std_logic_vector(3 downto 0)
+		Q : out std_logic_vector(3 downto 0) -- output of the register (4 bits in parallel)
 	);
 end reg4;
 architecture Behavioral of reg4 is begin

@@ -140,7 +140,7 @@ Q[14] <= Q[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[15] <= Q[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CampusController|vhdl_binary_counter:BuildingIdCounter
+|CampusController|vhdl_binary_counter:RoomIDCounter
 C => tmp[0].CLK
 C => tmp[1].CLK
 C => tmp[2].CLK
@@ -149,21 +149,6 @@ CLR => tmp[0].ACLR
 CLR => tmp[1].ACLR
 CLR => tmp[2].ACLR
 CLR => tmp[3].ACLR
-Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= tmp[3].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CampusController|ls163:AllignmentCounter
-C => tmp[0].CLK
-C => tmp[1].CLK
-C => tmp[2].CLK
-C => tmp[3].CLK
-CLR => tmp[0].OUTPUTSELECT
-CLR => tmp[1].OUTPUTSELECT
-CLR => tmp[2].OUTPUTSELECT
-CLR => tmp[3].OUTPUTSELECT
 Q[0] <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= tmp[2].DB_MAX_OUTPUT_PORT_TYPE
